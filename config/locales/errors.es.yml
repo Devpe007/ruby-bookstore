@@ -1,0 +1,5 @@
+es:
+  activerecord:
+    errors:
+      messages:
+        older_than_16: "debe ser mayor que 16 años"

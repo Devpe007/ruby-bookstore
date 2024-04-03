@@ -1,0 +1,12 @@
+---
+es:
+  activerecord:
+    models:
+      person: "Persona"
+    attributes:
+      person:
+        name: "Nombre"
+        email: "E-mail"
+        password: "Contraseña"
+        born_at: "Fecha de nacimiento"
+        admin: "Administrador"

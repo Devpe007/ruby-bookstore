@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+admin:
+  name: Pedro Henrique
+  password_digest: <%= BCrypt::Password.create('secret') %>
+  email: teste@teste.com
+  born_at: 2007-02-02
+  admin: true
+
+autor:
+  name: Lorena
+  password_digest: <%= BCrypt::Password.create('secretagain') %>
+  born_at: 2009-12-08
+  email: lorena@teste.com
+  admin: false

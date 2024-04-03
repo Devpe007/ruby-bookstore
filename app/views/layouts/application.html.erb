@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bookstore</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+    <header>
+      <h1>Interface de administração</h1>
+    </header>
+
+    <nav>
+      <ul>
+        <li> <%= link_to "Pessoas", people_path %> </li>
+      </ul>
+    </nav>
+
+    <section id="main">
+      <%= yield %>
+    </section>
+
+    <footer>
+      Desenvolvido no ebook "Conhecendo Rails"
+    </footer>
+  </body>
+</html>

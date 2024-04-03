@@ -1,0 +1,20 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @person %>
+
+<div>
+  <%= link_to "Edit this person", edit_person_path(@person) %> |
+  <%= link_to "Back to people", people_path %>
+
+  <%= button_to "Destroy this person", @person, method: :delete %>
+</div>
+
+<p>
+  <b> <%= Person.human_attribute_name(:name) %>: </b>
+  <%= @person.name %>
+</p>
+
+<p>
+  <strong> <%= Person.human_attribute_name(:email) %> </strong>
+  <%= mail_to @person.email, nil, encode: 'hex' %>
+</p>
