@@ -5090,3 +5090,188 @@ Processing by SessionsController#new as HTML
 Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.0ms | Allocations: 1778)
 
 
+Started GET "/people" for ::1 at 2024-04-03 22:18:59 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PeopleController#index as HTML
+Redirected to http://localhost:3000/sessions/new
+Completed 302 Found in 7ms (ActiveRecord: 0.0ms | Allocations: 2324)
+
+
+Started GET "/sessions/new" for ::1 at 2024-04-03 22:18:59 -0300
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 5.3ms | Allocations: 1949)
+  Rendered layout layouts/application.html.erb (Duration: 74.2ms | Allocations: 35440)
+Completed 200 OK in 90ms (Views: 78.3ms | ActiveRecord: 0.0ms | Allocations: 39326)
+
+
+Started GET "/people" for ::1 at 2024-04-03 22:19:05 -0300
+Processing by PeopleController#index as HTML
+Redirected to http://localhost:3000/sessions/new
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms | Allocations: 1272)
+
+
+Started GET "/sessions/new" for ::1 at 2024-04-03 22:19:05 -0300
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 3.2ms | Allocations: 447)
+  Rendered layout layouts/application.html.erb (Duration: 8.4ms | Allocations: 1547)
+Completed 200 OK in 10ms (Views: 9.5ms | ActiveRecord: 0.0ms | Allocations: 1798)
+
+
+Started GET "/people" for ::1 at 2024-04-03 22:19:07 -0300
+Processing by PeopleController#index as HTML
+Redirected to http://localhost:3000/sessions/new
+Completed 302 Found in 5ms (ActiveRecord: 0.0ms | Allocations: 1264)
+
+
+Started GET "/sessions/new" for ::1 at 2024-04-03 22:19:07 -0300
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.6ms | Allocations: 438)
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | Allocations: 1538)
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.0ms | Allocations: 1788)
+
+
+Started GET "/people" for ::1 at 2024-04-03 22:19:07 -0300
+Processing by PeopleController#index as HTML
+Redirected to http://localhost:3000/sessions/new
+Completed 302 Found in 7ms (ActiveRecord: 0.0ms | Allocations: 1267)
+
+
+Started GET "/sessions/new" for ::1 at 2024-04-03 22:19:07 -0300
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.6ms | Allocations: 435)
+  Rendered layout layouts/application.html.erb (Duration: 1.8ms | Allocations: 1535)
+Completed 200 OK in 2ms (Views: 2.1ms | ActiveRecord: 0.0ms | Allocations: 1785)
+
+
+Started GET "/people" for ::1 at 2024-04-03 22:19:08 -0300
+Processing by PeopleController#index as HTML
+Redirected to http://localhost:3000/sessions/new
+Completed 302 Found in 6ms (ActiveRecord: 0.0ms | Allocations: 1273)
+
+
+Started GET "/sessions/new" for ::1 at 2024-04-03 22:19:08 -0300
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.4ms | Allocations: 426)
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | Allocations: 1526)
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.0ms | Allocations: 1776)
+
+
+Started GET "/people" for ::1 at 2024-04-03 22:19:08 -0300
+Processing by PeopleController#index as HTML
+Redirected to http://localhost:3000/sessions/new
+Completed 302 Found in 5ms (ActiveRecord: 0.0ms | Allocations: 1266)
+
+
+Started GET "/sessions/new" for ::1 at 2024-04-03 22:19:08 -0300
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.7ms | Allocations: 411)
+  Rendered layout layouts/application.html.erb (Duration: 1.8ms | Allocations: 1511)
+Completed 200 OK in 2ms (Views: 2.1ms | ActiveRecord: 0.0ms | Allocations: 1759)
+
+
+Started GET "/sessions/new" for ::1 at 2024-04-03 22:20:30 -0300
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 4.3ms | Allocations: 705)
+  Rendered layout layouts/application.html.erb (Duration: 49.3ms | Allocations: 15608)
+Completed 200 OK in 55ms (Views: 52.7ms | ActiveRecord: 0.0ms | Allocations: 16583)
+
+
+Started GET "/sessions/new" for ::1 at 2024-04-03 22:25:10 -0300
+
+NoMethodError - undefined method `laout' for class SessionsController:
+  app/controllers/sessions_controller.rb:2:in `<class:SessionsController>'
+  app/controllers/sessions_controller.rb:1:in `<main>'
+
+Started POST "/__better_errors/8e53fad8bbea7ed4/variables" for ::1 at 2024-04-03 22:25:10 -0300
+Started GET "/sessions/new" for ::1 at 2024-04-03 22:25:20 -0300
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering sessions/new.html.erb within layouts/pub
+  Rendered sessions/new.html.erb within layouts/pub (Duration: 5.5ms | Allocations: 737)
+  Rendered layout layouts/pub.html.erb (Duration: 9.2ms | Allocations: 3022)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms | Allocations: 3910)
+
+
+
+ActionView::SyntaxErrorInTemplate - Encountered a syntax error while rendering template: check <!DOCTYPE html>
+<html>
+    <head>
+        <title>Bookstore</title>
+        <%= csrf_meta_tags %>
+        <%= stylesheet_link_tag
+        'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+        <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reloa\
+        d' %>
+    </head>
+    <body>
+        <header>
+            <h1>Bookstore - A maior livraria virtual (despois da Amazon)</h1>
+        </header>
+        <nav>
+            <ul>
+                <li> <%= link_to 'Inicial', '/' %> </li>
+            </ul>
+        </nav>
+        <section>
+            <footer>
+                Desenvolvido no ebook "Conhecendo Rails"
+            </footer>
+        </section>
+    </body>
+</html>:
+  app/views/layouts/pub.html.erb:7:in `'
+
+Started POST "/__better_errors/9f554a69f473e6d0/variables" for ::1 at 2024-04-03 22:25:20 -0300
+Started GET "/sessions/new" for ::1 at 2024-04-03 22:25:37 -0300
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering sessions/new.html.erb within layouts/pub
+  Rendered sessions/new.html.erb within layouts/pub (Duration: 1.1ms | Allocations: 730)
+  Rendered layout layouts/pub.html.erb (Duration: 3.8ms | Allocations: 3322)
+Completed 200 OK in 5ms (Views: 4.7ms | ActiveRecord: 0.0ms | Allocations: 4189)
+
+
+Started GET "/" for ::1 at 2024-04-03 22:25:43 -0300
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/pedrohenrique/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/railties-7.1.3.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/pedrohenrique/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/railties-7.1.3.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.5ms | Allocations: 272)
+Completed 200 OK in 3ms (Views: 1.2ms | ActiveRecord: 0.0ms | Allocations: 1009)
+
+
+Started GET "/sessions/new" for ::1 at 2024-04-03 22:28:41 -0300
+Processing by SessionsController#new as HTML
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 2163)
+
+
+
+ActionView::MissingTemplate - Missing template layouts/seila with {:locale=>[:"pt-BR", :pt], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+Searched in:
+  * "/home/pedrohenrique/Projects/bookstore/app/views"
+  * "/home/pedrohenrique/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/turbo-rails-2.0.5/app/views"
+  * "/home/pedrohenrique/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/actiontext-7.1.3.2/app/views"
+  * "/home/pedrohenrique/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/actionmailbox-7.1.3.2/app/views":
+
+Started POST "/__better_errors/75068c4c217ca632/variables" for ::1 at 2024-04-03 22:28:41 -0300
+Started GET "/sessions/new" for ::1 at 2024-04-03 22:29:37 -0300
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering sessions/new.html.erb within layouts/pub
+  Rendered sessions/new.html.erb within layouts/pub (Duration: 1.6ms | Allocations: 728)
+  Rendered layout layouts/pub.html.erb (Duration: 5.6ms | Allocations: 3310)
+Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.0ms | Allocations: 4178)
+
+
