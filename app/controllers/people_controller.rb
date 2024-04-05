@@ -24,6 +24,7 @@ class PeopleController < LoggedController
   # POST /people or /people.json
   def create
     @person = Person.new(person_params)
+    @person.admin = params[:admin] if session[:admin]
 
     flash[:notice] = 'Pessoa salva' if @person.save
     respond_with @person
@@ -31,6 +32,8 @@ class PeopleController < LoggedController
 
   # PATCH/PUT /people/1 or /people/1.json
   def update
+    @person.admin = params[:admin] if session[:admin]
+
     flash[:notice] = 'Pessoa atualizada' if @person.update(person_params)
     respond_with @person
   end
@@ -41,7 +44,7 @@ class PeopleController < LoggedController
     respond_with @person
   end
 
-  def admins 
+  def admins
     @admins = Person.admins
   end
 
@@ -53,7 +56,7 @@ class PeopleController < LoggedController
     def set_person
       @person = Person.find(params[:id]) rescue nil
 
-      if !@person 
+      if !@person
         flash[:notice] = "Pessoa não encontrada"
 
         redirect_to action: "index"
@@ -63,6 +66,6 @@ class PeopleController < LoggedController
 
     # Only allow a list of trusted parameters through.
     def person_params
-      params.require(:person).permit(:name, :password_digest, :born_at, :admin)
+      params.require(:person).permit(:name, :email, :password_digest, :born_at)
     end
 end

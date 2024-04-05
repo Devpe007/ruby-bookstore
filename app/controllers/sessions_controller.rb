@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
     end
 
     def create
-        person = Person.auth(params[:email], params[:senha])
+        person = Person.auth(params[:email], params[:password_digest])
 
         raise NotAuthenticated if !@person
 
@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
         session[:admin] = person.admin
 
         flash[:notice] = "Olá, #{person.name}!"
-        
+
         redirect_to people_path
     end
 

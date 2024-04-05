@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
     protect_from_forgery with: :exception
 
     NotAuthenticated = Class.new(StandardError)
-    
+
     rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
     rescue_from NotAuthenticated, with: :not_authenticated
 

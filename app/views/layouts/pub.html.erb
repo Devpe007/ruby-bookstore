@@ -4,8 +4,7 @@
         <title>Bookstore</title>
         <%= csrf_meta_tags %>
         <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-        <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reloa\
-        d' %>
+        <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     </head>
 
     <body>
@@ -17,6 +16,9 @@
                 <li> <%= link_to 'Inicial', '/' %> </li>
             </ul>
         </nav>
+        <section id="main" >
+            <%= yield %>
+        </section>
         <section>
             <footer>
                 Desenvolvido no ebook "Conhecendo Rails"

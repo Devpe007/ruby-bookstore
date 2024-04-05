@@ -6,9 +6,7 @@ class Person < ApplicationRecord
     validates :born_at, presence: true
     validate :age_limit
 
-    has_secure_token
-    has_secure_password :password_reset_token
-    validates :password, presence: { on: :create }, length: { minimum: 8, allow_blank: true }
+    validates :password_digest, presence: { on: :create }, length: { minimum: 8, allow_blank: true }
 
     before_save :convert_email
 
@@ -17,10 +15,10 @@ class Person < ApplicationRecord
 
     scope :admins, -> () { where(admin: true) }
 
-    def to_param 
+    def to_param
         "#{id}-#{name.parameterize}"
     end
-    
+
     private
 
     def age_limit
@@ -35,7 +33,7 @@ class Person < ApplicationRecord
     end
 
     def self.auth(email, password)
-        person = Person.where(email: email).first
-        person && person.authenticate(password) ? person : nil
+      person = Person.where(email: email).first
+      person && person.authenticate(password) ? person : nil
     end
 end
