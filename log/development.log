@@ -7448,3 +7448,1093 @@ Processing by SessionsController#new as HTML
 Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.0ms | Allocations: 4185)
 
 
+Started GET "/sessions/new" for ::1 at 2024-04-05 08:40:47 -0300
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering sessions/new.html.erb within layouts/pub
+  Rendered sessions/new.html.erb within layouts/pub (Duration: 1.2ms | Allocations: 723)
+  Rendered layout layouts/pub.html.erb (Duration: 5.5ms | Allocations: 3326)
+Completed 200 OK in 7ms (Views: 6.7ms | ActiveRecord: 0.0ms | Allocations: 4194)
+
+
+Started POST "/sessions" for ::1 at 2024-04-05 08:40:53 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"teste@teste.com", "senha"=>"123123123", "commit"=>"Autenticar"}
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."email" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["email", "teste@teste.com"], ["LIMIT", 1]]
+  ↳ app/models/person.rb:36:in `auth'
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 1.4ms | Allocations: 6854)
+
+
+
+NoMethodError - undefined method `authenticate' for an instance of Person:
+  app/models/person.rb:37:in `auth'
+  app/controllers/sessions_controller.rb:8:in `create'
+
+Started POST "/__better_errors/2bb25bc6af624e5b/variables" for ::1 at 2024-04-05 08:40:53 -0300
+Started GET "/sessions/new" for ::1 at 2024-04-05 08:40:56 -0300
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering sessions/new.html.erb within layouts/pub
+  Rendered sessions/new.html.erb within layouts/pub (Duration: 2.9ms | Allocations: 421)
+  Rendered layout layouts/pub.html.erb (Duration: 14.8ms | Allocations: 2723)
+Completed 200 OK in 17ms (Views: 15.8ms | ActiveRecord: 0.0ms | Allocations: 2944)
+
+
+Started POST "/sessions" for ::1 at 2024-04-05 08:54:46 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"teste@teste.com", "senha"=>"123123123", "commit"=>"Autenticar"}
+  [1m[36mPerson Load (0.7ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."email" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["email", "teste@teste.com"], ["LIMIT", 1]]
+  ↳ app/models/person.rb:36:in `auth'
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 1.1ms | Allocations: 2027)
+
+
+
+NoMethodError - undefined method `authenticate' for an instance of Person:
+  app/models/person.rb:37:in `auth'
+  app/controllers/sessions_controller.rb:8:in `create'
+
+Started POST "/__better_errors/48f756506787e901/variables" for ::1 at 2024-04-05 08:54:46 -0300
+Started GET "/sessions/new" for ::1 at 2024-04-05 08:54:49 -0300
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering sessions/new.html.erb within layouts/pub
+  Rendered sessions/new.html.erb within layouts/pub (Duration: 2.8ms | Allocations: 430)
+  Rendered layout layouts/pub.html.erb (Duration: 11.3ms | Allocations: 2732)
+Completed 200 OK in 14ms (Views: 12.6ms | ActiveRecord: 0.0ms | Allocations: 2953)
+
+
+Started GET "/" for ::1 at 2024-04-05 08:54:51 -0300
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/pedrohenrique/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/railties-7.1.3.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/pedrohenrique/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/railties-7.1.3.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.8ms | Allocations: 273)
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.0ms | Allocations: 1012)
+
+
+Started GET "/sessions/new" for ::1 at 2024-04-05 08:54:52 -0300
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering sessions/new.html.erb within layouts/pub
+  Rendered sessions/new.html.erb within layouts/pub (Duration: 2.1ms | Allocations: 421)
+  Rendered layout layouts/pub.html.erb (Duration: 8.3ms | Allocations: 2771)
+Completed 200 OK in 11ms (Views: 9.6ms | ActiveRecord: 0.0ms | Allocations: 2993)
+
+
+Started GET "/sessions/new" for ::1 at 2024-04-05 08:54:52 -0300
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering sessions/new.html.erb within layouts/pub
+  Rendered sessions/new.html.erb within layouts/pub (Duration: 1.9ms | Allocations: 415)
+  Rendered layout layouts/pub.html.erb (Duration: 9.6ms | Allocations: 2717)
+Completed 200 OK in 11ms (Views: 10.4ms | ActiveRecord: 0.0ms | Allocations: 2941)
+
+
+Started GET "/sessions/new" for ::1 at 2024-04-05 08:59:44 -0300
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering sessions/new.html.erb within layouts/pub
+  Rendered sessions/new.html.erb within layouts/pub (Duration: 1.3ms | Allocations: 714)
+  Rendered layout layouts/pub.html.erb (Duration: 4.0ms | Allocations: 3317)
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.0ms | Allocations: 4185)
+
+
+Started GET "/sessions/new" for ::1 at 2024-04-05 08:59:44 -0300
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering sessions/new.html.erb within layouts/pub
+  Rendered sessions/new.html.erb within layouts/pub (Duration: 3.1ms | Allocations: 427)
+  Rendered layout layouts/pub.html.erb (Duration: 13.0ms | Allocations: 2729)
+Completed 200 OK in 15ms (Views: 14.1ms | ActiveRecord: 0.0ms | Allocations: 2950)
+
+
+Started GET "/sessions/new" for ::1 at 2024-04-05 08:59:44 -0300
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering sessions/new.html.erb within layouts/pub
+  Rendered sessions/new.html.erb within layouts/pub (Duration: 2.5ms | Allocations: 442)
+  Rendered layout layouts/pub.html.erb (Duration: 13.2ms | Allocations: 2744)
+Completed 200 OK in 15ms (Views: 14.2ms | ActiveRecord: 0.0ms | Allocations: 2965)
+
+
+Started POST "/sessions" for ::1 at 2024-04-05 08:59:49 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"teste@teste.com", "senha"=>"123123123", "commit"=>"Autenticar"}
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."email" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["email", "teste@teste.com"], ["LIMIT", 1]]
+  ↳ app/models/person.rb:37:in `auth'
+Redirected to http://localhost:3000/sessions/new
+Completed 302 Found in 13ms (ActiveRecord: 1.3ms | Allocations: 7300)
+
+
+Started GET "/sessions/new" for ::1 at 2024-04-05 08:59:49 -0300
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering sessions/new.html.erb within layouts/pub
+  Rendered sessions/new.html.erb within layouts/pub (Duration: 0.9ms | Allocations: 416)
+  Rendered layout layouts/pub.html.erb (Duration: 3.9ms | Allocations: 2766)
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.0ms | Allocations: 2988)
+
+
+Started GET "/sessions/new" for ::1 at 2024-04-05 09:00:21 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering sessions/new.html.erb within layouts/pub
+  Rendered sessions/new.html.erb within layouts/pub (Duration: 6.4ms | Allocations: 2187)
+  Rendered layout layouts/pub.html.erb (Duration: 73.8ms | Allocations: 23355)
+Completed 200 OK in 84ms (Views: 77.2ms | ActiveRecord: 0.0ms | Allocations: 27902)
+
+
+Started POST "/sessions" for ::1 at 2024-04-05 09:00:30 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"anddev007pe@gmail.co", "senha"=>"123123123", "commit"=>"Autenticar"}
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."email" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["email", "anddev007pe@gmail.co"], ["LIMIT", 1]]
+  ↳ app/models/person.rb:37:in `auth'
+Redirected to http://localhost:3000/sessions/new
+Completed 302 Found in 39ms (ActiveRecord: 5.3ms | Allocations: 12649)
+
+
+Started GET "/sessions/new" for ::1 at 2024-04-05 09:00:30 -0300
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering sessions/new.html.erb within layouts/pub
+  Rendered sessions/new.html.erb within layouts/pub (Duration: 2.8ms | Allocations: 425)
+  Rendered layout layouts/pub.html.erb (Duration: 19.9ms | Allocations: 2728)
+Completed 200 OK in 21ms (Views: 20.4ms | ActiveRecord: 0.0ms | Allocations: 2956)
+
+
+Started GET "/sessions/new" for ::1 at 2024-04-05 09:00:50 -0300
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering sessions/new.html.erb within layouts/pub
+  Rendered sessions/new.html.erb within layouts/pub (Duration: 1.4ms | Allocations: 432)
+  Rendered layout layouts/pub.html.erb (Duration: 6.1ms | Allocations: 2783)
+Completed 200 OK in 7ms (Views: 6.8ms | ActiveRecord: 0.0ms | Allocations: 3014)
+
+
+Started GET "/sessions/new" for ::1 at 2024-04-05 09:00:59 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering sessions/new.html.erb within layouts/pub
+  Rendered sessions/new.html.erb within layouts/pub (Duration: 11.0ms | Allocations: 2208)
+  Rendered layout layouts/pub.html.erb (Duration: 107.9ms | Allocations: 23379)
+Completed 200 OK in 119ms (Views: 111.1ms | ActiveRecord: 0.0ms | Allocations: 27926)
+
+
+Started POST "/sessions" for ::1 at 2024-04-05 09:01:06 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"teste@teste.com", "senha"=>"123123123", "commit"=>"Autenticar"}
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."email" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["email", "teste@teste.com"], ["LIMIT", 1]]
+  ↳ app/models/person.rb:37:in `auth'
+Redirected to http://localhost:3000/sessions/new
+Completed 302 Found in 107ms (ActiveRecord: 3.8ms | Allocations: 23814)
+
+
+Started GET "/sessions/new" for ::1 at 2024-04-05 09:01:06 -0300
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering sessions/new.html.erb within layouts/pub
+  Rendered sessions/new.html.erb within layouts/pub (Duration: 0.8ms | Allocations: 479)
+  Rendered layout layouts/pub.html.erb (Duration: 4.2ms | Allocations: 2831)
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.0ms | Allocations: 3060)
+
+
+Started GET "/sessions/new" for ::1 at 2024-04-05 09:01:21 -0300
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering sessions/new.html.erb within layouts/pub
+  Rendered sessions/new.html.erb within layouts/pub (Duration: 1.4ms | Allocations: 411)
+  Rendered layout layouts/pub.html.erb (Duration: 6.3ms | Allocations: 2723)
+Completed 200 OK in 7ms (Views: 6.9ms | ActiveRecord: 0.0ms | Allocations: 2953)
+
+
+Started GET "/sessions/new" for ::1 at 2024-04-05 09:01:27 -0300
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering sessions/new.html.erb within layouts/pub
+  Rendered sessions/new.html.erb within layouts/pub (Duration: 4.6ms | Allocations: 435)
+  Rendered layout layouts/pub.html.erb (Duration: 16.3ms | Allocations: 2737)
+Completed 200 OK in 19ms (Views: 17.9ms | ActiveRecord: 0.0ms | Allocations: 2967)
+
+
+Started GET "/sessions" for ::1 at 2024-04-05 09:01:29 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/sessions"):
+  
+Started GET "/people" for ::1 at 2024-04-05 09:01:36 -0300
+Processing by PeopleController#index as HTML
+Redirected to http://localhost:3000/sessions/new
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms | Allocations: 1362)
+
+
+Started GET "/sessions/new" for ::1 at 2024-04-05 09:01:36 -0300
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering sessions/new.html.erb within layouts/pub
+  Rendered sessions/new.html.erb within layouts/pub (Duration: 0.9ms | Allocations: 456)
+  Rendered layout layouts/pub.html.erb (Duration: 4.7ms | Allocations: 2807)
+Completed 200 OK in 5ms (Views: 5.2ms | ActiveRecord: 0.0ms | Allocations: 3033)
+
+
+Started POST "/sessions" for ::1 at 2024-04-05 09:01:46 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"teste@teste.com", "senha"=>"123123123", "commit"=>"Autenticar"}
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."email" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["email", "teste@teste.com"], ["LIMIT", 1]]
+  ↳ app/models/person.rb:37:in `auth'
+Redirected to http://localhost:3000/sessions/new
+Completed 302 Found in 4ms (ActiveRecord: 0.1ms | Allocations: 1845)
+
+
+Started GET "/sessions/new" for ::1 at 2024-04-05 09:01:46 -0300
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering sessions/new.html.erb within layouts/pub
+  Rendered sessions/new.html.erb within layouts/pub (Duration: 0.7ms | Allocations: 485)
+  Rendered layout layouts/pub.html.erb (Duration: 3.5ms | Allocations: 2787)
+Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.0ms | Allocations: 3011)
+
+
+Started POST "/sessions" for ::1 at 2024-04-05 09:03:19 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"teste@teste.com", "senha"=>"123123123", "commit"=>"Autenticar"}
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."email" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["email", "teste@teste.com"], ["LIMIT", 1]]
+  ↳ app/models/person.rb:37:in `auth'
+Redirected to http://localhost:3000/sessions/new
+Completed 302 Found in 13ms (ActiveRecord: 2.2ms | Allocations: 7103)
+
+
+Started GET "/sessions/new" for ::1 at 2024-04-05 09:03:19 -0300
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering sessions/new.html.erb within layouts/pub
+  Rendered sessions/new.html.erb within layouts/pub (Duration: 1.7ms | Allocations: 717)
+  Rendered layout layouts/pub.html.erb (Duration: 6.8ms | Allocations: 3321)
+Completed 200 OK in 9ms (Views: 8.8ms | ActiveRecord: 0.0ms | Allocations: 4120)
+
+
+Started POST "/sessions" for ::1 at 2024-04-05 09:03:34 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"teste@teste.com", "senha"=>"123123123", "commit"=>"Autenticar"}
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."email" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["email", "teste@teste.com"], ["LIMIT", 1]]
+  ↳ app/models/person.rb:37:in `auth'
+Redirected to http://localhost:3000/sessions/new
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms | Allocations: 1817)
+
+
+Started GET "/sessions/new" for ::1 at 2024-04-05 09:03:34 -0300
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering sessions/new.html.erb within layouts/pub
+  Rendered sessions/new.html.erb within layouts/pub (Duration: 1.0ms | Allocations: 443)
+  Rendered layout layouts/pub.html.erb (Duration: 3.9ms | Allocations: 2745)
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.0ms | Allocations: 2970)
+
+
+Started GET "/sessions/new" for ::1 at 2024-04-05 09:07:34 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering sessions/new.html.erb within layouts/pub
+  Rendered sessions/new.html.erb within layouts/pub (Duration: 6.8ms | Allocations: 2201)
+  Rendered layout layouts/pub.html.erb (Duration: 70.1ms | Allocations: 23369)
+Completed 200 OK in 78ms (Views: 72.9ms | ActiveRecord: 0.0ms | Allocations: 27916)
+
+
+Started POST "/sessions" for ::1 at 2024-04-05 09:07:38 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"teste@teste.com", "senha"=>"123123123", "commit"=>"Autenticar"}
+  [1m[36mPerson Load (1.0ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."email" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["email", "teste@teste.com"], ["LIMIT", 1]]
+  ↳ app/models/person.rb:37:in `auth'
+Redirected to http://localhost:3000/sessions/new
+Completed 302 Found in 82ms (ActiveRecord: 3.5ms | Allocations: 23802)
+
+
+Started GET "/sessions/new" for ::1 at 2024-04-05 09:07:38 -0300
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering sessions/new.html.erb within layouts/pub
+  Rendered sessions/new.html.erb within layouts/pub (Duration: 2.6ms | Allocations: 446)
+  Rendered layout layouts/pub.html.erb (Duration: 7.0ms | Allocations: 2797)
+Completed 200 OK in 8ms (Views: 7.8ms | ActiveRecord: 0.0ms | Allocations: 3026)
+
+
+Started GET "/sessions/new" for ::1 at 2024-04-05 09:08:26 -0300
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering sessions/new.html.erb within layouts/pub
+  Rendered sessions/new.html.erb within layouts/pub (Duration: 1.3ms | Allocations: 713)
+  Rendered layout layouts/pub.html.erb (Duration: 4.0ms | Allocations: 3281)
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.0ms | Allocations: 4159)
+
+
+Started POST "/sessions" for ::1 at 2024-04-05 09:08:29 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"teste@teste.com", "senha"=>"123123123", "commit"=>"Autenticar"}
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."email" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["email", "teste@teste.com"], ["LIMIT", 1]]
+  ↳ app/models/person.rb:37:in `auth'
+Redirected to http://localhost:3000/sessions/new
+Completed 302 Found in 9ms (ActiveRecord: 1.4ms | Allocations: 7060)
+
+
+Started GET "/sessions/new" for ::1 at 2024-04-05 09:08:29 -0300
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering sessions/new.html.erb within layouts/pub
+  Rendered sessions/new.html.erb within layouts/pub (Duration: 0.8ms | Allocations: 446)
+  Rendered layout layouts/pub.html.erb (Duration: 2.7ms | Allocations: 2748)
+Completed 200 OK in 3ms (Views: 3.0ms | ActiveRecord: 0.0ms | Allocations: 2973)
+
+
+Started GET "/sessions/new" for ::1 at 2024-04-05 09:09:15 -0300
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering sessions/new.html.erb within layouts/pub
+  Rendered sessions/new.html.erb within layouts/pub (Duration: 2.2ms | Allocations: 713)
+  Rendered layout layouts/pub.html.erb (Duration: 9.4ms | Allocations: 3317)
+Completed 200 OK in 13ms (Views: 11.8ms | ActiveRecord: 0.0ms | Allocations: 4191)
+
+
+Started POST "/sessions" for ::1 at 2024-04-05 09:09:19 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"teste@teste.com", "senha"=>"123123123", "commit"=>"Autenticar"}
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."email" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["email", "teste@teste.com"], ["LIMIT", 1]]
+  ↳ app/models/person.rb:36:in `auth'
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 3.1ms | Allocations: 7027)
+
+
+
+NoMethodError - undefined method `authenticate' for an instance of Person:
+  app/models/person.rb:37:in `auth'
+  app/controllers/sessions_controller.rb:8:in `create'
+
+Started POST "/__better_errors/2558c0bf39115e70/variables" for ::1 at 2024-04-05 09:09:19 -0300
+Started GET "/sessions/new" for ::1 at 2024-04-05 09:09:23 -0300
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering sessions/new.html.erb within layouts/pub
+  Rendered sessions/new.html.erb within layouts/pub (Duration: 1.2ms | Allocations: 718)
+  Rendered layout layouts/pub.html.erb (Duration: 4.5ms | Allocations: 3273)
+Completed 200 OK in 7ms (Views: 5.7ms | ActiveRecord: 0.0ms | Allocations: 4136)
+
+
+Started GET "/sessions/new" for ::1 at 2024-04-05 09:09:23 -0300
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering sessions/new.html.erb within layouts/pub
+  Rendered sessions/new.html.erb within layouts/pub (Duration: 3.0ms | Allocations: 432)
+  Rendered layout layouts/pub.html.erb (Duration: 25.7ms | Allocations: 2772)
+Completed 200 OK in 28ms (Views: 26.8ms | ActiveRecord: 0.0ms | Allocations: 2994)
+
+
+Started GET "/sessions/new" for ::1 at 2024-04-05 09:09:23 -0300
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering sessions/new.html.erb within layouts/pub
+  Rendered sessions/new.html.erb within layouts/pub (Duration: 2.5ms | Allocations: 432)
+  Rendered layout layouts/pub.html.erb (Duration: 9.2ms | Allocations: 2759)
+Completed 200 OK in 13ms (Views: 11.9ms | ActiveRecord: 0.0ms | Allocations: 2980)
+
+
+Started GET "/sessions/new" for ::1 at 2024-04-05 09:09:23 -0300
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering sessions/new.html.erb within layouts/pub
+  Rendered sessions/new.html.erb within layouts/pub (Duration: 3.7ms | Allocations: 426)
+  Rendered layout layouts/pub.html.erb (Duration: 13.6ms | Allocations: 2728)
+Completed 200 OK in 16ms (Views: 14.8ms | ActiveRecord: 0.0ms | Allocations: 2949)
+
+
+Started GET "/sessions/new" for ::1 at 2024-04-05 09:09:24 -0300
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering sessions/new.html.erb within layouts/pub
+  Rendered sessions/new.html.erb within layouts/pub (Duration: 3.0ms | Allocations: 429)
+  Rendered layout layouts/pub.html.erb (Duration: 11.5ms | Allocations: 2731)
+Completed 200 OK in 13ms (Views: 12.5ms | ActiveRecord: 0.0ms | Allocations: 2952)
+
+
+Started GET "/sessions/new" for ::1 at 2024-04-05 09:09:37 -0300
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering sessions/new.html.erb within layouts/pub
+  Rendered sessions/new.html.erb within layouts/pub (Duration: 1.3ms | Allocations: 740)
+  Rendered layout layouts/pub.html.erb (Duration: 4.0ms | Allocations: 3300)
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.0ms | Allocations: 4167)
+
+
+Started POST "/sessions" for ::1 at 2024-04-05 09:09:42 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"teste@teste.com", "senha"=>"123123123", "commit"=>"Autenticar"}
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."email" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["email", "teste@teste.com"], ["LIMIT", 1]]
+  ↳ app/models/person.rb:38:in `auth'
+Redirected to http://localhost:3000/sessions/new
+Completed 302 Found in 11ms (ActiveRecord: 2.0ms | Allocations: 7243)
+
+
+Started GET "/sessions/new" for ::1 at 2024-04-05 09:09:42 -0300
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering sessions/new.html.erb within layouts/pub
+  Rendered sessions/new.html.erb within layouts/pub (Duration: 1.0ms | Allocations: 450)
+  Rendered layout layouts/pub.html.erb (Duration: 3.8ms | Allocations: 2752)
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.0ms | Allocations: 2974)
+
+
+Started GET "/sessions/new" for ::1 at 2024-04-05 09:16:06 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering sessions/new.html.erb within layouts/pub
+  Rendered sessions/new.html.erb within layouts/pub (Duration: 15.1ms | Allocations: 2199)
+  Rendered layout layouts/pub.html.erb (Duration: 124.5ms | Allocations: 23355)
+Completed 200 OK in 150ms (Views: 131.7ms | ActiveRecord: 0.0ms | Allocations: 27902)
+
+
+Started POST "/sessions" for ::1 at 2024-04-05 09:16:10 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"teste@teste.com", "senha"=>"123123123", "commit"=>"Autenticar"}
+  [1m[36mPerson Load (0.6ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."email" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["email", "teste@teste.com"], ["LIMIT", 1]]
+  ↳ app/models/person.rb:38:in `auth'
+Redirected to http://localhost:3000/sessions/new
+Completed 302 Found in 127ms (ActiveRecord: 4.5ms | Allocations: 23869)
+
+
+Started GET "/sessions/new" for ::1 at 2024-04-05 09:16:10 -0300
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering sessions/new.html.erb within layouts/pub
+  Rendered sessions/new.html.erb within layouts/pub (Duration: 1.5ms | Allocations: 422)
+  Rendered layout layouts/pub.html.erb (Duration: 6.0ms | Allocations: 2773)
+Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 0.0ms | Allocations: 3003)
+
+
+Started GET "/sessions/new" for ::1 at 2024-04-05 09:16:44 -0300
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering sessions/new.html.erb within layouts/pub
+  Rendered sessions/new.html.erb within layouts/pub (Duration: 2.3ms | Allocations: 737)
+  Rendered layout layouts/pub.html.erb (Duration: 7.7ms | Allocations: 3341)
+Completed 200 OK in 11ms (Views: 9.8ms | ActiveRecord: 0.0ms | Allocations: 4217)
+
+
+Started POST "/sessions" for ::1 at 2024-04-05 09:16:48 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"teste@teste.com", "senha"=>"123123123", "commit"=>"Autenticar"}
+  [1m[36mPerson Load (0.8ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."email" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["email", "teste@teste.com"], ["LIMIT", 1]]
+  ↳ app/models/person.rb:37:in `auth'
+Redirected to http://localhost:3000/sessions/new
+Completed 302 Found in 21ms (ActiveRecord: 3.9ms | Allocations: 7205)
+
+
+Started GET "/sessions/new" for ::1 at 2024-04-05 09:16:48 -0300
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering sessions/new.html.erb within layouts/pub
+  Rendered sessions/new.html.erb within layouts/pub (Duration: 1.3ms | Allocations: 426)
+  Rendered layout layouts/pub.html.erb (Duration: 5.7ms | Allocations: 2728)
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.0ms | Allocations: 2954)
+
+
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."email" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["email", "teste@teste.com"], ["LIMIT", 1]]
+Started GET "/people" for ::1 at 2024-04-05 13:03:24 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PeopleController#index as HTML
+Redirected to http://localhost:3000/sessions/new
+Completed 302 Found in 6ms (ActiveRecord: 0.0ms | Allocations: 2323)
+
+
+Started GET "/sessions/new" for ::1 at 2024-04-05 13:03:24 -0300
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering sessions/new.html.erb within layouts/pub
+  Rendered sessions/new.html.erb within layouts/pub (Duration: 4.3ms | Allocations: 1964)
+  Rendered layout layouts/pub.html.erb (Duration: 39.7ms | Allocations: 23131)
+Completed 200 OK in 65ms (Views: 43.2ms | ActiveRecord: 0.0ms | Allocations: 26931)
+
+
+Started POST "/sessions" for ::1 at 2024-04-05 13:03:29 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"teste@teste.com", "senha"=>"123123123", "commit"=>"Autenticar"}
+  [1m[36mPerson Load (0.6ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."email" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["email", "teste@teste.com"], ["LIMIT", 1]]
+  ↳ app/models/person.rb:37:in `auth'
+Redirected to http://localhost:3000/sessions/new
+Completed 302 Found in 96ms (ActiveRecord: 2.7ms | Allocations: 23800)
+
+
+Started GET "/sessions/new" for ::1 at 2024-04-05 13:03:29 -0300
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering sessions/new.html.erb within layouts/pub
+  Rendered sessions/new.html.erb within layouts/pub (Duration: 0.9ms | Allocations: 415)
+  Rendered layout layouts/pub.html.erb (Duration: 3.5ms | Allocations: 2765)
+Completed 200 OK in 4ms (Views: 3.9ms | ActiveRecord: 0.0ms | Allocations: 2994)
+
+
+Started GET "/sessions/new" for ::1 at 2024-04-05 13:05:03 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering sessions/new.html.erb within layouts/pub
+  Rendered sessions/new.html.erb within layouts/pub (Duration: 8.7ms | Allocations: 2176)
+  Rendered layout layouts/pub.html.erb (Duration: 70.0ms | Allocations: 23343)
+Completed 200 OK in 80ms (Views: 73.2ms | ActiveRecord: 0.0ms | Allocations: 27887)
+
+
+Started POST "/sessions" for ::1 at 2024-04-05 13:05:16 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"teste@teste.com", "senha"=>"123123123", "commit"=>"Autenticar"}
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."email" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["email", "teste@teste.com"], ["LIMIT", 1]]
+  ↳ app/models/person.rb:37:in `auth'
+Redirected to http://localhost:3000/sessions/new
+Completed 302 Found in 57ms (ActiveRecord: 1.7ms | Allocations: 25887)
+
+
+Started GET "/sessions/new" for ::1 at 2024-04-05 13:05:16 -0300
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering sessions/new.html.erb within layouts/pub
+  Rendered sessions/new.html.erb within layouts/pub (Duration: 1.9ms | Allocations: 935)
+  Rendered layout layouts/pub.html.erb (Duration: 100.7ms | Allocations: 22081)
+Completed 200 OK in 108ms (Views: 103.3ms | ActiveRecord: 0.0ms | Allocations: 25762)
+
+
+Started GET "/" for ::1 at 2024-04-05 13:05:37 -0300
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/pedrohenrique/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/railties-7.1.3.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/pedrohenrique/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/railties-7.1.3.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.6ms | Allocations: 270)
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.0ms | Allocations: 1014)
+
+
+Started GET "/sessions/new" for ::1 at 2024-04-05 13:05:39 -0300
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering sessions/new.html.erb within layouts/pub
+  Rendered sessions/new.html.erb within layouts/pub (Duration: 1.8ms | Allocations: 427)
+  Rendered layout layouts/pub.html.erb (Duration: 6.6ms | Allocations: 2729)
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.0ms | Allocations: 2960)
+
+
+Started GET "/sessions/new" for ::1 at 2024-04-05 13:06:51 -0300
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering sessions/new.html.erb within layouts/pub
+  Rendered sessions/new.html.erb within layouts/pub (Duration: 1.9ms | Allocations: 719)
+  Rendered layout layouts/pub.html.erb (Duration: 5.1ms | Allocations: 3275)
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.0ms | Allocations: 4144)
+
+
+Started POST "/sessions" for ::1 at 2024-04-05 13:07:03 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"teste@teste.com", "password"=>"[FILTERED]", "commit"=>"Autenticar"}
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."email" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["email", "teste@teste.com"], ["LIMIT", 1]]
+  ↳ app/models/person.rb:37:in `auth'
+Redirected to http://localhost:3000/sessions/new
+Completed 302 Found in 12ms (ActiveRecord: 1.4ms | Allocations: 7059)
+
+
+Started GET "/sessions/new" for ::1 at 2024-04-05 13:07:03 -0300
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering sessions/new.html.erb within layouts/pub
+  Rendered sessions/new.html.erb within layouts/pub (Duration: 0.8ms | Allocations: 426)
+  Rendered layout layouts/pub.html.erb (Duration: 3.7ms | Allocations: 2728)
+Completed 200 OK in 4ms (Views: 4.1ms | ActiveRecord: 0.0ms | Allocations: 2953)
+
+
+Started GET "/sessions/new" for ::1 at 2024-04-05 13:07:15 -0300
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering sessions/new.html.erb within layouts/pub
+  Rendered sessions/new.html.erb within layouts/pub (Duration: 1.2ms | Allocations: 712)
+  Rendered layout layouts/pub.html.erb (Duration: 5.0ms | Allocations: 3316)
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.0ms | Allocations: 4188)
+
+
+Started GET "/sessions/new" for ::1 at 2024-04-05 13:07:24 -0300
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering sessions/new.html.erb within layouts/pub
+  Rendered sessions/new.html.erb within layouts/pub (Duration: 1.1ms | Allocations: 707)
+  Rendered layout layouts/pub.html.erb (Duration: 3.5ms | Allocations: 3262)
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.0ms | Allocations: 4131)
+
+
+Started GET "/sessions/new" for ::1 at 2024-04-05 13:07:35 -0300
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering sessions/new.html.erb within layouts/pub
+  Rendered sessions/new.html.erb within layouts/pub (Duration: 1.3ms | Allocations: 703)
+  Rendered layout layouts/pub.html.erb (Duration: 4.8ms | Allocations: 3306)
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.0ms | Allocations: 4180)
+
+
+Started GET "/sessions/new" for ::1 at 2024-04-05 13:07:35 -0300
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering sessions/new.html.erb within layouts/pub
+  Rendered sessions/new.html.erb within layouts/pub (Duration: 2.4ms | Allocations: 439)
+  Rendered layout layouts/pub.html.erb (Duration: 12.2ms | Allocations: 2741)
+Completed 200 OK in 14ms (Views: 13.3ms | ActiveRecord: 0.0ms | Allocations: 2966)
+
+
+Started GET "/sessions/new" for ::1 at 2024-04-05 13:07:35 -0300
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering sessions/new.html.erb within layouts/pub
+  Rendered sessions/new.html.erb within layouts/pub (Duration: 2.6ms | Allocations: 415)
+  Rendered layout layouts/pub.html.erb (Duration: 8.1ms | Allocations: 2718)
+Completed 200 OK in 10ms (Views: 9.1ms | ActiveRecord: 0.0ms | Allocations: 2943)
+
+
+Started POST "/sessions" for ::1 at 2024-04-05 13:07:39 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"teste@teste.com", "password_digest"=>"[FILTERED]", "commit"=>"Autenticar"}
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."email" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["email", "teste@teste.com"], ["LIMIT", 1]]
+  ↳ app/models/person.rb:37:in `auth'
+Redirected to http://localhost:3000/sessions/new
+Completed 302 Found in 10ms (ActiveRecord: 2.1ms | Allocations: 7041)
+
+
+Started GET "/sessions/new" for ::1 at 2024-04-05 13:07:39 -0300
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering sessions/new.html.erb within layouts/pub
+  Rendered sessions/new.html.erb within layouts/pub (Duration: 0.9ms | Allocations: 454)
+  Rendered layout layouts/pub.html.erb (Duration: 4.3ms | Allocations: 2757)
+Completed 200 OK in 5ms (Views: 4.7ms | ActiveRecord: 0.0ms | Allocations: 2982)
+
+
+Started GET "/sessions/new" for ::1 at 2024-04-05 13:08:01 -0300
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering sessions/new.html.erb within layouts/pub
+  Rendered sessions/new.html.erb within layouts/pub (Duration: 1.4ms | Allocations: 718)
+  Rendered layout layouts/pub.html.erb (Duration: 5.9ms | Allocations: 3321)
+Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 0.0ms | Allocations: 4195)
+
+
+Started GET "/sessions/new" for ::1 at 2024-04-05 13:09:12 -0300
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering sessions/new.html.erb within layouts/pub
+  Rendered sessions/new.html.erb within layouts/pub (Duration: 1.1ms | Allocations: 713)
+  Rendered layout layouts/pub.html.erb (Duration: 5.0ms | Allocations: 3309)
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.0ms | Allocations: 4180)
+
+
+Started POST "/sessions" for ::1 at 2024-04-05 13:09:17 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"teste@teste.com", "password"=>"[FILTERED]", "commit"=>"Autenticar"}
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."email" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["email", "teste@teste.com"], ["LIMIT", 1]]
+  ↳ app/models/person.rb:37:in `auth'
+Redirected to http://localhost:3000/sessions/new
+Completed 302 Found in 10ms (ActiveRecord: 1.3ms | Allocations: 7043)
+
+
+Started GET "/sessions/new" for ::1 at 2024-04-05 13:09:17 -0300
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering sessions/new.html.erb within layouts/pub
+  Rendered sessions/new.html.erb within layouts/pub (Duration: 0.8ms | Allocations: 418)
+  Rendered layout layouts/pub.html.erb (Duration: 3.6ms | Allocations: 2720)
+Completed 200 OK in 4ms (Views: 3.9ms | ActiveRecord: 0.0ms | Allocations: 2945)
+
+
+Started GET "/sessions/new" for ::1 at 2024-04-05 13:09:27 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering sessions/new.html.erb within layouts/pub
+  Rendered sessions/new.html.erb within layouts/pub (Duration: 6.6ms | Allocations: 2174)
+  Rendered layout layouts/pub.html.erb (Duration: 65.5ms | Allocations: 23330)
+Completed 200 OK in 74ms (Views: 68.4ms | ActiveRecord: 0.0ms | Allocations: 27877)
+
+
+Started POST "/sessions" for ::1 at 2024-04-05 13:09:32 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"teste@teste.com", "password"=>"[FILTERED]", "commit"=>"Autenticar"}
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."email" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["email", "teste@teste.com"], ["LIMIT", 1]]
+  ↳ app/models/person.rb:37:in `auth'
+Redirected to http://localhost:3000/sessions/new
+Completed 302 Found in 91ms (ActiveRecord: 1.9ms | Allocations: 23797)
+
+
+Started GET "/sessions/new" for ::1 at 2024-04-05 13:09:32 -0300
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering sessions/new.html.erb within layouts/pub
+  Rendered sessions/new.html.erb within layouts/pub (Duration: 0.8ms | Allocations: 453)
+  Rendered layout layouts/pub.html.erb (Duration: 4.0ms | Allocations: 2805)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.0ms | Allocations: 3034)
+
+
+Started GET "/sessions/new" for ::1 at 2024-04-05 13:10:19 -0300
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering sessions/new.html.erb within layouts/pub
+  Rendered sessions/new.html.erb within layouts/pub (Duration: 1.3ms | Allocations: 732)
+  Rendered layout layouts/pub.html.erb (Duration: 3.9ms | Allocations: 3296)
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.0ms | Allocations: 4170)
+
+
+Started POST "/sessions" for ::1 at 2024-04-05 13:10:23 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"teste@teste.com", "password"=>"[FILTERED]", "commit"=>"Autenticar"}
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."email" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["email", "teste@teste.com"], ["LIMIT", 1]]
+  ↳ app/models/person.rb:37:in `auth'
+Redirected to http://localhost:3000/sessions/new
+Completed 302 Found in 14ms (ActiveRecord: 3.0ms | Allocations: 7068)
+
+
+Started GET "/sessions/new" for ::1 at 2024-04-05 13:10:23 -0300
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering sessions/new.html.erb within layouts/pub
+  Rendered sessions/new.html.erb within layouts/pub (Duration: 1.4ms | Allocations: 435)
+  Rendered layout layouts/pub.html.erb (Duration: 5.9ms | Allocations: 2737)
+Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 0.0ms | Allocations: 2963)
+
+
+Started GET "/sessions/new" for ::1 at 2024-04-05 13:10:40 -0300
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering sessions/new.html.erb within layouts/pub
+  Rendered sessions/new.html.erb within layouts/pub (Duration: 1.3ms | Allocations: 713)
+  Rendered layout layouts/pub.html.erb (Duration: 4.6ms | Allocations: 3317)
+Completed 200 OK in 7ms (Views: 5.7ms | ActiveRecord: 0.0ms | Allocations: 4191)
+
+
+Started GET "/sessions/new" for ::1 at 2024-04-05 13:11:08 -0300
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering sessions/new.html.erb within layouts/pub
+  Rendered sessions/new.html.erb within layouts/pub (Duration: 1.1ms | Allocations: 725)
+  Rendered layout layouts/pub.html.erb (Duration: 3.4ms | Allocations: 3282)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.0ms | Allocations: 4152)
+
+
+Started POST "/sessions" for ::1 at 2024-04-05 13:11:13 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"teste@teste.com", "password"=>"[FILTERED]", "commit"=>"Autenticar"}
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."email" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["email", "teste@teste.com"], ["LIMIT", 1]]
+  ↳ app/models/person.rb:37:in `auth'
+Redirected to http://localhost:3000/sessions/new
+Completed 302 Found in 9ms (ActiveRecord: 1.3ms | Allocations: 7172)
+
+
+Started GET "/sessions/new" for ::1 at 2024-04-05 13:11:13 -0300
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering sessions/new.html.erb within layouts/pub
+  Rendered sessions/new.html.erb within layouts/pub (Duration: 0.6ms | Allocations: 454)
+  Rendered layout layouts/pub.html.erb (Duration: 3.5ms | Allocations: 2756)
+Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.0ms | Allocations: 2981)
+
+
+Started GET "/sessions/new" for ::1 at 2024-04-05 13:11:30 -0300
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering sessions/new.html.erb within layouts/pub
+  Rendered sessions/new.html.erb within layouts/pub (Duration: 1.7ms | Allocations: 714)
+  Rendered layout layouts/pub.html.erb (Duration: 5.8ms | Allocations: 3318)
+Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 0.0ms | Allocations: 4193)
+
+
+Started GET "/sessions/new" for ::1 at 2024-04-05 13:11:30 -0300
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering sessions/new.html.erb within layouts/pub
+  Rendered sessions/new.html.erb within layouts/pub (Duration: 2.8ms | Allocations: 421)
+  Rendered layout layouts/pub.html.erb (Duration: 12.8ms | Allocations: 2723)
+Completed 200 OK in 15ms (Views: 14.4ms | ActiveRecord: 0.0ms | Allocations: 2949)
+
+
+Started POST "/sessions" for ::1 at 2024-04-05 13:11:39 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"teste@teste.com", "password"=>"[FILTERED]", "commit"=>"Autenticar"}
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."email" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["email", "teste@teste.com"], ["LIMIT", 1]]
+  ↳ app/models/person.rb:37:in `auth'
+Redirected to http://localhost:3000/sessions/new
+Completed 302 Found in 28ms (ActiveRecord: 1.6ms | Allocations: 31232)
+
+
+Started GET "/sessions/new" for ::1 at 2024-04-05 13:11:39 -0300
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering sessions/new.html.erb within layouts/pub
+  Rendered sessions/new.html.erb within layouts/pub (Duration: 0.7ms | Allocations: 439)
+  Rendered layout layouts/pub.html.erb (Duration: 3.0ms | Allocations: 2741)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.0ms | Allocations: 2966)
+
+
+Started GET "/sessions/new" for ::1 at 2024-04-06 22:14:21 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering sessions/new.html.erb within layouts/pub
+  Rendered sessions/new.html.erb within layouts/pub (Duration: 5.2ms | Allocations: 1073)
+  Rendered layout layouts/pub.html.erb (Duration: 71.8ms | Allocations: 22229)
+Completed 200 OK in 86ms (Views: 75.5ms | ActiveRecord: 0.0ms | Allocations: 26776)
+
+
+  [1m[36mPerson Load (0.7ms)[0m  [1m[34mSELECT "people".* FROM "people" /* loading for pp */ ORDER BY "people"."name" ASC LIMIT ?[0m  [["LIMIT", 11]]
+Started POST "/sessions" for ::1 at 2024-04-06 22:15:07 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"teste@teste.com", "password"=>"[FILTERED]", "commit"=>"Autenticar"}
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."email" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["email", "teste@teste.com"], ["LIMIT", 1]]
+  ↳ app/models/person.rb:37:in `auth'
+Redirected to http://localhost:3000/sessions/new
+Completed 302 Found in 56ms (ActiveRecord: 1.6ms | Allocations: 24774)
+
+
+Started GET "/sessions/new" for ::1 at 2024-04-06 22:15:07 -0300
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering sessions/new.html.erb within layouts/pub
+  Rendered sessions/new.html.erb within layouts/pub (Duration: 0.8ms | Allocations: 423)
+  Rendered layout layouts/pub.html.erb (Duration: 3.0ms | Allocations: 2774)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.0ms | Allocations: 3002)
+
+
+Started GET "/sessions/new" for ::1 at 2024-04-06 22:18:30 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering sessions/new.html.erb within layouts/pub
+  Rendered sessions/new.html.erb within layouts/pub (Duration: 8.6ms | Allocations: 2178)
+  Rendered layout layouts/pub.html.erb (Duration: 89.9ms | Allocations: 23334)
+Completed 200 OK in 106ms (Views: 94.1ms | ActiveRecord: 0.0ms | Allocations: 27881)
+
+
+Started GET "/sessions/new" for ::1 at 2024-04-06 22:22:50 -0300
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering sessions/new.html.erb within layouts/pub
+  Rendered sessions/new.html.erb within layouts/pub (Duration: 1.4ms | Allocations: 711)
+  Rendered layout layouts/pub.html.erb (Duration: 5.3ms | Allocations: 3315)
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.0ms | Allocations: 4192)
+
+
+Started POST "/sessions" for ::1 at 2024-04-06 22:23:02 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"teste@teste.com", "password"=>"[FILTERED]", "commit"=>"Autenticar"}
+  [1m[36mPerson Load (0.5ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."email" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["email", "teste@teste.com"], ["LIMIT", 1]]
+  ↳ app/models/person.rb:38:in `auth'
+Redirected to http://localhost:3000/sessions/new
+Completed 302 Found in 55ms (ActiveRecord: 1.8ms | Allocations: 26063)
+
+
+Started GET "/sessions/new" for ::1 at 2024-04-06 22:23:02 -0300
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering sessions/new.html.erb within layouts/pub
+  Rendered sessions/new.html.erb within layouts/pub (Duration: 2.1ms | Allocations: 923)
+  Rendered layout layouts/pub.html.erb (Duration: 55.7ms | Allocations: 22054)
+Completed 200 OK in 66ms (Views: 59.5ms | ActiveRecord: 0.0ms | Allocations: 25735)
+
+
+Started GET "/sessions/new" for ::1 at 2024-04-06 22:24:21 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering sessions/new.html.erb within layouts/pub
+  Rendered sessions/new.html.erb within layouts/pub (Duration: 7.6ms | Allocations: 2190)
+  Rendered layout layouts/pub.html.erb (Duration: 67.0ms | Allocations: 23352)
+Completed 200 OK in 75ms (Views: 69.6ms | ActiveRecord: 0.0ms | Allocations: 27899)
+
+
+Started POST "/sessions" for ::1 at 2024-04-06 22:24:28 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"teste@teste.com", "password"=>"[FILTERED]", "commit"=>"Autenticar"}
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."email" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["email", "teste@teste.com"], ["LIMIT", 1]]
+  ↳ app/models/person.rb:38:in `auth'
+Redirected to http://localhost:3000/sessions/new
+Completed 302 Found in 84ms (ActiveRecord: 2.1ms | Allocations: 23871)
+
+
+Started GET "/sessions/new" for ::1 at 2024-04-06 22:24:28 -0300
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering sessions/new.html.erb within layouts/pub
+  Rendered sessions/new.html.erb within layouts/pub (Duration: 0.8ms | Allocations: 444)
+  Rendered layout layouts/pub.html.erb (Duration: 3.6ms | Allocations: 2795)
+Completed 200 OK in 4ms (Views: 4.0ms | ActiveRecord: 0.0ms | Allocations: 3024)
+
+
+Started GET "/sessions/new" for ::1 at 2024-04-06 22:27:59 -0300
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering sessions/new.html.erb within layouts/pub
+  Rendered sessions/new.html.erb within layouts/pub (Duration: 1.3ms | Allocations: 744)
+  Rendered layout layouts/pub.html.erb (Duration: 3.9ms | Allocations: 3299)
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.0ms | Allocations: 4173)
+
+
+Started GET "/sessions/new" for ::1 at 2024-04-06 22:28:00 -0300
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering sessions/new.html.erb within layouts/pub
+  Rendered sessions/new.html.erb within layouts/pub (Duration: 2.8ms | Allocations: 415)
+  Rendered layout layouts/pub.html.erb (Duration: 12.4ms | Allocations: 2717)
+Completed 200 OK in 15ms (Views: 13.6ms | ActiveRecord: 0.0ms | Allocations: 2946)
+
+
+Started POST "/sessions" for ::1 at 2024-04-06 22:28:04 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"teste@teste.com", "password"=>"[FILTERED]", "commit"=>"Autenticar"}
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."email" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["email", "teste@teste.com"], ["LIMIT", 1]]
+  ↳ app/models/person.rb:38:in `auth'
+No template found for SessionsController#create, rendering head :no_content
+Completed 204 No Content in 10ms (ActiveRecord: 1.4ms | Allocations: 6403)
+
+
+Started POST "/sessions" for ::1 at 2024-04-06 22:28:33 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"teste@teste.com", "password"=>"[FILTERED]", "commit"=>"Autenticar"}
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."email" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["email", "teste@teste.com"], ["LIMIT", 1]]
+  ↳ app/models/person.rb:38:in `auth'
+Redirected to http://localhost:3000/sessions/new
+Completed 302 Found in 11ms (ActiveRecord: 1.8ms | Allocations: 7079)
+
+
+Started GET "/sessions/new" for ::1 at 2024-04-06 22:28:33 -0300
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering sessions/new.html.erb within layouts/pub
+  Rendered sessions/new.html.erb within layouts/pub (Duration: 1.2ms | Allocations: 729)
+  Rendered layout layouts/pub.html.erb (Duration: 4.7ms | Allocations: 3333)
+Completed 200 OK in 6ms (Views: 5.8ms | ActiveRecord: 0.0ms | Allocations: 4134)
+
+
+Started GET "/sessions/new" for ::1 at 2024-04-06 22:28:49 -0300
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.1ms | Allocations: 710)
+  Rendered layout layouts/application.html.erb (Duration: 14.0ms | Allocations: 15646)
+Completed 200 OK in 16ms (Views: 15.7ms | ActiveRecord: 0.0ms | Allocations: 16622)
+
+
+Started GET "/sessions/new" for ::1 at 2024-04-06 22:28:50 -0300
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 421)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | Allocations: 1537)
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.0ms | Allocations: 1785)
+
+
+Started GET "/sessions/new" for ::1 at 2024-04-06 22:28:50 -0300
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 4.7ms | Allocations: 436)
+  Rendered layout layouts/application.html.erb (Duration: 9.5ms | Allocations: 1536)
+Completed 200 OK in 12ms (Views: 10.8ms | ActiveRecord: 0.0ms | Allocations: 1782)
+
+
+Started POST "/sessions" for ::1 at 2024-04-06 22:28:54 -0300
+Processing by SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"teste@teste.com", "password"=>"[FILTERED]", "commit"=>"Autenticar"}
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."email" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["email", "teste@teste.com"], ["LIMIT", 1]]
+  ↳ app/models/person.rb:38:in `auth'
+Redirected to http://localhost:3000/sessions/new
+Completed 302 Found in 11ms (ActiveRecord: 1.5ms | Allocations: 7084)
+
+
+Started GET "/sessions/new" for ::1 at 2024-04-06 22:28:54 -0300
+Processing by SessionsController#new as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 460)
+  Rendered layout layouts/application.html.erb (Duration: 2.8ms | Allocations: 1560)
+Completed 200 OK in 3ms (Views: 3.1ms | ActiveRecord: 0.0ms | Allocations: 1856)
+
+
+Started GET "/sessions/new" for ::1 at 2024-04-06 22:29:04 -0300
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering sessions/new.html.erb within layouts/pub
+  Rendered sessions/new.html.erb within layouts/pub (Duration: 1.4ms | Allocations: 708)
+  Rendered layout layouts/pub.html.erb (Duration: 4.3ms | Allocations: 3299)
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.0ms | Allocations: 4173)
+
+
+Started GET "/sessions/new" for ::1 at 2024-04-06 22:36:29 -0300
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering sessions/new.html.erb within layouts/pub
+  Rendered sessions/new.html.erb within layouts/pub (Duration: 3.5ms | Allocations: 2310)
+  Rendered layout layouts/pub.html.erb (Duration: 3.7ms | Allocations: 2412)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms | Allocations: 3309)
+
+
+
+ActionView::SyntaxErrorInTemplate - Encountered a syntax error while rendering template: check <h1>Autenticação</h1>
+<p> <%= flash[:notice] %> </p>
+<%= form_tag sessions_path, method: :post do |form| do %>
+    <p>
+        <%= label_tag :email %>
+        <%= text_field_tag :email %>
+    </p>
+    <p>
+        <%= label_tag :senha %>
+        <%= password_field_tag :password %>
+    </p>
+    <p>
+        <%= submit_tag 'Autenticar' %>
+    </p>
+<% end %>:
+  app/views/sessions/new.html.erb:4:in `'
+  app/views/sessions/new.html.erb:20:in `'
+
+Started POST "/__better_errors/50559fe44a61188c/variables" for ::1 at 2024-04-06 22:36:29 -0300
+Started GET "/sessions/new" for ::1 at 2024-04-06 22:36:40 -0300
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering sessions/new.html.erb within layouts/pub
+  Rendered sessions/new.html.erb within layouts/pub (Duration: 1.2ms | Allocations: 712)
+  Rendered layout layouts/pub.html.erb (Duration: 4.3ms | Allocations: 3316)
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.0ms | Allocations: 4180)
+
+
+Started POST "/sessions" for ::1 at 2024-04-06 22:36:46 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"teste@teste.com", "password"=>"[FILTERED]", "commit"=>"Autenticar"}
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."email" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["email", "teste@teste.com"], ["LIMIT", 1]]
+  ↳ app/models/person.rb:38:in `authenticate'
+  Rendering layout layouts/pub.html.erb
+  Rendering sessions/new.html.erb within layouts/pub
+  Rendered sessions/new.html.erb within layouts/pub (Duration: 1.1ms | Allocations: 208)
+  Rendered layout layouts/pub.html.erb (Duration: 4.0ms | Allocations: 2555)
+Completed 200 OK in 21ms (Views: 4.4ms | ActiveRecord: 1.5ms | Allocations: 8963)
+
+
+Started POST "/sessions" for ::1 at 2024-04-06 22:36:54 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"teste@teste.com", "password"=>"[FILTERED]", "commit"=>"Autenticar"}
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."email" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["email", "teste@teste.com"], ["LIMIT", 1]]
+  ↳ app/models/person.rb:38:in `authenticate'
+  Rendering layout layouts/pub.html.erb
+  Rendering sessions/new.html.erb within layouts/pub
+  Rendered sessions/new.html.erb within layouts/pub (Duration: 0.9ms | Allocations: 208)
+  Rendered layout layouts/pub.html.erb (Duration: 6.2ms | Allocations: 2506)
+Completed 200 OK in 10ms (Views: 6.9ms | ActiveRecord: 0.2ms | Allocations: 3505)
+
+
+Started GET "/people" for ::1 at 2024-04-06 22:36:58 -0300
+Processing by PeopleController#index as HTML
+Redirected to http://localhost:3000/sessions/new
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms | Allocations: 1366)
+
+
+Started GET "/sessions/new" for ::1 at 2024-04-06 22:36:58 -0300
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering sessions/new.html.erb within layouts/pub
+  Rendered sessions/new.html.erb within layouts/pub (Duration: 0.9ms | Allocations: 443)
+  Rendered layout layouts/pub.html.erb (Duration: 4.6ms | Allocations: 2745)
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.0ms | Allocations: 2966)
+
+
