@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :people
   end
-  
+
   resources :people do
     collection do
       get :admins
