@@ -29,6 +29,7 @@ gem "jbuilder"
 gem 'actionview-encoded_mail_to'
 gem 'responders'
 gem 'bcrypt'
+gem 'htmlbeautifier'
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
