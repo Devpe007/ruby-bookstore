@@ -10,6 +10,9 @@ class PeopleController < LoggedController
 
   # GET /people/1 or /people/1.json
   def show
+    @person = PersonPresenter.new(@person)
+
+    respond_with @person
   end
 
   # GET /people/new
