@@ -1,19 +1,18 @@
 class SessionsController < ApplicationController
   layout 'pub'
 
-  def new
-  end
+  def new; end
 
   def create
     @person = Person.auth(params[:email], params[:password])
 
-    raise NotAuthenticated if !@person
+    raise NotAuthenticated unless @person
 
-    session[:id] = person.id
-    session[:name] = person.name
-    session[:admin] = person.admin
+    session[:id] = @person.id
+    session[:name] = @person.name
+    session[:admin] = @person.admin
 
-    flash[:notice] = "Olá, #{person.name}!"
+    flash[:notice] = "Olá, #{@person.name}!"
 
     redirect_to people_url
   end
