@@ -12477,3 +12477,262 @@ Processing by BooksController#show as TURBO_STREAM
 Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.2ms | Allocations: 2928)
 
 
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT "people".* FROM "people" ORDER BY "people"."name" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPerson Load (0.5ms)[0m  [1m[34mSELECT "people".* FROM "people" ORDER BY "people"."name" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT "people".* FROM "people" ORDER BY "people"."name" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" ORDER BY "people"."name" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/people" for ::1 at 2024-04-09 10:44:59 -0300
+Processing by PeopleController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering people/index.html.erb within layouts/application
+  [1m[36mPerson Load (0.6ms)[0m  [1m[34mSELECT "people".* FROM "people" ORDER BY "people"."name" ASC[0m
+  ↳ app/views/people/index.html.erb:6
+  Rendered people/_person.html.erb (Duration: 0.4ms | Allocations: 257)
+  Rendered people/_person.html.erb (Duration: 0.0ms | Allocations: 28)
+  Rendered people/index.html.erb within layouts/application (Duration: 5.0ms | Allocations: 4536)
+  Rendered layout layouts/application.html.erb (Duration: 20.6ms | Allocations: 19418)
+Completed 200 OK in 26ms (Views: 21.0ms | ActiveRecord: 0.9ms | Allocations: 23002)
+
+
+Started GET "/books/1/edit" for ::1 at 2024-04-09 10:45:00 -0300
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:68:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/edit.html.erb within layouts/application
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/books/_form.html.erb:42
+  [1m[36mCategory Pluck (0.1ms)[0m  [1m[34mSELECT "categories"."id" FROM "categories" INNER JOIN "books_categories" ON "categories"."id" = "books_categories"."category_id" WHERE "books_categories"."book_id" = ?[0m  [["book_id", 1]]
+  ↳ app/views/books/_form.html.erb:44
+  Rendered books/_form.html.erb (Duration: 12.4ms | Allocations: 12878)
+  Rendered books/edit.html.erb within layouts/application (Duration: 13.2ms | Allocations: 13199)
+  Rendered layout layouts/application.html.erb (Duration: 15.2ms | Allocations: 14301)
+Completed 200 OK in 34ms (Views: 15.6ms | ActiveRecord: 0.5ms | Allocations: 24658)
+
+
+Started GET "/people" for ::1 at 2024-04-09 10:45:02 -0300
+Processing by PeopleController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering people/index.html.erb within layouts/application
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" ORDER BY "people"."name" ASC[0m
+  ↳ app/views/people/index.html.erb:6
+  Rendered people/_person.html.erb (Duration: 0.2ms | Allocations: 30)
+  Rendered people/_person.html.erb (Duration: 0.1ms | Allocations: 28)
+  Rendered people/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 732)
+  Rendered layout layouts/application.html.erb (Duration: 3.3ms | Allocations: 1833)
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.1ms | Allocations: 2358)
+
+
+Started GET "/people" for ::1 at 2024-04-09 10:45:03 -0300
+Processing by PeopleController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering people/index.html.erb within layouts/application
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" ORDER BY "people"."name" ASC[0m
+  ↳ app/views/people/index.html.erb:6
+  Rendered people/_person.html.erb (Duration: 0.1ms | Allocations: 30)
+  Rendered people/_person.html.erb (Duration: 0.1ms | Allocations: 28)
+  Rendered people/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 731)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | Allocations: 1832)
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.1ms | Allocations: 2374)
+
+
+Started GET "/people" for ::1 at 2024-04-09 10:45:03 -0300
+Processing by PeopleController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering people/index.html.erb within layouts/application
+  [1m[36mPerson Load (0.4ms)[0m  [1m[34mSELECT "people".* FROM "people" ORDER BY "people"."name" ASC[0m
+  ↳ app/views/people/index.html.erb:6
+  Rendered people/_person.html.erb (Duration: 0.4ms | Allocations: 30)
+  Rendered people/_person.html.erb (Duration: 0.4ms | Allocations: 28)
+  Rendered people/index.html.erb within layouts/application (Duration: 7.0ms | Allocations: 731)
+  Rendered layout layouts/application.html.erb (Duration: 11.5ms | Allocations: 1832)
+Completed 200 OK in 18ms (Views: 13.3ms | ActiveRecord: 0.4ms | Allocations: 2356)
+
+
+Started GET "/books" for ::1 at 2024-04-09 10:45:07 -0300
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:6
+  Rendered books/_book.html.erb (Duration: 0.5ms | Allocations: 246)
+  Rendered books/_book.html.erb (Duration: 0.0ms | Allocations: 33)
+  Rendered books/index.html.erb within layouts/application (Duration: 4.4ms | Allocations: 1572)
+  Rendered layout layouts/application.html.erb (Duration: 10.7ms | Allocations: 2674)
+Completed 200 OK in 12ms (Views: 11.2ms | ActiveRecord: 0.1ms | Allocations: 3029)
+
+
+Started GET "/books/2" for ::1 at 2024-04-09 10:45:10 -0300
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:68:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/_book.html.erb (Duration: 0.3ms | Allocations: 34)
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "books_categories" ON "categories"."id" = "books_categories"."category_id" WHERE "books_categories"."book_id" = ?[0m  [["book_id", 2]]
+  ↳ app/views/books/show.html.erb:7
+  Rendered books/show.html.erb within layouts/application (Duration: 13.5ms | Allocations: 3416)
+  Rendered layout layouts/application.html.erb (Duration: 16.9ms | Allocations: 4513)
+Completed 200 OK in 23ms (Views: 17.9ms | ActiveRecord: 0.5ms | Allocations: 5231)
+
+
+Started GET "/books/2" for ::1 at 2024-04-09 10:45:13 -0300
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:68:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/_book.html.erb (Duration: 0.4ms | Allocations: 34)
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "books_categories" ON "categories"."id" = "books_categories"."category_id" WHERE "books_categories"."book_id" = ?[0m  [["book_id", 2]]
+  ↳ app/views/books/show.html.erb:7
+  Rendered books/show.html.erb within layouts/application (Duration: 7.8ms | Allocations: 1167)
+  Rendered layout layouts/application.html.erb (Duration: 11.5ms | Allocations: 2263)
+Completed 200 OK in 17ms (Views: 12.5ms | ActiveRecord: 0.5ms | Allocations: 2888)
+
+
+Started GET "/books/2/edit" for ::1 at 2024-04-09 10:45:16 -0300
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:68:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/edit.html.erb within layouts/application
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/books/_form.html.erb:42
+  [1m[36mCategory Pluck (0.1ms)[0m  [1m[34mSELECT "categories"."id" FROM "categories" INNER JOIN "books_categories" ON "categories"."id" = "books_categories"."category_id" WHERE "books_categories"."book_id" = ?[0m  [["book_id", 2]]
+  ↳ app/views/books/_form.html.erb:44
+  Rendered books/_form.html.erb (Duration: 6.2ms | Allocations: 2752)
+  Rendered books/edit.html.erb within layouts/application (Duration: 6.7ms | Allocations: 2856)
+  Rendered layout layouts/application.html.erb (Duration: 9.0ms | Allocations: 3952)
+Completed 200 OK in 11ms (Views: 9.4ms | ActiveRecord: 0.2ms | Allocations: 4588)
+
+
+Started PATCH "/books/2" for ::1 at 2024-04-09 10:45:20 -0300
+Processing by BooksController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "book"=>{"title"=>"Conhecendo o Git", "published_at"=>"2006-03-01", "text"=>"teste", "value"=>"50.0", "person_id"=>"6", "category_ids"=>["", "1"]}, "commit"=>"Atualizar Book", "id"=>"2"}
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:68:in `set_book'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:41:in `block in update'
+  [1m[36mCategory Load (3.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/books_controller.rb:41:in `block in update'
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "books_categories" ON "categories"."id" = "books_categories"."category_id" WHERE "books_categories"."book_id" = ?[0m  [["book_id", 2]]
+  ↳ app/controllers/books_controller.rb:41:in `block in update'
+  [1m[36mBook::HABTM_Categories Create (0.2ms)[0m  [1m[32mINSERT INTO "books_categories" ("book_id", "category_id") VALUES (?, ?)[0m  [["book_id", 2], ["category_id", 1]]
+  ↳ app/controllers/books_controller.rb:41:in `block in update'
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:41:in `block in update'
+  [1m[36mTRANSACTION (5.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:41:in `block in update'
+Redirected to http://localhost:3000/books/2
+Completed 302 Found in 36ms (ActiveRecord: 10.0ms | Allocations: 8366)
+
+
+Started GET "/books/2" for ::1 at 2024-04-09 10:45:20 -0300
+Processing by BooksController#show as TURBO_STREAM
+  Parameters: {"id"=>"2"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:68:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/_book.html.erb (Duration: 0.1ms | Allocations: 34)
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "books_categories" ON "categories"."id" = "books_categories"."category_id" WHERE "books_categories"."book_id" = ?[0m  [["book_id", 2]]
+  ↳ app/views/books/show.html.erb:7
+  Rendered books/show.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1218)
+  Rendered layout layouts/application.html.erb (Duration: 3.7ms | Allocations: 2315)
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.1ms | Allocations: 2988)
+
+
+Started GET "/books" for ::1 at 2024-04-09 10:45:21 -0300
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:6
+  Rendered books/_book.html.erb (Duration: 0.4ms | Allocations: 35)
+  Rendered books/_book.html.erb (Duration: 0.3ms | Allocations: 33)
+  Rendered books/index.html.erb within layouts/application (Duration: 7.1ms | Allocations: 925)
+  Rendered layout layouts/application.html.erb (Duration: 13.1ms | Allocations: 2026)
+Completed 200 OK in 16ms (Views: 14.2ms | ActiveRecord: 0.2ms | Allocations: 2286)
+
+
+Started GET "/books" for ::1 at 2024-04-09 10:45:23 -0300
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:6
+  Rendered books/_book.html.erb (Duration: 0.4ms | Allocations: 35)
+  Rendered books/_book.html.erb (Duration: 0.3ms | Allocations: 33)
+  Rendered books/index.html.erb within layouts/application (Duration: 8.4ms | Allocations: 937)
+  Rendered layout layouts/application.html.erb (Duration: 14.4ms | Allocations: 2038)
+Completed 200 OK in 17ms (Views: 16.0ms | ActiveRecord: 0.3ms | Allocations: 2298)
+
+
+Started GET "/books/2" for ::1 at 2024-04-09 10:46:07 -0300
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:68:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/_book.html.erb (Duration: 0.1ms | Allocations: 34)
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "books_categories" ON "categories"."id" = "books_categories"."category_id" WHERE "books_categories"."book_id" = ?[0m  [["book_id", 2]]
+  ↳ app/views/books/show.html.erb:7
+  Rendered books/show.html.erb within layouts/application (Duration: 3.9ms | Allocations: 1189)
+  Rendered layout layouts/application.html.erb (Duration: 14.5ms | Allocations: 2285)
+Completed 200 OK in 18ms (Views: 15.1ms | ActiveRecord: 0.2ms | Allocations: 2909)
+
+
+Started GET "/books/2" for ::1 at 2024-04-09 10:46:08 -0300
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:68:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/_book.html.erb (Duration: 0.4ms | Allocations: 34)
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "books_categories" ON "categories"."id" = "books_categories"."category_id" WHERE "books_categories"."book_id" = ?[0m  [["book_id", 2]]
+  ↳ app/views/books/show.html.erb:7
+  Rendered books/show.html.erb within layouts/application (Duration: 9.4ms | Allocations: 1183)
+  Rendered layout layouts/application.html.erb (Duration: 13.8ms | Allocations: 2286)
+Completed 200 OK in 19ms (Views: 15.0ms | ActiveRecord: 0.4ms | Allocations: 2909)
+
+
+Started GET "/books/2" for ::1 at 2024-04-09 10:47:16 -0300
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:68:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/_book.html.erb (Duration: 0.4ms | Allocations: 263)
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "books_categories" ON "categories"."id" = "books_categories"."category_id" WHERE "books_categories"."book_id" = ?[0m  [["book_id", 2]]
+  ↳ app/views/books/show.html.erb:7
+  Rendered books/show.html.erb within layouts/application (Duration: 16.2ms | Allocations: 14096)
+  Rendered layout layouts/application.html.erb (Duration: 26.1ms | Allocations: 28928)
+Completed 200 OK in 44ms (Views: 27.6ms | ActiveRecord: 1.9ms | Allocations: 38502)
+
+
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT "people".* FROM "people" ORDER BY "people"."name" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT DISTINCT "categories".* FROM "categories" INNER JOIN "books_categories" ON "categories"."id" = "books_categories"."category_id" INNER JOIN "books" ON "books_categories"."book_id" = "books"."id" WHERE "books"."person_id" = ? /* loading for pp */ LIMIT ?[0m  [["person_id", 6], ["LIMIT", 11]]
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT "people".* FROM "people" ORDER BY "people"."name" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT DISTINCT "categories".* FROM "categories" INNER JOIN "books_categories" ON "categories"."id" = "books_categories"."category_id" INNER JOIN "books" ON "books_categories"."book_id" = "books"."id" WHERE "books"."person_id" = ? /* loading for pp */ LIMIT ?[0m  [["person_id", 6], ["LIMIT", 11]]
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT "people".* FROM "people" ORDER BY "people"."name" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "books_categories" ON "categories"."id" = "books_categories"."category_id" INNER JOIN "books" ON "books_categories"."book_id" = "books"."id" WHERE "books"."person_id" = ? /* loading for pp */ LIMIT ?[0m  [["person_id", 6], ["LIMIT", 11]]
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT "people".* FROM "people" ORDER BY "people"."name" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT DISTINCT "categories".* FROM "categories" INNER JOIN "books_categories" ON "categories"."id" = "books_categories"."category_id" INNER JOIN "books" ON "books_categories"."book_id" = "books"."id" WHERE "books"."person_id" = ? /* loading for pp */ LIMIT ?[0m  [["person_id", 6], ["LIMIT", 11]]
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT DISTINCT "people".* FROM "people" INNER JOIN "books" ON "books"."person_id" = "people"."id" /* loading for pp */ ORDER BY "people"."name" ASC LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT DISTINCT "people".* FROM "people" ORDER BY "people"."name" ASC[0m
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."person_id" IN (?, ?)[0m  [["person_id", 7], ["person_id", 6]]
+  [1m[35mSQL (0.2ms)[0m  [1m[34mSELECT DISTINCT "people"."id" AS t0_r0, "people"."name" AS t0_r1, "people"."email" AS t0_r2, "people"."password_digest" AS t0_r3, "people"."born_at" AS t0_r4, "people"."admin" AS t0_r5, "people"."created_at" AS t0_r6, "people"."updated_at" AS t0_r7, "books"."id" AS t1_r0, "books"."title" AS t1_r1, "books"."published_at" AS t1_r2, "books"."text" AS t1_r3, "books"."value" AS t1_r4, "books"."person_id" AS t1_r5, "books"."created_at" AS t1_r6, "books"."updated_at" AS t1_r7 FROM "people" INNER JOIN "books" ON "books"."person_id" = "people"."id" ORDER BY "people"."name" ASC[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[34mSELECT DISTINCT "people"."id" AS t0_r0, "people"."name" AS t0_r1, "people"."email" AS t0_r2, "people"."password_digest" AS t0_r3, "people"."born_at" AS t0_r4, "people"."admin" AS t0_r5, "people"."created_at" AS t0_r6, "people"."updated_at" AS t0_r7, "books"."id" AS t1_r0, "books"."title" AS t1_r1, "books"."published_at" AS t1_r2, "books"."text" AS t1_r3, "books"."value" AS t1_r4, "books"."person_id" AS t1_r5, "books"."created_at" AS t1_r6, "books"."updated_at" AS t1_r7 FROM "people" INNER JOIN "books" ON "books"."person_id" = "people"."id" ORDER BY "people"."name" ASC[0m
+  [1m[36mPerson Pluck (0.4ms)[0m  [1m[34mSELECT "people"."name" FROM "people" ORDER BY "people"."name" ASC[0m
+  [1m[36mPerson Pluck (0.4ms)[0m  [1m[34mSELECT "people"."name", "people"."email" FROM "people" ORDER BY "people"."name" ASC[0m
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT "people"."name", "people"."email" FROM "people" /* loading for pp */ ORDER BY "people"."name" ASC LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mPerson Load (0.5ms)[0m  [1m[34mSELECT "people"."name", "people"."email" FROM "people" ORDER BY "people"."name" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT "people"."name", "people"."email" FROM "people" ORDER BY "people"."name" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT "people"."name", "people"."email" FROM "people" ORDER BY "people"."name" ASC LIMIT ?[0m  [["LIMIT", 1]]

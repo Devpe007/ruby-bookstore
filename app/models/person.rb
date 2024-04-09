@@ -19,6 +19,7 @@ class Person < ApplicationRecord
   scope :admins, -> { where(admin: true) }
 
   has_many :books
+  has_many :categories, -> { distinct }, through: :books
 
   def to_param
     "#{id}-#{name.parameterize}"
