@@ -6,4 +6,5 @@ class Book < ApplicationRecord
   validates :person, presence: true
 
   belongs_to :person
+  has_and_belongs_to_many :categories
 end
