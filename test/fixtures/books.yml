@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: Conhecendo Ruby
+  published_at: 2013-06-29
+  text: Livro prático sobre a linguagem Ruby
+  value: 1.00
+  person: admin
+
+two:
+  title: Conhecendo o Git
+  published_at: 2013-06-24
+  text: Quer aprender Git de forma rápida e prática?
+  value: 10.00
+  person: admin

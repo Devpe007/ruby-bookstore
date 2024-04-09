@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_04_01_121009) do
+ActiveRecord::Schema[7.1].define(version: 2024_04_09_111107) do
+  create_table "books", force: :cascade do |t|
+    t.string "title", limit: 100, null: false
+    t.date "published_at", null: false
+    t.text "text", null: false
+    t.decimal "value", precision: 10, scale: 2, null: false
+    t.integer "person_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["person_id"], name: "index_books_on_person_id"
+  end
+
   create_table "people", force: :cascade do |t|
     t.string "name", limit: 50, null: false
     t.string "email", limit: 100
@@ -22,4 +33,5 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_01_121009) do
     t.index ["email"], name: "index_people_on_email", unique: true
   end
 
+  add_foreign_key "books", "people"
 end
