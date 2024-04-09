@@ -2,6 +2,13 @@
 
 <%= render @book %>
 
+<h2>Categorias</h2>
+<ul>
+  <% for category in @book.categories %>
+    <li> <%= category.name %> </li>
+  <% end %>
+</ul>
+
 <div>
   <%= link_to "Edit this book", edit_book_path(@book) %> |
   <%= link_to "Back to books", books_path %>
