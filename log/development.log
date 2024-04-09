@@ -12736,3 +12736,365 @@ Completed 200 OK in 44ms (Views: 27.6ms | ActiveRecord: 1.9ms | Allocations: 385
   [1m[36mPerson Load (0.5ms)[0m  [1m[34mSELECT "people"."name", "people"."email" FROM "people" ORDER BY "people"."name" ASC LIMIT ?[0m  [["LIMIT", 1]]
   [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT "people"."name", "people"."email" FROM "people" ORDER BY "people"."name" ASC LIMIT ?[0m  [["LIMIT", 1]]
   [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT "people"."name", "people"."email" FROM "people" ORDER BY "people"."name" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateImages (20240409140628)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "images" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "person_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240409140628') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/books/2" for ::1 at 2024-04-09 11:26:03 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBook Load (0.7ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:68:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/_book.html.erb (Duration: 0.5ms | Allocations: 263)
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "books_categories" ON "categories"."id" = "books_categories"."category_id" WHERE "books_categories"."book_id" = ?[0m  [["book_id", 2]]
+  ↳ app/views/books/show.html.erb:7
+  Rendered books/show.html.erb within layouts/application (Duration: 11.4ms | Allocations: 13663)
+  Rendered layout layouts/application.html.erb (Duration: 25.9ms | Allocations: 28495)
+Completed 200 OK in 42ms (Views: 28.1ms | ActiveRecord: 1.3ms | Allocations: 37561)
+
+
+Started GET "/people" for ::1 at 2024-04-09 11:26:04 -0300
+Processing by PeopleController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering people/index.html.erb within layouts/application
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" ORDER BY "people"."name" ASC[0m
+  ↳ app/views/people/index.html.erb:6
+  Rendered people/_person.html.erb (Duration: 0.6ms | Allocations: 251)
+  Rendered people/_person.html.erb (Duration: 0.1ms | Allocations: 28)
+  Rendered people/index.html.erb within layouts/application (Duration: 6.5ms | Allocations: 4381)
+  Rendered layout layouts/application.html.erb (Duration: 8.9ms | Allocations: 5496)
+Completed 200 OK in 29ms (Views: 9.8ms | ActiveRecord: 0.6ms | Allocations: 9651)
+
+
+Started GET "/people/7-pedro" for ::1 at 2024-04-09 11:26:06 -0300
+Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"7-pedro"}
+  [1m[36mPerson Load (0.5ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:60:in `set_person'
+  Rendering layout layouts/application.html.erb
+  Rendering people/show.html.erb within layouts/application
+  Rendered people/show.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1005)
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | Allocations: 2110)
+Completed 200 OK in 19ms (Views: 8.9ms | ActiveRecord: 0.4ms | Allocations: 3538)
+
+
+Started GET "/people/7-pedro/edit" for ::1 at 2024-04-09 11:26:07 -0300
+Processing by PeopleController#edit as HTML
+  Parameters: {"id"=>"7-pedro"}
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:60:in `set_person'
+  Rendering layout layouts/application.html.erb
+  Rendering people/edit.html.erb within layouts/application
+  Rendered people/_form.html.erb (Duration: 16.6ms | Allocations: 3357)
+  Rendered people/edit.html.erb within layouts/application (Duration: 19.4ms | Allocations: 3681)
+  Rendered layout layouts/application.html.erb (Duration: 22.3ms | Allocations: 4777)
+Completed 200 OK in 31ms (Views: 23.7ms | ActiveRecord: 0.2ms | Allocations: 5884)
+
+
+Started GET "/people/7-pedro/edit" for ::1 at 2024-04-09 11:31:41 -0300
+Processing by PeopleController#edit as HTML
+  Parameters: {"id"=>"7-pedro"}
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:70:in `set_person'
+  Rendering layout layouts/application.html.erb
+  Rendering people/edit.html.erb within layouts/application
+  Rendered people/_form.html.erb (Duration: 4.3ms | Allocations: 2922)
+  Rendered people/edit.html.erb within layouts/application (Duration: 5.1ms | Allocations: 3260)
+  Rendered layout layouts/application.html.erb (Duration: 19.7ms | Allocations: 18097)
+Completed 200 OK in 37ms (Views: 22.2ms | ActiveRecord: 2.4ms | Allocations: 26476)
+
+
+Started GET "/people/7-pedro/edit" for ::1 at 2024-04-09 11:31:42 -0300
+Processing by PeopleController#edit as HTML
+  Parameters: {"id"=>"7-pedro"}
+  [1m[36mPerson Load (0.6ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:70:in `set_person'
+  Rendering layout layouts/application.html.erb
+  Rendering people/edit.html.erb within layouts/application
+  Rendered people/_form.html.erb (Duration: 6.8ms | Allocations: 2210)
+  Rendered people/edit.html.erb within layouts/application (Duration: 7.6ms | Allocations: 2317)
+  Rendered layout layouts/application.html.erb (Duration: 11.3ms | Allocations: 3413)
+Completed 200 OK in 20ms (Views: 13.1ms | ActiveRecord: 0.5ms | Allocations: 4465)
+
+
+Started PATCH "/people/7-pedro" for ::1 at 2024-04-09 11:31:46 -0300
+Processing by PeopleController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "person"=>{"name"=>"Pedro", "email"=>"anddev007pe@gmail.com", "password"=>"[FILTERED]", "born_at(3i)"=>"1", "born_at(2i)"=>"2", "born_at(1i)"=>"1992"}, "admin"=>"true", "commit"=>"Atualizar Pessoa", "id"=>"7-pedro"}
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:70:in `set_person'
+[31mUnpermitted parameter: :password. Context: { controller: PeopleController, action: update, request: #<ActionDispatch::Request:0x0000700696cd6e20>, params: {"_method"=>"patch", "authenticity_token"=>"[FILTERED]", "person"=>{"name"=>"Pedro", "email"=>"anddev007pe@gmail.com", "password"=>"[FILTERED]", "born_at(3i)"=>"1", "born_at(2i)"=>"2", "born_at(1i)"=>"1992"}, "admin"=>"true", "commit"=>"Atualizar Pessoa", "controller"=>"people", "action"=>"update", "id"=>"7-pedro"} }[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/people_controller.rb:42:in `update'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/people_controller.rb:42:in `update'
+Redirected to http://localhost:3000/people/7-pedro
+Completed 302 Found in 12ms (ActiveRecord: 1.2ms | Allocations: 5384)
+
+
+Started GET "/people/7-pedro" for ::1 at 2024-04-09 11:31:46 -0300
+Processing by PeopleController#show as TURBO_STREAM
+  Parameters: {"id"=>"7-pedro"}
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:70:in `set_person'
+  Rendering layout layouts/application.html.erb
+  Rendering people/show.html.erb within layouts/application
+  Rendered people/show.html.erb within layouts/application (Duration: 1.2ms | Allocations: 875)
+  Rendered layout layouts/application.html.erb (Duration: 2.8ms | Allocations: 1972)
+Completed 200 OK in 6ms (Views: 3.4ms | ActiveRecord: 0.1ms | Allocations: 3302)
+
+
+Started GET "/people" for ::1 at 2024-04-09 11:31:48 -0300
+Processing by PeopleController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering people/index.html.erb within layouts/application
+  [1m[36mPerson Load (0.6ms)[0m  [1m[34mSELECT "people".* FROM "people" ORDER BY "people"."name" ASC[0m
+  ↳ app/views/people/index.html.erb:6
+  Rendered people/_person.html.erb (Duration: 1.9ms | Allocations: 242)
+  Rendered people/_person.html.erb (Duration: 0.2ms | Allocations: 28)
+  Rendered people/index.html.erb within layouts/application (Duration: 11.5ms | Allocations: 1336)
+  Rendered layout layouts/application.html.erb (Duration: 15.8ms | Allocations: 2437)
+Completed 200 OK in 21ms (Views: 16.9ms | ActiveRecord: 0.6ms | Allocations: 3046)
+
+
+Started GET "/people/7-pedro/edit" for ::1 at 2024-04-09 11:31:48 -0300
+Processing by PeopleController#edit as HTML
+  Parameters: {"id"=>"7-pedro"}
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:70:in `set_person'
+  Rendering layout layouts/application.html.erb
+  Rendering people/edit.html.erb within layouts/application
+  Rendered people/_form.html.erb (Duration: 6.1ms | Allocations: 2216)
+  Rendered people/edit.html.erb within layouts/application (Duration: 6.6ms | Allocations: 2323)
+  Rendered layout layouts/application.html.erb (Duration: 8.7ms | Allocations: 3434)
+Completed 200 OK in 14ms (Views: 9.6ms | ActiveRecord: 0.1ms | Allocations: 4508)
+
+
+Started GET "/people/7-pedro/edit" for ::1 at 2024-04-09 11:31:49 -0300
+Processing by PeopleController#edit as HTML
+  Parameters: {"id"=>"7-pedro"}
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:70:in `set_person'
+  Rendering layout layouts/application.html.erb
+  Rendering people/edit.html.erb within layouts/application
+  Rendered people/_form.html.erb (Duration: 4.5ms | Allocations: 2208)
+  Rendered people/edit.html.erb within layouts/application (Duration: 4.9ms | Allocations: 2315)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 3411)
+Completed 200 OK in 11ms (Views: 7.4ms | ActiveRecord: 0.1ms | Allocations: 4471)
+
+
+Started PATCH "/people/7-pedro" for ::1 at 2024-04-09 11:31:57 -0300
+Processing by PeopleController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "data_stream"=>#<ActionDispatch::Http::UploadedFile:0x000070069ca65910 @tempfile=#<Tempfile:/tmp/RackMultipart20240409-5339-s09dgp.png>, @content_type="image/png", @original_filename="download.png", @headers="Content-Disposition: form-data; name=\"data_stream\"; filename=\"download.png\"\r\nContent-Type: image/png\r\n">, "person"=>{"name"=>"Pedro", "email"=>"anddev007pe@gmail.com", "password"=>"[FILTERED]", "born_at(3i)"=>"1", "born_at(2i)"=>"2", "born_at(1i)"=>"1992"}, "admin"=>"true", "commit"=>"Atualizar Pessoa", "id"=>"7-pedro"}
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:70:in `set_person'
+[31mUnpermitted parameter: :password. Context: { controller: PeopleController, action: update, request: #<ActionDispatch::Request:0x0000700696bf3030>, params: {"_method"=>"patch", "authenticity_token"=>"[FILTERED]", "data_stream"=>#<ActionDispatch::Http::UploadedFile:0x000070069ca65910 @tempfile=#<Tempfile:/tmp/RackMultipart20240409-5339-s09dgp.png>, @content_type="image/png", @original_filename="download.png", @headers="Content-Disposition: form-data; name=\"data_stream\"; filename=\"download.png\"\r\nContent-Type: image/png\r\n">, "person"=>{"name"=>"Pedro", "email"=>"anddev007pe@gmail.com", "password"=>"[FILTERED]", "born_at(3i)"=>"1", "born_at(2i)"=>"2", "born_at(1i)"=>"1992"}, "admin"=>"true", "commit"=>"Atualizar Pessoa", "controller"=>"people", "action"=>"update", "id"=>"7-pedro"} }[0m
+Redirected to http://localhost:3000/people/7-pedro
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."person_id" = ? LIMIT ?[0m  [["person_id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:63:in `save_image'
+Completed 500 Internal Server Error in 41ms (ActiveRecord: 1.2ms | Allocations: 9432)
+
+
+
+NameError - undefined local variable or method `image' for an instance of PeopleController:
+  app/controllers/people_controller.rb:65:in `save_image'
+
+Started POST "/__better_errors/c7467825c4e75543/variables" for ::1 at 2024-04-09 11:31:57 -0300
+Started GET "/people/7-pedro/edit" for ::1 at 2024-04-09 11:33:24 -0300
+Processing by PeopleController#edit as HTML
+  Parameters: {"id"=>"7-pedro"}
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:69:in `set_person'
+  Rendering layout layouts/application.html.erb
+  Rendering people/edit.html.erb within layouts/application
+  Rendered people/_form.html.erb (Duration: 3.8ms | Allocations: 2922)
+  Rendered people/edit.html.erb within layouts/application (Duration: 4.6ms | Allocations: 3260)
+  Rendered layout layouts/application.html.erb (Duration: 18.3ms | Allocations: 18097)
+Completed 200 OK in 35ms (Views: 20.3ms | ActiveRecord: 1.5ms | Allocations: 26457)
+
+
+Started PATCH "/people/7-pedro" for ::1 at 2024-04-09 11:33:28 -0300
+Processing by PeopleController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "data_stream"=>#<ActionDispatch::Http::UploadedFile:0x000070069683e3e0 @tempfile=#<Tempfile:/tmp/RackMultipart20240409-5339-gr59la.png>, @content_type="image/png", @original_filename="download.png", @headers="Content-Disposition: form-data; name=\"data_stream\"; filename=\"download.png\"\r\nContent-Type: image/png\r\n">, "person"=>{"name"=>"Pedro", "email"=>"anddev007pe@gmail.com", "password"=>"[FILTERED]", "born_at(3i)"=>"1", "born_at(2i)"=>"2", "born_at(1i)"=>"1992"}, "admin"=>"true", "commit"=>"Atualizar Pessoa", "id"=>"7-pedro"}
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:69:in `set_person'
+[31mUnpermitted parameter: :password. Context: { controller: PeopleController, action: update, request: #<ActionDispatch::Request:0x0000700696d20f20>, params: {"_method"=>"patch", "authenticity_token"=>"[FILTERED]", "data_stream"=>#<ActionDispatch::Http::UploadedFile:0x000070069683e3e0 @tempfile=#<Tempfile:/tmp/RackMultipart20240409-5339-gr59la.png>, @content_type="image/png", @original_filename="download.png", @headers="Content-Disposition: form-data; name=\"data_stream\"; filename=\"download.png\"\r\nContent-Type: image/png\r\n">, "person"=>{"name"=>"Pedro", "email"=>"anddev007pe@gmail.com", "password"=>"[FILTERED]", "born_at(3i)"=>"1", "born_at(2i)"=>"2", "born_at(1i)"=>"1992"}, "admin"=>"true", "commit"=>"Atualizar Pessoa", "controller"=>"people", "action"=>"update", "id"=>"7-pedro"} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/people_controller.rb:41:in `update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/people_controller.rb:41:in `update'
+Redirected to http://localhost:3000/people/7-pedro
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."person_id" = ? LIMIT ?[0m  [["person_id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:62:in `save_image'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/people_controller.rb:64:in `save_image'
+  [1m[36mPerson Load (1.0ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:64:in `save_image'
+  [1m[36mImage Create (0.1ms)[0m  [1m[32mINSERT INTO "images" ("title", "person_id", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["title", "Pedro"], ["person_id", 7], ["created_at", "2024-04-09 14:33:28.493132"], ["updated_at", "2024-04-09 14:33:28.493132"]]
+  ↳ app/controllers/people_controller.rb:64:in `save_image'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/people_controller.rb:64:in `save_image'
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 4.5ms | Allocations: 15159)
+
+
+
+ArgumentError - wrong number of arguments (given 1, expected 2..3):
+  app/models/image.rb:49:in `block in write_data'
+  app/models/image.rb:48:in `write_data'
+  app/models/image.rb:33:in `update_file'
+  app/controllers/people_controller.rb:64:in `save_image'
+
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? /* loading for inspect */ LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+Started POST "/__better_errors/b9be2ceb766a55b6/variables" for ::1 at 2024-04-09 11:33:28 -0300
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? /* loading for inspect */ LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+Started POST "/__better_errors/b9be2ceb766a55b6/variables" for ::1 at 2024-04-09 11:33:37 -0300
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? /* loading for inspect */ LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+Started POST "/__better_errors/b9be2ceb766a55b6/variables" for ::1 at 2024-04-09 11:33:39 -0300
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? /* loading for inspect */ LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+Started POST "/__better_errors/b9be2ceb766a55b6/variables" for ::1 at 2024-04-09 11:33:39 -0300
+Started GET "/people/7-pedro/edit" for ::1 at 2024-04-09 11:35:53 -0300
+Processing by PeopleController#edit as HTML
+  Parameters: {"id"=>"7-pedro"}
+  [1m[36mPerson Load (0.4ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:69:in `set_person'
+  Rendering layout layouts/application.html.erb
+  Rendering people/edit.html.erb within layouts/application
+  Rendered people/_form.html.erb (Duration: 3.2ms | Allocations: 2920)
+  Rendered people/edit.html.erb within layouts/application (Duration: 3.9ms | Allocations: 3258)
+  Rendered layout layouts/application.html.erb (Duration: 15.9ms | Allocations: 18095)
+Completed 200 OK in 31ms (Views: 17.4ms | ActiveRecord: 2.1ms | Allocations: 26504)
+
+
+Started PATCH "/people/7-pedro" for ::1 at 2024-04-09 11:35:57 -0300
+Processing by PeopleController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "data_stream"=>#<ActionDispatch::Http::UploadedFile:0x000070069ce82778 @tempfile=#<Tempfile:/tmp/RackMultipart20240409-5339-4kd4q3.png>, @content_type="image/png", @original_filename="download.png", @headers="Content-Disposition: form-data; name=\"data_stream\"; filename=\"download.png\"\r\nContent-Type: image/png\r\n">, "person"=>{"name"=>"Pedro", "email"=>"anddev007pe@gmail.com", "password"=>"[FILTERED]", "born_at(3i)"=>"1", "born_at(2i)"=>"2", "born_at(1i)"=>"1992"}, "admin"=>"true", "commit"=>"Atualizar Pessoa", "id"=>"7-pedro"}
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:69:in `set_person'
+[31mUnpermitted parameter: :password. Context: { controller: PeopleController, action: update, request: #<ActionDispatch::Request:0x000070069ccddf30>, params: {"_method"=>"patch", "authenticity_token"=>"[FILTERED]", "data_stream"=>#<ActionDispatch::Http::UploadedFile:0x000070069ce82778 @tempfile=#<Tempfile:/tmp/RackMultipart20240409-5339-4kd4q3.png>, @content_type="image/png", @original_filename="download.png", @headers="Content-Disposition: form-data; name=\"data_stream\"; filename=\"download.png\"\r\nContent-Type: image/png\r\n">, "person"=>{"name"=>"Pedro", "email"=>"anddev007pe@gmail.com", "password"=>"[FILTERED]", "born_at(3i)"=>"1", "born_at(2i)"=>"2", "born_at(1i)"=>"1992"}, "admin"=>"true", "commit"=>"Atualizar Pessoa", "controller"=>"people", "action"=>"update", "id"=>"7-pedro"} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/people_controller.rb:41:in `update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/people_controller.rb:41:in `update'
+Redirected to http://localhost:3000/people/7-pedro
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."person_id" = ? LIMIT ?[0m  [["person_id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:62:in `save_image'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/people_controller.rb:64:in `save_image'
+  [1m[36mPerson Load (1.0ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:64:in `save_image'
+  [1m[36mImage Create (0.2ms)[0m  [1m[32mINSERT INTO "images" ("title", "person_id", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["title", "Pedro"], ["person_id", 7], ["created_at", "2024-04-09 14:35:57.935138"], ["updated_at", "2024-04-09 14:35:57.935138"]]
+  ↳ app/controllers/people_controller.rb:64:in `save_image'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/people_controller.rb:64:in `save_image'
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 3.3ms | Allocations: 15209)
+
+
+
+ArgumentError - wrong number of arguments (given 1, expected 2..3):
+  app/models/image.rb:50:in `block in write_data'
+  app/models/image.rb:49:in `write_data'
+  app/models/image.rb:34:in `update_file'
+  app/controllers/people_controller.rb:64:in `save_image'
+
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? /* loading for inspect */ LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+Started POST "/__better_errors/7f55d4af0377c660/variables" for ::1 at 2024-04-09 11:35:57 -0300
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? /* loading for inspect */ LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+Started POST "/__better_errors/7f55d4af0377c660/variables" for ::1 at 2024-04-09 11:36:00 -0300
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? /* loading for inspect */ LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+Started POST "/__better_errors/7f55d4af0377c660/variables" for ::1 at 2024-04-09 11:36:01 -0300
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? /* loading for inspect */ LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+Started POST "/__better_errors/7f55d4af0377c660/variables" for ::1 at 2024-04-09 11:36:02 -0300
+Started GET "/people/7-pedro/edit" for ::1 at 2024-04-09 11:36:27 -0300
+Processing by PeopleController#edit as HTML
+  Parameters: {"id"=>"7-pedro"}
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:69:in `set_person'
+  Rendering layout layouts/application.html.erb
+  Rendering people/edit.html.erb within layouts/application
+  Rendered people/_form.html.erb (Duration: 3.8ms | Allocations: 2920)
+  Rendered people/edit.html.erb within layouts/application (Duration: 4.7ms | Allocations: 3258)
+  Rendered layout layouts/application.html.erb (Duration: 18.6ms | Allocations: 18096)
+Completed 200 OK in 33ms (Views: 20.2ms | ActiveRecord: 2.2ms | Allocations: 26499)
+
+
+Started PATCH "/people/7-pedro" for ::1 at 2024-04-09 11:36:31 -0300
+Processing by PeopleController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "data_stream"=>#<ActionDispatch::Http::UploadedFile:0x000070069686c718 @tempfile=#<Tempfile:/tmp/RackMultipart20240409-5339-8j30te.png>, @content_type="image/png", @original_filename="download.png", @headers="Content-Disposition: form-data; name=\"data_stream\"; filename=\"download.png\"\r\nContent-Type: image/png\r\n">, "person"=>{"name"=>"Pedro", "email"=>"anddev007pe@gmail.com", "password"=>"[FILTERED]", "born_at(3i)"=>"1", "born_at(2i)"=>"2", "born_at(1i)"=>"1992"}, "admin"=>"true", "commit"=>"Atualizar Pessoa", "id"=>"7-pedro"}
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:69:in `set_person'
+[31mUnpermitted parameter: :password. Context: { controller: PeopleController, action: update, request: #<ActionDispatch::Request:0x000070069d066ff8>, params: {"_method"=>"patch", "authenticity_token"=>"[FILTERED]", "data_stream"=>#<ActionDispatch::Http::UploadedFile:0x000070069686c718 @tempfile=#<Tempfile:/tmp/RackMultipart20240409-5339-8j30te.png>, @content_type="image/png", @original_filename="download.png", @headers="Content-Disposition: form-data; name=\"data_stream\"; filename=\"download.png\"\r\nContent-Type: image/png\r\n">, "person"=>{"name"=>"Pedro", "email"=>"anddev007pe@gmail.com", "password"=>"[FILTERED]", "born_at(3i)"=>"1", "born_at(2i)"=>"2", "born_at(1i)"=>"1992"}, "admin"=>"true", "commit"=>"Atualizar Pessoa", "controller"=>"people", "action"=>"update", "id"=>"7-pedro"} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/people_controller.rb:41:in `update'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/people_controller.rb:41:in `update'
+Redirected to http://localhost:3000/people/7-pedro
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."person_id" = ? LIMIT ?[0m  [["person_id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:62:in `save_image'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/people_controller.rb:64:in `save_image'
+  [1m[36mPerson Load (1.3ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:64:in `save_image'
+  [1m[36mImage Create (0.1ms)[0m  [1m[32mINSERT INTO "images" ("title", "person_id", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["title", "Pedro"], ["person_id", 7], ["created_at", "2024-04-09 14:36:31.443308"], ["updated_at", "2024-04-09 14:36:31.443308"]]
+  ↳ app/controllers/people_controller.rb:64:in `save_image'
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/people_controller.rb:64:in `save_image'
+Completed 302 Found in 37ms (ActiveRecord: 7.2ms | Allocations: 14213)
+
+
+Started GET "/people/7-pedro" for ::1 at 2024-04-09 11:36:31 -0300
+Processing by PeopleController#show as TURBO_STREAM
+  Parameters: {"id"=>"7-pedro"}
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:69:in `set_person'
+  Rendering layout layouts/application.html.erb
+  Rendering people/show.html.erb within layouts/application
+  Rendered people/show.html.erb within layouts/application (Duration: 1.6ms | Allocations: 875)
+  Rendered layout layouts/application.html.erb (Duration: 3.5ms | Allocations: 1972)
+Completed 200 OK in 8ms (Views: 4.2ms | ActiveRecord: 0.1ms | Allocations: 3320)
+
+
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" ORDER BY "images"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/people" for ::1 at 2024-04-09 11:37:43 -0300
+Processing by PeopleController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering people/index.html.erb within layouts/application
+  [1m[36mPerson Load (0.6ms)[0m  [1m[34mSELECT "people".* FROM "people" ORDER BY "people"."name" ASC[0m
+  ↳ app/views/people/index.html.erb:6
+  Rendered people/_person.html.erb (Duration: 1.5ms | Allocations: 241)
+  Rendered people/_person.html.erb (Duration: 0.2ms | Allocations: 28)
+  Rendered people/index.html.erb within layouts/application (Duration: 9.7ms | Allocations: 1334)
+  Rendered layout layouts/application.html.erb (Duration: 13.7ms | Allocations: 2435)
+Completed 200 OK in 19ms (Views: 14.7ms | ActiveRecord: 0.6ms | Allocations: 3075)
+
+
+Started GET "/people/7-pedro/edit" for ::1 at 2024-04-09 11:37:44 -0300
+Processing by PeopleController#edit as HTML
+  Parameters: {"id"=>"7-pedro"}
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:69:in `set_person'
+  Rendering layout layouts/application.html.erb
+  Rendering people/edit.html.erb within layouts/application
+  Rendered people/_form.html.erb (Duration: 2.2ms | Allocations: 2218)
+  Rendered people/edit.html.erb within layouts/application (Duration: 2.4ms | Allocations: 2325)
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | Allocations: 3436)
+Completed 200 OK in 27ms (Views: 4.5ms | ActiveRecord: 0.1ms | Allocations: 4487)
+
+
+Started GET "/people/7-pedro" for ::1 at 2024-04-09 11:37:47 -0300
+Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"7-pedro"}
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:69:in `set_person'
+  Rendering layout layouts/application.html.erb
+  Rendering people/show.html.erb within layouts/application
+  Rendered people/show.html.erb within layouts/application (Duration: 2.7ms | Allocations: 499)
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | Allocations: 1607)
+Completed 200 OK in 18ms (Views: 10.0ms | ActiveRecord: 0.2ms | Allocations: 2664)
+
+

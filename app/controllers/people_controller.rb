@@ -1,5 +1,6 @@
 class PeopleController < AdminController
   before_action :set_person, only: %i[ show edit update destroy changed ]
+  after_action :save_image, only: [:create, :update]
 
   respond_to :html
 
@@ -55,6 +56,14 @@ class PeopleController < AdminController
   end
 
   private
+    def save_image
+      return unless params[:data_stream].present?
+
+      @image = (@person.image || Image.new(title: @person.name, person_id: @person.id))
+      @image.data_stream = params[:data_stream]
+      @person.image = @image if @image.save
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_person
       @person = Person.find(params[:id]) rescue nil
