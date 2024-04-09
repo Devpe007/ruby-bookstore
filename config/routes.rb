@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  root 'pub#index'
+  get 'pub/sobre'
+
   namespace :admin do
     resources :people
   end
