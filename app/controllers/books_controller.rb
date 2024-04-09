@@ -1,5 +1,6 @@
 class BooksController < ApplicationController
   before_action :set_book, only: %i[ show edit update destroy ]
+  before_action :load_categories, only: [:new, :edit, :create, :update]
 
   # GET /books or /books.json
   def index
@@ -58,6 +59,10 @@ class BooksController < ApplicationController
   end
 
   private
+    def load_categories
+      @categories = Category.all
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_book
       @book = Book.find(params[:id])
