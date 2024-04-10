@@ -1,6 +1,4 @@
 class BooksController < ApplicationController
-  include ImageSaver
-
   before_action :set_book, only: %i[ show edit update destroy ]
   before_action :load_categories, only: [:new, :edit, :create, :update]
 
@@ -60,10 +58,6 @@ class BooksController < ApplicationController
     end
   end
 
-  def image_title_ref
-    'Capa do livro'
-  end
-
   private
     def load_categories
       @categories = Category.all
@@ -77,7 +71,7 @@ class BooksController < ApplicationController
     # Only allow a list of trusted parameters through.
     def book_params
       params.require(:book).permit(
-        :title, :published_at, :text, :value, :person_id, category_ids: []
+        :title, :published_at, :text, :value, :person_id, :image_title, :data_stream, category_ids: []
       )
     end
 end

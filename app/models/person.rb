@@ -1,4 +1,6 @@
 class Person < ApplicationRecord
+  include ImageSaver
+
   has_secure_password
 
   validates :name, presence: true, length: { maximum: 50 }

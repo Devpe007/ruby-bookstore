@@ -1,6 +1,4 @@
 class PeopleController < AdminController
-  include ImageSaver
-
   before_action :set_person, only: %i[ show edit update destroy changed ]
 
   respond_to :html
@@ -56,20 +54,7 @@ class PeopleController < AdminController
   def changed
   end
 
-  def image_title_ref
-    'Foto da pessoa'
-  end
-
   private
-    def save_image
-      return unless params[:data_stream].present?
-
-      @image = (@person.image || Image.new(title: @person.name, person_id: @person.id))
-      @image.data_stream = params[:data_stream]
-      @image.height = 200
-      @person.image = @image if @image.save
-    end
-
     # Use callbacks to share common setup or constraints between actions.
     def set_person
       @person = Person.find(params[:id]) rescue nil
@@ -84,6 +69,6 @@ class PeopleController < AdminController
 
     # Only allow a list of trusted parameters through.
     def person_params
-      params.require(:person).permit(:name, :email, :password_digest, :born_at)
+      params.require(:person).permit(:name, :email, :password_digest, :born_at, :image_title, :data_stream)
     end
 end
