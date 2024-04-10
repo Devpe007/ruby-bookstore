@@ -6,6 +6,12 @@ class PersonPresenter
     @person = person
   end
 
+  def image
+    return '' unless @person.image
+
+    helpers.image_tag(@person.image.to_s).html_safe
+  end
+
   def admin
     @person.admin ? 'Sim' : 'Não'
   end

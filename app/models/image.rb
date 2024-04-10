@@ -2,7 +2,7 @@ class Image < ApplicationRecord
   after_save :update_file
   after_destroy :delete_file
 
-  attr_accessor :data_stream
+  attr_accessor :data_stream, :width, :height
 
   belongs_to :person
 
@@ -32,9 +32,18 @@ class Image < ApplicationRecord
     check_path
 
     write_data(data)
+
+    resize
   end
 
   private
+
+  def resize
+    return unless @width || @height
+
+    image = MiniMagick::Image.new(full_path)
+    image.resize "#{width}x#{height}"
+  end
 
   def delete_file
     File.unlink(full_path) if File.exist?(full_path)

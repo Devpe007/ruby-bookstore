@@ -13098,3 +13098,342 @@ Processing by PeopleController#show as HTML
 Completed 200 OK in 18ms (Views: 10.0ms | ActiveRecord: 0.2ms | Allocations: 2664)
 
 
+Started GET "/people/7-pedro/edit" for ::1 at 2024-04-09 11:45:25 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PeopleController#edit as HTML
+  Parameters: {"id"=>"7-pedro"}
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:69:in `set_person'
+  Rendering layout layouts/application.html.erb
+  Rendering people/edit.html.erb within layouts/application
+  Rendered people/_form.html.erb (Duration: 5.2ms | Allocations: 4424)
+  Rendered people/edit.html.erb within layouts/application (Duration: 5.9ms | Allocations: 4923)
+  Rendered layout layouts/application.html.erb (Duration: 43.1ms | Allocations: 38375)
+Completed 200 OK in 87ms (Views: 46.3ms | ActiveRecord: 1.7ms | Allocations: 68895)
+
+
+Started GET "/people/7-pedro" for ::1 at 2024-04-09 11:45:34 -0300
+Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"7-pedro"}
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:69:in `set_person'
+  Rendering layout layouts/application.html.erb
+  Rendering people/show.html.erb within layouts/application
+  Rendered people/show.html.erb within layouts/application (Duration: 5.1ms | Allocations: 975)
+  Rendered layout layouts/application.html.erb (Duration: 9.8ms | Allocations: 2072)
+Completed 200 OK in 22ms (Views: 12.1ms | ActiveRecord: 0.2ms | Allocations: 3465)
+
+
+Started PATCH "/people/7-pedro" for ::1 at 2024-04-09 11:45:34 -0300
+Processing by PeopleController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "data_stream"=>#<ActionDispatch::Http::UploadedFile:0x00007d58015b0230 @tempfile=#<Tempfile:/tmp/RackMultipart20240409-30354-lsy3hz.png>, @content_type="image/png", @original_filename="download.png", @headers="Content-Disposition: form-data; name=\"data_stream\"; filename=\"download.png\"\r\nContent-Type: image/png\r\n">, "person"=>{"name"=>"Pedro", "email"=>"anddev007pe@gmail.com", "password"=>"[FILTERED]", "born_at(3i)"=>"1", "born_at(2i)"=>"2", "born_at(1i)"=>"1992"}, "admin"=>"true", "commit"=>"Atualizar Pessoa", "id"=>"7-pedro"}
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:69:in `set_person'
+[31mUnpermitted parameter: :password. Context: { controller: PeopleController, action: update, request: #<ActionDispatch::Request:0x00007d5801596d80>, params: {"_method"=>"patch", "authenticity_token"=>"[FILTERED]", "data_stream"=>#<ActionDispatch::Http::UploadedFile:0x00007d58015b0230 @tempfile=#<Tempfile:/tmp/RackMultipart20240409-30354-lsy3hz.png>, @content_type="image/png", @original_filename="download.png", @headers="Content-Disposition: form-data; name=\"data_stream\"; filename=\"download.png\"\r\nContent-Type: image/png\r\n">, "person"=>{"name"=>"Pedro", "email"=>"anddev007pe@gmail.com", "password"=>"[FILTERED]", "born_at(3i)"=>"1", "born_at(2i)"=>"2", "born_at(1i)"=>"1992"}, "admin"=>"true", "commit"=>"Atualizar Pessoa", "controller"=>"people", "action"=>"update", "id"=>"7-pedro"} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/people_controller.rb:41:in `update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/people_controller.rb:41:in `update'
+Redirected to http://localhost:3000/people/7-pedro
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."person_id" = ? LIMIT ?[0m  [["person_id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:62:in `save_image'
+Completed 302 Found in 49ms (ActiveRecord: 2.0ms | Allocations: 15912)
+
+
+Started GET "/people/7-pedro" for ::1 at 2024-04-09 11:45:34 -0300
+Processing by PeopleController#show as TURBO_STREAM
+  Parameters: {"id"=>"7-pedro"}
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:69:in `set_person'
+  Rendering layout layouts/application.html.erb
+  Rendering people/show.html.erb within layouts/application
+  Rendered people/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 505)
+  Rendered layout layouts/application.html.erb (Duration: 2.1ms | Allocations: 1617)
+Completed 200 OK in 4ms (Views: 2.6ms | ActiveRecord: 0.1ms | Allocations: 2717)
+
+
+  [1m[36mImage Load (0.5ms)[0m  [1m[34mSELECT "images".* FROM "images" /* loading for pp */ LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/people/7-pedro" for ::1 at 2024-04-10 09:23:28 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"7-pedro"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 6ms (ActiveRecord: 0.0ms | Allocations: 2337)
+
+
+Started GET "/" for ::1 at 2024-04-10 09:23:28 -0300
+Processing by PubController#index as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/index.html.erb within layouts/pub
+  Rendered pub/index.html.erb within layouts/pub (Duration: 0.3ms | Allocations: 183)
+  Rendered layout layouts/pub.html.erb (Duration: 65.8ms | Allocations: 22625)
+Completed 200 OK in 82ms (Views: 71.1ms | ActiveRecord: 0.0ms | Allocations: 26414)
+
+
+Started GET "/" for ::1 at 2024-04-10 09:23:33 -0300
+Processing by PubController#index as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/index.html.erb within layouts/pub
+  Rendered pub/index.html.erb within layouts/pub (Duration: 0.2ms | Allocations: 7)
+  Rendered layout layouts/pub.html.erb (Duration: 10.1ms | Allocations: 2522)
+Completed 200 OK in 12ms (Views: 11.3ms | ActiveRecord: 0.0ms | Allocations: 2753)
+
+
+Started GET "/people" for ::1 at 2024-04-10 09:23:36 -0300
+Processing by PeopleController#index as HTML
+Redirected to http://localhost:3000/sessions/new
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 1308)
+
+
+Started GET "/sessions/new" for ::1 at 2024-04-10 09:23:36 -0300
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering sessions/new.html.erb within layouts/pub
+  Rendered sessions/new.html.erb within layouts/pub (Duration: 1.8ms | Allocations: 787)
+  Rendered layout layouts/pub.html.erb (Duration: 4.2ms | Allocations: 3092)
+Completed 200 OK in 6ms (Views: 4.9ms | ActiveRecord: 0.0ms | Allocations: 3463)
+
+
+Started POST "/sessions" for ::1 at 2024-04-10 09:23:45 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"anddev007pe@gmail.com", "password"=>"[FILTERED]", "commit"=>"Autenticar"}
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."email" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["email", "anddev007pe@gmail.com"], ["LIMIT", 1]]
+  ↳ app/models/person.rb:43:in `auth'
+Redirected to http://localhost:3000/people
+Completed 302 Found in 255ms (ActiveRecord: 1.7ms | Allocations: 24611)
+
+
+Started GET "/people" for ::1 at 2024-04-10 09:23:45 -0300
+Processing by PeopleController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering people/index.html.erb within layouts/application
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" ORDER BY "people"."name" ASC[0m
+  ↳ app/views/people/index.html.erb:6
+  Rendered people/_person.html.erb (Duration: 0.5ms | Allocations: 288)
+  Rendered people/_person.html.erb (Duration: 0.0ms | Allocations: 28)
+  Rendered people/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 1615)
+  Rendered layout layouts/application.html.erb (Duration: 12.9ms | Allocations: 16475)
+Completed 200 OK in 18ms (Views: 13.9ms | ActiveRecord: 0.1ms | Allocations: 17483)
+
+
+Started GET "/books" for ::1 at 2024-04-10 09:23:51 -0300
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:6
+  Rendered books/_book.html.erb (Duration: 0.7ms | Allocations: 285)
+  Rendered books/_book.html.erb (Duration: 0.1ms | Allocations: 33)
+  Rendered books/index.html.erb within layouts/application (Duration: 19.6ms | Allocations: 9292)
+  Rendered layout layouts/application.html.erb (Duration: 21.3ms | Allocations: 10422)
+Completed 200 OK in 33ms (Views: 21.5ms | ActiveRecord: 0.4ms | Allocations: 14264)
+
+
+Started GET "/books/1" for ::1 at 2024-04-10 09:23:54 -0300
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:68:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/_book.html.erb (Duration: 0.3ms | Allocations: 35)
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "books_categories" ON "categories"."id" = "books_categories"."category_id" WHERE "books_categories"."book_id" = ?[0m  [["book_id", 1]]
+  ↳ app/views/books/show.html.erb:7
+  Rendered books/show.html.erb within layouts/application (Duration: 71.2ms | Allocations: 17576)
+  Rendered layout layouts/application.html.erb (Duration: 74.8ms | Allocations: 18672)
+Completed 200 OK in 82ms (Views: 74.2ms | ActiveRecord: 2.0ms | Allocations: 20917)
+
+
+Started GET "/people" for ::1 at 2024-04-10 09:24:02 -0300
+Processing by PeopleController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering people/index.html.erb within layouts/application
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT "people".* FROM "people" ORDER BY "people"."name" ASC[0m
+  ↳ app/views/people/index.html.erb:6
+  Rendered people/_person.html.erb (Duration: 0.2ms | Allocations: 30)
+  Rendered people/_person.html.erb (Duration: 0.2ms | Allocations: 28)
+  Rendered people/index.html.erb within layouts/application (Duration: 3.5ms | Allocations: 736)
+  Rendered layout layouts/application.html.erb (Duration: 7.2ms | Allocations: 1844)
+Completed 200 OK in 18ms (Views: 8.7ms | ActiveRecord: 0.2ms | Allocations: 2376)
+
+
+Started GET "/people" for ::1 at 2024-04-10 09:28:34 -0300
+Processing by PeopleController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering people/index.html.erb within layouts/application
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" ORDER BY "people"."name" ASC[0m
+  ↳ app/views/people/index.html.erb:6
+  Rendered people/_person.html.erb (Duration: 0.5ms | Allocations: 257)
+  Rendered people/_person.html.erb (Duration: 0.1ms | Allocations: 28)
+  Rendered people/index.html.erb within layouts/application (Duration: 6.1ms | Allocations: 4530)
+  Rendered layout layouts/application.html.erb (Duration: 16.8ms | Allocations: 19389)
+Completed 200 OK in 25ms (Views: 18.1ms | ActiveRecord: 1.7ms | Allocations: 24098)
+
+
+Started GET "/people" for ::1 at 2024-04-10 09:28:37 -0300
+Processing by PeopleController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering people/index.html.erb within layouts/application
+  [1m[36mPerson Load (0.4ms)[0m  [1m[34mSELECT "people".* FROM "people" ORDER BY "people"."name" ASC[0m
+  ↳ app/views/people/index.html.erb:6
+  Rendered people/_person.html.erb (Duration: 0.3ms | Allocations: 30)
+  Rendered people/_person.html.erb (Duration: 0.3ms | Allocations: 28)
+  Rendered people/index.html.erb within layouts/application (Duration: 7.0ms | Allocations: 731)
+  Rendered layout layouts/application.html.erb (Duration: 11.6ms | Allocations: 1832)
+Completed 200 OK in 16ms (Views: 12.6ms | ActiveRecord: 0.4ms | Allocations: 2353)
+
+
+Started GET "/people" for ::1 at 2024-04-10 09:28:37 -0300
+Processing by PeopleController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering people/index.html.erb within layouts/application
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT "people".* FROM "people" ORDER BY "people"."name" ASC[0m
+  ↳ app/views/people/index.html.erb:6
+  Rendered people/_person.html.erb (Duration: 0.3ms | Allocations: 30)
+  Rendered people/_person.html.erb (Duration: 0.2ms | Allocations: 28)
+  Rendered people/index.html.erb within layouts/application (Duration: 6.0ms | Allocations: 731)
+  Rendered layout layouts/application.html.erb (Duration: 10.4ms | Allocations: 1832)
+Completed 200 OK in 14ms (Views: 11.4ms | ActiveRecord: 0.2ms | Allocations: 2368)
+
+
+Started GET "/people" for ::1 at 2024-04-10 09:28:37 -0300
+Processing by PeopleController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering people/index.html.erb within layouts/application
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT "people".* FROM "people" ORDER BY "people"."name" ASC[0m
+  ↳ app/views/people/index.html.erb:6
+  Rendered people/_person.html.erb (Duration: 0.3ms | Allocations: 30)
+  Rendered people/_person.html.erb (Duration: 0.2ms | Allocations: 28)
+  Rendered people/index.html.erb within layouts/application (Duration: 4.4ms | Allocations: 731)
+  Rendered layout layouts/application.html.erb (Duration: 10.8ms | Allocations: 1832)
+Completed 200 OK in 16ms (Views: 12.5ms | ActiveRecord: 0.2ms | Allocations: 2347)
+
+
+Started GET "/people" for ::1 at 2024-04-10 09:28:37 -0300
+Processing by PeopleController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering people/index.html.erb within layouts/application
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT "people".* FROM "people" ORDER BY "people"."name" ASC[0m
+  ↳ app/views/people/index.html.erb:6
+  Rendered people/_person.html.erb (Duration: 0.3ms | Allocations: 30)
+  Rendered people/_person.html.erb (Duration: 0.2ms | Allocations: 28)
+  Rendered people/index.html.erb within layouts/application (Duration: 6.0ms | Allocations: 731)
+  Rendered layout layouts/application.html.erb (Duration: 11.2ms | Allocations: 1832)
+Completed 200 OK in 15ms (Views: 12.7ms | ActiveRecord: 0.3ms | Allocations: 2374)
+
+
+Started GET "/people" for ::1 at 2024-04-10 09:28:37 -0300
+Processing by PeopleController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering people/index.html.erb within layouts/application
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT "people".* FROM "people" ORDER BY "people"."name" ASC[0m
+  ↳ app/views/people/index.html.erb:6
+  Rendered people/_person.html.erb (Duration: 0.2ms | Allocations: 30)
+  Rendered people/_person.html.erb (Duration: 0.2ms | Allocations: 28)
+  Rendered people/index.html.erb within layouts/application (Duration: 4.8ms | Allocations: 731)
+  Rendered layout layouts/application.html.erb (Duration: 10.0ms | Allocations: 1832)
+Completed 200 OK in 14ms (Views: 11.3ms | ActiveRecord: 0.2ms | Allocations: 2368)
+
+
+Started GET "/people" for ::1 at 2024-04-10 09:28:38 -0300
+Processing by PeopleController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering people/index.html.erb within layouts/application
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT "people".* FROM "people" ORDER BY "people"."name" ASC[0m
+  ↳ app/views/people/index.html.erb:6
+  Rendered people/_person.html.erb (Duration: 0.2ms | Allocations: 30)
+  Rendered people/_person.html.erb (Duration: 0.2ms | Allocations: 28)
+  Rendered people/index.html.erb within layouts/application (Duration: 4.9ms | Allocations: 731)
+  Rendered layout layouts/application.html.erb (Duration: 8.5ms | Allocations: 1832)
+Completed 200 OK in 12ms (Views: 9.5ms | ActiveRecord: 0.2ms | Allocations: 2353)
+
+
+Started GET "/people/7-pedro" for ::1 at 2024-04-10 09:28:38 -0300
+Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"7-pedro"}
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:70:in `set_person'
+  Rendering layout layouts/application.html.erb
+  Rendering people/show.html.erb within layouts/application
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."person_id" = ? LIMIT ?[0m  [["person_id", 7], ["LIMIT", 1]]
+  ↳ app/presenters/person_presenter.rb:10:in `image'
+  Rendered people/show.html.erb within layouts/application (Duration: 15.2ms | Allocations: 10461)
+  Rendered layout layouts/application.html.erb (Duration: 15.4ms | Allocations: 10552)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 0.5ms | Allocations: 12076)
+
+
+
+NoMethodError - undefined method `html_save' for an instance of ActiveSupport::SafeBuffer:
+  app/presenters/person_presenter.rb:11:in `image'
+  app/views/people/show.html.erb:4
+  app/controllers/people_controller.rb:16:in `show'
+
+Started POST "/__better_errors/2de5286a5548b353/variables" for ::1 at 2024-04-10 09:28:39 -0300
+Started GET "/people/7-pedro" for ::1 at 2024-04-10 09:28:50 -0300
+Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"7-pedro"}
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:70:in `set_person'
+  Rendering layout layouts/application.html.erb
+  Rendering people/show.html.erb within layouts/application
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."person_id" = ? LIMIT ?[0m  [["person_id", 7], ["LIMIT", 1]]
+  ↳ app/presenters/person_presenter.rb:10:in `image'
+  Rendered people/show.html.erb within layouts/application (Duration: 9.3ms | Allocations: 8466)
+  Rendered layout layouts/application.html.erb (Duration: 20.2ms | Allocations: 23319)
+Completed 200 OK in 34ms (Views: 21.6ms | ActiveRecord: 2.2ms | Allocations: 31991)
+
+
+Started GET "/people" for ::1 at 2024-04-10 09:28:53 -0300
+Processing by PeopleController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering people/index.html.erb within layouts/application
+  [1m[36mPerson Load (0.4ms)[0m  [1m[34mSELECT "people".* FROM "people" ORDER BY "people"."name" ASC[0m
+  ↳ app/views/people/index.html.erb:6
+  Rendered people/_person.html.erb (Duration: 1.8ms | Allocations: 249)
+  Rendered people/_person.html.erb (Duration: 0.2ms | Allocations: 28)
+  Rendered people/index.html.erb within layouts/application (Duration: 9.8ms | Allocations: 1356)
+  Rendered layout layouts/application.html.erb (Duration: 13.4ms | Allocations: 2457)
+Completed 200 OK in 19ms (Views: 14.7ms | ActiveRecord: 0.4ms | Allocations: 3089)
+
+
+Started GET "/people" for ::1 at 2024-04-10 09:28:55 -0300
+Processing by PeopleController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering people/index.html.erb within layouts/application
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT "people".* FROM "people" ORDER BY "people"."name" ASC[0m
+  ↳ app/views/people/index.html.erb:6
+  Rendered people/_person.html.erb (Duration: 0.3ms | Allocations: 30)
+  Rendered people/_person.html.erb (Duration: 0.2ms | Allocations: 28)
+  Rendered people/index.html.erb within layouts/application (Duration: 5.7ms | Allocations: 734)
+  Rendered layout layouts/application.html.erb (Duration: 10.9ms | Allocations: 1835)
+Completed 200 OK in 15ms (Views: 12.0ms | ActiveRecord: 0.2ms | Allocations: 2368)
+
+
+Started GET "/people/7-pedro" for ::1 at 2024-04-10 09:28:57 -0300
+Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"7-pedro"}
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:70:in `set_person'
+  Rendering layout layouts/application.html.erb
+  Rendering people/show.html.erb within layouts/application
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."person_id" = ? LIMIT ?[0m  [["person_id", 7], ["LIMIT", 1]]
+  ↳ app/presenters/person_presenter.rb:10:in `image'
+  Rendered people/show.html.erb within layouts/application (Duration: 6.2ms | Allocations: 1100)
+  Rendered layout layouts/application.html.erb (Duration: 11.3ms | Allocations: 2197)
+Completed 200 OK in 21ms (Views: 12.5ms | ActiveRecord: 0.5ms | Allocations: 3251)
+
+
+Started GET "/people/7-pedro" for ::1 at 2024-04-10 09:29:34 -0300
+Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"7-pedro"}
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:70:in `set_person'
+  Rendering layout layouts/application.html.erb
+  Rendering people/show.html.erb within layouts/application
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."person_id" = ? LIMIT ?[0m  [["person_id", 7], ["LIMIT", 1]]
+  ↳ app/presenters/person_presenter.rb:10:in `image'
+  Rendered people/show.html.erb within layouts/application (Duration: 10.2ms | Allocations: 8236)
+  Rendered layout layouts/application.html.erb (Duration: 21.3ms | Allocations: 23089)
+Completed 200 OK in 37ms (Views: 23.4ms | ActiveRecord: 2.6ms | Allocations: 31783)
+
+

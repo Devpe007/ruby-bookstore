@@ -61,6 +61,7 @@ class PeopleController < AdminController
 
       @image = (@person.image || Image.new(title: @person.name, person_id: @person.id))
       @image.data_stream = params[:data_stream]
+      @image.height = 200
       @person.image = @image if @image.save
     end
 
