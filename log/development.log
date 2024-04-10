@@ -13585,3 +13585,65 @@ Processing by BooksController#new as HTML
 Completed 200 OK in 52ms (Views: 31.4ms | ActiveRecord: 0.5ms | Allocations: 18411)
 
 
+Started GET "/books/new" for ::1 at 2024-04-10 10:51:25 -0300
+Processing by BooksController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/books/_form.html.erb:42
+  Rendered books/_form.html.erb (Duration: 15.8ms | Allocations: 12625)
+  Rendered books/new.html.erb within layouts/application (Duration: 16.5ms | Allocations: 12916)
+  Rendered layout layouts/application.html.erb (Duration: 31.0ms | Allocations: 27762)
+Completed 200 OK in 47ms (Views: 31.1ms | ActiveRecord: 1.2ms | Allocations: 37595)
+
+
+Started GET "/books/new" for ::1 at 2024-04-10 10:52:12 -0300
+Processing by BooksController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/new.html.erb within layouts/application
+  Rendered application/_image_fields.html.erb (Duration: 5.3ms | Allocations: 3902)
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/books/_form.html.erb:44
+  Rendered books/_form.html.erb (Duration: 22.0ms | Allocations: 16867)
+  Rendered books/new.html.erb within layouts/application (Duration: 22.7ms | Allocations: 17158)
+  Rendered layout layouts/application.html.erb (Duration: 34.0ms | Allocations: 32004)
+Completed 200 OK in 50ms (Views: 34.3ms | ActiveRecord: 2.4ms | Allocations: 42419)
+
+
+Started GET "/people" for ::1 at 2024-04-10 10:52:21 -0300
+Processing by PeopleController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering people/index.html.erb within layouts/application
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT "people".* FROM "people" ORDER BY "people"."name" ASC[0m
+  ↳ app/views/people/index.html.erb:6
+  Rendered people/_person.html.erb (Duration: 0.6ms | Allocations: 254)
+  Rendered people/_person.html.erb (Duration: 0.1ms | Allocations: 28)
+  Rendered people/index.html.erb within layouts/application (Duration: 9.0ms | Allocations: 4392)
+  Rendered layout layouts/application.html.erb (Duration: 11.2ms | Allocations: 5507)
+Completed 200 OK in 36ms (Views: 12.5ms | ActiveRecord: 0.8ms | Allocations: 9426)
+
+
+Started GET "/people" for ::1 at 2024-04-10 10:52:23 -0300
+Processing by PeopleController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering people/index.html.erb within layouts/application
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT "people".* FROM "people" ORDER BY "people"."name" ASC[0m
+  ↳ app/views/people/index.html.erb:6
+  Rendered people/_person.html.erb (Duration: 0.4ms | Allocations: 30)
+  Rendered people/_person.html.erb (Duration: 0.3ms | Allocations: 28)
+  Rendered people/index.html.erb within layouts/application (Duration: 6.0ms | Allocations: 731)
+  Rendered layout layouts/application.html.erb (Duration: 10.4ms | Allocations: 1832)
+Completed 200 OK in 16ms (Views: 11.9ms | ActiveRecord: 0.3ms | Allocations: 2363)
+
+
+Started GET "/people/new" for ::1 at 2024-04-10 10:52:25 -0300
+Processing by PeopleController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering people/new.html.erb within layouts/application
+  Rendered application/_image_fields.html.erb (Duration: 7.0ms | Allocations: 2363)
+  Rendered people/_form.html.erb (Duration: 38.0ms | Allocations: 5934)
+  Rendered people/new.html.erb within layouts/application (Duration: 41.3ms | Allocations: 6215)
+  Rendered layout layouts/application.html.erb (Duration: 44.6ms | Allocations: 7330)
+Completed 200 OK in 50ms (Views: 46.2ms | ActiveRecord: 0.0ms | Allocations: 7980)
+
+

@@ -11,9 +11,7 @@
     </div>
   <% end %>
 
-  <div class="field" >
-    <%= file_field_tag :data_stream %>
-  </div>
+  <%= render 'image_fields', form: form %>
 
   <div>
     <%= form.label :title, style: "display: block" %>
