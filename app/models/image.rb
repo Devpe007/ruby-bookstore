@@ -4,14 +4,14 @@ class Image < ApplicationRecord
 
   attr_accessor :data_stream, :width, :height
 
-  belongs_to :person
+  belongs_to :imageable, polymorphic: true
 
   def filename
     "#{id}.jpg"
   end
 
   def path
-    '/images/people/'
+    "/images/#{imageable_type.pluralize.underscore}"
   end
 
   def to_s

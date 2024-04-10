@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_04_09_140628) do
+ActiveRecord::Schema[7.1].define(version: 2024_04_10_123406) do
   create_table "books", force: :cascade do |t|
     t.string "title", limit: 100, null: false
     t.date "published_at", null: false
@@ -37,9 +37,11 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_09_140628) do
 
   create_table "images", force: :cascade do |t|
     t.string "title"
-    t.integer "person_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "imageable_id"
+    t.string "imageable_type"
+    t.index ["imageable_id", "imageable_type"], name: "index_images_on_imageable_id_and_imageable_type"
   end
 
   create_table "people", force: :cascade do |t|

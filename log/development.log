@@ -13437,3 +13437,151 @@ Processing by PeopleController#show as HTML
 Completed 200 OK in 37ms (Views: 23.4ms | ActiveRecord: 2.6ms | Allocations: 31783)
 
 
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddPolymorphismToImage (20240410123406)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mImage Load (0.9ms)[0m  [1m[34mSELECT "images".* FROM "images"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddPolymorphismToImage (20240410123406)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mImage Load (0.9ms)[0m  [1m[34mSELECT "images".* FROM "images"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aimages" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar DEFAULT NULL, "person_id" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "aimages" ("id","title","person_id","created_at","updated_at")
+                     SELECT "id","title","person_id","created_at","updated_at" FROM "images"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "images"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "images" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "images" ("id","title","created_at","updated_at")
+                     SELECT "id","title","created_at","updated_at" FROM "aimages"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "aimages"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "images" ADD "imageable" integer[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "images" ADD "imageable_type" varchar[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE INDEX "index_images_on_imageable_id_and_imageable_type" ON "images" ("imageable_id", "imageable_type")[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddPolymorphismToImage (20240410123406)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mImage Load (0.8ms)[0m  [1m[34mSELECT "images".* FROM "images"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aimages" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar DEFAULT NULL, "person_id" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aimages" ("id","title","person_id","created_at","updated_at")
+                     SELECT "id","title","person_id","created_at","updated_at" FROM "images"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "images"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "images" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "images" ("id","title","created_at","updated_at")
+                     SELECT "id","title","created_at","updated_at" FROM "aimages"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "aimages"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "images" ADD "imageable_id" integer[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "images" ADD "imageable_type" varchar[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_images_on_imageable_id_and_imageable_type" ON "images" ("imageable_id", "imageable_type")[0m
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddPolymorphismToImage (20240410123406)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mImage Load (0.8ms)[0m  [1m[34mSELECT "images".* FROM "images"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aimages" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar DEFAULT NULL, "person_id" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "aimages" ("id","title","person_id","created_at","updated_at")
+                     SELECT "id","title","person_id","created_at","updated_at" FROM "images"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "images"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "images" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "images" ("id","title","created_at","updated_at")
+                     SELECT "id","title","created_at","updated_at" FROM "aimages"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "aimages"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "images" ADD "imageable_id" integer[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "images" ADD "imageable_type" varchar[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_images_on_imageable_id_and_imageable_type" ON "images" ("imageable_id", "imageable_type")[0m
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddPolymorphismToImage (20240410123406)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mImage Load (0.8ms)[0m  [1m[34mSELECT "images".* FROM "images"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aimages" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar DEFAULT NULL, "person_id" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "aimages" ("id","title","person_id","created_at","updated_at")
+                     SELECT "id","title","person_id","created_at","updated_at" FROM "images"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "images"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "images" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "images" ("id","title","created_at","updated_at")
+                     SELECT "id","title","created_at","updated_at" FROM "aimages"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "aimages"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "images" ADD "imageable_id" integer[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "images" ADD "imageable_type" varchar[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE INDEX "index_images_on_imageable_id_and_imageable_type" ON "images" ("imageable_id", "imageable_type")[0m
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mImage Update (0.1ms)[0m  [1m[33mUPDATE "images" SET "updated_at" = ?, "imageable_id" = ?, "imageable_type" = ? WHERE "images"."id" = ?[0m  [["updated_at", "2024-04-10 12:52:10.127786"], ["imageable_id", 7], ["imageable_type", "Person"], ["id", 1]]
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240410123406') RETURNING "version"[0m
+  [1m[36mTRANSACTION (2.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT "people".* FROM "people" ORDER BY "people"."name" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 6], ["imageable_type", "Person"], ["LIMIT", 1]]
+  [1m[36mPerson Load (0.5ms)[0m  [1m[34mSELECT "people".* FROM "people" /* loading for pp */ ORDER BY "people"."name" ASC LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mPerson Load (0.5ms)[0m  [1m[34mSELECT "people".* FROM "people" ORDER BY "people"."name" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 7], ["imageable_type", "Person"], ["LIMIT", 1]]
+Started GET "/people" for ::1 at 2024-04-10 10:00:47 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PeopleController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering people/index.html.erb within layouts/application
+  [1m[36mPerson Load (1.1ms)[0m  [1m[34mSELECT "people".* FROM "people" ORDER BY "people"."name" ASC[0m
+  ↳ app/views/people/index.html.erb:6
+  Rendered people/_person.html.erb (Duration: 0.5ms | Allocations: 257)
+  Rendered people/_person.html.erb (Duration: 0.1ms | Allocations: 28)
+  Rendered people/index.html.erb within layouts/application (Duration: 6.8ms | Allocations: 4536)
+  Rendered layout layouts/application.html.erb (Duration: 16.3ms | Allocations: 19395)
+Completed 200 OK in 23ms (Views: 16.1ms | ActiveRecord: 1.7ms | Allocations: 23595)
+
+
+Started GET "/books" for ::1 at 2024-04-10 10:00:54 -0300
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:6
+  Rendered books/_book.html.erb (Duration: 0.6ms | Allocations: 258)
+  Rendered books/_book.html.erb (Duration: 0.1ms | Allocations: 33)
+  Rendered books/index.html.erb within layouts/application (Duration: 6.4ms | Allocations: 4953)
+  Rendered layout layouts/application.html.erb (Duration: 8.2ms | Allocations: 6068)
+Completed 200 OK in 16ms (Views: 8.3ms | ActiveRecord: 0.5ms | Allocations: 9840)
+
+
+Started GET "/books/new" for ::1 at 2024-04-10 10:00:56 -0300
+Processing by BooksController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/books/_form.html.erb:46
+  Rendered books/_form.html.erb (Duration: 26.4ms | Allocations: 14419)
+  Rendered books/new.html.erb within layouts/application (Duration: 28.7ms | Allocations: 14707)
+  Rendered layout layouts/application.html.erb (Duration: 30.7ms | Allocations: 15824)
+Completed 200 OK in 52ms (Views: 31.4ms | ActiveRecord: 0.5ms | Allocations: 18411)
+
+
