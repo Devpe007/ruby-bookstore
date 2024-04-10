@@ -1,7 +1,8 @@
 class BooksController < ApplicationController
+  include ImageSaver
+
   before_action :set_book, only: %i[ show edit update destroy ]
   before_action :load_categories, only: [:new, :edit, :create, :update]
-  after_action :save_image, only: [:create, :update]
 
   # GET /books or /books.json
   def index
@@ -59,20 +60,11 @@ class BooksController < ApplicationController
     end
   end
 
+  def image_title_ref
+    'Capa do livro'
+  end
+
   private
-    def save_image
-      return if !params[:data_stream]
-
-      @image = @book.image ? @book.image : Image.new(
-        title: @book.title,
-        imageable_id: @book.id,
-        imageable_type: controller_name.singularize.camelize
-      )
-      @image.data_stream = params[:data_stream]
-      @image.height = 200
-      @book.image = @image if @image.save
-    end
-
     def load_categories
       @categories = Category.all
     end

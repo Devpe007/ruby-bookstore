@@ -1,6 +1,7 @@
 class PeopleController < AdminController
+  include ImageSaver
+
   before_action :set_person, only: %i[ show edit update destroy changed ]
-  after_action :save_image, only: [:create, :update]
 
   respond_to :html
 
@@ -53,6 +54,10 @@ class PeopleController < AdminController
   end
 
   def changed
+  end
+
+  def image_title_ref
+    'Foto da pessoa'
   end
 
   private
