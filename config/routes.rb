@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :books
   root 'pub#index'
   get 'pub/sobre'
+  get 'livro/:id' => 'pub#book', as: 'pub_book'
 
   namespace :admin do
     resources :people

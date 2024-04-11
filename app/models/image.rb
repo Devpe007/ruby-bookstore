@@ -15,7 +15,7 @@ class Image < ApplicationRecord
   end
 
   def to_s
-    "#{path}#{filename}"
+    "#{path}/#{filename}"
   end
 
   def full_path
