@@ -1,6 +1,7 @@
 class BooksController < ApplicationController
   before_action :set_book, only: %i[ show edit update destroy ]
   before_action :load_categories, only: [:new, :edit, :create, :update]
+  before_action :load_people, only: [:new, :edit, :create, :update]
 
   # GET /books or /books.json
   def index
@@ -59,6 +60,10 @@ class BooksController < ApplicationController
   end
 
   private
+    def load_people
+      @people = Person.all
+    end
+
     def load_categories
       @categories = Category.all
     end
@@ -71,7 +76,7 @@ class BooksController < ApplicationController
     # Only allow a list of trusted parameters through.
     def book_params
       params.require(:book).permit(
-        :title, :published_at, :text, :value, :person_id, :image_title, :data_stream, category_ids: []
+        :title, :published_at, :text, :value, :person_id, :image_title, :data_stream, :stock, category_ids: []
       )
     end
 end

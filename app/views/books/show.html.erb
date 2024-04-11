@@ -2,6 +2,11 @@
 
 <%= render @book %>
 
+<p>
+  <strong>Estoque: </strong>
+  <%= @book.stock %>
+</p>
+
 <h2>Categorias</h2>
 <ul>
   <% for category in @book.categories %>
