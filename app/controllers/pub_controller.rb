@@ -5,4 +5,8 @@ class PubController < ApplicationController
 
   def sobre
   end
+
+  def book
+    @book = Book.find(params[:id])
+  end
 end
