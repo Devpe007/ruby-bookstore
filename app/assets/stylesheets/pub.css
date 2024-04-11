@@ -1,0 +1,111 @@
+body {
+  margin: 0;
+
+  font-size: 14px;
+}
+
+header {
+  padding: 1em;
+
+  color: white;
+  background: maroon;
+}
+
+nav, footer {
+  color: white;
+  background: black;
+}
+
+ul {
+  margin: auto auto auto 1em;
+
+  list-style-type: none;
+}
+
+li {
+  padding: 1em 1em 1em 0;
+}
+
+a, a:visited {
+  text-decoration: none;
+  font-weight: bold;
+
+  color: white;
+}
+
+#main {
+  margin: auto 2em;
+}
+
+#mini_books {
+  list-style-type: none;
+  padding: 0;
+}
+
+#mini_books li {
+  display: table-cell;
+  padding-right: 7em;
+}
+
+#mini_books li img {
+  height: 150px;
+}
+
+#mini_books h1 {
+  margin-bottom: 0;
+
+  color: maroon;
+}
+
+#mini_books h2 {
+  margin-top: 0;
+
+  font-size: 1em;
+}
+
+a.more_book_info, a.buy_book {
+  padding: 0.5em 1em;
+  margin-left: 3em;
+
+  border-radius: 15px;
+
+  text-decoration: none;
+  font-weight: bold;
+
+  color: white;
+  background: red;
+}
+
+a.more_book_info:visited, a.buy_book:visited {
+  color: white;
+}
+
+p.sold_out {
+  font-weight: bold;
+
+  color: red;
+}
+
+span.book_value {
+  font-size: 1.5em;
+  font-weight: bold;
+
+  font-size: 1.5em;
+}
+
+a.buy_book {
+  display: block;
+
+  margin: 0;
+  margin: 1em 0;
+
+  width: 5em;
+}
+
+footer {
+  padding: 1em;
+}
+
+#book_detail img {
+  height: 200px;
+}
