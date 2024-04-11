@@ -19878,3 +19878,1033 @@ Processing by PubController#book as HTML
 Completed 200 OK in 12ms (Views: 8.9ms | ActiveRecord: 0.4ms | Allocations: 3226)
 
 
+Started GET "/book/2" for ::1 at 2024-04-11 10:15:37 -0300
+Processing by PubController#book as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/pub_controller.rb:10:in `book'
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/book.html.erb within layouts/pub
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/pub/book.html.erb:3
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 2], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/book.html.erb:5
+  Rendered pub/book.html.erb within layouts/pub (Duration: 9.7ms | Allocations: 1530)
+  Rendered layout layouts/pub.html.erb (Duration: 14.3ms | Allocations: 2607)
+Completed 200 OK in 19ms (Views: 15.0ms | ActiveRecord: 0.6ms | Allocations: 3203)
+
+
+Started GET "/book/1" for ::1 at 2024-04-11 10:15:40 -0300
+Processing by PubController#book as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pub_controller.rb:10:in `book'
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/book.html.erb within layouts/pub
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/pub/book.html.erb:3
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 1], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/book.html.erb:5
+  Rendered pub/book.html.erb within layouts/pub (Duration: 10.6ms | Allocations: 1535)
+  Rendered layout layouts/pub.html.erb (Duration: 15.8ms | Allocations: 2615)
+Completed 200 OK in 21ms (Views: 16.8ms | ActiveRecord: 0.7ms | Allocations: 3211)
+
+
+Started GET "/book/1" for ::1 at 2024-04-11 10:15:51 -0300
+Processing by PubController#book as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pub_controller.rb:10:in `book'
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/book.html.erb within layouts/pub
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/pub/book.html.erb:3
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 1], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/book.html.erb:5
+  Rendered pub/book.html.erb within layouts/pub (Duration: 10.3ms | Allocations: 1535)
+  Rendered layout layouts/pub.html.erb (Duration: 14.3ms | Allocations: 2615)
+Completed 200 OK in 20ms (Views: 15.6ms | ActiveRecord: 0.7ms | Allocations: 3211)
+
+
+Started GET "/book/1" for ::1 at 2024-04-11 10:16:10 -0300
+Processing by PubController#book as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pub_controller.rb:10:in `book'
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/book.html.erb within layouts/pub
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/pub/book.html.erb:3
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 1], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/book.html.erb:5
+  Rendered pub/book.html.erb within layouts/pub (Duration: 8.5ms | Allocations: 1535)
+  Rendered layout layouts/pub.html.erb (Duration: 15.6ms | Allocations: 3963)
+Completed 200 OK in 21ms (Views: 16.5ms | ActiveRecord: 0.5ms | Allocations: 4559)
+
+
+Started GET "/book/1" for ::1 at 2024-04-11 10:16:10 -0300
+Processing by PubController#book as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pub_controller.rb:10:in `book'
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/book.html.erb within layouts/pub
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/pub/book.html.erb:3
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 1], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/book.html.erb:5
+  Rendered pub/book.html.erb within layouts/pub (Duration: 4.2ms | Allocations: 1536)
+  Rendered layout layouts/pub.html.erb (Duration: 6.2ms | Allocations: 2627)
+Completed 200 OK in 8ms (Views: 6.5ms | ActiveRecord: 0.2ms | Allocations: 3224)
+
+
+Started GET "/book/1" for ::1 at 2024-04-11 10:16:11 -0300
+Processing by PubController#book as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pub_controller.rb:10:in `book'
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/book.html.erb within layouts/pub
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/pub/book.html.erb:3
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 1], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/book.html.erb:5
+  Rendered pub/book.html.erb within layouts/pub (Duration: 6.0ms | Allocations: 1536)
+  Rendered layout layouts/pub.html.erb (Duration: 9.2ms | Allocations: 2629)
+Completed 200 OK in 13ms (Views: 9.7ms | ActiveRecord: 0.4ms | Allocations: 3225)
+
+
+Started GET "/book/1" for ::1 at 2024-04-11 10:16:20 -0300
+Processing by PubController#book as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pub_controller.rb:10:in `book'
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/book.html.erb within layouts/pub
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/pub/book.html.erb:3
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 1], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/book.html.erb:5
+  Rendered pub/book.html.erb within layouts/pub (Duration: 4.7ms | Allocations: 1536)
+  Rendered layout layouts/pub.html.erb (Duration: 10.8ms | Allocations: 3919)
+Completed 200 OK in 14ms (Views: 11.2ms | ActiveRecord: 0.5ms | Allocations: 4515)
+
+
+Started GET "/book/1" for ::1 at 2024-04-11 10:16:21 -0300
+Processing by PubController#book as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pub_controller.rb:10:in `book'
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/book.html.erb within layouts/pub
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/pub/book.html.erb:3
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 1], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/book.html.erb:5
+  Rendered pub/book.html.erb within layouts/pub (Duration: 7.1ms | Allocations: 1535)
+  Rendered layout layouts/pub.html.erb (Duration: 9.5ms | Allocations: 2622)
+Completed 200 OK in 14ms (Views: 9.9ms | ActiveRecord: 0.9ms | Allocations: 3219)
+
+
+Started GET "/book/1" for ::1 at 2024-04-11 10:16:21 -0300
+Processing by PubController#book as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pub_controller.rb:10:in `book'
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/book.html.erb within layouts/pub
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/pub/book.html.erb:3
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 1], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/book.html.erb:5
+  Rendered pub/book.html.erb within layouts/pub (Duration: 6.1ms | Allocations: 1535)
+  Rendered layout layouts/pub.html.erb (Duration: 9.1ms | Allocations: 2630)
+Completed 200 OK in 15ms (Views: 10.5ms | ActiveRecord: 0.5ms | Allocations: 3226)
+
+
+Started GET "/book/1" for ::1 at 2024-04-11 10:16:40 -0300
+Processing by PubController#book as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pub_controller.rb:10:in `book'
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/book.html.erb within layouts/pub
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/pub/book.html.erb:3
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 1], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/book.html.erb:5
+  Rendered pub/book.html.erb within layouts/pub (Duration: 5.3ms | Allocations: 1535)
+  Rendered layout layouts/pub.html.erb (Duration: 10.5ms | Allocations: 3942)
+Completed 200 OK in 14ms (Views: 10.9ms | ActiveRecord: 0.4ms | Allocations: 4538)
+
+
+Started GET "/book/1" for ::1 at 2024-04-11 10:16:41 -0300
+Processing by PubController#book as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pub_controller.rb:10:in `book'
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/book.html.erb within layouts/pub
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/pub/book.html.erb:3
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 1], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/book.html.erb:5
+  Rendered pub/book.html.erb within layouts/pub (Duration: 6.5ms | Allocations: 1535)
+  Rendered layout layouts/pub.html.erb (Duration: 9.1ms | Allocations: 2615)
+Completed 200 OK in 14ms (Views: 9.6ms | ActiveRecord: 0.6ms | Allocations: 3211)
+
+
+Started GET "/book/1" for ::1 at 2024-04-11 10:16:41 -0300
+Processing by PubController#book as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pub_controller.rb:10:in `book'
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/book.html.erb within layouts/pub
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/pub/book.html.erb:3
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 1], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/book.html.erb:5
+  Rendered pub/book.html.erb within layouts/pub (Duration: 9.0ms | Allocations: 1535)
+  Rendered layout layouts/pub.html.erb (Duration: 12.1ms | Allocations: 2636)
+Completed 200 OK in 17ms (Views: 12.8ms | ActiveRecord: 0.6ms | Allocations: 3232)
+
+
+Started GET "/book/1" for ::1 at 2024-04-11 10:16:41 -0300
+Processing by PubController#book as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pub_controller.rb:10:in `book'
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/book.html.erb within layouts/pub
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/pub/book.html.erb:3
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 1], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/book.html.erb:5
+  Rendered pub/book.html.erb within layouts/pub (Duration: 9.5ms | Allocations: 1535)
+  Rendered layout layouts/pub.html.erb (Duration: 13.6ms | Allocations: 2615)
+Completed 200 OK in 19ms (Views: 14.4ms | ActiveRecord: 0.6ms | Allocations: 3211)
+
+
+Started GET "/book/1" for ::1 at 2024-04-11 10:16:41 -0300
+Processing by PubController#book as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pub_controller.rb:10:in `book'
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/book.html.erb within layouts/pub
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/pub/book.html.erb:3
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 1], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/book.html.erb:5
+  Rendered pub/book.html.erb within layouts/pub (Duration: 11.9ms | Allocations: 1535)
+  Rendered layout layouts/pub.html.erb (Duration: 17.9ms | Allocations: 2615)
+Completed 200 OK in 23ms (Views: 18.7ms | ActiveRecord: 0.8ms | Allocations: 3211)
+
+
+Started GET "/book/1" for ::1 at 2024-04-11 10:25:57 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PubController#book as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pub_controller.rb:10:in `book'
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/book.html.erb within layouts/pub
+  [1m[36mPerson Load (1.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/pub/book.html.erb:3
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 1], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/book.html.erb:5
+  Rendered pub/book.html.erb within layouts/pub (Duration: 51.9ms | Allocations: 24930)
+  Rendered layout layouts/pub.html.erb (Duration: 118.9ms | Allocations: 49177)
+Completed 200 OK in 168ms (Views: 120.4ms | ActiveRecord: 4.4ms | Allocations: 80078)
+
+
+Started GET "/book/1" for ::1 at 2024-04-11 10:26:06 -0300
+Processing by PubController#book as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pub_controller.rb:10:in `book'
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/book.html.erb within layouts/pub
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/pub/book.html.erb:3
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 1], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/book.html.erb:5
+  Rendered pub/book.html.erb within layouts/pub (Duration: 21.0ms | Allocations: 15885)
+  Rendered layout layouts/pub.html.erb (Duration: 22.9ms | Allocations: 17221)
+Completed 200 OK in 39ms (Views: 23.8ms | ActiveRecord: 2.3ms | Allocations: 27095)
+
+
+Started GET "/book/1" for ::1 at 2024-04-11 10:26:07 -0300
+Processing by PubController#book as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pub_controller.rb:10:in `book'
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/book.html.erb within layouts/pub
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/pub/book.html.erb:3
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 1], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/book.html.erb:5
+  Rendered pub/book.html.erb within layouts/pub (Duration: 2.7ms | Allocations: 1429)
+  Rendered layout layouts/pub.html.erb (Duration: 4.4ms | Allocations: 2518)
+Completed 200 OK in 7ms (Views: 4.6ms | ActiveRecord: 0.2ms | Allocations: 3131)
+
+
+Started GET "/book/1" for ::1 at 2024-04-11 10:26:07 -0300
+Processing by PubController#book as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pub_controller.rb:10:in `book'
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/book.html.erb within layouts/pub
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/pub/book.html.erb:3
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 1], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/book.html.erb:5
+  Rendered pub/book.html.erb within layouts/pub (Duration: 8.4ms | Allocations: 1427)
+  Rendered layout layouts/pub.html.erb (Duration: 12.5ms | Allocations: 2525)
+Completed 200 OK in 17ms (Views: 13.5ms | ActiveRecord: 0.5ms | Allocations: 3121)
+
+
+Started GET "/book/1" for ::1 at 2024-04-11 10:26:12 -0300
+Processing by PubController#book as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pub_controller.rb:10:in `book'
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/book.html.erb within layouts/pub
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/pub/book.html.erb:3
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 1], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/book.html.erb:5
+  Rendered pub/book.html.erb within layouts/pub (Duration: 19.6ms | Allocations: 15859)
+  Rendered layout layouts/pub.html.erb (Duration: 21.7ms | Allocations: 17206)
+Completed 200 OK in 39ms (Views: 22.2ms | ActiveRecord: 2.3ms | Allocations: 27054)
+
+
+Started GET "/book/1" for ::1 at 2024-04-11 10:27:03 -0300
+Processing by PubController#book as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pub_controller.rb:10:in `book'
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/book.html.erb within layouts/pub
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/pub/book.html.erb:3
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 1], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/book.html.erb:5
+  Rendered pub/book.html.erb within layouts/pub (Duration: 21.4ms | Allocations: 15854)
+  Rendered layout layouts/pub.html.erb (Duration: 23.5ms | Allocations: 17210)
+Completed 200 OK in 40ms (Views: 24.3ms | ActiveRecord: 2.5ms | Allocations: 26992)
+
+
+Started GET "/books" for ::1 at 2024-04-11 10:27:11 -0300
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:6
+  Rendered books/_book.html.erb (Duration: 1.3ms | Allocations: 294)
+  Rendered books/_book.html.erb (Duration: 0.1ms | Allocations: 33)
+  Rendered books/index.html.erb within layouts/application (Duration: 7.4ms | Allocations: 1814)
+  Rendered layout layouts/application.html.erb (Duration: 22.1ms | Allocations: 16862)
+Completed 200 OK in 24ms (Views: 23.1ms | ActiveRecord: 0.2ms | Allocations: 17520)
+
+
+Started GET "/books/1" for ::1 at 2024-04-11 10:27:13 -0300
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:68:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/_book.html.erb (Duration: 0.3ms | Allocations: 35)
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "books_categories" ON "categories"."id" = "books_categories"."category_id" WHERE "books_categories"."book_id" = ?[0m  [["book_id", 1]]
+  ↳ app/views/books/show.html.erb:7
+  Rendered books/show.html.erb within layouts/application (Duration: 33.3ms | Allocations: 16744)
+  Rendered layout layouts/application.html.erb (Duration: 36.0ms | Allocations: 17913)
+Completed 200 OK in 42ms (Views: 36.4ms | ActiveRecord: 1.0ms | Allocations: 18635)
+
+
+Started GET "/books/1/edit" for ::1 at 2024-04-11 10:27:15 -0300
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:68:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/edit.html.erb within layouts/application
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 1], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/models/concerns/image_saver.rb:10:in `image_title'
+  Rendered application/_image_fields.html.erb (Duration: 11.5ms | Allocations: 1678)
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/books/_form.html.erb:44
+  [1m[36mCategory Pluck (0.3ms)[0m  [1m[34mSELECT "categories"."id" FROM "categories" INNER JOIN "books_categories" ON "categories"."id" = "books_categories"."category_id" WHERE "books_categories"."book_id" = ?[0m  [["book_id", 1]]
+  ↳ app/views/books/_form.html.erb:46
+  Rendered books/_form.html.erb (Duration: 36.5ms | Allocations: 6445)
+  Rendered books/edit.html.erb within layouts/application (Duration: 39.4ms | Allocations: 6777)
+  Rendered layout layouts/application.html.erb (Duration: 42.1ms | Allocations: 7937)
+Completed 200 OK in 48ms (Views: 42.6ms | ActiveRecord: 0.8ms | Allocations: 8644)
+
+
+Started PATCH "/books/1" for ::1 at 2024-04-11 10:27:21 -0300
+Processing by BooksController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "book"=>{"image_title"=>"Capa do livro", "title"=>"Ruby - Conhecendo a linguagem", "published_at"=>"2006-03-01", "text"=>"Livro sobre a linguagem de programação **Ruby**.\r\nO livro aborda temas como:\r\n1. Instalação\r\n2. Básico de linguagem\r\n3. Tópicos mais avançados\r\nPara conhecer o *framework* Rails, conheça o outro livro, *\"Conhecendo Rails\".", "value"=>"40.0", "person_id"=>"7", "category_ids"=>["", "1", "2"]}, "commit"=>"Atualizar Book", "id"=>"1"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:68:in `set_book'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:41:in `block in update'
+  [1m[36mCategory Load (1.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?)[0m  [["id", 1], ["id", 2]]
+  ↳ app/controllers/books_controller.rb:41:in `block in update'
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "books_categories" ON "categories"."id" = "books_categories"."category_id" WHERE "books_categories"."book_id" = ?[0m  [["book_id", 1]]
+  ↳ app/controllers/books_controller.rb:41:in `block in update'
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:41:in `block in update'
+  [1m[36mBook Update (0.1ms)[0m  [1m[33mUPDATE "books" SET "text" = ?, "updated_at" = ? WHERE "books"."id" = ?[0m  [["text", "Livro sobre a linguagem de programação **Ruby**.\r\nO livro aborda temas como:\r\n1. Instalação\r\n2. Básico de linguagem\r\n3. Tópicos mais avançados\r\nPara conhecer o *framework* Rails, conheça o outro livro, *\"Conhecendo Rails\"."], ["updated_at", "2024-04-11 13:27:21.706761"], ["id", 1]]
+  ↳ app/controllers/books_controller.rb:41:in `block in update'
+  [1m[36mTRANSACTION (5.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:41:in `block in update'
+Redirected to http://localhost:3000/books/1
+Completed 302 Found in 26ms (ActiveRecord: 7.9ms | Allocations: 7895)
+
+
+Started GET "/books/1" for ::1 at 2024-04-11 10:27:21 -0300
+Processing by BooksController#show as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:68:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/_book.html.erb (Duration: 0.1ms | Allocations: 36)
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "books_categories" ON "categories"."id" = "books_categories"."category_id" WHERE "books_categories"."book_id" = ?[0m  [["book_id", 1]]
+  ↳ app/views/books/show.html.erb:7
+  Rendered books/show.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1269)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | Allocations: 2424)
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.1ms | Allocations: 3099)
+
+
+Started GET "/book/1" for ::1 at 2024-04-11 10:27:27 -0300
+Processing by PubController#book as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pub_controller.rb:10:in `book'
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/book.html.erb within layouts/pub
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/pub/book.html.erb:3
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 1], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/book.html.erb:5
+  Rendered pub/book.html.erb within layouts/pub (Duration: 3.5ms | Allocations: 1428)
+  Rendered layout layouts/pub.html.erb (Duration: 4.9ms | Allocations: 2525)
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.2ms | Allocations: 3122)
+
+
+Started GET "/book/1" for ::1 at 2024-04-11 10:27:30 -0300
+Processing by PubController#book as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pub_controller.rb:10:in `book'
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/book.html.erb within layouts/pub
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/pub/book.html.erb:3
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 1], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/book.html.erb:5
+  Rendered pub/book.html.erb within layouts/pub (Duration: 10.7ms | Allocations: 1427)
+  Rendered layout layouts/pub.html.erb (Duration: 14.6ms | Allocations: 2519)
+Completed 200 OK in 19ms (Views: 15.1ms | ActiveRecord: 0.6ms | Allocations: 3115)
+
+
+Started GET "/" for ::1 at 2024-04-11 10:29:23 -0300
+Processing by PubController#index as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/index.html.erb within layouts/pub
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/pub/index.html.erb:4
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:3
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 1], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:5
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:3
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 2], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:5
+  Rendered collection of pub/_mini_book.html.erb [2 times] (Duration: 9.0ms | Allocations: 3407)
+  Rendered pub/index.html.erb within layouts/pub (Duration: 12.3ms | Allocations: 4214)
+  Rendered layout layouts/pub.html.erb (Duration: 14.1ms | Allocations: 5304)
+Completed 200 OK in 16ms (Views: 14.3ms | ActiveRecord: 0.5ms | Allocations: 5605)
+
+
+Started GET "/" for ::1 at 2024-04-11 10:29:27 -0300
+Processing by PubController#index as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/index.html.erb within layouts/pub
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/pub/index.html.erb:4
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:3
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 1], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:5
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:3
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 2], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:5
+  Rendered collection of pub/_mini_book.html.erb [2 times] (Duration: 11.0ms | Allocations: 3035)
+  Rendered pub/index.html.erb within layouts/pub (Duration: 14.8ms | Allocations: 3601)
+  Rendered layout layouts/pub.html.erb (Duration: 17.5ms | Allocations: 4676)
+Completed 200 OK in 19ms (Views: 17.7ms | ActiveRecord: 0.8ms | Allocations: 4909)
+
+
+Started GET "/book/1" for ::1 at 2024-04-11 10:29:29 -0300
+Processing by PubController#book as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pub_controller.rb:10:in `book'
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/book.html.erb within layouts/pub
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/pub/book.html.erb:3
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 1], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/book.html.erb:5
+  Rendered pub/book.html.erb within layouts/pub (Duration: 9.4ms | Allocations: 1427)
+  Rendered layout layouts/pub.html.erb (Duration: 13.1ms | Allocations: 2525)
+Completed 200 OK in 18ms (Views: 13.8ms | ActiveRecord: 0.6ms | Allocations: 3121)
+
+
+Started GET "/author/7-pedro" for ::1 at 2024-04-11 10:29:38 -0300
+Processing by PubController#author as HTML
+  Parameters: {"id"=>"7-pedro"}
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/pub_controller.rb:14:in `author'
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/author.html.erb within layouts/pub
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."person_id" = ?[0m  [["person_id", 7]]
+  ↳ app/views/pub/author.html.erb:4
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 1], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:5
+  Rendered collection of pub/_mini_book.html.erb [1 times] (Duration: 2.9ms | Allocations: 943)
+  Rendered pub/author.html.erb within layouts/pub (Duration: 9.1ms | Allocations: 3613)
+  Rendered layout layouts/pub.html.erb (Duration: 11.1ms | Allocations: 4696)
+Completed 200 OK in 20ms (Views: 11.6ms | ActiveRecord: 0.7ms | Allocations: 5594)
+
+
+Started GET "/book/1" for ::1 at 2024-04-11 10:29:47 -0300
+Processing by PubController#book as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (16.7ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pub_controller.rb:10:in `book'
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/book.html.erb within layouts/pub
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/pub/book.html.erb:3
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 1], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/book.html.erb:5
+  Rendered pub/book.html.erb within layouts/pub (Duration: 4.0ms | Allocations: 1427)
+  Rendered layout layouts/pub.html.erb (Duration: 6.1ms | Allocations: 2530)
+Completed 200 OK in 26ms (Views: 6.5ms | ActiveRecord: 16.9ms | Allocations: 3128)
+
+
+Started GET "/" for ::1 at 2024-04-11 10:29:49 -0300
+Processing by PubController#index as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/index.html.erb within layouts/pub
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/pub/index.html.erb:4
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:3
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 1], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:5
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:3
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 2], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:5
+  Rendered collection of pub/_mini_book.html.erb [2 times] (Duration: 13.6ms | Allocations: 3036)
+  Rendered pub/index.html.erb within layouts/pub (Duration: 17.9ms | Allocations: 3602)
+  Rendered layout layouts/pub.html.erb (Duration: 22.6ms | Allocations: 4691)
+Completed 200 OK in 25ms (Views: 23.0ms | ActiveRecord: 1.0ms | Allocations: 4924)
+
+
+Started GET "/" for ::1 at 2024-04-11 10:30:12 -0300
+Processing by PubController#index as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/index.html.erb within layouts/pub
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/pub/index.html.erb:4
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:3
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 1], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:5
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:3
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 2], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:5
+  Rendered collection of pub/_mini_book.html.erb [2 times] (Duration: 11.9ms | Allocations: 3035)
+  Rendered pub/index.html.erb within layouts/pub (Duration: 13.5ms | Allocations: 3601)
+  Rendered layout layouts/pub.html.erb (Duration: 15.5ms | Allocations: 4679)
+Completed 200 OK in 17ms (Views: 15.5ms | ActiveRecord: 0.7ms | Allocations: 4912)
+
+
+Started GET "/" for ::1 at 2024-04-11 10:32:09 -0300
+Processing by PubController#index as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/index.html.erb within layouts/pub
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/pub/index.html.erb:4
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:3
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 1], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:5
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:3
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 2], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:5
+  Rendered collection of pub/_mini_book.html.erb [2 times] (Duration: 24.8ms | Allocations: 18086)
+  Rendered pub/index.html.erb within layouts/pub (Duration: 32.7ms | Allocations: 22662)
+  Rendered layout layouts/pub.html.erb (Duration: 34.8ms | Allocations: 24042)
+Completed 200 OK in 45ms (Views: 32.4ms | ActiveRecord: 3.4ms | Allocations: 28410)
+
+
+Started GET "/" for ::1 at 2024-04-11 10:32:10 -0300
+Processing by PubController#index as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/index.html.erb within layouts/pub
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/pub/index.html.erb:4
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:3
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 1], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:5
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:3
+  [1m[36mImage Load (0.4ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 2], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:5
+  Rendered collection of pub/_mini_book.html.erb [2 times] (Duration: 9.2ms | Allocations: 2795)
+  Rendered pub/index.html.erb within layouts/pub (Duration: 10.7ms | Allocations: 3363)
+  Rendered layout layouts/pub.html.erb (Duration: 12.9ms | Allocations: 4450)
+Completed 200 OK in 14ms (Views: 12.7ms | ActiveRecord: 0.7ms | Allocations: 4683)
+
+
+Started GET "/" for ::1 at 2024-04-11 10:32:10 -0300
+Processing by PubController#index as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/index.html.erb within layouts/pub
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/pub/index.html.erb:4
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:3
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 1], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:5
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:3
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 2], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:5
+  Rendered collection of pub/_mini_book.html.erb [2 times] (Duration: 14.9ms | Allocations: 2794)
+  Rendered pub/index.html.erb within layouts/pub (Duration: 17.9ms | Allocations: 3360)
+  Rendered layout layouts/pub.html.erb (Duration: 20.4ms | Allocations: 4450)
+Completed 200 OK in 22ms (Views: 20.5ms | ActiveRecord: 0.8ms | Allocations: 4683)
+
+
+Started GET "/" for ::1 at 2024-04-11 10:32:10 -0300
+Processing by PubController#index as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/index.html.erb within layouts/pub
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/pub/index.html.erb:4
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:3
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 1], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:5
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:3
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 2], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:5
+  Rendered collection of pub/_mini_book.html.erb [2 times] (Duration: 21.8ms | Allocations: 2794)
+  Rendered pub/index.html.erb within layouts/pub (Duration: 25.7ms | Allocations: 3360)
+  Rendered layout layouts/pub.html.erb (Duration: 29.3ms | Allocations: 4465)
+Completed 200 OK in 31ms (Views: 29.1ms | ActiveRecord: 1.2ms | Allocations: 4698)
+
+
+Started GET "/" for ::1 at 2024-04-11 10:32:10 -0300
+Processing by PubController#index as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/index.html.erb within layouts/pub
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/pub/index.html.erb:4
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:3
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 1], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:5
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:3
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 2], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:5
+  Rendered collection of pub/_mini_book.html.erb [2 times] (Duration: 10.6ms | Allocations: 2797)
+  Rendered pub/index.html.erb within layouts/pub (Duration: 14.3ms | Allocations: 3363)
+  Rendered layout layouts/pub.html.erb (Duration: 17.3ms | Allocations: 4474)
+Completed 200 OK in 19ms (Views: 17.7ms | ActiveRecord: 0.7ms | Allocations: 4707)
+
+
+Started GET "/book/1" for ::1 at 2024-04-11 10:32:12 -0300
+Processing by PubController#book as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pub_controller.rb:10:in `book'
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/book.html.erb within layouts/pub
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/pub/book.html.erb:3
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 1], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/book.html.erb:5
+  Rendered pub/book.html.erb within layouts/pub (Duration: 4.6ms | Allocations: 1633)
+  Rendered layout layouts/pub.html.erb (Duration: 6.4ms | Allocations: 2719)
+Completed 200 OK in 10ms (Views: 6.7ms | ActiveRecord: 0.5ms | Allocations: 4764)
+
+
+Started GET "/books/1" for ::1 at 2024-04-11 10:32:14 -0300
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:68:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/_book.html.erb (Duration: 0.6ms | Allocations: 255)
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "books_categories" ON "categories"."id" = "books_categories"."category_id" WHERE "books_categories"."book_id" = ?[0m  [["book_id", 1]]
+  ↳ app/views/books/show.html.erb:7
+  Rendered books/show.html.erb within layouts/application (Duration: 19.6ms | Allocations: 14211)
+  Rendered layout layouts/application.html.erb (Duration: 36.9ms | Allocations: 29078)
+Completed 200 OK in 57ms (Views: 51.5ms | ActiveRecord: 0.9ms | Allocations: 30093)
+
+
+Started GET "/books/1" for ::1 at 2024-04-11 10:32:14 -0300
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:68:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/_book.html.erb (Duration: 0.1ms | Allocations: 36)
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "books_categories" ON "categories"."id" = "books_categories"."category_id" WHERE "books_categories"."book_id" = ?[0m  [["book_id", 1]]
+  ↳ app/views/books/show.html.erb:7
+  Rendered books/show.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1201)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | Allocations: 2354)
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.1ms | Allocations: 2979)
+
+
+Started GET "/books/1/edit" for ::1 at 2024-04-11 10:32:15 -0300
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:68:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/edit.html.erb within layouts/application
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 1], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/models/concerns/image_saver.rb:10:in `image_title'
+  Rendered application/_image_fields.html.erb (Duration: 2.7ms | Allocations: 1046)
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/books/_form.html.erb:44
+  [1m[36mCategory Pluck (0.1ms)[0m  [1m[34mSELECT "categories"."id" FROM "categories" INNER JOIN "books_categories" ON "categories"."id" = "books_categories"."category_id" WHERE "books_categories"."book_id" = ?[0m  [["book_id", 1]]
+  ↳ app/views/books/_form.html.erb:46
+  Rendered books/_form.html.erb (Duration: 10.0ms | Allocations: 4716)
+  Rendered books/edit.html.erb within layouts/application (Duration: 11.7ms | Allocations: 5033)
+  Rendered layout layouts/application.html.erb (Duration: 13.3ms | Allocations: 6185)
+Completed 200 OK in 16ms (Views: 13.7ms | ActiveRecord: 0.4ms | Allocations: 6889)
+
+
+Started GET "/books" for ::1 at 2024-04-11 10:32:18 -0300
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:6
+  Rendered books/_book.html.erb (Duration: 0.1ms | Allocations: 36)
+  Rendered books/_book.html.erb (Duration: 0.1ms | Allocations: 33)
+  Rendered books/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1158)
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | Allocations: 2315)
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.1ms | Allocations: 2669)
+
+
+Started GET "/" for ::1 at 2024-04-11 10:32:22 -0300
+Processing by PubController#index as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/index.html.erb within layouts/pub
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/pub/index.html.erb:4
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:3
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 1], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:5
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:3
+  [1m[36mImage Load (0.0ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 2], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:5
+  Rendered collection of pub/_mini_book.html.erb [2 times] (Duration: 6.0ms | Allocations: 2796)
+  Rendered pub/index.html.erb within layouts/pub (Duration: 7.1ms | Allocations: 3362)
+  Rendered layout layouts/pub.html.erb (Duration: 8.6ms | Allocations: 4459)
+Completed 200 OK in 9ms (Views: 8.7ms | ActiveRecord: 0.3ms | Allocations: 4692)
+
+
+Started GET "/" for ::1 at 2024-04-11 10:32:30 -0300
+Processing by PubController#index as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/index.html.erb within layouts/pub
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/pub/index.html.erb:4
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:3
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 1], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:5
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:3
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 2], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:5
+  Rendered collection of pub/_mini_book.html.erb [2 times] (Duration: 6.8ms | Allocations: 2794)
+  Rendered pub/index.html.erb within layouts/pub (Duration: 8.8ms | Allocations: 3360)
+  Rendered layout layouts/pub.html.erb (Duration: 10.6ms | Allocations: 4456)
+Completed 200 OK in 12ms (Views: 10.9ms | ActiveRecord: 0.4ms | Allocations: 4689)
+
+
+Started GET "/" for ::1 at 2024-04-11 10:32:30 -0300
+Processing by PubController#index as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/index.html.erb within layouts/pub
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/pub/index.html.erb:4
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:3
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 1], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:5
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:3
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 2], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:5
+  Rendered collection of pub/_mini_book.html.erb [2 times] (Duration: 15.2ms | Allocations: 2795)
+  Rendered pub/index.html.erb within layouts/pub (Duration: 18.8ms | Allocations: 3361)
+  Rendered layout layouts/pub.html.erb (Duration: 30.3ms | Allocations: 4468)
+Completed 200 OK in 33ms (Views: 30.5ms | ActiveRecord: 0.9ms | Allocations: 4702)
+
+
+Started GET "/" for ::1 at 2024-04-11 10:32:30 -0300
+Processing by PubController#index as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/index.html.erb within layouts/pub
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/pub/index.html.erb:4
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:3
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 1], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:5
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:3
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 2], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:5
+  Rendered collection of pub/_mini_book.html.erb [2 times] (Duration: 12.9ms | Allocations: 2794)
+  Rendered pub/index.html.erb within layouts/pub (Duration: 15.4ms | Allocations: 3360)
+  Rendered layout layouts/pub.html.erb (Duration: 18.0ms | Allocations: 4459)
+Completed 200 OK in 20ms (Views: 18.4ms | ActiveRecord: 0.6ms | Allocations: 4692)
+
+
+Started GET "/" for ::1 at 2024-04-11 10:32:31 -0300
+Processing by PubController#index as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/index.html.erb within layouts/pub
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/pub/index.html.erb:4
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:3
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 1], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:5
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:3
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 2], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:5
+  Rendered collection of pub/_mini_book.html.erb [2 times] (Duration: 15.1ms | Allocations: 2794)
+  Rendered pub/index.html.erb within layouts/pub (Duration: 19.7ms | Allocations: 3360)
+  Rendered layout layouts/pub.html.erb (Duration: 23.5ms | Allocations: 4479)
+Completed 200 OK in 26ms (Views: 23.6ms | ActiveRecord: 0.9ms | Allocations: 4712)
+
+
+Started GET "/book/1" for ::1 at 2024-04-11 10:33:07 -0300
+Processing by PubController#book as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pub_controller.rb:10:in `book'
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/book.html.erb within layouts/pub
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/pub/book.html.erb:3
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 1], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/book.html.erb:5
+  Rendered pub/book.html.erb within layouts/pub (Duration: 9.5ms | Allocations: 1428)
+  Rendered layout layouts/pub.html.erb (Duration: 12.3ms | Allocations: 2520)
+Completed 200 OK in 17ms (Views: 12.9ms | ActiveRecord: 0.6ms | Allocations: 3116)
+
+
+Started GET "/author/7-pedro" for ::1 at 2024-04-11 10:33:09 -0300
+Processing by PubController#author as HTML
+  Parameters: {"id"=>"7-pedro"}
+  [1m[36mPerson Load (0.4ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/pub_controller.rb:14:in `author'
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/author.html.erb within layouts/pub
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."person_id" = ?[0m  [["person_id", 7]]
+  ↳ app/views/pub/author.html.erb:4
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 1], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:5
+  Rendered collection of pub/_mini_book.html.erb [1 times] (Duration: 3.7ms | Allocations: 814)
+  Rendered pub/author.html.erb within layouts/pub (Duration: 12.1ms | Allocations: 3418)
+  Rendered layout layouts/pub.html.erb (Duration: 15.1ms | Allocations: 4502)
+Completed 200 OK in 24ms (Views: 16.1ms | ActiveRecord: 0.7ms | Allocations: 5388)
+
+
+Started GET "/" for ::1 at 2024-04-11 10:33:13 -0300
+Processing by PubController#index as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/index.html.erb within layouts/pub
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/pub/index.html.erb:4
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:3
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 1], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:5
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:3
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 2], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:5
+  Rendered collection of pub/_mini_book.html.erb [2 times] (Duration: 9.8ms | Allocations: 2794)
+  Rendered pub/index.html.erb within layouts/pub (Duration: 12.3ms | Allocations: 3360)
+  Rendered layout layouts/pub.html.erb (Duration: 14.5ms | Allocations: 4439)
+Completed 200 OK in 16ms (Views: 14.6ms | ActiveRecord: 0.5ms | Allocations: 4673)
+
+
+Started GET "/" for ::1 at 2024-04-11 10:34:02 -0300
+Processing by PubController#index as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/index.html.erb within layouts/pub
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/pub/index.html.erb:4
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:3
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 1], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:5
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:3
+  [1m[36mImage Load (0.0ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 2], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:5
+  Rendered collection of pub/_mini_book.html.erb [2 times] (Duration: 21.7ms | Allocations: 18072)
+  Rendered pub/index.html.erb within layouts/pub (Duration: 29.6ms | Allocations: 22642)
+  Rendered layout layouts/pub.html.erb (Duration: 35.0ms | Allocations: 25491)
+Completed 200 OK in 42ms (Views: 32.5ms | ActiveRecord: 3.6ms | Allocations: 29852)
+
+
+Started GET "/book/1" for ::1 at 2024-04-11 10:34:03 -0300
+Processing by PubController#book as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pub_controller.rb:10:in `book'
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/book.html.erb within layouts/pub
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/pub/book.html.erb:3
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 1], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/book.html.erb:5
+  Rendered pub/book.html.erb within layouts/pub (Duration: 5.9ms | Allocations: 1637)
+  Rendered layout layouts/pub.html.erb (Duration: 9.4ms | Allocations: 2769)
+Completed 200 OK in 14ms (Views: 9.6ms | ActiveRecord: 0.6ms | Allocations: 4819)
+
+
+Started GET "/book/1" for ::1 at 2024-04-11 10:34:04 -0300
+Processing by PubController#book as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pub_controller.rb:10:in `book'
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/book.html.erb within layouts/pub
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/pub/book.html.erb:3
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 1], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/book.html.erb:5
+  Rendered pub/book.html.erb within layouts/pub (Duration: 10.0ms | Allocations: 1427)
+  Rendered layout layouts/pub.html.erb (Duration: 17.7ms | Allocations: 2519)
+Completed 200 OK in 22ms (Views: 18.3ms | ActiveRecord: 0.6ms | Allocations: 3115)
+
+
+Started GET "/book/1" for ::1 at 2024-04-11 10:34:04 -0300
+Processing by PubController#book as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pub_controller.rb:10:in `book'
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/book.html.erb within layouts/pub
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/pub/book.html.erb:3
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 1], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/book.html.erb:5
+  Rendered pub/book.html.erb within layouts/pub (Duration: 12.6ms | Allocations: 1427)
+  Rendered layout layouts/pub.html.erb (Duration: 16.9ms | Allocations: 2522)
+Completed 200 OK in 21ms (Views: 17.4ms | ActiveRecord: 0.7ms | Allocations: 3118)
+
+
+Started GET "/book/1" for ::1 at 2024-04-11 10:34:04 -0300
+Processing by PubController#book as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pub_controller.rb:10:in `book'
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/book.html.erb within layouts/pub
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/pub/book.html.erb:3
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 1], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/book.html.erb:5
+  Rendered pub/book.html.erb within layouts/pub (Duration: 9.5ms | Allocations: 1427)
+  Rendered layout layouts/pub.html.erb (Duration: 13.8ms | Allocations: 2510)
+Completed 200 OK in 19ms (Views: 14.6ms | ActiveRecord: 0.7ms | Allocations: 3109)
+
+
+Started GET "/book/1" for ::1 at 2024-04-11 10:34:04 -0300
+Processing by PubController#book as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pub_controller.rb:10:in `book'
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/book.html.erb within layouts/pub
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/pub/book.html.erb:3
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 1], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/book.html.erb:5
+  Rendered pub/book.html.erb within layouts/pub (Duration: 8.7ms | Allocations: 1427)
+  Rendered layout layouts/pub.html.erb (Duration: 11.7ms | Allocations: 2522)
+Completed 200 OK in 17ms (Views: 12.8ms | ActiveRecord: 0.6ms | Allocations: 3119)
+
+
+Started GET "/book/1" for ::1 at 2024-04-11 10:34:53 -0300
+Processing by PubController#book as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pub_controller.rb:10:in `book'
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/book.html.erb within layouts/pub
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/pub/book.html.erb:3
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 1], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/book.html.erb:5
+  Rendered pub/book.html.erb within layouts/pub (Duration: 21.6ms | Allocations: 15858)
+  Rendered layout layouts/pub.html.erb (Duration: 23.8ms | Allocations: 17270)
+Completed 200 OK in 37ms (Views: 24.4ms | ActiveRecord: 2.3ms | Allocations: 27075)
+
+
+Started GET "/book/1" for ::1 at 2024-04-11 10:35:03 -0300
+Processing by PubController#book as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pub_controller.rb:10:in `book'
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/book.html.erb within layouts/pub
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/pub/book.html.erb:3
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 1], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/book.html.erb:5
+  Rendered pub/book.html.erb within layouts/pub (Duration: 4.4ms | Allocations: 1429)
+  Rendered layout layouts/pub.html.erb (Duration: 6.6ms | Allocations: 2515)
+Completed 200 OK in 10ms (Views: 7.0ms | ActiveRecord: 0.3ms | Allocations: 3112)
+
+

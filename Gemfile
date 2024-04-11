@@ -31,6 +31,7 @@ gem 'responders'
 gem 'bcrypt'
 gem 'htmlbeautifier'
 gem 'mini_magick'
+gem 'redcarpet'
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"

@@ -3,7 +3,7 @@
   <h2> <%= link_to @book.person.name, pub_author_path(@book.person) %> </h2>
 
   <%= image_tag(@book.image) %>
-  <%= simple_format(@book.text) %>
+  <%= markdown(@book.text) %>
 
   <span class="book_value" >
     <%= number_to_currency(@book.value) %>
