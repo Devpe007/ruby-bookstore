@@ -1,0 +1,9 @@
+<li id="item_<%= cart_item[:id] %>" >
+  <%= image_tag(cart_item[:item].image, height: 100) %>
+
+  <%= cart_item[:item].title %><br/>
+
+  <%= text_field_tag :qty, cart_item[:qty], size: 3, readonly: 'readonly' %>
+
+  <span class="book_value" > <%= number_to_currency(cart_item[:item].value) %> </span>
+</li>

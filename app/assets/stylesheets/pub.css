@@ -109,3 +109,33 @@ footer {
 #book_detail img {
   height: 200px;
 }
+
+#cart_items {
+  padding: 0;
+
+  list-style-type: none;
+}
+
+#cart_items li {
+  height: 100px;
+}
+
+#cart_items li img {
+  margin-right: 1em;
+
+  float: left;
+}
+
+#cart_items li span.book_value {
+  margin-top: 1em;
+
+  font-size: 1em;
+}
+
+a.remove_book {
+  text-decoration: none;
+
+  font-weight: bold;
+
+  color: red;
+}

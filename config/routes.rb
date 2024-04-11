@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   get 'author/:id' => 'pub#author', as: 'pub_author'
   get 'buy/:id' => 'pub#buy', as: 'buy'
 
+  get 'cart' => 'pub#cart', as: 'cart'
+
   namespace :admin do
     resources :people
   end
