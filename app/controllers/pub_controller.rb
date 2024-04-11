@@ -9,4 +9,9 @@ class PubController < ApplicationController
   def book
     @book = Book.find(params[:id])
   end
+
+  def author
+    @author = Person.find(params[:id])
+  end
+
 end
