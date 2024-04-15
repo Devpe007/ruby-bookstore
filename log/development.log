@@ -27079,3 +27079,2129 @@ Processing by PubController#index as HTML
 Completed 200 OK in 40ms (Views: 17.7ms | ActiveRecord: 21.5ms | Allocations: 4759)
 
 
+Started GET "/book/2" for ::1 at 2024-04-15 14:50:13 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PubController#book as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/pub_controller.rb:12:in `book'
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/book.html.erb within layouts/pub
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/pub/book.html.erb:3
+  [1m[36mImage Load (0.9ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 2], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/book.html.erb:5
+  Rendered pub/book.html.erb within layouts/pub (Duration: 85.9ms | Allocations: 26231)
+  Rendered layout layouts/pub.html.erb (Duration: 156.5ms | Allocations: 52992)
+Completed 200 OK in 223ms (Views: 156.9ms | ActiveRecord: 4.7ms | Allocations: 83674)
+
+
+Started GET "/buy/2" for ::1 at 2024-04-15 14:50:16 -0300
+Processing by PubController#buy as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/pub_controller.rb:24:in `buy'
+Redirected to http://localhost:3000/cart
+Completed 302 Found in 9ms (ActiveRecord: 0.6ms | Allocations: 1748)
+
+
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::SessionStore::Session Update (3.1ms)[0m  [1m[33mUPDATE "sessions" SET "data" = ?, "updated_at" = ? WHERE "sessions"."id" = ?[0m  [["data", "BAh7CkkiEF9jc3JmX3Rva2VuBjoGRUZJIjBrQXFaRDA4RTlrcmNBbEZNLUQw\nZ2JlRXZfQXl5UTZISGVDTEhMQzFYcnljBjsARkkiCWNhcnQGOwBGbzoJQ2Fy\ndAY6C0BpdGVtc30GaQdpBmkASSIHaWQGOwBGaQxJIgluYW1lBjsARkkiClBl\nZHJvBjsAVEkiCmFkbWluBjsARlQ=\n"], ["updated_at", "2024-04-15 17:50:16.532564"], ["id", 5]]
+  [1m[36mTRANSACTION (7.8ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/cart" for ::1 at 2024-04-15 14:50:16 -0300
+Processing by PubController#cart as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/cart.html.erb within layouts/pub
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/services/cart.rb:35:in `block in items'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 2], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/_cart_item.html.erb:2
+  Rendered collection of pub/_cart_item.html.erb [1 times] (Duration: 2.8ms | Allocations: 1204)
+  [1m[36mCACHE Book Load (0.0ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/services/cart.rb:22:in `block in total'
+  Rendered pub/cart.html.erb within layouts/pub (Duration: 5.4ms | Allocations: 2436)
+  Rendered layout layouts/pub.html.erb (Duration: 6.9ms | Allocations: 3340)
+Completed 200 OK in 9ms (Views: 7.1ms | ActiveRecord: 0.3ms | Allocations: 3884)
+
+
+Started GET "/close" for ::1 at 2024-04-15 14:50:18 -0300
+Processing by PubController#close_order as HTML
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.2ms | Allocations: 2361)
+
+
+
+SyntaxError - syntax error, unexpected `end':
+  app/models/order.rb:39:in `'
+  app/controllers/pub_controller.rb:51:in `close_order'
+
+Started POST "/__better_errors/4e20c93988046b60/variables" for ::1 at 2024-04-15 14:50:18 -0300
+Started GET "/close" for ::1 at 2024-04-15 14:50:47 -0300
+Processing by PubController#close_order as HTML
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/services/cart.rb:35:in `block in items'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/order.rb:17:in `block in create_by_cart'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/order.rb:16:in `create_by_cart'
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 2.7ms | Allocations: 17203)
+
+
+
+NoMethodError - undefined method `realod' for an instance of Book:
+  app/models/order.rb:20:in `block (2 levels) in create_by_cart'
+  app/models/order.rb:19:in `block in create_by_cart'
+  app/models/order.rb:16:in `create_by_cart'
+  app/controllers/pub_controller.rb:51:in `close_order'
+
+Started POST "/__better_errors/ef3dfd92478e8458/variables" for ::1 at 2024-04-15 14:50:48 -0300
+Started GET "/close" for ::1 at 2024-04-15 14:51:32 -0300
+Processing by PubController#close_order as HTML
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/services/cart.rb:35:in `block in items'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/order.rb:17:in `block in create_by_cart'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/order.rb:16:in `create_by_cart'
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 3.4ms | Allocations: 17932)
+
+
+
+NameError - uninitialized constant Order::Exeception:
+  app/models/order.rb:34:in `rescue in create_by_cart'
+  app/models/order.rb:15:in `create_by_cart'
+  app/controllers/pub_controller.rb:51:in `close_order'
+
+Started POST "/__better_errors/85cf0d49d8464af8/variables" for ::1 at 2024-04-15 14:51:32 -0300
+Started GET "/close" for ::1 at 2024-04-15 14:51:34 -0300
+Processing by PubController#close_order as HTML
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/services/cart.rb:35:in `block in items'
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.4ms | Allocations: 2542)
+
+
+
+NameError - uninitialized constant Order::Exeception:
+  app/models/order.rb:34:in `rescue in create_by_cart'
+  app/models/order.rb:15:in `create_by_cart'
+  app/controllers/pub_controller.rb:51:in `close_order'
+
+Started POST "/__better_errors/6c6a6cf2aeb760f2/variables" for ::1 at 2024-04-15 14:51:34 -0300
+Started GET "/close" for ::1 at 2024-04-15 14:51:49 -0300
+Processing by PubController#close_order as HTML
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/services/cart.rb:35:in `block in items'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/order.rb:17:in `block in create_by_cart'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/order.rb:16:in `create_by_cart'
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 2.9ms | Allocations: 17981)
+
+
+
+NameError - uninitialized constant Order::Exeception:
+  app/models/order.rb:34:in `rescue in create_by_cart'
+  app/models/order.rb:15:in `create_by_cart'
+  app/controllers/pub_controller.rb:51:in `close_order'
+
+Started POST "/__better_errors/074ee65132391226/variables" for ::1 at 2024-04-15 14:51:49 -0300
+Started GET "/close" for ::1 at 2024-04-15 14:51:50 -0300
+Processing by PubController#close_order as HTML
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/services/cart.rb:35:in `block in items'
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.5ms | Allocations: 2542)
+
+
+
+NameError - uninitialized constant Order::Exeception:
+  app/models/order.rb:34:in `rescue in create_by_cart'
+  app/models/order.rb:15:in `create_by_cart'
+  app/controllers/pub_controller.rb:51:in `close_order'
+
+Started POST "/__better_errors/9eb8799948a31813/variables" for ::1 at 2024-04-15 14:51:50 -0300
+Started POST "/__better_errors/9eb8799948a31813/variables" for ::1 at 2024-04-15 14:51:51 -0300
+Started POST "/__better_errors/9eb8799948a31813/variables" for ::1 at 2024-04-15 14:51:53 -0300
+Started GET "/close" for ::1 at 2024-04-15 14:52:15 -0300
+Processing by PubController#close_order as HTML
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 1.4ms | Allocations: 2722)
+
+
+
+SyntaxError - syntax error, unexpected `end':
+  app/models/order.rb:39:in `'
+  app/controllers/pub_controller.rb:51:in `close_order'
+
+Started POST "/__better_errors/bc7189ebfa60ef7f/variables" for ::1 at 2024-04-15 14:52:16 -0300
+Started GET "/close" for ::1 at 2024-04-15 14:52:18 -0300
+Processing by PubController#close_order as HTML
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.3ms | Allocations: 2324)
+
+
+
+SyntaxError - syntax error, unexpected `end':
+  app/models/order.rb:39:in `'
+  app/controllers/pub_controller.rb:51:in `close_order'
+
+Started POST "/__better_errors/3060bfa90c80ef3e/variables" for ::1 at 2024-04-15 14:52:18 -0300
+Started GET "/close" for ::1 at 2024-04-15 14:52:30 -0300
+Processing by PubController#close_order as HTML
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/services/cart.rb:35:in `block in items'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/order.rb:17:in `block in create_by_cart'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/order.rb:16:in `create_by_cart'
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 2.6ms | Allocations: 17983)
+
+
+
+NameError - uninitialized constant Order::Exeception:
+  app/models/order.rb:34:in `rescue in create_by_cart'
+  app/models/order.rb:15:in `create_by_cart'
+  app/controllers/pub_controller.rb:51:in `close_order'
+
+Started POST "/__better_errors/2cc8e58e537d992e/variables" for ::1 at 2024-04-15 14:52:30 -0300
+Started GET "/close" for ::1 at 2024-04-15 14:52:31 -0300
+Processing by PubController#close_order as HTML
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/services/cart.rb:35:in `block in items'
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.4ms | Allocations: 2542)
+
+
+
+NameError - uninitialized constant Order::Exeception:
+  app/models/order.rb:34:in `rescue in create_by_cart'
+  app/models/order.rb:15:in `create_by_cart'
+  app/controllers/pub_controller.rb:51:in `close_order'
+
+Started POST "/__better_errors/dd4d9569de137880/variables" for ::1 at 2024-04-15 14:52:31 -0300
+Started GET "/close" for ::1 at 2024-04-15 14:53:25 -0300
+Processing by PubController#close_order as HTML
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/services/cart.rb:35:in `block in items'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/order.rb:17:in `block in create_by_cart'
+  [1m[36mBook Load (0.0ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/order.rb:20:in `block (2 levels) in create_by_cart'
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/models/book.rb:28:in `sell'
+  [1m[36mBook Update (0.1ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "stock" = ?, "lock_version" = ? WHERE "books"."id" = ? AND "books"."lock_version" = ?[0m  [["updated_at", "2024-04-15 17:53:25.258958"], ["stock", 3], ["lock_version", 2], ["id", 2], ["lock_version", 1]]
+  ↳ app/models/book.rb:28:in `sell'
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/models/order.rb:30:in `block in create_by_cart'
+  [1m[36mOrder Create (0.1ms)[0m  [1m[32mINSERT INTO "orders" ("person_id", "created_at", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["person_id", 7], ["created_at", "2024-04-15 17:53:25.281096"], ["updated_at", "2024-04-15 17:53:25.281096"]]
+  ↳ app/models/order.rb:30:in `block in create_by_cart'
+  [1m[36mOrderItem Create (0.1ms)[0m  [1m[32mINSERT INTO "order_items" ("order_id", "book_id", "quantity", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["order_id", 3], ["book_id", 2], ["quantity", 1], ["value", 50.0], ["created_at", "2024-04-15 17:53:25.282699"], ["updated_at", "2024-04-15 17:53:25.282699"]]
+  ↳ app/models/order.rb:30:in `block in create_by_cart'
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/order.rb:16:in `create_by_cart'
+Completed 500 Internal Server Error in 93ms (ActiveRecord: 5.6ms | Allocations: 55909)
+
+
+
+NoMethodError - undefined method `smtp_settiongs=' for class ActionMailer::Base:
+  app/mailers/application_mailer.rb:1:in `<main>'
+  app/mailers/order_mailer.rb:1:in `<main>'
+  app/controllers/pub_controller.rb:62:in `close_order'
+
+Started POST "/__better_errors/f3ac62ce8f62472a/variables" for ::1 at 2024-04-15 14:53:25 -0300
+Started GET "/close" for ::1 at 2024-04-15 14:53:55 -0300
+Processing by PubController#close_order as HTML
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/services/cart.rb:35:in `block in items'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/order.rb:17:in `block in create_by_cart'
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/order.rb:20:in `block (2 levels) in create_by_cart'
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/models/book.rb:28:in `sell'
+  [1m[36mBook Update (0.3ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "stock" = ?, "lock_version" = ? WHERE "books"."id" = ? AND "books"."lock_version" = ?[0m  [["updated_at", "2024-04-15 17:53:55.136015"], ["stock", 2], ["lock_version", 3], ["id", 2], ["lock_version", 2]]
+  ↳ app/models/book.rb:28:in `sell'
+  [1m[36mPerson Load (0.0ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/models/order.rb:30:in `block in create_by_cart'
+  [1m[36mOrder Create (0.1ms)[0m  [1m[32mINSERT INTO "orders" ("person_id", "created_at", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["person_id", 7], ["created_at", "2024-04-15 17:53:55.148648"], ["updated_at", "2024-04-15 17:53:55.148648"]]
+  ↳ app/models/order.rb:30:in `block in create_by_cart'
+  [1m[36mOrderItem Create (0.1ms)[0m  [1m[32mINSERT INTO "order_items" ("order_id", "book_id", "quantity", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["order_id", 4], ["book_id", 2], ["quantity", 1], ["value", 50.0], ["created_at", "2024-04-15 17:53:55.149987"], ["updated_at", "2024-04-15 17:53:55.149987"]]
+  ↳ app/models/order.rb:30:in `block in create_by_cart'
+  [1m[36mTRANSACTION (5.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/order.rb:16:in `create_by_cart'
+Completed 500 Internal Server Error in 73ms (ActiveRecord: 9.4ms | Allocations: 41422)
+
+
+
+NoMethodError - undefined method `smtp_settiongs=' for class ActionMailer::Base:
+  app/mailers/application_mailer.rb:1:in `<main>'
+  app/mailers/order_mailer.rb:1:in `<main>'
+  app/controllers/pub_controller.rb:62:in `close_order'
+
+Started POST "/__better_errors/d8c06cec08df0a79/variables" for ::1 at 2024-04-15 14:53:55 -0300
+Started POST "/__better_errors/d8c06cec08df0a79/variables" for ::1 at 2024-04-15 14:54:00 -0300
+Started POST "/__better_errors/d8c06cec08df0a79/variables" for ::1 at 2024-04-15 14:54:32 -0300
+Started GET "/cart" for ::1 at 2024-04-15 14:58:11 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PubController#cart as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/cart.html.erb within layouts/pub
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/services/cart.rb:35:in `block in items'
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 2], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/_cart_item.html.erb:2
+  Rendered collection of pub/_cart_item.html.erb [1 times] (Duration: 48.5ms | Allocations: 13037)
+  [1m[36mCACHE Book Load (0.0ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/services/cart.rb:22:in `block in total'
+  Rendered pub/cart.html.erb within layouts/pub (Duration: 87.1ms | Allocations: 32055)
+  Rendered layout layouts/pub.html.erb (Duration: 177.6ms | Allocations: 53648)
+Completed 200 OK in 224ms (Views: 180.6ms | ActiveRecord: 2.9ms | Allocations: 72534)
+
+
+Started GET "/close" for ::1 at 2024-04-15 14:58:14 -0300
+Processing by PubController#close_order as HTML
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/services/cart.rb:35:in `block in items'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/order.rb:17:in `block in create_by_cart'
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/order.rb:20:in `block (2 levels) in create_by_cart'
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/models/book.rb:28:in `sell'
+  [1m[36mBook Update (0.1ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "stock" = ?, "lock_version" = ? WHERE "books"."id" = ? AND "books"."lock_version" = ?[0m  [["updated_at", "2024-04-15 17:58:14.303410"], ["stock", 1], ["lock_version", 4], ["id", 2], ["lock_version", 3]]
+  ↳ app/models/book.rb:28:in `sell'
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/models/order.rb:30:in `block in create_by_cart'
+  [1m[36mOrder Create (0.2ms)[0m  [1m[32mINSERT INTO "orders" ("person_id", "created_at", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["person_id", 7], ["created_at", "2024-04-15 17:58:14.324543"], ["updated_at", "2024-04-15 17:58:14.324543"]]
+  ↳ app/models/order.rb:30:in `block in create_by_cart'
+  [1m[36mOrderItem Create (0.2ms)[0m  [1m[32mINSERT INTO "order_items" ("order_id", "book_id", "quantity", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["order_id", 5], ["book_id", 2], ["quantity", 1], ["value", 50.0], ["created_at", "2024-04-15 17:58:14.326303"], ["updated_at", "2024-04-15 17:58:14.326303"]]
+  ↳ app/models/order.rb:30:in `block in create_by_cart'
+  [1m[36mTRANSACTION (5.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/order.rb:16:in `create_by_cart'
+Completed 500 Internal Server Error in 115ms (ActiveRecord: 11.4ms | Allocations: 51460)
+
+
+
+NoMethodError - undefined method `smtp_settiongs=' for class ActionMailer::Base:
+  app/mailers/application_mailer.rb:1:in `<main>'
+  app/mailers/order_mailer.rb:1:in `<main>'
+  app/controllers/pub_controller.rb:62:in `close_order'
+
+Started POST "/__better_errors/2edd6aa2545209d0/variables" for ::1 at 2024-04-15 14:58:14 -0300
+Started GET "/close" for ::1 at 2024-04-15 14:59:27 -0300
+Processing by PubController#close_order as HTML
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/services/cart.rb:35:in `block in items'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/order.rb:17:in `block in create_by_cart'
+  [1m[36mBook Load (0.0ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/order.rb:20:in `block (2 levels) in create_by_cart'
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/models/book.rb:28:in `sell'
+  [1m[36mBook Update (0.1ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "stock" = ?, "lock_version" = ? WHERE "books"."id" = ? AND "books"."lock_version" = ?[0m  [["updated_at", "2024-04-15 17:59:27.709456"], ["stock", 0], ["lock_version", 5], ["id", 2], ["lock_version", 4]]
+  ↳ app/models/book.rb:28:in `sell'
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/models/order.rb:30:in `block in create_by_cart'
+  [1m[36mOrder Create (0.2ms)[0m  [1m[32mINSERT INTO "orders" ("person_id", "created_at", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["person_id", 7], ["created_at", "2024-04-15 17:59:27.721003"], ["updated_at", "2024-04-15 17:59:27.721003"]]
+  ↳ app/models/order.rb:30:in `block in create_by_cart'
+  [1m[36mOrderItem Create (0.1ms)[0m  [1m[32mINSERT INTO "order_items" ("order_id", "book_id", "quantity", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["order_id", 6], ["book_id", 2], ["quantity", 1], ["value", 50.0], ["created_at", "2024-04-15 17:59:27.722384"], ["updated_at", "2024-04-15 17:59:27.722384"]]
+  ↳ app/models/order.rb:30:in `block in create_by_cart'
+  [1m[36mTRANSACTION (4.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/order.rb:16:in `create_by_cart'
+Completed 500 Internal Server Error in 61ms (ActiveRecord: 9.4ms | Allocations: 41342)
+
+
+
+NoMethodError - undefined method `smtp_settiongs=' for class ActionMailer::Base:
+  app/mailers/application_mailer.rb:1:in `<main>'
+  app/mailers/order_mailer.rb:1:in `<main>'
+  app/controllers/pub_controller.rb:62:in `close_order'
+
+Started POST "/__better_errors/b74c63256f7120c0/variables" for ::1 at 2024-04-15 14:59:27 -0300
+Started GET "/cart" for ::1 at 2024-04-15 14:59:29 -0300
+Processing by PubController#cart as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/cart.html.erb within layouts/pub
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/services/cart.rb:35:in `block in items'
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 2], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/_cart_item.html.erb:2
+  Rendered collection of pub/_cart_item.html.erb [1 times] (Duration: 17.1ms | Allocations: 8766)
+  [1m[36mCACHE Book Load (0.0ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/services/cart.rb:22:in `block in total'
+  Rendered pub/cart.html.erb within layouts/pub (Duration: 23.7ms | Allocations: 9935)
+  Rendered layout layouts/pub.html.erb (Duration: 26.0ms | Allocations: 11108)
+Completed 200 OK in 36ms (Views: 29.0ms | ActiveRecord: 1.3ms | Allocations: 12183)
+
+
+Started GET "/cart" for ::1 at 2024-04-15 14:59:29 -0300
+Processing by PubController#cart as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/cart.html.erb within layouts/pub
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/services/cart.rb:35:in `block in items'
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 2], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/_cart_item.html.erb:2
+  Rendered collection of pub/_cart_item.html.erb [1 times] (Duration: 6.5ms | Allocations: 905)
+  [1m[36mCACHE Book Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/services/cart.rb:22:in `block in total'
+  Rendered pub/cart.html.erb within layouts/pub (Duration: 14.2ms | Allocations: 1802)
+  Rendered layout layouts/pub.html.erb (Duration: 17.7ms | Allocations: 2706)
+Completed 200 OK in 22ms (Views: 18.7ms | ActiveRecord: 0.7ms | Allocations: 3190)
+
+
+Started GET "/close" for ::1 at 2024-04-15 14:59:31 -0300
+Processing by PubController#close_order as HTML
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/services/cart.rb:35:in `block in items'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/order.rb:20:in `block (2 levels) in create_by_cart'
+  [1m[36mBook Load (1.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/order.rb:20:in `block (2 levels) in create_by_cart'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/order.rb:16:in `create_by_cart'
+erro salvando o pedido: Esgotado
+Redirected to http://localhost:3000/
+Completed 302 Found in 8ms (ActiveRecord: 1.8ms | Allocations: 3362)
+
+
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::SessionStore::Session Update (2.0ms)[0m  [1m[33mUPDATE "sessions" SET "data" = ?, "updated_at" = ? WHERE "sessions"."id" = ?[0m  [["data", "BAh7C0kiEF9jc3JmX3Rva2VuBjoGRUZJIjBrQXFaRDA4RTlrcmNBbEZNLUQw\nZ2JlRXZfQXl5UTZISGVDTEhMQzFYcnljBjsARkkiCWNhcnQGOwBGbzoJQ2Fy\ndAY6C0BpdGVtc30GaQdpBmkASSIHaWQGOwBGaQxJIgluYW1lBjsARkkiClBl\nZHJvBjsAVEkiCmFkbWluBjsARlRJIgpmbGFzaAY7AFR7B0kiDGRpc2NhcmQG\nOwBUWwBJIgxmbGFzaGVzBjsAVHsGSSILbm90aWNlBjsARkkiK07Do28gZm9p\nIHBvc3PDrXZlbCBjcmlhciBvIHNldSBwZWRpZG8hBjsAVA==\n"], ["updated_at", "2024-04-15 17:59:31.041526"], ["id", 5]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/" for ::1 at 2024-04-15 14:59:31 -0300
+Processing by PubController#index as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/index.html.erb within layouts/pub
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/pub/index.html.erb:4
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:3
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 1], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:5
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:3
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 2], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:5
+  Rendered collection of pub/_mini_book.html.erb [2 times] (Duration: 7.5ms | Allocations: 3040)
+  Rendered pub/index.html.erb within layouts/pub (Duration: 10.4ms | Allocations: 3854)
+  Rendered layout layouts/pub.html.erb (Duration: 12.5ms | Allocations: 5019)
+Completed 200 OK in 14ms (Views: 12.4ms | ActiveRecord: 0.7ms | Allocations: 5322)
+
+
+Started GET "/" for ::1 at 2024-04-15 15:01:27 -0300
+Processing by PubController#index as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/index.html.erb within layouts/pub
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/pub/index.html.erb:4
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:3
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 1], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:5
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:3
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 2], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:5
+  Rendered collection of pub/_mini_book.html.erb [2 times] (Duration: 27.6ms | Allocations: 19308)
+  Rendered pub/index.html.erb within layouts/pub (Duration: 37.2ms | Allocations: 24514)
+  Rendered layout layouts/pub.html.erb (Duration: 40.4ms | Allocations: 26065)
+Completed 200 OK in 50ms (Views: 36.7ms | ActiveRecord: 4.8ms | Allocations: 31719)
+
+
+Started GET "/book/2" for ::1 at 2024-04-15 15:01:28 -0300
+Processing by PubController#book as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/pub_controller.rb:12:in `book'
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/book.html.erb within layouts/pub
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/pub/book.html.erb:3
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 2], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/book.html.erb:5
+  Rendered pub/book.html.erb within layouts/pub (Duration: 10.7ms | Allocations: 1672)
+  Rendered layout layouts/pub.html.erb (Duration: 15.5ms | Allocations: 2833)
+Completed 200 OK in 24ms (Views: 16.5ms | ActiveRecord: 0.9ms | Allocations: 4895)
+
+
+Started GET "/book/1" for ::1 at 2024-04-15 15:01:30 -0300
+Processing by PubController#book as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pub_controller.rb:12:in `book'
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/book.html.erb within layouts/pub
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/pub/book.html.erb:3
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 1], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/book.html.erb:5
+  Rendered pub/book.html.erb within layouts/pub (Duration: 24.1ms | Allocations: 1401)
+  Rendered layout layouts/pub.html.erb (Duration: 27.3ms | Allocations: 2576)
+Completed 200 OK in 32ms (Views: 27.7ms | ActiveRecord: 0.8ms | Allocations: 3174)
+
+
+Started GET "/books/1" for ::1 at 2024-04-15 15:01:33 -0300
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:73:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/_book.html.erb (Duration: 1.1ms | Allocations: 279)
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "books_categories" ON "categories"."id" = "books_categories"."category_id" WHERE "books_categories"."book_id" = ?[0m  [["book_id", 1]]
+  ↳ app/views/books/show.html.erb:12
+  Rendered books/show.html.erb within layouts/application (Duration: 29.0ms | Allocations: 16907)
+  Rendered layout layouts/application.html.erb (Duration: 42.2ms | Allocations: 33027)
+Completed 200 OK in 46ms (Views: 41.9ms | ActiveRecord: 1.5ms | Allocations: 34060)
+
+
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::SessionStore::Session Update (1.5ms)[0m  [1m[33mUPDATE "sessions" SET "data" = ?, "updated_at" = ? WHERE "sessions"."id" = ?[0m  [["data", "BAh7CkkiEF9jc3JmX3Rva2VuBjoGRUZJIjBrQXFaRDA4RTlrcmNBbEZNLUQw\nZ2JlRXZfQXl5UTZISGVDTEhMQzFYcnljBjsARkkiCWNhcnQGOwBGbzoJQ2Fy\ndAY6C0BpdGVtc30GaQdpBmkASSIHaWQGOwBGaQxJIgluYW1lBjsARkkiClBl\nZHJvBjsAVEkiCmFkbWluBjsARlQ=\n"], ["updated_at", "2024-04-15 18:01:33.702759"], ["id", 5]]
+  [1m[36mTRANSACTION (4.7ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/books/1/edit" for ::1 at 2024-04-15 15:01:35 -0300
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:73:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/edit.html.erb within layouts/application
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 1], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/models/concerns/image_saver.rb:10:in `image_title'
+  Rendered application/_image_fields.html.erb (Duration: 8.2ms | Allocations: 1675)
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT "people".* FROM "people" ORDER BY "people"."name" ASC[0m
+  ↳ app/views/books/_form.html.erb:38
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/books/_form.html.erb:49
+  [1m[36mCategory Pluck (0.2ms)[0m  [1m[34mSELECT "categories"."id" FROM "categories" INNER JOIN "books_categories" ON "categories"."id" = "books_categories"."category_id" WHERE "books_categories"."book_id" = ?[0m  [["book_id", 1]]
+  ↳ app/views/books/_form.html.erb:51
+  Rendered books/_form.html.erb (Duration: 27.9ms | Allocations: 7652)
+  Rendered books/edit.html.erb within layouts/application (Duration: 32.4ms | Allocations: 7981)
+  Rendered layout layouts/application.html.erb (Duration: 35.2ms | Allocations: 9139)
+Completed 200 OK in 42ms (Views: 36.3ms | ActiveRecord: 0.9ms | Allocations: 9884)
+
+
+Started GET "/books/1/edit" for ::1 at 2024-04-15 15:01:36 -0300
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:73:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/edit.html.erb within layouts/application
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 1], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/models/concerns/image_saver.rb:10:in `image_title'
+  Rendered application/_image_fields.html.erb (Duration: 2.9ms | Allocations: 781)
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" ORDER BY "people"."name" ASC[0m
+  ↳ app/views/books/_form.html.erb:38
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/books/_form.html.erb:49
+  [1m[36mCategory Pluck (0.1ms)[0m  [1m[34mSELECT "categories"."id" FROM "categories" INNER JOIN "books_categories" ON "categories"."id" = "books_categories"."category_id" WHERE "books_categories"."book_id" = ?[0m  [["book_id", 1]]
+  ↳ app/views/books/_form.html.erb:51
+  Rendered books/_form.html.erb (Duration: 11.1ms | Allocations: 4344)
+  Rendered books/edit.html.erb within layouts/application (Duration: 11.5ms | Allocations: 4448)
+  Rendered layout layouts/application.html.erb (Duration: 13.6ms | Allocations: 5604)
+Completed 200 OK in 19ms (Views: 14.3ms | ActiveRecord: 0.6ms | Allocations: 6272)
+
+
+Started PATCH "/books/1" for ::1 at 2024-04-15 15:01:41 -0300
+Processing by BooksController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "book"=>{"image_title"=>"Capa do livro", "title"=>"Ruby - Conhecendo a linguagem", "published_at"=>"2006-03-01", "text"=>"Livro sobre a linguagem de programação **Ruby**.\r\nO livro aborda temas como:\r\n1. Instalação\r\n2. Básico de linguagem\r\n3. Tópicos mais avançados\r\nPara conhecer o *framework* Rails, conheça o outro livro, *\"Conhecendo Rails\".", "value"=>"40.0", "person_id"=>"7", "stock"=>"50", "category_ids"=>["", "1", "2"]}, "commit"=>"Atualizar Book", "id"=>"1"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:73:in `set_book'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:42:in `block in update'
+  [1m[36mCategory Load (1.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?)[0m  [["id", 1], ["id", 2]]
+  ↳ app/controllers/books_controller.rb:42:in `block in update'
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "books_categories" ON "categories"."id" = "books_categories"."category_id" WHERE "books_categories"."book_id" = ?[0m  [["book_id", 1]]
+  ↳ app/controllers/books_controller.rb:42:in `block in update'
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:42:in `block in update'
+  [1m[36mBook Update (0.2ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "stock" = ?, "lock_version" = ? WHERE "books"."id" = ? AND "books"."lock_version" = ?[0m  [["updated_at", "2024-04-15 18:01:41.267449"], ["stock", 50], ["lock_version", 4], ["id", 1], ["lock_version", 3]]
+  ↳ app/controllers/books_controller.rb:42:in `block in update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:42:in `block in update'
+Redirected to http://localhost:3000/books/1
+Completed 302 Found in 13ms (ActiveRecord: 1.6ms | Allocations: 5888)
+
+
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::SessionStore::Session Update (1.3ms)[0m  [1m[33mUPDATE "sessions" SET "data" = ?, "updated_at" = ? WHERE "sessions"."id" = ?[0m  [["data", "BAh7C0kiEF9jc3JmX3Rva2VuBjoGRUZJIjBrQXFaRDA4RTlrcmNBbEZNLUQw\nZ2JlRXZfQXl5UTZISGVDTEhMQzFYcnljBjsARkkiCWNhcnQGOwBGbzoJQ2Fy\ndAY6C0BpdGVtc30GaQdpBmkASSIHaWQGOwBGaQxJIgluYW1lBjsARkkiClBl\nZHJvBjsAVEkiCmFkbWluBjsARlRJIgpmbGFzaAY7AFR7B0kiDGRpc2NhcmQG\nOwBUWwBJIgxmbGFzaGVzBjsAVHsGSSILbm90aWNlBjsARkkiH0xpdnJvIGVk\naXRhZG8gY29tIHN1Y2Vzc28uBjsAVA==\n"], ["updated_at", "2024-04-15 18:01:41.271725"], ["id", 5]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/books/1" for ::1 at 2024-04-15 15:01:41 -0300
+Processing by BooksController#show as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:73:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/_book.html.erb (Duration: 0.1ms | Allocations: 36)
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "books_categories" ON "categories"."id" = "books_categories"."category_id" WHERE "books_categories"."book_id" = ?[0m  [["book_id", 1]]
+  ↳ app/views/books/show.html.erb:12
+  Rendered books/show.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1300)
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | Allocations: 2473)
+Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 0.2ms | Allocations: 3150)
+
+
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::SessionStore::Session Update (1.2ms)[0m  [1m[33mUPDATE "sessions" SET "data" = ?, "updated_at" = ? WHERE "sessions"."id" = ?[0m  [["data", "BAh7CkkiEF9jc3JmX3Rva2VuBjoGRUZJIjBrQXFaRDA4RTlrcmNBbEZNLUQw\nZ2JlRXZfQXl5UTZISGVDTEhMQzFYcnljBjsARkkiCWNhcnQGOwBGbzoJQ2Fy\ndAY6C0BpdGVtc30GaQdpBmkASSIHaWQGOwBGaQxJIgluYW1lBjsARkkiClBl\nZHJvBjsAVEkiCmFkbWluBjsARlQ=\n"], ["updated_at", "2024-04-15 18:01:41.296330"], ["id", 5]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/books/2" for ::1 at 2024-04-15 15:01:44 -0300
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:73:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/_book.html.erb (Duration: 0.2ms | Allocations: 34)
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "books_categories" ON "categories"."id" = "books_categories"."category_id" WHERE "books_categories"."book_id" = ?[0m  [["book_id", 2]]
+  ↳ app/views/books/show.html.erb:12
+  Rendered books/show.html.erb within layouts/application (Duration: 4.3ms | Allocations: 1244)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 2413)
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.3ms | Allocations: 3037)
+
+
+Started GET "/books/2/edit" for ::1 at 2024-04-15 15:01:45 -0300
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:73:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/edit.html.erb within layouts/application
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 2], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/models/concerns/image_saver.rb:10:in `image_title'
+  Rendered application/_image_fields.html.erb (Duration: 5.7ms | Allocations: 782)
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT "people".* FROM "people" ORDER BY "people"."name" ASC[0m
+  ↳ app/views/books/_form.html.erb:38
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/books/_form.html.erb:49
+  [1m[36mCategory Pluck (0.1ms)[0m  [1m[34mSELECT "categories"."id" FROM "categories" INNER JOIN "books_categories" ON "categories"."id" = "books_categories"."category_id" WHERE "books_categories"."book_id" = ?[0m  [["book_id", 2]]
+  ↳ app/views/books/_form.html.erb:51
+  Rendered books/_form.html.erb (Duration: 21.1ms | Allocations: 4342)
+  Rendered books/edit.html.erb within layouts/application (Duration: 21.7ms | Allocations: 4446)
+  Rendered layout layouts/application.html.erb (Duration: 24.0ms | Allocations: 5604)
+Completed 200 OK in 31ms (Views: 24.7ms | ActiveRecord: 1.0ms | Allocations: 6272)
+
+
+Started PATCH "/books/2" for ::1 at 2024-04-15 15:01:49 -0300
+Processing by BooksController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "book"=>{"image_title"=>"Capa do livro", "title"=>"Conhecendo o Git", "published_at"=>"2006-03-01", "text"=>"teste", "value"=>"50.0", "person_id"=>"6", "stock"=>"50", "category_ids"=>["", "1", "2"]}, "commit"=>"Atualizar Book", "id"=>"2"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:73:in `set_book'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:42:in `block in update'
+  [1m[36mCategory Load (3.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?)[0m  [["id", 1], ["id", 2]]
+  ↳ app/controllers/books_controller.rb:42:in `block in update'
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "books_categories" ON "categories"."id" = "books_categories"."category_id" WHERE "books_categories"."book_id" = ?[0m  [["book_id", 2]]
+  ↳ app/controllers/books_controller.rb:42:in `block in update'
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:42:in `block in update'
+  [1m[36mBook Update (0.2ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "stock" = ?, "lock_version" = ? WHERE "books"."id" = ? AND "books"."lock_version" = ?[0m  [["updated_at", "2024-04-15 18:01:49.369718"], ["stock", 50], ["lock_version", 6], ["id", 2], ["lock_version", 5]]
+  ↳ app/controllers/books_controller.rb:42:in `block in update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:42:in `block in update'
+Redirected to http://localhost:3000/books/2
+Completed 302 Found in 27ms (ActiveRecord: 4.1ms | Allocations: 5161)
+
+
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::SessionStore::Session Update (1.5ms)[0m  [1m[33mUPDATE "sessions" SET "data" = ?, "updated_at" = ? WHERE "sessions"."id" = ?[0m  [["data", "BAh7C0kiEF9jc3JmX3Rva2VuBjoGRUZJIjBrQXFaRDA4RTlrcmNBbEZNLUQw\nZ2JlRXZfQXl5UTZISGVDTEhMQzFYcnljBjsARkkiCWNhcnQGOwBGbzoJQ2Fy\ndAY6C0BpdGVtc30GaQdpBmkASSIHaWQGOwBGaQxJIgluYW1lBjsARkkiClBl\nZHJvBjsAVEkiCmFkbWluBjsARlRJIgpmbGFzaAY7AFR7B0kiDGRpc2NhcmQG\nOwBUWwBJIgxmbGFzaGVzBjsAVHsGSSILbm90aWNlBjsARkkiH0xpdnJvIGVk\naXRhZG8gY29tIHN1Y2Vzc28uBjsAVA==\n"], ["updated_at", "2024-04-15 18:01:49.373834"], ["id", 5]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/books/2" for ::1 at 2024-04-15 15:01:49 -0300
+Processing by BooksController#show as TURBO_STREAM
+  Parameters: {"id"=>"2"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:73:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/_book.html.erb (Duration: 0.1ms | Allocations: 34)
+  [1m[36mCategory Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "books_categories" ON "categories"."id" = "books_categories"."category_id" WHERE "books_categories"."book_id" = ?[0m  [["book_id", 2]]
+  ↳ app/views/books/show.html.erb:12
+  Rendered books/show.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1252)
+  Rendered layout layouts/application.html.erb (Duration: 3.7ms | Allocations: 2410)
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.2ms | Allocations: 3041)
+
+
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::SessionStore::Session Update (1.0ms)[0m  [1m[33mUPDATE "sessions" SET "data" = ?, "updated_at" = ? WHERE "sessions"."id" = ?[0m  [["data", "BAh7CkkiEF9jc3JmX3Rva2VuBjoGRUZJIjBrQXFaRDA4RTlrcmNBbEZNLUQw\nZ2JlRXZfQXl5UTZISGVDTEhMQzFYcnljBjsARkkiCWNhcnQGOwBGbzoJQ2Fy\ndAY6C0BpdGVtc30GaQdpBmkASSIHaWQGOwBGaQxJIgluYW1lBjsARkkiClBl\nZHJvBjsAVEkiCmFkbWluBjsARlQ=\n"], ["updated_at", "2024-04-15 18:01:49.388808"], ["id", 5]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/books" for ::1 at 2024-04-15 15:01:52 -0300
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:6
+  Rendered books/_book.html.erb (Duration: 0.2ms | Allocations: 36)
+  Rendered books/_book.html.erb (Duration: 0.2ms | Allocations: 33)
+  Rendered books/index.html.erb within layouts/application (Duration: 4.9ms | Allocations: 1196)
+  Rendered layout layouts/application.html.erb (Duration: 8.4ms | Allocations: 2357)
+Completed 200 OK in 10ms (Views: 9.0ms | ActiveRecord: 0.2ms | Allocations: 2711)
+
+
+Started GET "/" for ::1 at 2024-04-15 15:01:52 -0300
+Processing by PubController#index as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/index.html.erb within layouts/pub
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/pub/index.html.erb:4
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:3
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 1], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:5
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:3
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 2], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:5
+  Rendered collection of pub/_mini_book.html.erb [2 times] (Duration: 9.1ms | Allocations: 2794)
+  Rendered pub/index.html.erb within layouts/pub (Duration: 10.5ms | Allocations: 3360)
+  Rendered layout layouts/pub.html.erb (Duration: 12.3ms | Allocations: 4524)
+Completed 200 OK in 13ms (Views: 12.2ms | ActiveRecord: 0.6ms | Allocations: 4758)
+
+
+Started GET "/book/2" for ::1 at 2024-04-15 15:01:54 -0300
+Processing by PubController#book as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/pub_controller.rb:12:in `book'
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/book.html.erb within layouts/pub
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/pub/book.html.erb:3
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 2], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/book.html.erb:5
+  Rendered pub/book.html.erb within layouts/pub (Duration: 11.2ms | Allocations: 1428)
+  Rendered layout layouts/pub.html.erb (Duration: 15.3ms | Allocations: 2581)
+Completed 200 OK in 20ms (Views: 16.0ms | ActiveRecord: 0.8ms | Allocations: 3178)
+
+
+Started GET "/buy/2" for ::1 at 2024-04-15 15:01:55 -0300
+Processing by PubController#buy as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/pub_controller.rb:24:in `buy'
+Redirected to http://localhost:3000/cart
+Completed 302 Found in 8ms (ActiveRecord: 0.4ms | Allocations: 1625)
+
+
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::SessionStore::Session Update (12.5ms)[0m  [1m[33mUPDATE "sessions" SET "data" = ?, "updated_at" = ? WHERE "sessions"."id" = ?[0m  [["data", "BAh7CkkiEF9jc3JmX3Rva2VuBjoGRUZJIjBrQXFaRDA4RTlrcmNBbEZNLUQw\nZ2JlRXZfQXl5UTZISGVDTEhMQzFYcnljBjsARkkiCWNhcnQGOwBGbzoJQ2Fy\ndAY6C0BpdGVtc30GaQdpB2kASSIHaWQGOwBGaQxJIgluYW1lBjsARkkiClBl\nZHJvBjsAVEkiCmFkbWluBjsARlQ=\n"], ["updated_at", "2024-04-15 18:01:55.909087"], ["id", 5]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/cart" for ::1 at 2024-04-15 15:01:55 -0300
+Processing by PubController#cart as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/cart.html.erb within layouts/pub
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/services/cart.rb:35:in `block in items'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 2], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/_cart_item.html.erb:2
+  Rendered collection of pub/_cart_item.html.erb [1 times] (Duration: 3.5ms | Allocations: 1107)
+  [1m[36mCACHE Book Load (0.0ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/services/cart.rb:22:in `block in total'
+  Rendered pub/cart.html.erb within layouts/pub (Duration: 6.0ms | Allocations: 2263)
+  Rendered layout layouts/pub.html.erb (Duration: 7.4ms | Allocations: 3181)
+Completed 200 OK in 9ms (Views: 7.7ms | ActiveRecord: 0.2ms | Allocations: 3732)
+
+
+Started GET "/cart" for ::1 at 2024-04-15 15:01:58 -0300
+Processing by PubController#cart as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/cart.html.erb within layouts/pub
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/services/cart.rb:35:in `block in items'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 2], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/_cart_item.html.erb:2
+  Rendered collection of pub/_cart_item.html.erb [1 times] (Duration: 6.0ms | Allocations: 905)
+  [1m[36mCACHE Book Load (0.0ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/services/cart.rb:22:in `block in total'
+  Rendered pub/cart.html.erb within layouts/pub (Duration: 14.2ms | Allocations: 1802)
+  Rendered layout layouts/pub.html.erb (Duration: 17.1ms | Allocations: 2706)
+Completed 200 OK in 22ms (Views: 17.8ms | ActiveRecord: 0.7ms | Allocations: 3189)
+
+
+Started GET "/" for ::1 at 2024-04-15 15:02:00 -0300
+Processing by PubController#index as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/index.html.erb within layouts/pub
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/pub/index.html.erb:4
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:3
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 1], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:5
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:3
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 2], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:5
+  Rendered collection of pub/_mini_book.html.erb [2 times] (Duration: 12.4ms | Allocations: 2794)
+  Rendered pub/index.html.erb within layouts/pub (Duration: 17.6ms | Allocations: 3361)
+  Rendered layout layouts/pub.html.erb (Duration: 21.4ms | Allocations: 4518)
+Completed 200 OK in 24ms (Views: 21.9ms | ActiveRecord: 0.9ms | Allocations: 4752)
+
+
+Started GET "/book/1" for ::1 at 2024-04-15 15:02:01 -0300
+Processing by PubController#book as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pub_controller.rb:12:in `book'
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/book.html.erb within layouts/pub
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/pub/book.html.erb:3
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 1], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/book.html.erb:5
+  Rendered pub/book.html.erb within layouts/pub (Duration: 8.7ms | Allocations: 1427)
+  Rendered layout layouts/pub.html.erb (Duration: 14.4ms | Allocations: 2580)
+Completed 200 OK in 19ms (Views: 14.6ms | ActiveRecord: 0.9ms | Allocations: 3177)
+
+
+Started GET "/buy/1" for ::1 at 2024-04-15 15:02:02 -0300
+Processing by PubController#buy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pub_controller.rb:24:in `buy'
+Redirected to http://localhost:3000/cart
+Completed 302 Found in 8ms (ActiveRecord: 0.6ms | Allocations: 814)
+
+
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::SessionStore::Session Update (3.9ms)[0m  [1m[33mUPDATE "sessions" SET "data" = ?, "updated_at" = ? WHERE "sessions"."id" = ?[0m  [["data", "BAh7CkkiEF9jc3JmX3Rva2VuBjoGRUZJIjBrQXFaRDA4RTlrcmNBbEZNLUQw\nZ2JlRXZfQXl5UTZISGVDTEhMQzFYcnljBjsARkkiCWNhcnQGOwBGbzoJQ2Fy\ndAY6C0BpdGVtc30HaQdpB2kGaQZpAEkiB2lkBjsARmkMSSIJbmFtZQY7AEZJ\nIgpQZWRybwY7AFRJIgphZG1pbgY7AEZU\n"], ["updated_at", "2024-04-15 18:02:02.525833"], ["id", 5]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/cart" for ::1 at 2024-04-15 15:02:02 -0300
+Processing by PubController#cart as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/cart.html.erb within layouts/pub
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/services/cart.rb:35:in `block in items'
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/services/cart.rb:35:in `block in items'
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 2], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/_cart_item.html.erb:2
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 1], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/_cart_item.html.erb:2
+  Rendered collection of pub/_cart_item.html.erb [2 times] (Duration: 9.4ms | Allocations: 1892)
+  [1m[36mCACHE Book Load (0.0ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/services/cart.rb:22:in `block in total'
+  [1m[36mCACHE Book Load (0.0ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Started GET "/buy/1" for ::1 at 2024-04-15 15:02:02 -0300
+  ↳ app/services/cart.rb:22:in `block in total'
+  Rendered pub/cart.html.erb within layouts/pub (Duration: 15.3ms | Allocations: 3894)
+  Rendered layout layouts/pub.html.erb (Duration: 19.1ms | Allocations: 4826)
+Completed 200 OK in 21ms (Views: 19.2ms | ActiveRecord: 0.6ms | Allocations: 5310)
+
+
+Processing by PubController#buy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.0ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pub_controller.rb:24:in `buy'
+Redirected to http://localhost:3000/cart
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms | Allocations: 814)
+
+
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::SessionStore::Session Update (1.8ms)[0m  [1m[33mUPDATE "sessions" SET "data" = ?, "updated_at" = ? WHERE "sessions"."id" = ?[0m  [["data", "BAh7CkkiEF9jc3JmX3Rva2VuBjoGRUZJIjBrQXFaRDA4RTlrcmNBbEZNLUQw\nZ2JlRXZfQXl5UTZISGVDTEhMQzFYcnljBjsARkkiCWNhcnQGOwBGbzoJQ2Fy\ndAY6C0BpdGVtc30HaQdpB2kGaQdpAEkiB2lkBjsARmkMSSIJbmFtZQY7AEZJ\nIgpQZWRybwY7AFRJIgphZG1pbgY7AEZU\n"], ["updated_at", "2024-04-15 18:02:02.571859"], ["id", 5]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/cart" for ::1 at 2024-04-15 15:02:02 -0300
+Processing by PubController#cart as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/cart.html.erb within layouts/pub
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/services/cart.rb:35:in `block in items'
+  [1m[36mBook Load (0.0ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/services/cart.rb:35:in `block in items'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 2], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/_cart_item.html.erb:2
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 1], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/_cart_item.html.erb:2
+  Rendered collection of pub/_cart_item.html.erb [2 times] (Duration: 4.5ms | Allocations: 1787)
+  [1m[36mCACHE Book Load (0.0ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/services/cart.rb:22:in `block in total'
+  [1m[36mCACHE Book Load (0.0ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/services/cart.rb:22:in `block in total'
+  Rendered pub/cart.html.erb within layouts/pub (Duration: 8.6ms | Allocations: 3360)
+  Rendered layout layouts/pub.html.erb (Duration: 10.6ms | Allocations: 4264)
+Completed 200 OK in 12ms (Views: 10.8ms | ActiveRecord: 0.3ms | Allocations: 4748)
+
+
+Started GET "/close" for ::1 at 2024-04-15 15:02:07 -0300
+Processing by PubController#close_order as HTML
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/services/cart.rb:35:in `block in items'
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/services/cart.rb:35:in `block in items'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/order.rb:17:in `block in create_by_cart'
+  [1m[36mBook Load (0.0ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/order.rb:20:in `block (2 levels) in create_by_cart'
+  [1m[36mPerson Load (0.0ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/models/book.rb:28:in `sell'
+  [1m[36mBook Update (0.1ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "stock" = ?, "lock_version" = ? WHERE "books"."id" = ? AND "books"."lock_version" = ?[0m  [["updated_at", "2024-04-15 18:02:07.185999"], ["stock", 48], ["lock_version", 7], ["id", 2], ["lock_version", 6]]
+  ↳ app/models/book.rb:28:in `sell'
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/order.rb:20:in `block (2 levels) in create_by_cart'
+  [1m[36mPerson Load (0.0ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/models/book.rb:28:in `sell'
+  [1m[36mBook Update (0.1ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "stock" = ?, "lock_version" = ? WHERE "books"."id" = ? AND "books"."lock_version" = ?[0m  [["updated_at", "2024-04-15 18:02:07.199486"], ["stock", 48], ["lock_version", 5], ["id", 1], ["lock_version", 4]]
+  ↳ app/models/book.rb:28:in `sell'
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/models/order.rb:30:in `block in create_by_cart'
+  [1m[36mOrder Create (0.1ms)[0m  [1m[32mINSERT INTO "orders" ("person_id", "created_at", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["person_id", 7], ["created_at", "2024-04-15 18:02:07.203766"], ["updated_at", "2024-04-15 18:02:07.203766"]]
+  ↳ app/models/order.rb:30:in `block in create_by_cart'
+  [1m[36mOrderItem Create (0.1ms)[0m  [1m[32mINSERT INTO "order_items" ("order_id", "book_id", "quantity", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["order_id", 7], ["book_id", 2], ["quantity", 2], ["value", 50.0], ["created_at", "2024-04-15 18:02:07.205359"], ["updated_at", "2024-04-15 18:02:07.205359"]]
+  ↳ app/models/order.rb:30:in `block in create_by_cart'
+  [1m[36mOrderItem Create (0.1ms)[0m  [1m[32mINSERT INTO "order_items" ("order_id", "book_id", "quantity", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["order_id", 7], ["book_id", 1], ["quantity", 2], ["value", 40.0], ["created_at", "2024-04-15 18:02:07.206845"], ["updated_at", "2024-04-15 18:02:07.206845"]]
+  ↳ app/models/order.rb:30:in `block in create_by_cart'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/order.rb:16:in `create_by_cart'
+Completed 500 Internal Server Error in 65ms (ActiveRecord: 2.4ms | Allocations: 53286)
+
+
+
+NoMethodError - undefined method `smtp_settiongs=' for class ActionMailer::Base:
+  app/mailers/application_mailer.rb:1:in `<main>'
+  app/mailers/order_mailer.rb:1:in `<main>'
+  app/controllers/pub_controller.rb:62:in `close_order'
+
+Started POST "/__better_errors/358d4881be65c6ee/variables" for ::1 at 2024-04-15 15:02:07 -0300
+Started GET "/cart" for ::1 at 2024-04-15 15:02:15 -0300
+Processing by PubController#cart as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/cart.html.erb within layouts/pub
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/services/cart.rb:35:in `block in items'
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/services/cart.rb:35:in `block in items'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 2], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/_cart_item.html.erb:2
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 1], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/_cart_item.html.erb:2
+  Rendered collection of pub/_cart_item.html.erb [2 times] (Duration: 11.9ms | Allocations: 9498)
+  [1m[36mCACHE Book Load (0.0ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/services/cart.rb:22:in `block in total'
+  [1m[36mCACHE Book Load (0.0ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/services/cart.rb:22:in `block in total'
+  Rendered pub/cart.html.erb within layouts/pub (Duration: 29.7ms | Allocations: 22025)
+  Rendered layout layouts/pub.html.erb (Duration: 31.5ms | Allocations: 23197)
+Completed 200 OK in 35ms (Views: 31.3ms | ActiveRecord: 2.7ms | Allocations: 24717)
+
+
+Started GET "/close" for ::1 at 2024-04-15 15:02:17 -0300
+Processing by PubController#close_order as HTML
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/services/cart.rb:35:in `block in items'
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/services/cart.rb:35:in `block in items'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/order.rb:17:in `block in create_by_cart'
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/order.rb:20:in `block (2 levels) in create_by_cart'
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/models/book.rb:28:in `sell'
+  [1m[36mBook Update (0.1ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "stock" = ?, "lock_version" = ? WHERE "books"."id" = ? AND "books"."lock_version" = ?[0m  [["updated_at", "2024-04-15 18:02:17.077552"], ["stock", 46], ["lock_version", 8], ["id", 2], ["lock_version", 7]]
+  ↳ app/models/book.rb:28:in `sell'
+  [1m[36mBook Load (0.0ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/order.rb:20:in `block (2 levels) in create_by_cart'
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/models/book.rb:28:in `sell'
+  [1m[36mBook Update (0.1ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "stock" = ?, "lock_version" = ? WHERE "books"."id" = ? AND "books"."lock_version" = ?[0m  [["updated_at", "2024-04-15 18:02:17.091109"], ["stock", 46], ["lock_version", 6], ["id", 1], ["lock_version", 5]]
+  ↳ app/models/book.rb:28:in `sell'
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/models/order.rb:30:in `block in create_by_cart'
+  [1m[36mOrder Create (0.1ms)[0m  [1m[32mINSERT INTO "orders" ("person_id", "created_at", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["person_id", 7], ["created_at", "2024-04-15 18:02:17.095993"], ["updated_at", "2024-04-15 18:02:17.095993"]]
+  ↳ app/models/order.rb:30:in `block in create_by_cart'
+  [1m[36mOrderItem Create (0.1ms)[0m  [1m[32mINSERT INTO "order_items" ("order_id", "book_id", "quantity", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["order_id", 8], ["book_id", 2], ["quantity", 2], ["value", 50.0], ["created_at", "2024-04-15 18:02:17.097513"], ["updated_at", "2024-04-15 18:02:17.097513"]]
+  ↳ app/models/order.rb:30:in `block in create_by_cart'
+  [1m[36mOrderItem Create (0.1ms)[0m  [1m[32mINSERT INTO "order_items" ("order_id", "book_id", "quantity", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["order_id", 8], ["book_id", 1], ["quantity", 2], ["value", 40.0], ["created_at", "2024-04-15 18:02:17.098998"], ["updated_at", "2024-04-15 18:02:17.098998"]]
+  ↳ app/models/order.rb:30:in `block in create_by_cart'
+  [1m[36mTRANSACTION (5.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/order.rb:16:in `create_by_cart'
+Completed 500 Internal Server Error in 81ms (ActiveRecord: 9.6ms | Allocations: 34249)
+
+
+
+NoMethodError - undefined method `smtp_settiongs=' for class ActionMailer::Base:
+  app/mailers/application_mailer.rb:1:in `<main>'
+  app/mailers/order_mailer.rb:1:in `<main>'
+  app/controllers/pub_controller.rb:62:in `close_order'
+
+Started POST "/__better_errors/c4f16f6f6e5f41e5/variables" for ::1 at 2024-04-15 15:02:17 -0300
+Started GET "/cart" for ::1 at 2024-04-15 15:02:56 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PubController#cart as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/cart.html.erb within layouts/pub
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/services/cart.rb:35:in `block in items'
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/services/cart.rb:35:in `block in items'
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 2], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/_cart_item.html.erb:2
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 1], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/_cart_item.html.erb:2
+  Rendered collection of pub/_cart_item.html.erb [2 times] (Duration: 55.0ms | Allocations: 13919)
+  [1m[36mCACHE Book Load (0.0ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/services/cart.rb:22:in `block in total'
+  [1m[36mCACHE Book Load (0.0ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/services/cart.rb:22:in `block in total'
+  Rendered pub/cart.html.erb within layouts/pub (Duration: 99.6ms | Allocations: 33614)
+  Rendered layout layouts/pub.html.erb (Duration: 175.4ms | Allocations: 55185)
+Completed 200 OK in 220ms (Views: 175.9ms | ActiveRecord: 4.6ms | Allocations: 74071)
+
+
+Started GET "/close" for ::1 at 2024-04-15 15:02:58 -0300
+Processing by PubController#close_order as HTML
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/services/cart.rb:35:in `block in items'
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/services/cart.rb:35:in `block in items'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/order.rb:17:in `block in create_by_cart'
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/order.rb:20:in `block (2 levels) in create_by_cart'
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/models/book.rb:28:in `sell'
+  [1m[36mBook Update (0.1ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "stock" = ?, "lock_version" = ? WHERE "books"."id" = ? AND "books"."lock_version" = ?[0m  [["updated_at", "2024-04-15 18:02:59.029638"], ["stock", 44], ["lock_version", 9], ["id", 2], ["lock_version", 8]]
+  ↳ app/models/book.rb:28:in `sell'
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/order.rb:20:in `block (2 levels) in create_by_cart'
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/models/book.rb:28:in `sell'
+  [1m[36mBook Update (0.1ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "stock" = ?, "lock_version" = ? WHERE "books"."id" = ? AND "books"."lock_version" = ?[0m  [["updated_at", "2024-04-15 18:02:59.054263"], ["stock", 44], ["lock_version", 7], ["id", 1], ["lock_version", 6]]
+  ↳ app/models/book.rb:28:in `sell'
+  [1m[36mPerson Load (0.0ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/models/order.rb:30:in `block in create_by_cart'
+  [1m[36mOrder Create (0.3ms)[0m  [1m[32mINSERT INTO "orders" ("person_id", "created_at", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["person_id", 7], ["created_at", "2024-04-15 18:02:59.058257"], ["updated_at", "2024-04-15 18:02:59.058257"]]
+  ↳ app/models/order.rb:30:in `block in create_by_cart'
+  [1m[36mOrderItem Create (0.2ms)[0m  [1m[32mINSERT INTO "order_items" ("order_id", "book_id", "quantity", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["order_id", 9], ["book_id", 2], ["quantity", 2], ["value", 50.0], ["created_at", "2024-04-15 18:02:59.060323"], ["updated_at", "2024-04-15 18:02:59.060323"]]
+  ↳ app/models/order.rb:30:in `block in create_by_cart'
+  [1m[36mOrderItem Create (0.2ms)[0m  [1m[32mINSERT INTO "order_items" ("order_id", "book_id", "quantity", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["order_id", 9], ["book_id", 1], ["quantity", 2], ["value", 40.0], ["created_at", "2024-04-15 18:02:59.062487"], ["updated_at", "2024-04-15 18:02:59.062487"]]
+  ↳ app/models/order.rb:30:in `block in create_by_cart'
+  [1m[36mTRANSACTION (5.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/order.rb:16:in `create_by_cart'
+  Rendering layout layouts/mailer.html.erb
+  Rendering order_mailer/created.html.erb within layouts/mailer
+  Rendered order_mailer/created.html.erb within layouts/mailer (Duration: 1.2ms | Allocations: 843)
+  Rendered layout layouts/mailer.html.erb (Duration: 1.7ms | Allocations: 1064)
+  Rendering layout layouts/mailer.text.erb
+  Rendering order_mailer/created.text.erb within layouts/mailer
+  Rendered order_mailer/created.text.erb within layouts/mailer (Duration: 1.4ms | Allocations: 626)
+  Rendered layout layouts/mailer.text.erb (Duration: 2.4ms | Allocations: 821)
+OrderMailer#created: processed outbound mail in 45.1ms
+Delivered mail 661d6bd3263cd_603e4484-366@pop-os.mail (1851.0ms)
+Date: Mon, 15 Apr 2024 15:02:59 -0300
+From: systemcraftdevelopmenttest@gmail.com
+To: anddev007pe@gmail.com
+Message-ID: <661d6bd3263cd_603e4484-366@pop-os.mail>
+Subject: Pedido 9 recebido!
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_661d6bd322e54_603e4484-43e";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_661d6bd322e54_603e4484-43e
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+Ol=C3=A1, Pedro!
+
+Seu pedido foi recebido em nosso sistema. Anote o n=C3=BAmero: 9
+
+Os itens comprados foram:
+
+- Conhecendo o Git - 2 - R$ 50,00 - R$ 100,00
+- Ruby - Conhecendo a linguagem - 2 - R$ 40,00 - R$ 80,00
+
+Obrigado por fazer seu pedido conosco!
+
+
+----==_mimepart_661d6bd322e54_603e4484-43e
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8">
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <h1>Bookstore</h1>
+<h2>Recebemos o seu pedido!<h2>
+
+<p>Ol=C3=A1, Pedro! </p>
+
+<p>
+  Seu pedido foi recebido em nosso sistema. Anote o n=C3=BAmero: <strong>=
+ 9 </strong>
+</p>
+
+<p>Os itens comprados foram:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>T=C3=ADtulo</th>
+      <th>Quantidade</th>
+      <th>Valor</th>
+      <th>Total</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td> Conhecendo o Git </td>
+        <td> 2 </td>
+        <td> R$ 50,00 </td>
+        <td> R$ 100,00 </td>
+      </tr>
+      <tr>
+        <td> Ruby - Conhecendo a linguagem </td>
+        <td> 2 </td>
+        <td> R$ 40,00 </td>
+        <td> R$ 80,00 </td>
+      </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td colspan=3D'3' >Total</td>
+      <td> R$ 180,00 </td>
+    </tr>
+  </tfoot>
+</table>
+
+  </body>
+</html>
+
+----==_mimepart_661d6bd322e54_603e4484-43e--
+
+Redirected to http://localhost:3000/order/9
+Completed 302 Found in 2015ms (ActiveRecord: 8.7ms | Allocations: 98841)
+
+
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::SessionStore::Session Update (9.9ms)[0m  [1m[33mUPDATE "sessions" SET "data" = ?, "updated_at" = ? WHERE "sessions"."id" = ?[0m  [["data", "BAh7CkkiEF9jc3JmX3Rva2VuBjoGRUZJIjBrQXFaRDA4RTlrcmNBbEZNLUQw\nZ2JlRXZfQXl5UTZISGVDTEhMQzFYcnljBjsARkkiCWNhcnQGOwBGbzoJQ2Fy\ndAY6C0BpdGVtc30AaQBJIgdpZAY7AEZpDEkiCW5hbWUGOwBGSSIKUGVkcm8G\nOwBUSSIKYWRtaW4GOwBGVA==\n"], ["updated_at", "2024-04-15 18:03:01.010978"], ["id", 5]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/order/9" for ::1 at 2024-04-15 15:03:01 -0300
+Processing by PubController#order as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/pub_controller.rb:68:in `order'
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/order.html.erb within layouts/pub
+  [1m[36mOrderItem Load (0.2ms)[0m  [1m[34mSELECT "order_items".* FROM "order_items" WHERE "order_items"."order_id" = ?[0m  [["order_id", 9]]
+  ↳ app/views/pub/order.html.erb:8
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/pub/order.html.erb:10
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pub/order.html.erb:10
+  Rendered pub/order.html.erb within layouts/pub (Duration: 19.9ms | Allocations: 5913)
+  Rendered layout layouts/pub.html.erb (Duration: 23.0ms | Allocations: 7096)
+Completed 200 OK in 34ms (Views: 24.0ms | ActiveRecord: 0.5ms | Allocations: 9208)
+
+
+Started GET "/order/9" for ::1 at 2024-04-15 15:25:02 -0300
+Processing by PubController#order as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mOrder Load (0.8ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/pub_controller.rb:68:in `order'
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/order.html.erb within layouts/pub
+  [1m[36mOrderItem Load (0.1ms)[0m  [1m[34mSELECT "order_items".* FROM "order_items" WHERE "order_items"."order_id" = ?[0m  [["order_id", 9]]
+  ↳ app/views/pub/order.html.erb:8
+  [1m[36mBook Load (0.7ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/pub/order.html.erb:10
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pub/order.html.erb:10
+  Rendered pub/order.html.erb within layouts/pub (Duration: 39.9ms | Allocations: 22423)
+  Rendered layout layouts/pub.html.erb (Duration: 43.0ms | Allocations: 24009)
+Completed 200 OK in 51ms (Views: 42.8ms | ActiveRecord: 2.5ms | Allocations: 30697)
+
+
+Started GET "/" for ::1 at 2024-04-15 15:25:04 -0300
+Processing by PubController#index as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/index.html.erb within layouts/pub
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/pub/index.html.erb:4
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:3
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 1], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:5
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:3
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 2], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:5
+  Rendered collection of pub/_mini_book.html.erb [2 times] (Duration: 37.6ms | Allocations: 18565)
+  Rendered pub/index.html.erb within layouts/pub (Duration: 43.9ms | Allocations: 19418)
+  Rendered layout layouts/pub.html.erb (Duration: 46.0ms | Allocations: 20578)
+Completed 200 OK in 49ms (Views: 46.2ms | ActiveRecord: 0.9ms | Allocations: 20882)
+
+
+Started GET "/book/1" for ::1 at 2024-04-15 15:25:06 -0300
+Processing by PubController#book as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pub_controller.rb:12:in `book'
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/book.html.erb within layouts/pub
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/pub/book.html.erb:3
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 1], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/book.html.erb:5
+  Rendered pub/book.html.erb within layouts/pub (Duration: 10.3ms | Allocations: 1703)
+  Rendered layout layouts/pub.html.erb (Duration: 14.8ms | Allocations: 2856)
+Completed 200 OK in 26ms (Views: 15.6ms | ActiveRecord: 0.7ms | Allocations: 4849)
+
+
+Started GET "/buy/1" for ::1 at 2024-04-15 15:25:07 -0300
+Processing by PubController#buy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pub_controller.rb:24:in `buy'
+Redirected to http://localhost:3000/cart
+Completed 302 Found in 9ms (ActiveRecord: 0.4ms | Allocations: 1649)
+
+
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::SessionStore::Session Update (3.6ms)[0m  [1m[33mUPDATE "sessions" SET "data" = ?, "updated_at" = ? WHERE "sessions"."id" = ?[0m  [["data", "BAh7CkkiEF9jc3JmX3Rva2VuBjoGRUZJIjBrQXFaRDA4RTlrcmNBbEZNLUQw\nZ2JlRXZfQXl5UTZISGVDTEhMQzFYcnljBjsARkkiCWNhcnQGOwBGbzoJQ2Fy\ndAY6C0BpdGVtc30GaQZpBmkASSIHaWQGOwBGaQxJIgluYW1lBjsARkkiClBl\nZHJvBjsAVEkiCmFkbWluBjsARlQ=\n"], ["updated_at", "2024-04-15 18:25:07.616071"], ["id", 5]]
+  [1m[36mTRANSACTION (5.8ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/cart" for ::1 at 2024-04-15 15:25:07 -0300
+Processing by PubController#cart as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/cart.html.erb within layouts/pub
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/services/cart.rb:35:in `block in items'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 1], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/_cart_item.html.erb:2
+  Rendered collection of pub/_cart_item.html.erb [1 times] (Duration: 2.9ms | Allocations: 1118)
+  [1m[36mCACHE Book Load (0.0ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/services/cart.rb:22:in `block in total'
+  Rendered pub/cart.html.erb within layouts/pub (Duration: 6.1ms | Allocations: 2272)
+  Rendered layout layouts/pub.html.erb (Duration: 9.3ms | Allocations: 3176)
+Completed 200 OK in 11ms (Views: 9.6ms | ActiveRecord: 0.2ms | Allocations: 3725)
+
+
+Started GET "/close" for ::1 at 2024-04-15 15:25:09 -0300
+Processing by PubController#close_order as HTML
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/services/cart.rb:35:in `block in items'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/order.rb:20:in `block (2 levels) in create_by_cart'
+  [1m[36mBook Load (0.9ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/order.rb:20:in `block (2 levels) in create_by_cart'
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/models/book.rb:28:in `sell'
+  [1m[36mBook Update (0.2ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "stock" = ?, "lock_version" = ? WHERE "books"."id" = ? AND "books"."lock_version" = ?[0m  [["updated_at", "2024-04-15 18:25:09.959362"], ["stock", 43], ["lock_version", 8], ["id", 1], ["lock_version", 7]]
+  ↳ app/models/book.rb:28:in `sell'
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/models/order.rb:30:in `block in create_by_cart'
+  [1m[36mOrder Create (0.2ms)[0m  [1m[32mINSERT INTO "orders" ("person_id", "created_at", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["person_id", 7], ["created_at", "2024-04-15 18:25:09.966573"], ["updated_at", "2024-04-15 18:25:09.966573"]]
+  ↳ app/models/order.rb:30:in `block in create_by_cart'
+  [1m[36mOrderItem Create (0.2ms)[0m  [1m[32mINSERT INTO "order_items" ("order_id", "book_id", "quantity", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["order_id", 10], ["book_id", 1], ["quantity", 1], ["value", 40.0], ["created_at", "2024-04-15 18:25:09.968397"], ["updated_at", "2024-04-15 18:25:09.968397"]]
+  ↳ app/models/order.rb:30:in `block in create_by_cart'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/order.rb:16:in `create_by_cart'
+  Rendering layout layouts/mailer.html.erb
+  Rendering order_mailer/created.html.erb within layouts/mailer
+  Rendered order_mailer/created.html.erb within layouts/mailer (Duration: 1.2ms | Allocations: 598)
+  Rendered layout layouts/mailer.html.erb (Duration: 1.7ms | Allocations: 816)
+  Rendering layout layouts/mailer.text.erb
+  Rendering order_mailer/created.text.erb within layouts/mailer
+  Rendered order_mailer/created.text.erb within layouts/mailer (Duration: 0.9ms | Allocations: 423)
+  Rendered layout layouts/mailer.text.erb (Duration: 1.7ms | Allocations: 617)
+OrderMailer#created: processed outbound mail in 25.7ms
+Delivered mail 661d71063b2_603e4470-157@pop-os.mail (4151.0ms)
+Date: Mon, 15 Apr 2024 15:25:10 -0300
+From: systemcraftdevelomenttest@gmail.com
+To: anddev007pe@gmail.com
+Message-ID: <661d71063b2_603e4470-157@pop-os.mail>
+Subject: Pedido 10 recebido!
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_661d7105f271d_603e4470-26";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_661d7105f271d_603e4470-26
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+Ol=C3=A1, Pedro!
+
+Seu pedido foi recebido em nosso sistema. Anote o n=C3=BAmero: 10
+
+Os itens comprados foram:
+
+- Ruby - Conhecendo a linguagem - 1 - R$ 40,00 - R$ 40,00
+
+Obrigado por fazer seu pedido conosco!
+
+
+----==_mimepart_661d7105f271d_603e4470-26
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8">
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <h1>Bookstore</h1>
+<h2>Recebemos o seu pedido!<h2>
+
+<p>Ol=C3=A1, Pedro! </p>
+
+<p>
+  Seu pedido foi recebido em nosso sistema. Anote o n=C3=BAmero: <strong>=
+ 10 </strong>
+</p>
+
+<p>Os itens comprados foram:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>T=C3=ADtulo</th>
+      <th>Quantidade</th>
+      <th>Valor</th>
+      <th>Total</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td> Ruby - Conhecendo a linguagem </td>
+        <td> 1 </td>
+        <td> R$ 40,00 </td>
+        <td> R$ 40,00 </td>
+      </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td colspan=3D'3' >Total</td>
+      <td> R$ 40,00 </td>
+    </tr>
+  </tfoot>
+</table>
+
+  </body>
+</html>
+
+----==_mimepart_661d7105f271d_603e4470-26--
+
+Redirected to http://localhost:3000/order/10
+Completed 302 Found in 4203ms (ActiveRecord: 2.0ms | Allocations: 47487)
+
+
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::SessionStore::Session Update (2.9ms)[0m  [1m[33mUPDATE "sessions" SET "data" = ?, "updated_at" = ? WHERE "sessions"."id" = ?[0m  [["data", "BAh7CkkiEF9jc3JmX3Rva2VuBjoGRUZJIjBrQXFaRDA4RTlrcmNBbEZNLUQw\nZ2JlRXZfQXl5UTZISGVDTEhMQzFYcnljBjsARkkiCWNhcnQGOwBGbzoJQ2Fy\ndAY6C0BpdGVtc30AaQBJIgdpZAY7AEZpDEkiCW5hbWUGOwBGSSIKUGVkcm8G\nOwBUSSIKYWRtaW4GOwBGVA==\n"], ["updated_at", "2024-04-15 18:25:14.155623"], ["id", 5]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/order/10" for ::1 at 2024-04-15 15:25:14 -0300
+Processing by PubController#order as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/pub_controller.rb:68:in `order'
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/order.html.erb within layouts/pub
+  [1m[36mOrderItem Load (0.1ms)[0m  [1m[34mSELECT "order_items".* FROM "order_items" WHERE "order_items"."order_id" = ?[0m  [["order_id", 10]]
+  ↳ app/views/pub/order.html.erb:8
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pub/order.html.erb:10
+  Rendered pub/order.html.erb within layouts/pub (Duration: 2.9ms | Allocations: 1332)
+  Rendered layout layouts/pub.html.erb (Duration: 6.0ms | Allocations: 2514)
+Completed 200 OK in 9ms (Views: 6.3ms | ActiveRecord: 0.4ms | Allocations: 3111)
+
+
+Started GET "/" for ::1 at 2024-04-15 15:26:08 -0300
+Processing by PubController#index as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/index.html.erb within layouts/pub
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/pub/index.html.erb:4
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:3
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 1], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:5
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:3
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 2], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:5
+  Rendered collection of pub/_mini_book.html.erb [2 times] (Duration: 11.1ms | Allocations: 2795)
+  Rendered pub/index.html.erb within layouts/pub (Duration: 16.0ms | Allocations: 3361)
+  Rendered layout layouts/pub.html.erb (Duration: 19.7ms | Allocations: 4518)
+Completed 200 OK in 22ms (Views: 19.9ms | ActiveRecord: 0.9ms | Allocations: 4752)
+
+
+Started GET "/book/1" for ::1 at 2024-04-15 15:26:10 -0300
+Processing by PubController#book as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pub_controller.rb:12:in `book'
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/book.html.erb within layouts/pub
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/pub/book.html.erb:3
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 1], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/book.html.erb:5
+  Rendered pub/book.html.erb within layouts/pub (Duration: 7.2ms | Allocations: 1427)
+  Rendered layout layouts/pub.html.erb (Duration: 10.8ms | Allocations: 2580)
+Completed 200 OK in 15ms (Views: 11.1ms | ActiveRecord: 0.6ms | Allocations: 3177)
+
+
+Started GET "/buy/1" for ::1 at 2024-04-15 15:26:11 -0300
+Processing by PubController#buy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pub_controller.rb:24:in `buy'
+Redirected to http://localhost:3000/cart
+Completed 302 Found in 8ms (ActiveRecord: 0.6ms | Allocations: 814)
+
+
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::SessionStore::Session Update (2.6ms)[0m  [1m[33mUPDATE "sessions" SET "data" = ?, "updated_at" = ? WHERE "sessions"."id" = ?[0m  [["data", "BAh7CkkiEF9jc3JmX3Rva2VuBjoGRUZJIjBrQXFaRDA4RTlrcmNBbEZNLUQw\nZ2JlRXZfQXl5UTZISGVDTEhMQzFYcnljBjsARkkiCWNhcnQGOwBGbzoJQ2Fy\ndAY6C0BpdGVtc30GaQZpBmkASSIHaWQGOwBGaQxJIgluYW1lBjsARkkiClBl\nZHJvBjsAVEkiCmFkbWluBjsARlQ=\n"], ["updated_at", "2024-04-15 18:26:11.489558"], ["id", 5]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/cart" for ::1 at 2024-04-15 15:26:11 -0300
+Processing by PubController#cart as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/cart.html.erb within layouts/pub
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/services/cart.rb:35:in `block in items'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 1], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/_cart_item.html.erb:2
+  Rendered collection of pub/_cart_item.html.erb [1 times] (Duration: 1.9ms | Allocations: 905)
+  [1m[36mCACHE Book Load (0.0ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/services/cart.rb:22:in `block in total'
+  Rendered pub/cart.html.erb within layouts/pub (Duration: 3.8ms | Allocations: 1802)
+  Rendered layout layouts/pub.html.erb (Duration: 13.8ms | Allocations: 2720)
+Completed 200 OK in 15ms (Views: 14.2ms | ActiveRecord: 0.2ms | Allocations: 3204)
+
+
+Started GET "/" for ::1 at 2024-04-15 15:26:13 -0300
+Processing by PubController#index as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/index.html.erb within layouts/pub
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/pub/index.html.erb:4
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:3
+  [1m[36mImage Load (2.0ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 1], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:5
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:3
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 2], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:5
+  Rendered collection of pub/_mini_book.html.erb [2 times] (Duration: 17.0ms | Allocations: 2794)
+  Rendered pub/index.html.erb within layouts/pub (Duration: 22.6ms | Allocations: 3360)
+  Rendered layout layouts/pub.html.erb (Duration: 25.7ms | Allocations: 4517)
+Completed 200 OK in 29ms (Views: 24.2ms | ActiveRecord: 2.9ms | Allocations: 4751)
+
+
+Started GET "/book/2" for ::1 at 2024-04-15 15:26:14 -0300
+Processing by PubController#book as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/pub_controller.rb:12:in `book'
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/book.html.erb within layouts/pub
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/pub/book.html.erb:3
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 2], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/book.html.erb:5
+  Rendered pub/book.html.erb within layouts/pub (Duration: 8.9ms | Allocations: 1425)
+  Rendered layout layouts/pub.html.erb (Duration: 13.0ms | Allocations: 2578)
+Completed 200 OK in 18ms (Views: 13.3ms | ActiveRecord: 0.8ms | Allocations: 3175)
+
+
+Started GET "/buy/2" for ::1 at 2024-04-15 15:26:16 -0300
+Processing by PubController#buy as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/pub_controller.rb:24:in `buy'
+Redirected to http://localhost:3000/cart
+Completed 302 Found in 7ms (ActiveRecord: 0.5ms | Allocations: 814)
+
+
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::SessionStore::Session Update (1.9ms)[0m  [1m[33mUPDATE "sessions" SET "data" = ?, "updated_at" = ? WHERE "sessions"."id" = ?[0m  [["data", "BAh7CkkiEF9jc3JmX3Rva2VuBjoGRUZJIjBrQXFaRDA4RTlrcmNBbEZNLUQw\nZ2JlRXZfQXl5UTZISGVDTEhMQzFYcnljBjsARkkiCWNhcnQGOwBGbzoJQ2Fy\ndAY6C0BpdGVtc30HaQZpBmkHaQZpAEkiB2lkBjsARmkMSSIJbmFtZQY7AEZJ\nIgpQZWRybwY7AFRJIgphZG1pbgY7AEZU\n"], ["updated_at", "2024-04-15 18:26:16.750061"], ["id", 5]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/cart" for ::1 at 2024-04-15 15:26:16 -0300
+Processing by PubController#cart as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/cart.html.erb within layouts/pub
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/services/cart.rb:35:in `block in items'
+  [1m[36mBook Load (0.0ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/services/cart.rb:35:in `block in items'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 1], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/_cart_item.html.erb:2
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 2], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/_cart_item.html.erb:2
+  Rendered collection of pub/_cart_item.html.erb [2 times] (Duration: 4.2ms | Allocations: 1787)
+  [1m[36mCACHE Book Load (0.0ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/services/cart.rb:22:in `block in total'
+  [1m[36mCACHE Book Load (0.0ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/services/cart.rb:22:in `block in total'
+  Rendered pub/cart.html.erb within layouts/pub (Duration: 7.0ms | Allocations: 3360)
+  Rendered layout layouts/pub.html.erb (Duration: 8.9ms | Allocations: 4264)
+Completed 200 OK in 11ms (Views: 9.3ms | ActiveRecord: 0.3ms | Allocations: 4748)
+
+
+Started GET "/close" for ::1 at 2024-04-15 15:26:21 -0300
+Processing by PubController#close_order as HTML
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/services/cart.rb:35:in `block in items'
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/services/cart.rb:35:in `block in items'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/order.rb:20:in `block (2 levels) in create_by_cart'
+  [1m[36mBook Load (2.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/order.rb:20:in `block (2 levels) in create_by_cart'
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/models/book.rb:28:in `sell'
+  [1m[36mBook Update (0.2ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "stock" = ?, "lock_version" = ? WHERE "books"."id" = ? AND "books"."lock_version" = ?[0m  [["updated_at", "2024-04-15 18:26:21.862450"], ["stock", 42], ["lock_version", 9], ["id", 1], ["lock_version", 8]]
+  ↳ app/models/book.rb:28:in `sell'
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/order.rb:20:in `block (2 levels) in create_by_cart'
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/models/book.rb:28:in `sell'
+  [1m[36mBook Update (0.2ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "stock" = ?, "lock_version" = ? WHERE "books"."id" = ? AND "books"."lock_version" = ?[0m  [["updated_at", "2024-04-15 18:26:21.868591"], ["stock", 43], ["lock_version", 10], ["id", 2], ["lock_version", 9]]
+  ↳ app/models/book.rb:28:in `sell'
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/models/order.rb:30:in `block in create_by_cart'
+  [1m[36mOrder Create (0.2ms)[0m  [1m[32mINSERT INTO "orders" ("person_id", "created_at", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["person_id", 7], ["created_at", "2024-04-15 18:26:21.872498"], ["updated_at", "2024-04-15 18:26:21.872498"]]
+  ↳ app/models/order.rb:30:in `block in create_by_cart'
+  [1m[36mOrderItem Create (0.1ms)[0m  [1m[32mINSERT INTO "order_items" ("order_id", "book_id", "quantity", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["order_id", 11], ["book_id", 1], ["quantity", 1], ["value", 40.0], ["created_at", "2024-04-15 18:26:21.874057"], ["updated_at", "2024-04-15 18:26:21.874057"]]
+  ↳ app/models/order.rb:30:in `block in create_by_cart'
+  [1m[36mOrderItem Create (0.2ms)[0m  [1m[32mINSERT INTO "order_items" ("order_id", "book_id", "quantity", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["order_id", 11], ["book_id", 2], ["quantity", 1], ["value", 50.0], ["created_at", "2024-04-15 18:26:21.875617"], ["updated_at", "2024-04-15 18:26:21.875617"]]
+  ↳ app/models/order.rb:30:in `block in create_by_cart'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/order.rb:16:in `create_by_cart'
+  Rendering layout layouts/mailer.html.erb
+  Rendering order_mailer/created.html.erb within layouts/mailer
+  Rendered order_mailer/created.html.erb within layouts/mailer (Duration: 0.8ms | Allocations: 532)
+  Rendered layout layouts/mailer.html.erb (Duration: 1.2ms | Allocations: 633)
+  Rendering layout layouts/mailer.text.erb
+  Rendering order_mailer/created.text.erb within layouts/mailer
+  Rendered order_mailer/created.text.erb within layouts/mailer (Duration: 0.6ms | Allocations: 402)
+  Rendered layout layouts/mailer.text.erb (Duration: 0.7ms | Allocations: 503)
+OrderMailer#created: processed outbound mail in 10.1ms
+Delivered mail 661d714dd9018_603e449813c@pop-os.mail (4880.6ms)
+Date: Mon, 15 Apr 2024 15:26:21 -0300
+From: systemcraftdevelomenttest@gmail.com
+To: anddev007pe@gmail.com
+Message-ID: <661d714dd9018_603e449813c@pop-os.mail>
+Subject: Pedido 11 recebido!
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_661d714dd7941_603e4498055";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_661d714dd7941_603e4498055
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+Ol=C3=A1, Pedro!
+
+Seu pedido foi recebido em nosso sistema. Anote o n=C3=BAmero: 11
+
+Os itens comprados foram:
+
+- Ruby - Conhecendo a linguagem - 1 - R$ 40,00 - R$ 40,00
+- Conhecendo o Git - 1 - R$ 50,00 - R$ 50,00
+
+Obrigado por fazer seu pedido conosco!
+
+
+----==_mimepart_661d714dd7941_603e4498055
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8">
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <h1>Bookstore</h1>
+<h2>Recebemos o seu pedido!<h2>
+
+<p>Ol=C3=A1, Pedro! </p>
+
+<p>
+  Seu pedido foi recebido em nosso sistema. Anote o n=C3=BAmero: <strong>=
+ 11 </strong>
+</p>
+
+<p>Os itens comprados foram:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>T=C3=ADtulo</th>
+      <th>Quantidade</th>
+      <th>Valor</th>
+      <th>Total</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td> Ruby - Conhecendo a linguagem </td>
+        <td> 1 </td>
+        <td> R$ 40,00 </td>
+        <td> R$ 40,00 </td>
+      </tr>
+      <tr>
+        <td> Conhecendo o Git </td>
+        <td> 1 </td>
+        <td> R$ 50,00 </td>
+        <td> R$ 50,00 </td>
+      </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td colspan=3D'3' >Total</td>
+      <td> R$ 90,00 </td>
+    </tr>
+  </tfoot>
+</table>
+
+  </body>
+</html>
+
+----==_mimepart_661d714dd7941_603e4498055--
+
+Redirected to http://localhost:3000/order/11
+Completed 302 Found in 4930ms (ActiveRecord: 4.2ms | Allocations: 44907)
+
+
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::SessionStore::Session Update (7.0ms)[0m  [1m[33mUPDATE "sessions" SET "data" = ?, "updated_at" = ? WHERE "sessions"."id" = ?[0m  [["data", "BAh7CkkiEF9jc3JmX3Rva2VuBjoGRUZJIjBrQXFaRDA4RTlrcmNBbEZNLUQw\nZ2JlRXZfQXl5UTZISGVDTEhMQzFYcnljBjsARkkiCWNhcnQGOwBGbzoJQ2Fy\ndAY6C0BpdGVtc30AaQBJIgdpZAY7AEZpDEkiCW5hbWUGOwBGSSIKUGVkcm8G\nOwBUSSIKYWRtaW4GOwBGVA==\n"], ["updated_at", "2024-04-15 18:26:26.774068"], ["id", 5]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/order/11" for ::1 at 2024-04-15 15:26:26 -0300
+Processing by PubController#order as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/pub_controller.rb:68:in `order'
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/order.html.erb within layouts/pub
+  [1m[36mOrderItem Load (0.1ms)[0m  [1m[34mSELECT "order_items".* FROM "order_items" WHERE "order_items"."order_id" = ?[0m  [["order_id", 11]]
+  ↳ app/views/pub/order.html.erb:8
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pub/order.html.erb:10
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/pub/order.html.erb:10
+  Rendered pub/order.html.erb within layouts/pub (Duration: 5.8ms | Allocations: 2059)
+  Rendered layout layouts/pub.html.erb (Duration: 8.9ms | Allocations: 3241)
+Completed 200 OK in 11ms (Views: 9.2ms | ActiveRecord: 0.4ms | Allocations: 3837)
+
+
+Started GET "/order/11" for ::1 at 2024-04-15 15:27:41 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PubController#order as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/pub_controller.rb:68:in `order'
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/order.html.erb within layouts/pub
+  [1m[36mOrderItem Load (0.1ms)[0m  [1m[34mSELECT "order_items".* FROM "order_items" WHERE "order_items"."order_id" = ?[0m  [["order_id", 11]]
+  ↳ app/views/pub/order.html.erb:8
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pub/order.html.erb:10
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/pub/order.html.erb:10
+  Rendered pub/order.html.erb within layouts/pub (Duration: 43.4ms | Allocations: 34405)
+  Rendered layout layouts/pub.html.erb (Duration: 121.6ms | Allocations: 61459)
+Completed 200 OK in 154ms (Views: 123.2ms | ActiveRecord: 3.6ms | Allocations: 81874)
+
+
+Started GET "/" for ::1 at 2024-04-15 15:27:42 -0300
+Processing by PubController#index as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/index.html.erb within layouts/pub
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/pub/index.html.erb:4
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:3
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 1], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:5
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:3
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 2], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:5
+  Rendered collection of pub/_mini_book.html.erb [2 times] (Duration: 48.5ms | Allocations: 25891)
+  Rendered pub/index.html.erb within layouts/pub (Duration: 54.3ms | Allocations: 26801)
+  Rendered layout layouts/pub.html.erb (Duration: 57.7ms | Allocations: 27965)
+Completed 200 OK in 60ms (Views: 57.0ms | ActiveRecord: 1.6ms | Allocations: 28282)
+
+
+Started GET "/book/1" for ::1 at 2024-04-15 15:27:43 -0300
+Processing by PubController#book as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pub_controller.rb:12:in `book'
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/book.html.erb within layouts/pub
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/pub/book.html.erb:3
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 1], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/book.html.erb:5
+  Rendered pub/book.html.erb within layouts/pub (Duration: 9.7ms | Allocations: 1705)
+  Rendered layout layouts/pub.html.erb (Duration: 13.3ms | Allocations: 2858)
+Completed 200 OK in 20ms (Views: 13.8ms | ActiveRecord: 0.8ms | Allocations: 4914)
+
+
+Started GET "/buy/1" for ::1 at 2024-04-15 15:27:45 -0300
+Processing by PubController#buy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pub_controller.rb:24:in `buy'
+Redirected to http://localhost:3000/cart
+Completed 302 Found in 4ms (ActiveRecord: 0.1ms | Allocations: 1711)
+
+
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::SessionStore::Session Update (1.6ms)[0m  [1m[33mUPDATE "sessions" SET "data" = ?, "updated_at" = ? WHERE "sessions"."id" = ?[0m  [["data", "BAh7CkkiEF9jc3JmX3Rva2VuBjoGRUZJIjBrQXFaRDA4RTlrcmNBbEZNLUQw\nZ2JlRXZfQXl5UTZISGVDTEhMQzFYcnljBjsARkkiCWNhcnQGOwBGbzoJQ2Fy\ndAY6C0BpdGVtc30GaQZpBmkASSIHaWQGOwBGaQxJIgluYW1lBjsARkkiClBl\nZHJvBjsAVEkiCmFkbWluBjsARlQ=\n"], ["updated_at", "2024-04-15 18:27:45.606401"], ["id", 5]]
+  [1m[36mTRANSACTION (5.4ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/cart" for ::1 at 2024-04-15 15:27:45 -0300
+Processing by PubController#cart as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/cart.html.erb within layouts/pub
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/services/cart.rb:35:in `block in items'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 1], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/_cart_item.html.erb:2
+  Rendered collection of pub/_cart_item.html.erb [1 times] (Duration: 4.3ms | Allocations: 1158)
+  [1m[36mCACHE Book Load (0.0ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/services/cart.rb:22:in `block in total'
+  Rendered pub/cart.html.erb within layouts/pub (Duration: 8.4ms | Allocations: 2338)
+  Rendered layout layouts/pub.html.erb (Duration: 10.0ms | Allocations: 3258)
+Completed 200 OK in 12ms (Views: 10.3ms | ActiveRecord: 0.3ms | Allocations: 3813)
+
+
+Started GET "/cart" for ::1 at 2024-04-15 15:27:50 -0300
+Processing by PubController#cart as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/cart.html.erb within layouts/pub
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/services/cart.rb:35:in `block in items'
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 1], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/_cart_item.html.erb:2
+  Rendered collection of pub/_cart_item.html.erb [1 times] (Duration: 4.3ms | Allocations: 905)
+  [1m[36mCACHE Book Load (0.0ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/services/cart.rb:22:in `block in total'
+  Rendered pub/cart.html.erb within layouts/pub (Duration: 10.7ms | Allocations: 1803)
+  Rendered layout layouts/pub.html.erb (Duration: 13.4ms | Allocations: 2708)
+Completed 200 OK in 19ms (Views: 14.3ms | ActiveRecord: 0.7ms | Allocations: 3209)
+
+
+Started GET "/" for ::1 at 2024-04-15 15:27:51 -0300
+Processing by PubController#index as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/index.html.erb within layouts/pub
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/pub/index.html.erb:4
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:3
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 1], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:5
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:3
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 2], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:5
+  Rendered collection of pub/_mini_book.html.erb [2 times] (Duration: 15.0ms | Allocations: 2794)
+  Rendered pub/index.html.erb within layouts/pub (Duration: 17.4ms | Allocations: 3360)
+  Rendered layout layouts/pub.html.erb (Duration: 21.0ms | Allocations: 4517)
+Completed 200 OK in 23ms (Views: 21.0ms | ActiveRecord: 0.8ms | Allocations: 4756)
+
+
+Started GET "/book/1" for ::1 at 2024-04-15 15:27:53 -0300
+Processing by PubController#book as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pub_controller.rb:12:in `book'
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/book.html.erb within layouts/pub
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/pub/book.html.erb:3
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 1], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/book.html.erb:5
+  Rendered pub/book.html.erb within layouts/pub (Duration: 10.7ms | Allocations: 1427)
+  Rendered layout layouts/pub.html.erb (Duration: 14.5ms | Allocations: 2581)
+Completed 200 OK in 19ms (Views: 15.0ms | ActiveRecord: 0.7ms | Allocations: 3183)
+
+
+Started GET "/buy/1" for ::1 at 2024-04-15 15:27:54 -0300
+Processing by PubController#buy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pub_controller.rb:24:in `buy'
+Redirected to http://localhost:3000/cart
+Completed 302 Found in 11ms (ActiveRecord: 0.2ms | Allocations: 815)
+
+
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::SessionStore::Session Update (6.3ms)[0m  [1m[33mUPDATE "sessions" SET "data" = ?, "updated_at" = ? WHERE "sessions"."id" = ?[0m  [["data", "BAh7CkkiEF9jc3JmX3Rva2VuBjoGRUZJIjBrQXFaRDA4RTlrcmNBbEZNLUQw\nZ2JlRXZfQXl5UTZISGVDTEhMQzFYcnljBjsARkkiCWNhcnQGOwBGbzoJQ2Fy\ndAY6C0BpdGVtc30GaQZpB2kASSIHaWQGOwBGaQxJIgluYW1lBjsARkkiClBl\nZHJvBjsAVEkiCmFkbWluBjsARlQ=\n"], ["updated_at", "2024-04-15 18:27:54.591704"], ["id", 5]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/cart" for ::1 at 2024-04-15 15:27:54 -0300
+Processing by PubController#cart as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/cart.html.erb within layouts/pub
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/services/cart.rb:35:in `block in items'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 1], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/_cart_item.html.erb:2
+  Rendered collection of pub/_cart_item.html.erb [1 times] (Duration: 5.7ms | Allocations: 905)
+  [1m[36mCACHE Book Load (0.0ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/services/cart.rb:22:in `block in total'
+  Rendered pub/cart.html.erb within layouts/pub (Duration: 12.6ms | Allocations: 1802)
+  Rendered layout layouts/pub.html.erb (Duration: 15.8ms | Allocations: 2706)
+Completed 200 OK in 21ms (Views: 18.0ms | ActiveRecord: 0.2ms | Allocations: 3193)
+
+
+Started GET "/" for ::1 at 2024-04-15 15:27:56 -0300
+Processing by PubController#index as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/index.html.erb within layouts/pub
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/pub/index.html.erb:4
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:3
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 1], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:5
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:3
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 2], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:5
+  Rendered collection of pub/_mini_book.html.erb [2 times] (Duration: 7.6ms | Allocations: 2794)
+  Rendered pub/index.html.erb within layouts/pub (Duration: 8.9ms | Allocations: 3360)
+  Rendered layout layouts/pub.html.erb (Duration: 12.7ms | Allocations: 4533)
+Completed 200 OK in 14ms (Views: 12.9ms | ActiveRecord: 0.5ms | Allocations: 4773)
+
+
+Started GET "/book/2" for ::1 at 2024-04-15 15:27:57 -0300
+Processing by PubController#book as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/pub_controller.rb:12:in `book'
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/book.html.erb within layouts/pub
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/pub/book.html.erb:3
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 2], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/book.html.erb:5
+  Rendered pub/book.html.erb within layouts/pub (Duration: 9.7ms | Allocations: 1425)
+  Rendered layout layouts/pub.html.erb (Duration: 15.9ms | Allocations: 2583)
+Completed 200 OK in 22ms (Views: 16.6ms | ActiveRecord: 0.8ms | Allocations: 3186)
+
+
+Started GET "/buy/2" for ::1 at 2024-04-15 15:27:58 -0300
+Processing by PubController#buy as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/pub_controller.rb:24:in `buy'
+Redirected to http://localhost:3000/cart
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms | Allocations: 815)
+
+
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::SessionStore::Session Update (2.5ms)[0m  [1m[33mUPDATE "sessions" SET "data" = ?, "updated_at" = ? WHERE "sessions"."id" = ?[0m  [["data", "BAh7CkkiEF9jc3JmX3Rva2VuBjoGRUZJIjBrQXFaRDA4RTlrcmNBbEZNLUQw\nZ2JlRXZfQXl5UTZISGVDTEhMQzFYcnljBjsARkkiCWNhcnQGOwBGbzoJQ2Fy\ndAY6C0BpdGVtc30HaQZpB2kHaQZpAEkiB2lkBjsARmkMSSIJbmFtZQY7AEZJ\nIgpQZWRybwY7AFRJIgphZG1pbgY7AEZU\n"], ["updated_at", "2024-04-15 18:27:58.515635"], ["id", 5]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/cart" for ::1 at 2024-04-15 15:27:58 -0300
+Processing by PubController#cart as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/cart.html.erb within layouts/pub
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/services/cart.rb:35:in `block in items'
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/services/cart.rb:35:in `block in items'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 1], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/_cart_item.html.erb:2
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 2], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/_cart_item.html.erb:2
+  Rendered collection of pub/_cart_item.html.erb [2 times] (Duration: 4.0ms | Allocations: 1787)
+  [1m[36mCACHE Book Load (0.0ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/services/cart.rb:22:in `block in total'
+  [1m[36mCACHE Book Load (0.0ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/services/cart.rb:22:in `block in total'
+  Rendered pub/cart.html.erb within layouts/pub (Duration: 7.3ms | Allocations: 3360)
+  Rendered layout layouts/pub.html.erb (Duration: 8.7ms | Allocations: 4275)
+Completed 200 OK in 10ms (Views: 8.8ms | ActiveRecord: 0.5ms | Allocations: 4762)
+
+
+Started GET "/close" for ::1 at 2024-04-15 15:28:00 -0300
+Processing by PubController#close_order as HTML
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/services/cart.rb:35:in `block in items'
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/services/cart.rb:35:in `block in items'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/order.rb:20:in `block (2 levels) in create_by_cart'
+  [1m[36mBook Load (3.9ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/order.rb:20:in `block (2 levels) in create_by_cart'
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/models/book.rb:28:in `sell'
+  [1m[36mBook Update (0.2ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "stock" = ?, "lock_version" = ? WHERE "books"."id" = ? AND "books"."lock_version" = ?[0m  [["updated_at", "2024-04-15 18:28:00.325104"], ["stock", 40], ["lock_version", 10], ["id", 1], ["lock_version", 9]]
+  ↳ app/models/book.rb:28:in `sell'
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/order.rb:20:in `block (2 levels) in create_by_cart'
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/models/book.rb:28:in `sell'
+  [1m[36mBook Update (0.1ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "stock" = ?, "lock_version" = ? WHERE "books"."id" = ? AND "books"."lock_version" = ?[0m  [["updated_at", "2024-04-15 18:28:00.332471"], ["stock", 42], ["lock_version", 11], ["id", 2], ["lock_version", 10]]
+  ↳ app/models/book.rb:28:in `sell'
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/models/order.rb:30:in `block in create_by_cart'
+  [1m[36mOrder Create (0.2ms)[0m  [1m[32mINSERT INTO "orders" ("person_id", "created_at", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["person_id", 7], ["created_at", "2024-04-15 18:28:00.336850"], ["updated_at", "2024-04-15 18:28:00.336850"]]
+  ↳ app/models/order.rb:30:in `block in create_by_cart'
+  [1m[36mOrderItem Create (0.1ms)[0m  [1m[32mINSERT INTO "order_items" ("order_id", "book_id", "quantity", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["order_id", 12], ["book_id", 1], ["quantity", 2], ["value", 40.0], ["created_at", "2024-04-15 18:28:00.338728"], ["updated_at", "2024-04-15 18:28:00.338728"]]
+  ↳ app/models/order.rb:30:in `block in create_by_cart'
+  [1m[36mOrderItem Create (0.3ms)[0m  [1m[32mINSERT INTO "order_items" ("order_id", "book_id", "quantity", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["order_id", 12], ["book_id", 2], ["quantity", 1], ["value", 50.0], ["created_at", "2024-04-15 18:28:00.340779"], ["updated_at", "2024-04-15 18:28:00.340779"]]
+  ↳ app/models/order.rb:30:in `block in create_by_cart'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/order.rb:16:in `create_by_cart'
+Completed 500 Internal Server Error in 68ms (ActiveRecord: 6.0ms | Allocations: 25508)
+
+
+
+NoMethodError - undefined method `smtp_settiongs=' for class ActionMailer::Base:
+  app/mailers/application_mailer.rb:1:in `<main>'
+  app/mailers/order_mailer.rb:1:in `<main>'
+  app/controllers/pub_controller.rb:62:in `close_order'
+
+Started POST "/__better_errors/cb4fe825f4be2f61/variables" for ::1 at 2024-04-15 15:28:00 -0300
+Started GET "/cart" for ::1 at 2024-04-15 15:28:21 -0300
+Processing by PubController#cart as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/cart.html.erb within layouts/pub
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/services/cart.rb:35:in `block in items'
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/services/cart.rb:35:in `block in items'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 1], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/_cart_item.html.erb:2
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 2], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/_cart_item.html.erb:2
+  Rendered collection of pub/_cart_item.html.erb [2 times] (Duration: 15.3ms | Allocations: 9505)
+  [1m[36mCACHE Book Load (0.0ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/services/cart.rb:22:in `block in total'
+  [1m[36mCACHE Book Load (0.0ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/services/cart.rb:22:in `block in total'
+  Rendered pub/cart.html.erb within layouts/pub (Duration: 43.5ms | Allocations: 22013)
+  Rendered layout layouts/pub.html.erb (Duration: 46.4ms | Allocations: 23188)
+Completed 200 OK in 51ms (Views: 46.4ms | ActiveRecord: 2.9ms | Allocations: 24729)
+
+
+Started GET "/close" for ::1 at 2024-04-15 15:28:23 -0300
+Processing by PubController#close_order as HTML
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/services/cart.rb:35:in `block in items'
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/services/cart.rb:35:in `block in items'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/order.rb:17:in `block in create_by_cart'
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/order.rb:20:in `block (2 levels) in create_by_cart'
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/models/book.rb:28:in `sell'
+  [1m[36mBook Update (0.2ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "stock" = ?, "lock_version" = ? WHERE "books"."id" = ? AND "books"."lock_version" = ?[0m  [["updated_at", "2024-04-15 18:28:23.239530"], ["stock", 38], ["lock_version", 11], ["id", 1], ["lock_version", 10]]
+  ↳ app/models/book.rb:28:in `sell'
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/order.rb:20:in `block (2 levels) in create_by_cart'
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/models/book.rb:28:in `sell'
+  [1m[36mBook Update (0.2ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "stock" = ?, "lock_version" = ? WHERE "books"."id" = ? AND "books"."lock_version" = ?[0m  [["updated_at", "2024-04-15 18:28:23.273252"], ["stock", 41], ["lock_version", 12], ["id", 2], ["lock_version", 11]]
+  ↳ app/models/book.rb:28:in `sell'
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/models/order.rb:30:in `block in create_by_cart'
+  [1m[36mOrder Create (0.6ms)[0m  [1m[32mINSERT INTO "orders" ("person_id", "created_at", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["person_id", 7], ["created_at", "2024-04-15 18:28:23.282773"], ["updated_at", "2024-04-15 18:28:23.282773"]]
+  ↳ app/models/order.rb:30:in `block in create_by_cart'
+  [1m[36mOrderItem Create (0.2ms)[0m  [1m[32mINSERT INTO "order_items" ("order_id", "book_id", "quantity", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["order_id", 13], ["book_id", 1], ["quantity", 2], ["value", 40.0], ["created_at", "2024-04-15 18:28:23.287274"], ["updated_at", "2024-04-15 18:28:23.287274"]]
+  ↳ app/models/order.rb:30:in `block in create_by_cart'
+  [1m[36mOrderItem Create (0.2ms)[0m  [1m[32mINSERT INTO "order_items" ("order_id", "book_id", "quantity", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["order_id", 13], ["book_id", 2], ["quantity", 1], ["value", 50.0], ["created_at", "2024-04-15 18:28:23.291019"], ["updated_at", "2024-04-15 18:28:23.291019"]]
+  ↳ app/models/order.rb:30:in `block in create_by_cart'
+  [1m[36mTRANSACTION (5.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/order.rb:16:in `create_by_cart'
+Completed 500 Internal Server Error in 108ms (ActiveRecord: 11.0ms | Allocations: 34275)
+
+
+
+NoMethodError - undefined method `smtp_settiongs=' for class ActionMailer::Base:
+  app/mailers/application_mailer.rb:1:in `<main>'
+  app/mailers/order_mailer.rb:1:in `<main>'
+  app/controllers/pub_controller.rb:62:in `close_order'
+
+Started POST "/__better_errors/618e8cbc7a8a3077/variables" for ::1 at 2024-04-15 15:28:23 -0300
+Started GET "/close" for ::1 at 2024-04-15 15:28:42 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PubController#close_order as HTML
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/services/cart.rb:35:in `block in items'
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/services/cart.rb:35:in `block in items'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/order.rb:17:in `block in create_by_cart'
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/order.rb:20:in `block (2 levels) in create_by_cart'
+  [1m[36mPerson Load (1.0ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/models/book.rb:28:in `sell'
+  [1m[36mBook Update (0.1ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "stock" = ?, "lock_version" = ? WHERE "books"."id" = ? AND "books"."lock_version" = ?[0m  [["updated_at", "2024-04-15 18:28:42.390462"], ["stock", 36], ["lock_version", 12], ["id", 1], ["lock_version", 11]]
+  ↳ app/models/book.rb:28:in `sell'
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/order.rb:20:in `block (2 levels) in create_by_cart'
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/models/book.rb:28:in `sell'
+  [1m[36mBook Update (0.1ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "stock" = ?, "lock_version" = ? WHERE "books"."id" = ? AND "books"."lock_version" = ?[0m  [["updated_at", "2024-04-15 18:28:42.439682"], ["stock", 40], ["lock_version", 13], ["id", 2], ["lock_version", 12]]
+  ↳ app/models/book.rb:28:in `sell'
+  [1m[36mPerson Load (0.0ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/models/order.rb:30:in `block in create_by_cart'
+  [1m[36mOrder Create (0.2ms)[0m  [1m[32mINSERT INTO "orders" ("person_id", "created_at", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["person_id", 7], ["created_at", "2024-04-15 18:28:42.443560"], ["updated_at", "2024-04-15 18:28:42.443560"]]
+  ↳ app/models/order.rb:30:in `block in create_by_cart'
+  [1m[36mOrderItem Create (0.1ms)[0m  [1m[32mINSERT INTO "order_items" ("order_id", "book_id", "quantity", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["order_id", 14], ["book_id", 1], ["quantity", 2], ["value", 40.0], ["created_at", "2024-04-15 18:28:42.445368"], ["updated_at", "2024-04-15 18:28:42.445368"]]
+  ↳ app/models/order.rb:30:in `block in create_by_cart'
+  [1m[36mOrderItem Create (0.2ms)[0m  [1m[32mINSERT INTO "order_items" ("order_id", "book_id", "quantity", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["order_id", 14], ["book_id", 2], ["quantity", 1], ["value", 50.0], ["created_at", "2024-04-15 18:28:42.447395"], ["updated_at", "2024-04-15 18:28:42.447395"]]
+  ↳ app/models/order.rb:30:in `block in create_by_cart'
+  [1m[36mTRANSACTION (5.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/order.rb:16:in `create_by_cart'
+  Rendering layout layouts/mailer.html.erb
+  Rendering order_mailer/created.html.erb within layouts/mailer
+  Rendered order_mailer/created.html.erb within layouts/mailer (Duration: 3.3ms | Allocations: 1903)
+  Rendered layout layouts/mailer.html.erb (Duration: 3.8ms | Allocations: 2165)
+  Rendering layout layouts/mailer.text.erb
+  Rendering order_mailer/created.text.erb within layouts/mailer
+  Rendered order_mailer/created.text.erb within layouts/mailer (Duration: 1.0ms | Allocations: 626)
+  Rendered layout layouts/mailer.text.erb (Duration: 1.4ms | Allocations: 821)
+OrderMailer#created: processed outbound mail in 20.5ms
+Delivered mail 661d71da7c453_6ec7445c426fe@pop-os.mail (5055.1ms)
+Date: Mon, 15 Apr 2024 15:28:42 -0300
+From: systemcraftdevelomenttest@gmail.com
+To: anddev007pe@gmail.com
+Message-ID: <661d71da7c453_6ec7445c426fe@pop-os.mail>
+Subject: Pedido 14 recebido!
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_661d71da7aa67_6ec7445c42549";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_661d71da7aa67_6ec7445c42549
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+Ol=C3=A1, Pedro!
+
+Seu pedido foi recebido em nosso sistema. Anote o n=C3=BAmero: 14
+
+Os itens comprados foram:
+
+- Ruby - Conhecendo a linguagem - 2 - R$ 40,00 - R$ 80,00
+- Conhecendo o Git - 1 - R$ 50,00 - R$ 50,00
+
+Obrigado por fazer seu pedido conosco!
+
+
+----==_mimepart_661d71da7aa67_6ec7445c42549
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8">
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <h1>Bookstore</h1>
+<h2>Recebemos o seu pedido!<h2>
+
+<p>Ol=C3=A1, Pedro! </p>
+
+<p>
+  Seu pedido foi recebido em nosso sistema. Anote o n=C3=BAmero: <strong>=
+ 14 </strong>
+</p>
+
+<p>Os itens comprados foram:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>T=C3=ADtulo</th>
+      <th>Quantidade</th>
+      <th>Valor</th>
+      <th>Total</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td> Ruby - Conhecendo a linguagem </td>
+        <td> 2 </td>
+        <td> R$ 40,00 </td>
+        <td> R$ 80,00 </td>
+      </tr>
+      <tr>
+        <td> Conhecendo o Git </td>
+        <td> 1 </td>
+        <td> R$ 50,00 </td>
+        <td> R$ 50,00 </td>
+      </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td colspan=3D'3' >Total</td>
+      <td> R$ 130,00 </td>
+    </tr>
+  </tfoot>
+</table>
+
+  </body>
+</html>
+
+----==_mimepart_661d71da7aa67_6ec7445c42549--
+
+Redirected to http://localhost:3000/order/14
+Completed 302 Found in 5311ms (ActiveRecord: 12.8ms | Allocations: 133740)
+
+
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::SessionStore::Session Update (4.6ms)[0m  [1m[33mUPDATE "sessions" SET "data" = ?, "updated_at" = ? WHERE "sessions"."id" = ?[0m  [["data", "BAh7CkkiEF9jc3JmX3Rva2VuBjoGRUZJIjBrQXFaRDA4RTlrcmNBbEZNLUQw\nZ2JlRXZfQXl5UTZISGVDTEhMQzFYcnljBjsARkkiCWNhcnQGOwBGbzoJQ2Fy\ndAY6C0BpdGVtc30AaQBJIgdpZAY7AEZpDEkiCW5hbWUGOwBGSSIKUGVkcm8G\nOwBUSSIKYWRtaW4GOwBGVA==\n"], ["updated_at", "2024-04-15 18:28:47.569449"], ["id", 5]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/order/14" for ::1 at 2024-04-15 15:28:47 -0300
+Processing by PubController#order as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/pub_controller.rb:68:in `order'
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/order.html.erb within layouts/pub
+  [1m[36mOrderItem Load (0.3ms)[0m  [1m[34mSELECT "order_items".* FROM "order_items" WHERE "order_items"."order_id" = ?[0m  [["order_id", 14]]
+  ↳ app/views/pub/order.html.erb:8
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pub/order.html.erb:10
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/pub/order.html.erb:10
+  Rendered pub/order.html.erb within layouts/pub (Duration: 14.1ms | Allocations: 5966)
+  Rendered layout layouts/pub.html.erb (Duration: 93.0ms | Allocations: 27870)
+Completed 200 OK in 101ms (Views: 94.9ms | ActiveRecord: 0.9ms | Allocations: 30400)
+
+

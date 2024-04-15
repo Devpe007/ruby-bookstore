@@ -58,6 +58,9 @@ class PubController < ApplicationController
     end
 
     @cart.clear
+
+    OrderMailer.created(@order).deliver_now
+
     redirect_to order_path(@order)
   end
 

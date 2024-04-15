@@ -17,7 +17,7 @@ class Order < ApplicationRecord
       order = Order.new(person_id: person_id)
 
       items.each do |item|
-        item[:item].realod.sell(item[:qty])
+        item[:item].reload.sell(item[:qty])
 
         order_item = OrderItem.new
         order_item.book = item[:item]
@@ -30,10 +30,9 @@ class Order < ApplicationRecord
       order.save!
       order
     end
-  end
 
-  rescue Exeception => error
-    logger.error "erro salvando o pedido: #{error}"
-    nil
+    rescue Exception => e
+      logger.error "erro salvando o pedido: #{e}"
+      nil
   end
 end
