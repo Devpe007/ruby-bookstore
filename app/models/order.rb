@@ -13,19 +13,27 @@ class Order < ApplicationRecord
   end
 
   def self.create_by_cart(person_id, items)
-    order = Order.new(person_id: person_id)
+    Book.transaction do
+      order = Order.new(person_id: person_id)
 
-    items.each do |item|
-      item[:item].sell(item[:qty])
+      items.each do |item|
+        item[:item].realod.sell(item[:qty])
 
-      order_item = OrderItem.new
-      order_item.book = item[:item]
-      order_item.quantity = item[:qty]
-      order_item.value = item[:item].value
+        order_item = OrderItem.new
+        order_item.book = item[:item]
+        order_item.quantity = item[:qty]
+        order_item.value = item[:item].value
 
-      order.order_items << order_item
+        order.order_items << order_item
+      end
+
+      order.save!
+      order
     end
+  end
 
-    order.save ? order : nil
+  rescue Exeception => error
+    logger.error "erro salvando o pedido: #{error}"
+    nil
   end
 end
