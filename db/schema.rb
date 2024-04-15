@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_04_15_155525) do
+ActiveRecord::Schema[7.1].define(version: 2024_04_15_195910) do
   create_table "books", force: :cascade do |t|
     t.string "title", limit: 100, null: false
     t.date "published_at", null: false
@@ -61,6 +61,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_15_155525) do
     t.integer "person_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "status"
     t.index ["person_id"], name: "index_orders_on_person_id"
   end
 

@@ -1,4 +1,6 @@
 class Order < ApplicationRecord
+  enum status: [:mailed, :delivered, :canceled]
+
   has_many :order_items
   has_many :items, class_name: 'OrderItem', foreign_key: 'order_id'
   belongs_to :person
