@@ -27,4 +27,12 @@ class PubController < ApplicationController
   def cart
     @cart = find_cart
   end
+
+  def remove
+    @book = Book.find(params[:id])
+    @cart = find_cart
+    @cart - @book
+
+    redirect_to cart_path
+  end
 end

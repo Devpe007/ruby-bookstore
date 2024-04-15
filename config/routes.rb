@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get 'buy/:id' => 'pub#buy', as: 'buy'
 
   get 'cart' => 'pub#cart', as: 'cart'
+  delete 'remove/:id' => 'pub#remove', as: 'remove'
 
   namespace :admin do
     resources :people

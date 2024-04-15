@@ -6,4 +6,6 @@
   <%= text_field_tag :qty, cart_item[:qty], size: 3, readonly: 'readonly' %>
 
   <span class="book_value" > <%= number_to_currency(cart_item[:item].value) %> </span>
+
+  <%= button_to 'Remover', remove_path(cart_item[:id]), method: 'delete', remote: true, data: { confirm: 'Tem certeza?' } %>
 </li>

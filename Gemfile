@@ -33,6 +33,7 @@ gem 'htmlbeautifier'
 gem 'mini_magick'
 gem 'redcarpet'
 gem 'activerecord-session_store'
+gem 'jquery-rails'
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"

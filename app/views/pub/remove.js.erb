@@ -1,0 +1,2 @@
+$("#item_<%= @book.id %>").fadeOut(1000);
+$("#cart_total").text("<%= number_to_currency(@cart.total) %>");
