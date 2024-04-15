@@ -34,6 +34,7 @@ gem 'mini_magick'
 gem 'redcarpet'
 gem 'activerecord-session_store'
 gem 'jquery-rails'
+gem 'figaro'
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
