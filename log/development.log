@@ -26725,3 +26725,14 @@ Processing by PubController#order as HTML
 Completed 200 OK in 39ms (Views: 28.9ms | ActiveRecord: 2.8ms | Allocations: 29150)
 
 
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" ORDER BY "books"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" INNER JOIN "order_items" ON "orders"."id" = "order_items"."order_id" WHERE "order_items"."book_id" = ? /* loading for pp */ LIMIT ?[0m  [["book_id", 1], ["LIMIT", 11]]
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT "people".* FROM "people" ORDER BY "people"."name" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mOrderItem Load (0.1ms)[0m  [1m[34mSELECT "order_items".* FROM "order_items" INNER JOIN "orders" ON "order_items"."order_id" = "orders"."id" WHERE "orders"."person_id" = ? /* loading for pp */ LIMIT ?[0m  [["person_id", 7], ["LIMIT", 11]]
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" ORDER BY "orders"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mOrderItem Load (0.1ms)[0m  [1m[34mSELECT "order_items".* FROM "order_items" WHERE "order_items"."order_id" = ?[0m  [["order_id", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" ORDER BY "books"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" ORDER BY "books"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" ORDER BY "books"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT DISTINCT "people".* FROM "people" INNER JOIN "orders" ON "people"."id" = "orders"."person_id" INNER JOIN "order_items" ON "orders"."id" = "order_items"."order_id" WHERE "order_items"."book_id" = ? /* loading for pp */ ORDER BY "people"."name" ASC LIMIT ?[0m  [["book_id", 1], ["LIMIT", 11]]
