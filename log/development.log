@@ -29205,3 +29205,652 @@ Processing by PubController#order as HTML
 Completed 200 OK in 101ms (Views: 94.9ms | ActiveRecord: 0.9ms | Allocations: 30400)
 
 
+Started GET "/people" for ::1 at 2024-04-15 15:43:15 -0300
+Processing by PeopleController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering people/index.html.erb within layouts/application
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT "people".* FROM "people" ORDER BY "people"."name" ASC[0m
+  ↳ app/views/people/index.html.erb:6
+  Rendered people/_person.html.erb (Duration: 0.8ms | Allocations: 285)
+  Rendered people/_person.html.erb (Duration: 0.1ms | Allocations: 28)
+  Rendered people/index.html.erb within layouts/application (Duration: 8.9ms | Allocations: 4554)
+  Rendered layout layouts/application.html.erb (Duration: 32.9ms | Allocations: 20743)
+Completed 200 OK in 65ms (Views: 36.5ms | ActiveRecord: 1.6ms | Allocations: 26667)
+
+
+Started GET "/order/14" for ::1 at 2024-04-15 15:44:14 -0300
+Processing by PubController#order as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/pub_controller.rb:68:in `order'
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/order.html.erb within layouts/pub
+  [1m[36mOrderItem Load (0.1ms)[0m  [1m[34mSELECT "order_items".* FROM "order_items" WHERE "order_items"."order_id" = ?[0m  [["order_id", 14]]
+  ↳ app/views/pub/order.html.erb:8
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pub/order.html.erb:10
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/pub/order.html.erb:10
+  Rendered pub/order.html.erb within layouts/pub (Duration: 37.7ms | Allocations: 22310)
+  Rendered layout layouts/pub.html.erb (Duration: 40.3ms | Allocations: 23729)
+Completed 200 OK in 49ms (Views: 40.5ms | ActiveRecord: 0.5ms | Allocations: 29471)
+
+
+Started GET "/" for ::1 at 2024-04-15 15:44:21 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PubController#index as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/index.html.erb within layouts/pub
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/pub/index.html.erb:4
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:3
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 1], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:5
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:3
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 2], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:5
+  Rendered collection of pub/_mini_book.html.erb [2 times] (Duration: 119.3ms | Allocations: 32473)
+  Rendered pub/index.html.erb within layouts/pub (Duration: 170.3ms | Allocations: 47728)
+  Rendered layout layouts/pub.html.erb (Duration: 271.1ms | Allocations: 83760)
+Completed 200 OK in 296ms (Views: 271.5ms | ActiveRecord: 3.5ms | Allocations: 95701)
+
+
+Started GET "/book/1" for ::1 at 2024-04-15 15:44:23 -0300
+Processing by PubController#book as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pub_controller.rb:12:in `book'
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/book.html.erb within layouts/pub
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/pub/book.html.erb:3
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 1], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/book.html.erb:5
+  Rendered pub/book.html.erb within layouts/pub (Duration: 9.8ms | Allocations: 1771)
+  Rendered layout layouts/pub.html.erb (Duration: 13.5ms | Allocations: 2927)
+Completed 200 OK in 22ms (Views: 14.0ms | ActiveRecord: 1.0ms | Allocations: 5029)
+
+
+Started GET "/buy/1" for ::1 at 2024-04-15 15:44:24 -0300
+Processing by PubController#buy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pub_controller.rb:24:in `buy'
+Redirected to http://localhost:3000/cart
+Completed 302 Found in 8ms (ActiveRecord: 0.5ms | Allocations: 1711)
+
+
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::SessionStore::Session Update (2.0ms)[0m  [1m[33mUPDATE "sessions" SET "data" = ?, "updated_at" = ? WHERE "sessions"."id" = ?[0m  [["data", "BAh7CkkiEF9jc3JmX3Rva2VuBjoGRUZJIjBrQXFaRDA4RTlrcmNBbEZNLUQw\nZ2JlRXZfQXl5UTZISGVDTEhMQzFYcnljBjsARkkiCWNhcnQGOwBGbzoJQ2Fy\ndAY6C0BpdGVtc30GaQZpBmkASSIHaWQGOwBGaQxJIgluYW1lBjsARkkiClBl\nZHJvBjsAVEkiCmFkbWluBjsARlQ=\n"], ["updated_at", "2024-04-15 18:44:24.573237"], ["id", 5]]
+  [1m[36mTRANSACTION (19.3ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/cart" for ::1 at 2024-04-15 15:44:24 -0300
+Processing by PubController#cart as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/cart.html.erb within layouts/pub
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/services/cart.rb:35:in `block in items'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 1], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/_cart_item.html.erb:2
+  Rendered collection of pub/_cart_item.html.erb [1 times] (Duration: 3.4ms | Allocations: 1158)
+  [1m[36mCACHE Book Load (0.0ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/services/cart.rb:22:in `block in total'
+  Rendered pub/cart.html.erb within layouts/pub (Duration: 7.6ms | Allocations: 2337)
+  Rendered layout layouts/pub.html.erb (Duration: 9.4ms | Allocations: 3244)
+Completed 200 OK in 13ms (Views: 9.9ms | ActiveRecord: 0.5ms | Allocations: 3798)
+
+
+Started GET "/close" for ::1 at 2024-04-15 15:44:26 -0300
+Processing by PubController#close_order as HTML
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/services/cart.rb:35:in `block in items'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/order.rb:17:in `block in create_by_cart'
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/order.rb:20:in `block (2 levels) in create_by_cart'
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/models/book.rb:28:in `sell'
+  [1m[36mBook Update (0.1ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "stock" = ?, "lock_version" = ? WHERE "books"."id" = ? AND "books"."lock_version" = ?[0m  [["updated_at", "2024-04-15 18:44:26.190597"], ["stock", 35], ["lock_version", 13], ["id", 1], ["lock_version", 12]]
+  ↳ app/models/book.rb:28:in `sell'
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/models/order.rb:30:in `block in create_by_cart'
+  [1m[36mOrder Create (0.3ms)[0m  [1m[32mINSERT INTO "orders" ("person_id", "created_at", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["person_id", 7], ["created_at", "2024-04-15 18:44:26.211750"], ["updated_at", "2024-04-15 18:44:26.211750"]]
+  ↳ app/models/order.rb:30:in `block in create_by_cart'
+  [1m[36mOrderItem Create (0.2ms)[0m  [1m[32mINSERT INTO "order_items" ("order_id", "book_id", "quantity", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["order_id", 15], ["book_id", 1], ["quantity", 1], ["value", 40.0], ["created_at", "2024-04-15 18:44:26.232715"], ["updated_at", "2024-04-15 18:44:26.232715"]]
+  ↳ app/models/order.rb:30:in `block in create_by_cart'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/order.rb:16:in `create_by_cart'
+  Rendering layout layouts/mailer.html.erb
+  Rendering order_mailer/created.html.erb within layouts/mailer
+  Rendered order_mailer/created.html.erb within layouts/mailer (Duration: 1.0ms | Allocations: 630)
+  Rendered layout layouts/mailer.html.erb (Duration: 1.4ms | Allocations: 851)
+  Rendering layout layouts/mailer.text.erb
+  Rendering order_mailer/created.text.erb within layouts/mailer
+  Rendered order_mailer/created.text.erb within layouts/mailer (Duration: 0.9ms | Allocations: 430)
+  Rendered layout layouts/mailer.text.erb (Duration: 1.3ms | Allocations: 625)
+OrderMailer#created: processed outbound mail in 28.7ms
+Delivered mail 661d758a4934b_7403445c4665f@pop-os.mail (5600.9ms)
+Date: Mon, 15 Apr 2024 15:44:26 -0300
+From: systemcraftdevelomenttest@gmail.com
+To: anddev007pe@gmail.com
+Message-ID: <661d758a4934b_7403445c4665f@pop-os.mail>
+Subject: Pedido 15 recebido!
+Mime-Version: 1.0
+Content-Type: multipart/mixed;
+ boundary="--==_mimepart_661d758a468a3_7403445c46548";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_661d758a468a3_7403445c46548
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_661d758a4654d_7403445c464a"
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_661d758a4654d_7403445c464a
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+Ol=C3=A1, Pedro!
+
+Seu pedido foi recebido em nosso sistema. Anote o n=C3=BAmero: 15
+
+Os itens comprados foram:
+
+- Ruby - Conhecendo a linguagem - 1 - R$ 40,00 - R$ 40,00
+
+Obrigado por fazer seu pedido conosco!
+
+
+----==_mimepart_661d758a4654d_7403445c464a
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8">
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <h1>Bookstore</h1>
+<h2>Recebemos o seu pedido!<h2>
+
+<p>Ol=C3=A1, Pedro! </p>
+
+<p>
+  Seu pedido foi recebido em nosso sistema. Anote o n=C3=BAmero: <strong>=
+ 15 </strong>
+</p>
+
+<p>Os itens comprados foram:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>T=C3=ADtulo</th>
+      <th>Quantidade</th>
+      <th>Valor</th>
+      <th>Total</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td> Ruby - Conhecendo a linguagem </td>
+        <td> 1 </td>
+        <td> R$ 40,00 </td>
+        <td> R$ 40,00 </td>
+      </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td colspan=3D'3' >Total</td>
+      <td> R$ 40,00 </td>
+    </tr>
+  </tfoot>
+</table>
+
+  </body>
+</html>
+
+----==_mimepart_661d758a4654d_7403445c464a--
+
+----==_mimepart_661d758a468a3_7403445c46548
+Content-Type: image/png;
+ filename=logo.png
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment;
+ filename=logo.png
+
+iVBORw0KGgoAAAANSUhEUgAAAJQAAACUCAMAAABC4vDmAAAAe1BMVEX////Z
+FATYAADXAADZEwDspKTleHb87+7/+vngXlz99PPhZWT54uHzxMLzvrz+9/fv
+sK776unqmJbcLiv429r20M7uqKX21dPoioflc2/pj4zsnpz1ysjng4HwtbPi
+ZGDdPDreTk3dR0bbJCDgWFXdNjPaGRXdQ0DkbWjmZpI+AAAOkElEQVR4nO1c
+65qqvA7GtgOoKHJSBEUQQe//CneSljM4S3RmrWc/X345cuhrkubc0bT/6D/6
+npyD/bch1GQ7h+3urB/1L7/50giSyPkrcFbWNtaXWerd3JO1qr+2A/dyXXC+
+/V00h23i6tecc14uo6TFEWDQOWWcMyYW7PK7oJwzMIKV1zhwajUyV4F7u5eE
+h0hw85fgBIGC4G+CRmBGsAvvnDeAiPj+VyA567LMdkbnO/MU3tKS8Q4eIrb+
+BUhGCCsLWF7fNkzSVkl443ihj2khcn/6ZZ8hM/a4XFgw5p3gm02142xneykW
+Q16xn5bfLuXNmtwDEe45T8NdxQzzFK8XfaUqfhTSKWO8zYIvEFvKcAvm9+NJ
+bUHTOJ3veZth/Aftp693RSNyQLEjlEJwMEsXd1tpv7/XEau8nbk/BckJy562
+cGCUDYyqQTLG88z1FTDzEGUeQ2nz2+r5u+fSzuM9BeYFrL7rAsVdyQs9Pqin
+rCQq0W4dnr57JgVXzhY9wk21SgdfI8PYIj8malOaVnzxzp+HZEdsaBPFAtxH
+wgeYFDDgT6bvlSStzccxHfK+5Eh6O2TUCChUeZZfb8do+3NWc7sYigiWToEL
+SYuBAsUGeHixjncnv3ZCK0TmfDju24+xCeQDjLILXmkRKLOXrY9fm8YkrRx/
+415K5Kh9/ez22w+1SeLQUKM48YanDzcJrJaHtrauvixQjhzDqS/20fDFHeUT
+BEmoUUVxO573QdstOwFxB9GScxYlCM7i4pOYoilMOvz0VYc5wJ1Iv6WIp3mI
+pGyuWfk5SKY+hSls3YUZQ/zwuIzuekZfhxtizr3PgbpMYYqrO5xtdATuMD5i
+yOhO0HuHCZZ+CpJxm8C02CGczAJdGeNO604GmYx9YwuWfQiTeR8zT/jr0Tw7
+N3THl/FbKqJAGE3KpzIavxhfkJUYbVoQMeRgV8ftRQW/NGjnwUP6ZzB5E5gY
+GugDIBZso9kT3FQsxZ33wDt49AlMm3x8NZ5acDWgkIEdTdhY06D4UdPUDfwT
+Ud6pnOATBuVasiChCWHhzprEVMLOs+StzXadTwkbxST4BTHtqk2JQtGn5Cd4
+AsJbyssoyLcxTZinCzoUt77KPFPbTLGKPbTGmb9f5IinMJ3BtZhR24cAM0ZC
+T7qWo/CqN/HTm5i+psKCED39o21Q2doEZoz/goR8nvqTB+9h2k65FtxA9rpz
+VTBLMxZj93NpNmv074Hy8wk+Yeq96pslBglBOCI/RsKrXyXezGaWoyrCURqa
+NTCVAkzEachaMpstHyQWb4H6GtUQnqOijhh5Wv06+LonvDfrLn45qiAluuBg
+zPGwmzlMs0RuoXds5RTkB2YSRhkjC+eopttxI88PmtFz3b2dhzdd36hwjApP
+hgUJG/dyGFpGXVB8qVV1jxqU8d3SkxSMCE/wK7I+HjcUqOqW5nesAvOc/iZ+
+p8AxFJ7gzMUfOZHTLJStaKu63HnrzqvYcnYu6g4ExPKQ+B7ySVALdgcH2HqS
+gsyemUfLP4/6O08wrivzYm2OncSpQ6jqTUmBdr/Vs8CzA89+SM7YubOPT+fr
+OCzU67h6lnbewALPBtXhOHDpId3VCRY5SOY7p/MYv1DVm3Dgpo3Uh+aCMlrK
+KpjQJZeCO/r3K78limuHc8b7CoYVzYuqdAx3Ht0RPln5GVlVtAlcOkpdstaC
+MVNzUvjKe+zltjYCt+SdgiwvTHCA8iO67cfQ7czOGyxyI4ItlC75F1iaXTUZ
+XGJp7rrzpSCtaNnud0AiuCJzQsLbDa0spohzECEKyHVhx0nf6egl1XUjjPoq
+KfD8FkvE9uGrqFN1zDkxaxEe7jxvuBvmhej2FYNoPy1DuaZ1VoqDcey6rW2c
+p24gTaEVryW/RHnQVvCBIvHlWMFxVojupIxycQlpFdbtF/D3Zs9+MV5mkWSn
+be3uYDsoKgVLhj5vtDLLZ9VhA8bq2N5xmwoKW9uQd/fXQH554Uk6WWd/BGdk
+wys8Z2g2FahZeQMop1jQk3ZctHYWhrsjiovrMHbXpRxNJ7knmp2h4kwErrMC
+T0wpGYc9v+9Wp1EZHpOlchDkWTVj4FEKcCbim1nhFCZvIjf7CAQ3tNUw2u0A
+Sy+bOi6xign3OCtyQShk4YIOKJZjZf9ZtWchW6Q7uUNuE0yd1dr20cgs8MXd
+2g6GlVONjjZ27pHSbKZunQUKnTE6TUPr1nbQ5Z+/BcWYa9e/bYyo5v4y6VgC
+A0V9rDp7WpRgjopvQAl2I6MVxPCe8XtngbJhI7MC1GeRdGJinoGeT8eccj0W
+o2xMl3Nr1MXge/IZoPBdKKmIHzuhLUp0Uk8Upgup+MkDt7k0J2wam9PYPoGj
+SB3NBu1wtFWzrTEnGKsU1JA4Fa81+4z5FxWGRqu3s6rokO5hoAbqjk7Mrd+L
+Nm/cRMvL7EiWc5tLH4CqE4zV1GdV0Y+MOgNYhL+jZtWTM9PmkLIv8v2GXtci
+0dKdx3L7OVX0nGMtEGM5ahFUJrz6cpQYC9FMm7uyVdlbBJo98gCfEaKbXGAk
+TgaJtzwwxrbjVRhgk0fRiNMp7C0wTh2p7M2Jhk+cXWzNkEMPIEfDUxXpYCxp
+psVL6p7bX/0qMoSY5rA1MqdgvecYripTjh+lXrA76NmYlRLKq1jDhhJLDe0w
+YNUcUKCpoK/K6fE7hny4GDuOOw5W0pDPKhwZlSL1CfsPzZjqWt1Q5lXrR5Qg
+NJKfshIDNmXEpmC87ybArjv9HUtZ82vk5yVY5aze16HCwn00Fv01PfrVTjgc
+6FB8XA5Le+z1ED1AljtNhWJhy44KWCkj61VP+FJ6lbEZiQp20vqF8iv2eoj+
+hSxp2Tyl6miGD51qmGAFmUuwA898j1hph7L73OtV9IuHKVYrWVhShR89zrYT
+XPEjhdrJRHeyvs/ttZHEjH4D+tF9uxSHqp4z/HktlRL8TpqByfxTTMQYO2/9
+HMxVXySjcHrOHX9qxAvQnmbPM35G52vuJpqTbWK3VvttobL512gb9dMFUZqa
+j050VX0NdoAk4GfPQ77q7l0nuphRRQ+dQScRsmxzGTYqVQXh7kS/dMAqYL7f
+wGevV9EPwyoXdjG+tlXOIPiS2H+6/wmb5AvOqAA1qGxOFb1fFkYlME0K3TH3
+2yObVuHoFNU4iU4fYl4VfeDDZJGLQnf+IIXYpH/MJmJO267PqqIP0005wgoB
+HivIbbWiyz9lVdLEMHMGms31cEEqk0DWpIJw7+mgxiiqHOy6Yi6GG69SMLIi
+1ZhT6vJpzpp/n7kP3xDWMcycgnWV1ooWMQ80SSc27cuXtKlmFfNB1/lMUAYO
+qikCD1LmeZGm90JVKf3by5KrWJWhtop5oILIdeP9LtkCbU6n4OBbjmMYtItX
+bj1bN4NVVQzD55b2x8kOdtF6eS8YjpK9Co3lhubjQ58YdBmQYZ228Tkr5VgZ
+/2NwXOn63EGXYLvb7fexG5314/p2y67Xe7Y8f20D31nVBa+Vtfk6r29pzqb7
+bB0BQm5qemz2oEuw2Sbu+XGnSVJJNFXKFsXyeI62rVFO0zpskujoMTnL+Yxx
+GC5CZjuvit4m0/E3e8C3vt29nDX4mPeIkpPfmgE2/MTV11lBk6YTBVjITY/s
+7embhlaO5Z82wL+117APGPcI46AVHxnW4bQ7L5lC390OmJtafF4V/Q8QWock
+js6PZeaVcv2bvtsc2gOxTrCPjms6mNVAwxgm/sljF0i2YfmHzXYXPrIFHgu7
+L/Uoaaa8UfjBNtavTPGNQW5qpz90wGGcHP+0D/XHLcu9Y7iDrdpa3drEwNiC
+pZBF/o0ziCao3+GU7OIwPEdu4rcugFrOn934IDk/pNb/0X/0HymyDUNFgv8Q
+7bw0LT41jz9JwVbRJvgTX/UFMcusRtBLdKziqEXp3b8/+o1V/x8+dqlh5aWV
+YfFvzy7+FqhOKPtd6+IXQalYbfF9Sff3QLGlA5GkSyPm/Hk/jEClvwJKThka
+WEbFbp+GR4g2m81JZTQ+fN4EDagr3LuHeCWh62aAl09V9GTik5v3YoYWKNVx
+INO4xQAyV0GRi38szQoUZCsxkykNZVERfa7q0wn99V4m0wZFxU4uy0Boj7wK
+FJ5pb4E6f3HVhaOE0+G4c6szqw/czm+e62uDojYbr/GJBpQs0ilQIsfRNEqv
+sFEku4NCnZpzsOv07nmZNijUdOZ9CwoHqTJ92ZRW6GbV9MC2mBBvpnwE6uIY
+jrWhGSHVD3sOisr2NDxPk7DUYFLzk9jtwTL/26BEnmWQuZHFutnfghJMTiXS
+qW2qGOAUg5zzXn2k3kLGU6iJRMGvSkOf65R0kSapDyo4NaJp/20I9LuxTdvN
+CBZVr3sKqjp0eZX2QZPjA7T/cAJ1TgV2BBSTM7itsdpnoOrQhRBUZW7q7WDL
+VrC3DzuRoqdxHOJreZ1RPgNV+z5swcmzqjiCjG6TwKVvJ6LSJGhKWev3dUCF
+E+K71JyilgrID9s6H6h11nbKwfYRqyIXAlW5GX0C1L3Z/jgVyjN6B3//uH1j
+PJN6C1WgmNxlxp13QZVy2RVBUHxZ0sFNvDF7/+h4A4qaKlU/jGa6VS2ODji1
+jaeyU1QuryqbW5Ifqy9+CJTmkzGUJXmaDWB3RChnwzsWvTl6VJ9sIlUvBQ30
+fxIUNRCrHjlNAfD07B7l7FYbFKy+PB+prUwHH5uHvw0SXwdFR+bUDpQdSpzJ
+hRCmBwoH2FkrSiBy1ND4J/7DRRsUOIn6RPOqHmphOR4/bhvPfTUCK9ozNtTn
+Y8Un0ucHlVft9l9Sd52LqphfDyAauEeB4jxdGUd5qWyP2NAsD/vIcWjMkJM6
+/DGwgZQoCfjRZXkJcc7bSap7fLgB428/XC4fScd047QxTVz8S0RDv+nfRtEl
+Gy3EL/13rj8lUyeT8Hf+D90YnTaH7f1zav4ZeqjeUZ0o/gt0VO318sf/idkL
+dMTMlfHiX8Kkufe0uF5++d8afkuGZf1D2vR/Rf8Dq5fP5XcXoeYAAAAASUVO
+RK5CYII=
+
+----==_mimepart_661d758a468a3_7403445c46548--
+
+Redirected to http://localhost:3000/order/15
+Completed 302 Found in 5742ms (ActiveRecord: 3.4ms | Allocations: 118288)
+
+
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::SessionStore::Session Update (3.6ms)[0m  [1m[33mUPDATE "sessions" SET "data" = ?, "updated_at" = ? WHERE "sessions"."id" = ?[0m  [["data", "BAh7CkkiEF9jc3JmX3Rva2VuBjoGRUZJIjBrQXFaRDA4RTlrcmNBbEZNLUQw\nZ2JlRXZfQXl5UTZISGVDTEhMQzFYcnljBjsARkkiCWNhcnQGOwBGbzoJQ2Fy\ndAY6C0BpdGVtc30AaQBJIgdpZAY7AEZpDEkiCW5hbWUGOwBGSSIKUGVkcm8G\nOwBUSSIKYWRtaW4GOwBGVA==\n"], ["updated_at", "2024-04-15 18:44:31.906667"], ["id", 5]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/order/15" for ::1 at 2024-04-15 15:44:31 -0300
+Processing by PubController#order as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/pub_controller.rb:68:in `order'
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/order.html.erb within layouts/pub
+  [1m[36mOrderItem Load (0.2ms)[0m  [1m[34mSELECT "order_items".* FROM "order_items" WHERE "order_items"."order_id" = ?[0m  [["order_id", 15]]
+  ↳ app/views/pub/order.html.erb:8
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pub/order.html.erb:10
+  Rendered pub/order.html.erb within layouts/pub (Duration: 6.6ms | Allocations: 5185)
+  Rendered layout layouts/pub.html.erb (Duration: 9.0ms | Allocations: 6370)
+Completed 200 OK in 14ms (Views: 9.4ms | ActiveRecord: 0.5ms | Allocations: 8474)
+
+
+Started GET "/" for ::1 at 2024-04-15 15:46:18 -0300
+Processing by PubController#index as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/index.html.erb within layouts/pub
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/pub/index.html.erb:4
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:3
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 1], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:5
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:3
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 2], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:5
+  Rendered collection of pub/_mini_book.html.erb [2 times] (Duration: 26.2ms | Allocations: 19308)
+  Rendered pub/index.html.erb within layouts/pub (Duration: 35.2ms | Allocations: 24534)
+  Rendered layout layouts/pub.html.erb (Duration: 38.6ms | Allocations: 26080)
+Completed 200 OK in 52ms (Views: 37.8ms | ActiveRecord: 3.4ms | Allocations: 31748)
+
+
+Started GET "/book/2" for ::1 at 2024-04-15 15:46:20 -0300
+Processing by PubController#book as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/pub_controller.rb:12:in `book'
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/book.html.erb within layouts/pub
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/pub/book.html.erb:3
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 2], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/book.html.erb:5
+  Rendered pub/book.html.erb within layouts/pub (Duration: 8.4ms | Allocations: 1684)
+  Rendered layout layouts/pub.html.erb (Duration: 12.6ms | Allocations: 2840)
+Completed 200 OK in 19ms (Views: 13.0ms | ActiveRecord: 0.7ms | Allocations: 4897)
+
+
+Started GET "/buy/2" for ::1 at 2024-04-15 15:46:21 -0300
+Processing by PubController#buy as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/pub_controller.rb:24:in `buy'
+Redirected to http://localhost:3000/cart
+Completed 302 Found in 10ms (ActiveRecord: 0.6ms | Allocations: 1550)
+
+
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::SessionStore::Session Update (2.6ms)[0m  [1m[33mUPDATE "sessions" SET "data" = ?, "updated_at" = ? WHERE "sessions"."id" = ?[0m  [["data", "BAh7CkkiEF9jc3JmX3Rva2VuBjoGRUZJIjBrQXFaRDA4RTlrcmNBbEZNLUQw\nZ2JlRXZfQXl5UTZISGVDTEhMQzFYcnljBjsARkkiCWNhcnQGOwBGbzoJQ2Fy\ndAY6C0BpdGVtc30GaQdpBmkASSIHaWQGOwBGaQxJIgluYW1lBjsARkkiClBl\nZHJvBjsAVEkiCmFkbWluBjsARlQ=\n"], ["updated_at", "2024-04-15 18:46:21.040661"], ["id", 5]]
+  [1m[36mTRANSACTION (5.4ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/cart" for ::1 at 2024-04-15 15:46:21 -0300
+Processing by PubController#cart as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/cart.html.erb within layouts/pub
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/services/cart.rb:35:in `block in items'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 2], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/_cart_item.html.erb:2
+  Rendered collection of pub/_cart_item.html.erb [1 times] (Duration: 2.6ms | Allocations: 1118)
+  [1m[36mCACHE Book Load (0.0ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/services/cart.rb:22:in `block in total'
+  Rendered pub/cart.html.erb within layouts/pub (Duration: 5.0ms | Allocations: 2272)
+  Rendered layout layouts/pub.html.erb (Duration: 6.4ms | Allocations: 3179)
+Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 0.2ms | Allocations: 3728)
+
+
+Started GET "/close" for ::1 at 2024-04-15 15:46:22 -0300
+Processing by PubController#close_order as HTML
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/services/cart.rb:35:in `block in items'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/order.rb:17:in `block in create_by_cart'
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/order.rb:20:in `block (2 levels) in create_by_cart'
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/models/book.rb:28:in `sell'
+  [1m[36mBook Update (0.2ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "stock" = ?, "lock_version" = ? WHERE "books"."id" = ? AND "books"."lock_version" = ?[0m  [["updated_at", "2024-04-15 18:46:22.088760"], ["stock", 39], ["lock_version", 14], ["id", 2], ["lock_version", 13]]
+  ↳ app/models/book.rb:28:in `sell'
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/models/order.rb:30:in `block in create_by_cart'
+  [1m[36mOrder Create (0.2ms)[0m  [1m[32mINSERT INTO "orders" ("person_id", "created_at", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["person_id", 7], ["created_at", "2024-04-15 18:46:22.119575"], ["updated_at", "2024-04-15 18:46:22.119575"]]
+  ↳ app/models/order.rb:30:in `block in create_by_cart'
+  [1m[36mOrderItem Create (0.2ms)[0m  [1m[32mINSERT INTO "order_items" ("order_id", "book_id", "quantity", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["order_id", 16], ["book_id", 2], ["quantity", 1], ["value", 50.0], ["created_at", "2024-04-15 18:46:22.121553"], ["updated_at", "2024-04-15 18:46:22.121553"]]
+  ↳ app/models/order.rb:30:in `block in create_by_cart'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/order.rb:16:in `create_by_cart'
+  Rendering layout layouts/mailer.html.erb
+  Rendering order_mailer/created.html.erb within layouts/mailer
+  Rendered order_mailer/created.html.erb within layouts/mailer (Duration: 3.4ms | Allocations: 5097)
+  Rendered layout layouts/mailer.html.erb (Duration: 3.9ms | Allocations: 5315)
+  Rendering layout layouts/mailer.text.erb
+  Rendering order_mailer/created.text.erb within layouts/mailer
+  Rendered order_mailer/created.text.erb within layouts/mailer (Duration: 0.7ms | Allocations: 423)
+  Rendered layout layouts/mailer.text.erb (Duration: 1.2ms | Allocations: 617)
+OrderMailer#created: processed outbound mail in 36.0ms
+Delivered mail 661d75fe287f7_74034484470ca@pop-os.mail (5140.0ms)
+Date: Mon, 15 Apr 2024 15:46:22 -0300
+From: systemcraftdevelomenttest@gmail.com
+To: anddev007pe@gmail.com
+Message-ID: <661d75fe287f7_74034484470ca@pop-os.mail>
+Subject: Pedido 16 recebido!
+Mime-Version: 1.0
+Content-Type: multipart/related;
+ boundary="--==_mimepart_661d75fe229cd_74034484469b7";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_661d75fe229cd_74034484469b7
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_661d75fe2226c_7403448446823"
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_661d75fe2226c_7403448446823
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+Ol=C3=A1, Pedro!
+
+Seu pedido foi recebido em nosso sistema. Anote o n=C3=BAmero: 16
+
+Os itens comprados foram:
+
+- Conhecendo o Git - 1 - R$ 50,00 - R$ 50,00
+
+Obrigado por fazer seu pedido conosco!
+
+
+----==_mimepart_661d75fe2226c_7403448446823
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8">
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <img src=3D"cid:661d75fe20e08_740344844672a@pop-os.mail" />
+
+<h1>Bookstore</h1>
+<h2>Recebemos o seu pedido!<h2>
+
+<p>Ol=C3=A1, Pedro! </p>
+
+<p>
+  Seu pedido foi recebido em nosso sistema. Anote o n=C3=BAmero: <strong>=
+ 16 </strong>
+</p>
+
+<p>Os itens comprados foram:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>T=C3=ADtulo</th>
+      <th>Quantidade</th>
+      <th>Valor</th>
+      <th>Total</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td> Conhecendo o Git </td>
+        <td> 1 </td>
+        <td> R$ 50,00 </td>
+        <td> R$ 50,00 </td>
+      </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td colspan=3D'3' >Total</td>
+      <td> R$ 50,00 </td>
+    </tr>
+  </tfoot>
+</table>
+
+  </body>
+</html>
+
+----==_mimepart_661d75fe2226c_7403448446823--
+
+----==_mimepart_661d75fe229cd_74034484469b7
+Content-Type: image/png;
+ filename=logo.png
+Content-Transfer-Encoding: base64
+Content-Disposition: inline;
+ filename=logo.png
+Content-ID: <661d75fe20e08_740344844672a@pop-os.mail>
+
+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
+RK5CYII=
+
+----==_mimepart_661d75fe229cd_74034484469b7--
+
+Redirected to http://localhost:3000/order/16
+Completed 302 Found in 5240ms (ActiveRecord: 3.7ms | Allocations: 109316)
+
+
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::SessionStore::Session Update (3.5ms)[0m  [1m[33mUPDATE "sessions" SET "data" = ?, "updated_at" = ? WHERE "sessions"."id" = ?[0m  [["data", "BAh7CkkiEF9jc3JmX3Rva2VuBjoGRUZJIjBrQXFaRDA4RTlrcmNBbEZNLUQw\nZ2JlRXZfQXl5UTZISGVDTEhMQzFYcnljBjsARkkiCWNhcnQGOwBGbzoJQ2Fy\ndAY6C0BpdGVtc30AaQBJIgdpZAY7AEZpDEkiCW5hbWUGOwBGSSIKUGVkcm8G\nOwBUSSIKYWRtaW4GOwBGVA==\n"], ["updated_at", "2024-04-15 18:46:27.310383"], ["id", 5]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/order/16" for ::1 at 2024-04-15 15:46:27 -0300
+Processing by PubController#order as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/pub_controller.rb:68:in `order'
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/order.html.erb within layouts/pub
+  [1m[36mOrderItem Load (0.3ms)[0m  [1m[34mSELECT "order_items".* FROM "order_items" WHERE "order_items"."order_id" = ?[0m  [["order_id", 16]]
+  ↳ app/views/pub/order.html.erb:8
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/pub/order.html.erb:10
+  Rendered pub/order.html.erb within layouts/pub (Duration: 8.4ms | Allocations: 5155)
+  Rendered layout layouts/pub.html.erb (Duration: 11.2ms | Allocations: 6339)
+Completed 200 OK in 18ms (Views: 11.5ms | ActiveRecord: 0.7ms | Allocations: 8432)
+
+
