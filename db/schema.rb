@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_04_11_141130) do
+ActiveRecord::Schema[7.1].define(version: 2024_04_15_112425) do
   create_table "books", force: :cascade do |t|
     t.string "title", limit: 100, null: false
     t.date "published_at", null: false
@@ -45,6 +45,24 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_11_141130) do
     t.index ["imageable_id", "imageable_type"], name: "index_images_on_imageable_id_and_imageable_type"
   end
 
+  create_table "order_items", force: :cascade do |t|
+    t.integer "order_id", null: false
+    t.integer "book_id", null: false
+    t.integer "quantity", null: false
+    t.decimal "value", precision: 15, scale: 2, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["book_id"], name: "index_order_items_on_book_id"
+    t.index ["order_id"], name: "index_order_items_on_order_id"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.integer "person_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["person_id"], name: "index_orders_on_person_id"
+  end
+
   create_table "people", force: :cascade do |t|
     t.string "name", limit: 50, null: false
     t.string "email", limit: 100
@@ -66,4 +84,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_11_141130) do
   end
 
   add_foreign_key "books", "people"
+  add_foreign_key "order_items", "books"
+  add_foreign_key "order_items", "orders"
+  add_foreign_key "orders", "people"
 end

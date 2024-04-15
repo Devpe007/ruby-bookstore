@@ -22,6 +22,7 @@ class Person < ApplicationRecord
 
   has_many :books
   has_many :categories, -> { distinct }, through: :books
+  has_many :orders
   has_one :image, dependent: :destroy, as: :imageable
 
   def to_param

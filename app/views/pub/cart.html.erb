@@ -8,6 +8,8 @@
   Total: <span class="book_value" id="cart_total"> <%= number_to_currency(@cart.total) %> </span>
 </p>
 
+<%= link_to 'Fecher pedido', close_order_path, data: { confirm: 'Tem certeza?' } %>
+
 <%= link_to 'Continuar comprando', root_path %>
 
 <script type='text/javascript' >

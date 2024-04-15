@@ -12,6 +12,9 @@ Rails.application.routes.draw do
   delete 'remove/:id' => 'pub#remove', as: 'remove'
   patch 'change/:id' => 'pub#change', as: 'change'
 
+  get 'close' => 'pub#close_order', as: 'close_order'
+  get 'order/:id' => 'pub#order', as: 'order'
+
   namespace :admin do
     resources :people
   end
