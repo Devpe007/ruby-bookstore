@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
   get 'cart' => 'pub#cart', as: 'cart'
   delete 'remove/:id' => 'pub#remove', as: 'remove'
+  patch 'change/:id' => 'pub#change', as: 'change'
 
   namespace :admin do
     resources :people

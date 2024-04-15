@@ -37,4 +37,13 @@ class Cart
       }
     end
   end
+
+  def change(product, qty)
+    if qty <= 0
+      self - product
+      return
+    end
+
+    @items[product.id] = qty
+  end
 end

@@ -1,4 +1,6 @@
 class PubController < ApplicationController
+  skip_before_action :verify_authenticity_token, only: %w(change)
+
   def index
     @books = Book.all
   end
@@ -34,5 +36,11 @@ class PubController < ApplicationController
     @cart - @book
 
     redirect_to cart_path
+  end
+
+  def change
+    @book = Book.find(params[:id])
+    @cart = find_cart
+    @cart.change(@book, params[:qty].to_i)
   end
 end
