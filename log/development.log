@@ -29911,3 +29911,1187 @@ Migrating to AddStatusToOrder (20240415195910)
   [1m[36mOrder Update (0.1ms)[0m  [1m[33mUPDATE "orders" SET "updated_at" = ?, "status" = ? WHERE "orders"."id" = ?[0m  [["updated_at", "2024-04-15 20:02:57.489368"], ["status", 0], ["id", 1]]
   [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
   [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."status" = ? /* loading for pp */ LIMIT ?[0m  [["status", 0], ["LIMIT", 11]]
+Started GET "/" for ::1 at 2024-04-15 17:15:16 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PubController#index as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/index.html.erb within layouts/pub
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/pub/index.html.erb:4
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:3
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 1], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:5
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:3
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 2], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:5
+  Rendered collection of pub/_mini_book.html.erb [2 times] (Duration: 107.0ms | Allocations: 32471)
+  Rendered pub/index.html.erb within layouts/pub (Duration: 149.4ms | Allocations: 47726)
+  Rendered layout layouts/pub.html.erb (Duration: 217.7ms | Allocations: 74692)
+Completed 200 OK in 237ms (Views: 214.4ms | ActiveRecord: 6.2ms | Allocations: 86634)
+
+
+Started GET "/book/2" for ::1 at 2024-04-15 17:15:19 -0300
+Processing by PubController#book as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/pub_controller.rb:12:in `book'
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/book.html.erb within layouts/pub
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/pub/book.html.erb:3
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 2], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/book.html.erb:5
+  Rendered pub/book.html.erb within layouts/pub (Duration: 5.9ms | Allocations: 1769)
+  Rendered layout layouts/pub.html.erb (Duration: 8.6ms | Allocations: 2905)
+Completed 200 OK in 13ms (Views: 8.8ms | ActiveRecord: 0.6ms | Allocations: 5007)
+
+
+Started GET "/buy/2" for ::1 at 2024-04-15 17:15:22 -0300
+Processing by PubController#buy as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/pub_controller.rb:24:in `buy'
+Redirected to http://localhost:3000/cart
+Completed 302 Found in 11ms (ActiveRecord: 0.5ms | Allocations: 1778)
+
+
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::SessionStore::Session Update (1.6ms)[0m  [1m[33mUPDATE "sessions" SET "data" = ?, "updated_at" = ? WHERE "sessions"."id" = ?[0m  [["data", "BAh7B0kiEF9jc3JmX3Rva2VuBjoGRUZJIjBseDU0dUhnZUkwNXRQNmxBQTha\namFVNE05eHRiUjlXM1R3YmJPaVNjSWlVBjsARkkiCWNhcnQGOwBGbzoJQ2Fy\ndAY6C0BpdGVtc30GaQdpBmkA\n"], ["updated_at", "2024-04-15 20:15:22.124715"], ["id", 6]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/cart" for ::1 at 2024-04-15 17:15:22 -0300
+Processing by PubController#cart as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/cart.html.erb within layouts/pub
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/services/cart.rb:35:in `block in items'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 2], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/_cart_item.html.erb:2
+  Rendered collection of pub/_cart_item.html.erb [1 times] (Duration: 2.5ms | Allocations: 1158)
+  [1m[36mCACHE Book Load (0.0ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/services/cart.rb:22:in `block in total'
+  Rendered pub/cart.html.erb within layouts/pub (Duration: 5.3ms | Allocations: 2337)
+  Rendered layout layouts/pub.html.erb (Duration: 6.8ms | Allocations: 3244)
+Completed 200 OK in 9ms (Views: 7.2ms | ActiveRecord: 0.2ms | Allocations: 3783)
+
+
+Started GET "/close" for ::1 at 2024-04-15 17:15:23 -0300
+Processing by PubController#close_order as HTML
+Redirected to http://localhost:3000/sessions/new
+Completed 302 Found in 7ms (ActiveRecord: 0.2ms | Allocations: 1358)
+
+
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::SessionStore::Session Update (2.9ms)[0m  [1m[33mUPDATE "sessions" SET "data" = ?, "updated_at" = ? WHERE "sessions"."id" = ?[0m  [["data", "BAh7CEkiEF9jc3JmX3Rva2VuBjoGRUZJIjBseDU0dUhnZUkwNXRQNmxBQTha\namFVNE05eHRiUjlXM1R3YmJPaVNjSWlVBjsARkkiCWNhcnQGOwBGbzoJQ2Fy\ndAY6C0BpdGVtc30GaQdpBmkASSIKZmxhc2gGOwBUewdJIgxkaXNjYXJkBjsA\nVFsASSIMZmxhc2hlcwY7AFR7BkkiC25vdGljZQY7AEZJIitWb2PDqiBwcmVj\naXNhIHNlIGF1dGVudGljYXIgbm8gc2lzdGVtYQY7AFQ=\n"], ["updated_at", "2024-04-15 20:15:23.883600"], ["id", 6]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/sessions/new" for ::1 at 2024-04-15 17:15:23 -0300
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering sessions/new.html.erb within layouts/pub
+  Rendered sessions/new.html.erb within layouts/pub (Duration: 2.2ms | Allocations: 790)
+  Rendered layout layouts/pub.html.erb (Duration: 4.2ms | Allocations: 1700)
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.1ms | Allocations: 2115)
+
+
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::SessionStore::Session Update (1.4ms)[0m  [1m[33mUPDATE "sessions" SET "data" = ?, "updated_at" = ? WHERE "sessions"."id" = ?[0m  [["data", "BAh7B0kiEF9jc3JmX3Rva2VuBjoGRUZJIjBseDU0dUhnZUkwNXRQNmxBQTha\namFVNE05eHRiUjlXM1R3YmJPaVNjSWlVBjsARkkiCWNhcnQGOwBGbzoJQ2Fy\ndAY6C0BpdGVtc30GaQdpBmkA\n"], ["updated_at", "2024-04-15 20:15:23.910082"], ["id", 6]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+Started POST "/sessions" for ::1 at 2024-04-15 17:15:31 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"anddev007pe@gmail.com", "password"=>"[FILTERED]", "commit"=>"Autenticar"}
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."email" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["email", "anddev007pe@gmail.com"], ["LIMIT", 1]]
+  ↳ app/models/person.rb:48:in `auth'
+Redirected to http://localhost:3000/people
+Completed 302 Found in 217ms (ActiveRecord: 0.2ms | Allocations: 1163)
+
+
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::SessionStore::Session Update (1.0ms)[0m  [1m[33mUPDATE "sessions" SET "data" = ?, "updated_at" = ? WHERE "sessions"."id" = ?[0m  [["data", "BAh7C0kiEF9jc3JmX3Rva2VuBjoGRUZJIjBseDU0dUhnZUkwNXRQNmxBQTha\namFVNE05eHRiUjlXM1R3YmJPaVNjSWlVBjsARkkiCWNhcnQGOwBGbzoJQ2Fy\ndAY6C0BpdGVtc30GaQdpBmkASSIHaWQGOwBGaQxJIgluYW1lBjsARkkiClBl\nZHJvBjsAVEkiCmFkbWluBjsARlRJIgpmbGFzaAY7AFR7B0kiDGRpc2NhcmQG\nOwBUWwBJIgxmbGFzaGVzBjsAVHsGSSILbm90aWNlBjsARkkiEU9sw6EsIFBl\nZHJvIQY7AFQ=\n"], ["updated_at", "2024-04-15 20:15:31.711997"], ["id", 6]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/people" for ::1 at 2024-04-15 17:15:31 -0300
+Processing by PeopleController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering people/index.html.erb within layouts/application
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" ORDER BY "people"."name" ASC[0m
+  ↳ app/views/people/index.html.erb:6
+  Rendered people/_person.html.erb (Duration: 0.5ms | Allocations: 285)
+  Rendered people/_person.html.erb (Duration: 0.0ms | Allocations: 28)
+  Rendered people/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 1565)
+  Rendered layout layouts/application.html.erb (Duration: 38.2ms | Allocations: 17714)
+Completed 200 OK in 42ms (Views: 39.9ms | ActiveRecord: 0.2ms | Allocations: 18878)
+
+
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::SessionStore::Session Update (1.1ms)[0m  [1m[33mUPDATE "sessions" SET "data" = ?, "updated_at" = ? WHERE "sessions"."id" = ?[0m  [["data", "BAh7CkkiEF9jc3JmX3Rva2VuBjoGRUZJIjBseDU0dUhnZUkwNXRQNmxBQTha\namFVNE05eHRiUjlXM1R3YmJPaVNjSWlVBjsARkkiCWNhcnQGOwBGbzoJQ2Fy\ndAY6C0BpdGVtc30GaQdpBmkASSIHaWQGOwBGaQxJIgluYW1lBjsARkkiClBl\nZHJvBjsAVEkiCmFkbWluBjsARlQ=\n"], ["updated_at", "2024-04-15 20:15:31.764500"], ["id", 6]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/" for ::1 at 2024-04-15 17:15:39 -0300
+Processing by PubController#index as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/index.html.erb within layouts/pub
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/pub/index.html.erb:4
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:3
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 1], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:5
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:3
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 2], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:5
+  Rendered collection of pub/_mini_book.html.erb [2 times] (Duration: 8.2ms | Allocations: 2794)
+  Rendered pub/index.html.erb within layouts/pub (Duration: 9.8ms | Allocations: 3404)
+  Rendered layout layouts/pub.html.erb (Duration: 12.1ms | Allocations: 4561)
+Completed 200 OK in 14ms (Views: 13.1ms | ActiveRecord: 0.7ms | Allocations: 4799)
+
+
+Started GET "/book/2" for ::1 at 2024-04-15 17:15:51 -0300
+Processing by PubController#book as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/pub_controller.rb:12:in `book'
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/book.html.erb within layouts/pub
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/pub/book.html.erb:3
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 2], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/book.html.erb:5
+  Rendered pub/book.html.erb within layouts/pub (Duration: 10.9ms | Allocations: 1425)
+  Rendered layout layouts/pub.html.erb (Duration: 17.4ms | Allocations: 2570)
+Completed 200 OK in 22ms (Views: 17.8ms | ActiveRecord: 0.9ms | Allocations: 3171)
+
+
+Started GET "/cart" for ::1 at 2024-04-15 17:15:54 -0300
+Processing by PubController#cart as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/cart.html.erb within layouts/pub
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/services/cart.rb:35:in `block in items'
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 2], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/_cart_item.html.erb:2
+  Rendered collection of pub/_cart_item.html.erb [1 times] (Duration: 4.2ms | Allocations: 905)
+  [1m[36mCACHE Book Load (0.0ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/services/cart.rb:22:in `block in total'
+  Rendered pub/cart.html.erb within layouts/pub (Duration: 8.8ms | Allocations: 1802)
+  Rendered layout layouts/pub.html.erb (Duration: 10.8ms | Allocations: 2709)
+Completed 200 OK in 14ms (Views: 11.2ms | ActiveRecord: 0.6ms | Allocations: 3185)
+
+
+Started GET "/close" for ::1 at 2024-04-15 17:15:55 -0300
+Processing by PubController#close_order as HTML
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/services/cart.rb:35:in `block in items'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/order.rb:19:in `block in create_by_cart'
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/order.rb:22:in `block (2 levels) in create_by_cart'
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/models/book.rb:28:in `sell'
+  [1m[36mBook Update (0.1ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "stock" = ?, "lock_version" = ? WHERE "books"."id" = ? AND "books"."lock_version" = ?[0m  [["updated_at", "2024-04-15 20:15:55.872172"], ["stock", 38], ["lock_version", 15], ["id", 2], ["lock_version", 14]]
+  ↳ app/models/book.rb:28:in `sell'
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/models/order.rb:32:in `block in create_by_cart'
+  [1m[36mOrder Create (0.2ms)[0m  [1m[32mINSERT INTO "orders" ("person_id", "created_at", "updated_at", "status") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["person_id", 7], ["created_at", "2024-04-15 20:15:55.907263"], ["updated_at", "2024-04-15 20:15:55.907263"], ["status", nil]]
+  ↳ app/models/order.rb:32:in `block in create_by_cart'
+  [1m[36mOrderItem Create (0.2ms)[0m  [1m[32mINSERT INTO "order_items" ("order_id", "book_id", "quantity", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["order_id", 17], ["book_id", 2], ["quantity", 1], ["value", 50.0], ["created_at", "2024-04-15 20:15:55.910576"], ["updated_at", "2024-04-15 20:15:55.910576"]]
+  ↳ app/models/order.rb:32:in `block in create_by_cart'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/order.rb:18:in `create_by_cart'
+[ActiveJob] Enqueued ActionMailer::MailDeliveryJob (Job ID: 7d648ef7-bb7e-4145-8e95-ca126b9f6bf3) to Async(default) with arguments: "OrderMailer", "created", "deliver_now", {:args=>[#<GlobalID:0x000078153bf7f698 @uri=#<URI::GID gid://bookstore/Order/17>>]}
+[ActiveJob] ↳ app/controllers/pub_controller.rb:62:in `close_order'
+Redirected to http://localhost:3000/order/17
+Completed 302 Found in 115ms (ActiveRecord: 2.5ms | Allocations: 70844)
+
+
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::SessionStore::Session Update (1.4ms)[0m  [1m[33mUPDATE "sessions" SET "data" = ?, "updated_at" = ? WHERE "sessions"."id" = ?[0m  [["data", "BAh7CkkiEF9jc3JmX3Rva2VuBjoGRUZJIjBseDU0dUhnZUkwNXRQNmxBQTha\namFVNE05eHRiUjlXM1R3YmJPaVNjSWlVBjsARkkiCWNhcnQGOwBGbzoJQ2Fy\ndAY6C0BpdGVtc30AaQBJIgdpZAY7AEZpDEkiCW5hbWUGOwBGSSIKUGVkcm8G\nOwBUSSIKYWRtaW4GOwBGVA==\n"], ["updated_at", "2024-04-15 20:15:55.951152"], ["id", 6]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/order/17" for ::1 at 2024-04-15 17:15:55 -0300
+[ActiveJob] [ActionMailer::MailDeliveryJob] [7d648ef7-bb7e-4145-8e95-ca126b9f6bf3]   [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+[ActiveJob] [ActionMailer::MailDeliveryJob] [7d648ef7-bb7e-4145-8e95-ca126b9f6bf3] Performing ActionMailer::MailDeliveryJob (Job ID: 7d648ef7-bb7e-4145-8e95-ca126b9f6bf3) from Async(default) enqueued at 2024-04-15T20:15:55.948565220Z with arguments: "OrderMailer", "created", "deliver_now", {:args=>[#<GlobalID:0x000078153bef5cb8 @uri=#<URI::GID gid://bookstore/Order/17>>]}
+Processing by PubController#order as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mOrder Load (0.7ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/pub_controller.rb:68:in `order'
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/order.html.erb within layouts/pub
+  [1m[36mOrderItem Load (0.1ms)[0m  [1m[34mSELECT "order_items".* FROM "order_items" WHERE "order_items"."order_id" = ?[0m  [["order_id", 17]]
+  ↳ app/views/pub/order.html.erb:8
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/pub/order.html.erb:10
+[ActiveJob] [ActionMailer::MailDeliveryJob] [7d648ef7-bb7e-4145-8e95-ca126b9f6bf3]   [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendered pub/order.html.erb within layouts/pub (Duration: 8.8ms | Allocations: 6397)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [7d648ef7-bb7e-4145-8e95-ca126b9f6bf3]   ↳ app/mailers/order_mailer.rb:7:in `created'
+  Rendered layout layouts/pub.html.erb (Duration: 16.1ms | Allocations: 10399)
+Completed 200 OK in 23ms (Views: 17.2ms | ActiveRecord: 1.4ms | Allocations: 13555)
+
+
+[ActiveJob] [ActionMailer::MailDeliveryJob] [7d648ef7-bb7e-4145-8e95-ca126b9f6bf3]   Rendering layout layouts/mailer.html.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [7d648ef7-bb7e-4145-8e95-ca126b9f6bf3]   Rendering order_mailer/created.html.erb within layouts/mailer
+[ActiveJob] [ActionMailer::MailDeliveryJob] [7d648ef7-bb7e-4145-8e95-ca126b9f6bf3]   [1m[36mOrderItem Load (0.2ms)[0m  [1m[34mSELECT "order_items".* FROM "order_items" WHERE "order_items"."order_id" = ?[0m  [["order_id", 17]]
+[ActiveJob] [ActionMailer::MailDeliveryJob] [7d648ef7-bb7e-4145-8e95-ca126b9f6bf3]   ↳ app/views/order_mailer/created.html.erb:24
+[ActiveJob] [ActionMailer::MailDeliveryJob] [7d648ef7-bb7e-4145-8e95-ca126b9f6bf3]   [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[ActiveJob] [ActionMailer::MailDeliveryJob] [7d648ef7-bb7e-4145-8e95-ca126b9f6bf3]   ↳ app/views/order_mailer/created.html.erb:26
+[ActiveJob] [ActionMailer::MailDeliveryJob] [7d648ef7-bb7e-4145-8e95-ca126b9f6bf3]   Rendered order_mailer/created.html.erb within layouts/mailer (Duration: 9.2ms | Allocations: 5557)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [7d648ef7-bb7e-4145-8e95-ca126b9f6bf3]   Rendered layout layouts/mailer.html.erb (Duration: 9.9ms | Allocations: 5782)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [7d648ef7-bb7e-4145-8e95-ca126b9f6bf3]   Rendering layout layouts/mailer.text.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [7d648ef7-bb7e-4145-8e95-ca126b9f6bf3]   Rendering order_mailer/created.text.erb within layouts/mailer
+[ActiveJob] [ActionMailer::MailDeliveryJob] [7d648ef7-bb7e-4145-8e95-ca126b9f6bf3]   Rendered order_mailer/created.text.erb within layouts/mailer (Duration: 1.2ms | Allocations: 429)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [7d648ef7-bb7e-4145-8e95-ca126b9f6bf3]   Rendered layout layouts/mailer.text.erb (Duration: 2.5ms | Allocations: 628)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [7d648ef7-bb7e-4145-8e95-ca126b9f6bf3] OrderMailer#created: processed outbound mail in 68.3ms
+[ActiveJob] [ActionMailer::MailDeliveryJob] [7d648ef7-bb7e-4145-8e95-ca126b9f6bf3] Delivered mail 661d8afc868a_19917c9c-16b@pop-os.mail (3648.7ms)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [7d648ef7-bb7e-4145-8e95-ca126b9f6bf3] Date: Mon, 15 Apr 2024 17:15:56 -0300
+From: systemcraftdevelomenttest@gmail.com
+To: anddev007pe@gmail.com
+Message-ID: <661d8afc868a_19917c9c-16b@pop-os.mail>
+Subject: Pedido 17 recebido!
+Mime-Version: 1.0
+Content-Type: multipart/related;
+ boundary="--==_mimepart_661d8afc2ca3_19917c9c-253";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_661d8afc2ca3_19917c9c-253
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_661d8afc260d_19917c9c-365"
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_661d8afc260d_19917c9c-365
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+Ol=C3=A1, Pedro!
+
+Seu pedido foi recebido em nosso sistema. Anote o n=C3=BAmero: 17
+
+Os itens comprados foram:
+
+- Conhecendo o Git - 1 - R$ 50,00 - R$ 50,00
+
+Obrigado por fazer seu pedido conosco!
+
+
+----==_mimepart_661d8afc260d_19917c9c-365
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8">
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <img src=3D"cid:661d8afbf2feb_19917c9c-4e9@pop-os.mail" />
+
+<h1>Bookstore</h1>
+<h2>Recebemos o seu pedido!<h2>
+
+<p>Ol=C3=A1, Pedro! </p>
+
+<p>
+  Seu pedido foi recebido em nosso sistema. Anote o n=C3=BAmero: <strong>=
+ 17 </strong>
+</p>
+
+<p>Os itens comprados foram:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>T=C3=ADtulo</th>
+      <th>Quantidade</th>
+      <th>Valor</th>
+      <th>Total</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td> Conhecendo o Git </td>
+        <td> 1 </td>
+        <td> R$ 50,00 </td>
+        <td> R$ 50,00 </td>
+      </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td colspan=3D'3' >Total</td>
+      <td> R$ 50,00 </td>
+    </tr>
+  </tfoot>
+</table>
+
+  </body>
+</html>
+
+----==_mimepart_661d8afc260d_19917c9c-365--
+
+----==_mimepart_661d8afc2ca3_19917c9c-253
+Content-Type: image/png;
+ filename=logo.png
+Content-Transfer-Encoding: base64
+Content-Disposition: inline;
+ filename=logo.png
+Content-ID: <661d8afbf2feb_19917c9c-4e9@pop-os.mail>
+
+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
+RK5CYII=
+
+----==_mimepart_661d8afc2ca3_19917c9c-253--
+
+[ActiveJob] [ActionMailer::MailDeliveryJob] [7d648ef7-bb7e-4145-8e95-ca126b9f6bf3] Performed ActionMailer::MailDeliveryJob (Job ID: 7d648ef7-bb7e-4145-8e95-ca126b9f6bf3) from Async(default) in 3724.54ms
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateDelayedJobs (20240415202145)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "delayed_jobs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "priority" integer DEFAULT 0 NOT NULL, "attempts" integer DEFAULT 0 NOT NULL, "handler" text NOT NULL, "last_error" text, "run_at" datetime(6), "locked_at" datetime(6), "failed_at" datetime(6), "locked_by" varchar, "queue" varchar, "created_at" datetime(6), "updated_at" datetime(6))[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "delayed_jobs_priority" ON "delayed_jobs" ("priority", "run_at")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240415202145') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/order/17" for ::1 at 2024-04-15 17:25:57 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PubController#order as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/pub_controller.rb:68:in `order'
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/order.html.erb within layouts/pub
+  [1m[36mOrderItem Load (0.1ms)[0m  [1m[34mSELECT "order_items".* FROM "order_items" WHERE "order_items"."order_id" = ?[0m  [["order_id", 17]]
+  ↳ app/views/pub/order.html.erb:8
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/pub/order.html.erb:10
+  Rendered pub/order.html.erb within layouts/pub (Duration: 69.5ms | Allocations: 33699)
+  Rendered layout layouts/pub.html.erb (Duration: 161.6ms | Allocations: 60991)
+Completed 200 OK in 196ms (Views: 163.5ms | ActiveRecord: 3.2ms | Allocations: 83103)
+
+
+Started GET "/" for ::1 at 2024-04-15 17:25:59 -0300
+Processing by PubController#index as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/index.html.erb within layouts/pub
+  [1m[36mBook Load (1.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/pub/index.html.erb:4
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:3
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 1], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:5
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:3
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 2], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:5
+  Rendered collection of pub/_mini_book.html.erb [2 times] (Duration: 54.7ms | Allocations: 25856)
+  Rendered pub/index.html.erb within layouts/pub (Duration: 60.6ms | Allocations: 26763)
+  Rendered layout layouts/pub.html.erb (Duration: 62.6ms | Allocations: 27919)
+Completed 200 OK in 66ms (Views: 61.2ms | ActiveRecord: 2.2ms | Allocations: 28237)
+
+
+Started GET "/book/1" for ::1 at 2024-04-15 17:26:01 -0300
+Processing by PubController#book as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pub_controller.rb:12:in `book'
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/book.html.erb within layouts/pub
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/pub/book.html.erb:3
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 1], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/book.html.erb:5
+  Rendered pub/book.html.erb within layouts/pub (Duration: 8.7ms | Allocations: 1709)
+  Rendered layout layouts/pub.html.erb (Duration: 12.1ms | Allocations: 2854)
+Completed 200 OK in 20ms (Views: 12.6ms | ActiveRecord: 0.8ms | Allocations: 4911)
+
+
+Started GET "/buy/1" for ::1 at 2024-04-15 17:26:04 -0300
+Processing by PubController#buy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pub_controller.rb:24:in `buy'
+Redirected to http://localhost:3000/cart
+Completed 302 Found in 6ms (ActiveRecord: 0.4ms | Allocations: 1698)
+
+
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::SessionStore::Session Update (1.7ms)[0m  [1m[33mUPDATE "sessions" SET "data" = ?, "updated_at" = ? WHERE "sessions"."id" = ?[0m  [["data", "BAh7CkkiEF9jc3JmX3Rva2VuBjoGRUZJIjBseDU0dUhnZUkwNXRQNmxBQTha\namFVNE05eHRiUjlXM1R3YmJPaVNjSWlVBjsARkkiCWNhcnQGOwBGbzoJQ2Fy\ndAY6C0BpdGVtc30GaQZpBmkASSIHaWQGOwBGaQxJIgluYW1lBjsARkkiClBl\nZHJvBjsAVEkiCmFkbWluBjsARlQ=\n"], ["updated_at", "2024-04-15 20:26:04.306620"], ["id", 6]]
+  [1m[36mTRANSACTION (4.9ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/cart" for ::1 at 2024-04-15 17:26:04 -0300
+Processing by PubController#cart as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/cart.html.erb within layouts/pub
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/services/cart.rb:35:in `block in items'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 1], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/_cart_item.html.erb:2
+  Rendered collection of pub/_cart_item.html.erb [1 times] (Duration: 19.7ms | Allocations: 1157)
+  [1m[36mCACHE Book Load (0.0ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/services/cart.rb:22:in `block in total'
+  Rendered pub/cart.html.erb within layouts/pub (Duration: 23.0ms | Allocations: 2333)
+  Rendered layout layouts/pub.html.erb (Duration: 25.9ms | Allocations: 3254)
+Completed 200 OK in 28ms (Views: 26.3ms | ActiveRecord: 0.2ms | Allocations: 3798)
+
+
+Started GET "/close" for ::1 at 2024-04-15 17:26:07 -0300
+Processing by PubController#close_order as HTML
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/services/cart.rb:35:in `block in items'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/order.rb:22:in `block (2 levels) in create_by_cart'
+  [1m[36mBook Load (2.8ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/order.rb:22:in `block (2 levels) in create_by_cart'
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/models/book.rb:28:in `sell'
+  [1m[36mBook Update (0.1ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "stock" = ?, "lock_version" = ? WHERE "books"."id" = ? AND "books"."lock_version" = ?[0m  [["updated_at", "2024-04-15 20:26:07.203753"], ["stock", 34], ["lock_version", 14], ["id", 1], ["lock_version", 13]]
+  ↳ app/models/book.rb:28:in `sell'
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/models/order.rb:32:in `block in create_by_cart'
+  [1m[36mOrder Create (0.2ms)[0m  [1m[32mINSERT INTO "orders" ("person_id", "created_at", "updated_at", "status") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["person_id", 7], ["created_at", "2024-04-15 20:26:07.211718"], ["updated_at", "2024-04-15 20:26:07.211718"], ["status", nil]]
+  ↳ app/models/order.rb:32:in `block in create_by_cart'
+  [1m[36mOrderItem Create (0.2ms)[0m  [1m[32mINSERT INTO "order_items" ("order_id", "book_id", "quantity", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["order_id", 18], ["book_id", 1], ["quantity", 1], ["value", 40.0], ["created_at", "2024-04-15 20:26:07.215179"], ["updated_at", "2024-04-15 20:26:07.215179"]]
+  ↳ app/models/order.rb:32:in `block in create_by_cart'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/order.rb:18:in `create_by_cart'
+[ActiveJob]   [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob]   ↳ app/controllers/pub_controller.rb:62:in `close_order'
+[ActiveJob]   [1m[36mDelayed::Backend::ActiveRecord::Job Create (1.4ms)[0m  [1m[32mINSERT INTO "delayed_jobs" ("priority", "attempts", "handler", "last_error", "run_at", "locked_at", "failed_at", "locked_by", "queue", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["priority", 0], ["attempts", 0], ["handler", "--- !ruby/object:ActiveJob::QueueAdapters::DelayedJobAdapter::JobWrapper\njob_data:\n  job_class: OrderCreatedEmailJob\n  job_id: a40664ee-da6c-4673-b5b7-587449d8efa2\n  provider_job_id: \n  queue_name: default\n  priority: \n  arguments:\n  - _aj_globalid: gid://bookstore/Order/18\n  executions: 0\n  exception_executions: {}\n  locale: pt-BR\n  timezone: Brasilia\n  enqueued_at: '2024-04-15T20:26:07.222752776Z'\n  scheduled_at: \n"], ["last_error", nil], ["run_at", "2024-04-15 20:26:07.243266"], ["locked_at", nil], ["failed_at", nil], ["locked_by", nil], ["queue", "default"], ["created_at", "2024-04-15 20:26:07.243305"], ["updated_at", "2024-04-15 20:26:07.243305"]]
+[ActiveJob]   ↳ app/controllers/pub_controller.rb:62:in `close_order'
+[ActiveJob]   [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob]   ↳ app/controllers/pub_controller.rb:62:in `close_order'
+[ActiveJob] Enqueued OrderCreatedEmailJob (Job ID: a40664ee-da6c-4673-b5b7-587449d8efa2) to DelayedJob(default) with arguments: #<GlobalID:0x00007e35f34c2960 @uri=#<URI::GID gid://bookstore/Order/18>>
+[ActiveJob] ↳ app/controllers/pub_controller.rb:62:in `close_order'
+Redirected to http://localhost:3000/order/18
+Completed 302 Found in 64ms (ActiveRecord: 6.2ms | Allocations: 26683)
+
+
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::SessionStore::Session Update (1.0ms)[0m  [1m[33mUPDATE "sessions" SET "data" = ?, "updated_at" = ? WHERE "sessions"."id" = ?[0m  [["data", "BAh7CkkiEF9jc3JmX3Rva2VuBjoGRUZJIjBseDU0dUhnZUkwNXRQNmxBQTha\namFVNE05eHRiUjlXM1R3YmJPaVNjSWlVBjsARkkiCWNhcnQGOwBGbzoJQ2Fy\ndAY6C0BpdGVtc30AaQBJIgdpZAY7AEZpDEkiCW5hbWUGOwBGSSIKUGVkcm8G\nOwBUSSIKYWRtaW4GOwBGVA==\n"], ["updated_at", "2024-04-15 20:26:07.248960"], ["id", 6]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/order/18" for ::1 at 2024-04-15 17:26:07 -0300
+Processing by PubController#order as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/pub_controller.rb:68:in `order'
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/order.html.erb within layouts/pub
+  [1m[36mOrderItem Load (0.1ms)[0m  [1m[34mSELECT "order_items".* FROM "order_items" WHERE "order_items"."order_id" = ?[0m  [["order_id", 18]]
+  ↳ app/views/pub/order.html.erb:8
+  [1m[36mBook Load (0.0ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pub/order.html.erb:10
+  Rendered pub/order.html.erb within layouts/pub (Duration: 2.1ms | Allocations: 1364)
+  Rendered layout layouts/pub.html.erb (Duration: 3.9ms | Allocations: 2535)
+Completed 200 OK in 6ms (Views: 4.0ms | ActiveRecord: 0.4ms | Allocations: 3158)
+
+
+2024-04-15T17:26:41-0300: [Worker(delayed_job host:pop-os pid:9988)] Starting job worker
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.1ms)[0m  [1m[34mSELECT "delayed_jobs"."id" FROM "delayed_jobs" WHERE (((run_at <= '2024-04-15 20:26:41.122688' AND (locked_at IS NULL OR locked_at < '2024-04-15 16:26:41.122707')) OR locked_by = 'delayed_job host:pop-os pid:9988') AND failed_at IS NULL) ORDER BY priority ASC, run_at ASC LIMIT ?[0m  [["LIMIT", 5]]
+  [1m[36mDelayed::Backend::ActiveRecord::Job Update All (0.2ms)[0m  [1m[33mUPDATE "delayed_jobs" SET "locked_at" = ?, "locked_by" = ? WHERE "delayed_jobs"."id" IN (SELECT "delayed_jobs"."id" FROM "delayed_jobs" WHERE (((run_at <= '2024-04-15 20:26:41.122688' AND (locked_at IS NULL OR locked_at < '2024-04-15 16:26:41.122707')) OR locked_by = 'delayed_job host:pop-os pid:9988') AND failed_at IS NULL) AND "delayed_jobs"."id" = ? ORDER BY priority ASC, run_at ASC)[0m  [["locked_at", "2024-04-15 20:26:41.129639"], ["locked_by", "delayed_job host:pop-os pid:9988"], ["id", 1]]
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.1ms)[0m  [1m[34mSELECT "delayed_jobs".* FROM "delayed_jobs" WHERE "delayed_jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+2024-04-15T17:26:41-0300: [Worker(delayed_job host:pop-os pid:9988)] Job OrderCreatedEmailJob [a40664ee-da6c-4673-b5b7-587449d8efa2] from DelayedJob(default) with arguments: [{"_aj_globalid"=>"gid://bookstore/Order/18"}] (id=1) (queue=default) RUNNING
+[ActiveJob] [OrderCreatedEmailJob] [a40664ee-da6c-4673-b5b7-587449d8efa2]   [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+[ActiveJob] [OrderCreatedEmailJob] [a40664ee-da6c-4673-b5b7-587449d8efa2] Performing OrderCreatedEmailJob (Job ID: a40664ee-da6c-4673-b5b7-587449d8efa2) from DelayedJob(default) enqueued at 2024-04-15T20:26:07.222752776Z with arguments: #<GlobalID:0x000075564eb3d390 @uri=#<URI::GID gid://bookstore/Order/18>>
+[ActiveJob] [OrderCreatedEmailJob] [a40664ee-da6c-4673-b5b7-587449d8efa2]   [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+[ActiveJob] [OrderCreatedEmailJob] [a40664ee-da6c-4673-b5b7-587449d8efa2]   ↳ app/mailers/order_mailer.rb:7:in `created'
+[ActiveJob] [OrderCreatedEmailJob] [a40664ee-da6c-4673-b5b7-587449d8efa2]   Rendering layout layouts/mailer.html.erb
+[ActiveJob] [OrderCreatedEmailJob] [a40664ee-da6c-4673-b5b7-587449d8efa2]   Rendering order_mailer/created.html.erb within layouts/mailer
+[ActiveJob] [OrderCreatedEmailJob] [a40664ee-da6c-4673-b5b7-587449d8efa2]   [1m[36mOrderItem Load (0.1ms)[0m  [1m[34mSELECT "order_items".* FROM "order_items" WHERE "order_items"."order_id" = ?[0m  [["order_id", 18]]
+[ActiveJob] [OrderCreatedEmailJob] [a40664ee-da6c-4673-b5b7-587449d8efa2]   ↳ app/views/order_mailer/created.html.erb:24
+[ActiveJob] [OrderCreatedEmailJob] [a40664ee-da6c-4673-b5b7-587449d8efa2]   [1m[36mBook Load (1.0ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[ActiveJob] [OrderCreatedEmailJob] [a40664ee-da6c-4673-b5b7-587449d8efa2]   ↳ app/views/order_mailer/created.html.erb:26
+[ActiveJob] [OrderCreatedEmailJob] [a40664ee-da6c-4673-b5b7-587449d8efa2]   Rendered order_mailer/created.html.erb within layouts/mailer (Duration: 91.1ms | Allocations: 38302)
+[ActiveJob] [OrderCreatedEmailJob] [a40664ee-da6c-4673-b5b7-587449d8efa2]   Rendered layout layouts/mailer.html.erb (Duration: 91.7ms | Allocations: 38537)
+[ActiveJob] [OrderCreatedEmailJob] [a40664ee-da6c-4673-b5b7-587449d8efa2]   Rendering layout layouts/mailer.text.erb
+[ActiveJob] [OrderCreatedEmailJob] [a40664ee-da6c-4673-b5b7-587449d8efa2]   Rendering order_mailer/created.text.erb within layouts/mailer
+[ActiveJob] [OrderCreatedEmailJob] [a40664ee-da6c-4673-b5b7-587449d8efa2]   Rendered order_mailer/created.text.erb within layouts/mailer (Duration: 0.7ms | Allocations: 430)
+[ActiveJob] [OrderCreatedEmailJob] [a40664ee-da6c-4673-b5b7-587449d8efa2]   Rendered layout layouts/mailer.text.erb (Duration: 1.1ms | Allocations: 594)
+[ActiveJob] [OrderCreatedEmailJob] [a40664ee-da6c-4673-b5b7-587449d8efa2] OrderMailer#created: processed outbound mail in 157.9ms
+[ActiveJob] [OrderCreatedEmailJob] [a40664ee-da6c-4673-b5b7-587449d8efa2] Delivered mail 661d8d81568df_2704d98867ec@pop-os.mail (3379.2ms)
+[ActiveJob] [OrderCreatedEmailJob] [a40664ee-da6c-4673-b5b7-587449d8efa2] Date: Mon, 15 Apr 2024 17:26:41 -0300
+From: systemcraftdevelomenttest@gmail.com
+To: anddev007pe@gmail.com
+Message-ID: <661d8d81568df_2704d98867ec@pop-os.mail>
+Subject: Pedido 18 recebido!
+Mime-Version: 1.0
+Content-Type: multipart/related;
+ boundary="--==_mimepart_661d8d8151572_2704d988669e";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_661d8d8151572_2704d988669e
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_661d8d81511e5_2704d9886574"
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_661d8d81511e5_2704d9886574
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+Ol=C3=A1, Pedro!
+
+Seu pedido foi recebido em nosso sistema. Anote o n=C3=BAmero: 18
+
+Os itens comprados foram:
+
+- Ruby - Conhecendo a linguagem - 1 - R$ 40,00 - R$ 40,00
+
+Obrigado por fazer seu pedido conosco!
+
+
+----==_mimepart_661d8d81511e5_2704d9886574
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8">
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <img src=3D"cid:661d8d813bba6_2704d9886497@pop-os.mail" />
+
+<h1>Bookstore</h1>
+<h2>Recebemos o seu pedido!<h2>
+
+<p>Ol=C3=A1, Pedro! </p>
+
+<p>
+  Seu pedido foi recebido em nosso sistema. Anote o n=C3=BAmero: <strong>=
+ 18 </strong>
+</p>
+
+<p>Os itens comprados foram:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>T=C3=ADtulo</th>
+      <th>Quantidade</th>
+      <th>Valor</th>
+      <th>Total</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td> Ruby - Conhecendo a linguagem </td>
+        <td> 1 </td>
+        <td> R$ 40,00 </td>
+        <td> R$ 40,00 </td>
+      </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td colspan=3D'3' >Total</td>
+      <td> R$ 40,00 </td>
+    </tr>
+  </tfoot>
+</table>
+
+  </body>
+</html>
+
+----==_mimepart_661d8d81511e5_2704d9886574--
+
+----==_mimepart_661d8d8151572_2704d988669e
+Content-Type: image/png;
+ filename=logo.png
+Content-Transfer-Encoding: base64
+Content-Disposition: inline;
+ filename=logo.png
+Content-ID: <661d8d813bba6_2704d9886497@pop-os.mail>
+
+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
+RK5CYII=
+
+----==_mimepart_661d8d8151572_2704d988669e--
+
+[ActiveJob] [OrderCreatedEmailJob] [a40664ee-da6c-4673-b5b7-587449d8efa2] Performed OrderCreatedEmailJob (Job ID: a40664ee-da6c-4673-b5b7-587449d8efa2) from DelayedJob(default) in 3579.83ms
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDelayed::Backend::ActiveRecord::Job Destroy (5.0ms)[0m  [1m[31mDELETE FROM "delayed_jobs" WHERE "delayed_jobs"."id" = ?[0m  [["id", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mcommit transaction[0m
+2024-04-15T17:26:44-0300: [Worker(delayed_job host:pop-os pid:9988)] Job OrderCreatedEmailJob [a40664ee-da6c-4673-b5b7-587449d8efa2] from DelayedJob(default) with arguments: [{"_aj_globalid"=>"gid://bookstore/Order/18"}] (id=1) (queue=default) COMPLETED after 3.6033
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.3ms)[0m  [1m[34mSELECT "delayed_jobs"."id" FROM "delayed_jobs" WHERE (((run_at <= '2024-04-15 20:26:44.754822' AND (locked_at IS NULL OR locked_at < '2024-04-15 16:26:44.754865')) OR locked_by = 'delayed_job host:pop-os pid:9988') AND failed_at IS NULL) ORDER BY priority ASC, run_at ASC LIMIT ?[0m  [["LIMIT", 5]]
+2024-04-15T17:26:44-0300: [Worker(delayed_job host:pop-os pid:9988)] 1 jobs processed at 0.2750 j/s, 0 failed
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.3ms)[0m  [1m[34mSELECT "delayed_jobs"."id" FROM "delayed_jobs" WHERE (((run_at <= '2024-04-15 20:26:44.758976' AND (locked_at IS NULL OR locked_at < '2024-04-15 16:26:44.759008')) OR locked_by = 'delayed_job host:pop-os pid:9988') AND failed_at IS NULL) ORDER BY priority ASC, run_at ASC LIMIT ?[0m  [["LIMIT", 5]]
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.1ms)[0m  [1m[34mSELECT "delayed_jobs"."id" FROM "delayed_jobs" WHERE (((run_at <= '2024-04-15 20:26:49.832168' AND (locked_at IS NULL OR locked_at < '2024-04-15 16:26:49.832177')) OR locked_by = 'delayed_job host:pop-os pid:9988') AND failed_at IS NULL) ORDER BY priority ASC, run_at ASC LIMIT ?[0m  [["LIMIT", 5]]
+Started GET "/" for ::1 at 2024-04-15 17:26:51 -0300
+Processing by PubController#index as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/index.html.erb within layouts/pub
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/pub/index.html.erb:4
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:3
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 1], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:5
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:3
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 2], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/_mini_book.html.erb:5
+  Rendered collection of pub/_mini_book.html.erb [2 times] (Duration: 24.8ms | Allocations: 2798)
+  Rendered pub/index.html.erb within layouts/pub (Duration: 28.8ms | Allocations: 3364)
+  Rendered layout layouts/pub.html.erb (Duration: 31.5ms | Allocations: 4527)
+Completed 200 OK in 34ms (Views: 32.0ms | ActiveRecord: 0.9ms | Allocations: 4766)
+
+
+Started GET "/book/1" for ::1 at 2024-04-15 17:26:52 -0300
+Processing by PubController#book as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pub_controller.rb:12:in `book'
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/book.html.erb within layouts/pub
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/pub/book.html.erb:3
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 1], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/book.html.erb:5
+  Rendered pub/book.html.erb within layouts/pub (Duration: 9.6ms | Allocations: 1427)
+  Rendered layout layouts/pub.html.erb (Duration: 14.0ms | Allocations: 2572)
+Completed 200 OK in 21ms (Views: 14.8ms | ActiveRecord: 0.9ms | Allocations: 3173)
+
+
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.1ms)[0m  [1m[34mSELECT "delayed_jobs"."id" FROM "delayed_jobs" WHERE (((run_at <= '2024-04-15 20:26:54.895287' AND (locked_at IS NULL OR locked_at < '2024-04-15 16:26:54.895296')) OR locked_by = 'delayed_job host:pop-os pid:9988') AND failed_at IS NULL) ORDER BY priority ASC, run_at ASC LIMIT ?[0m  [["LIMIT", 5]]
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.1ms)[0m  [1m[34mSELECT "delayed_jobs"."id" FROM "delayed_jobs" WHERE (((run_at <= '2024-04-15 20:26:59.932456' AND (locked_at IS NULL OR locked_at < '2024-04-15 16:26:59.932467')) OR locked_by = 'delayed_job host:pop-os pid:9988') AND failed_at IS NULL) ORDER BY priority ASC, run_at ASC LIMIT ?[0m  [["LIMIT", 5]]
+Started GET "/buy/1" for ::1 at 2024-04-15 17:27:02 -0300
+Processing by PubController#buy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pub_controller.rb:24:in `buy'
+Redirected to http://localhost:3000/cart
+Completed 302 Found in 7ms (ActiveRecord: 0.5ms | Allocations: 804)
+
+
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::SessionStore::Session Update (2.6ms)[0m  [1m[33mUPDATE "sessions" SET "data" = ?, "updated_at" = ? WHERE "sessions"."id" = ?[0m  [["data", "BAh7CkkiEF9jc3JmX3Rva2VuBjoGRUZJIjBseDU0dUhnZUkwNXRQNmxBQTha\namFVNE05eHRiUjlXM1R3YmJPaVNjSWlVBjsARkkiCWNhcnQGOwBGbzoJQ2Fy\ndAY6C0BpdGVtc30GaQZpBmkASSIHaWQGOwBGaQxJIgluYW1lBjsARkkiClBl\nZHJvBjsAVEkiCmFkbWluBjsARlQ=\n"], ["updated_at", "2024-04-15 20:27:02.717023"], ["id", 6]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/cart" for ::1 at 2024-04-15 17:27:02 -0300
+Processing by PubController#cart as HTML
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/cart.html.erb within layouts/pub
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/services/cart.rb:35:in `block in items'
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = ? AND "images"."imageable_type" = ? LIMIT ?[0m  [["imageable_id", 1], ["imageable_type", "Book"], ["LIMIT", 1]]
+  ↳ app/views/pub/_cart_item.html.erb:2
+  Rendered collection of pub/_cart_item.html.erb [1 times] (Duration: 2.0ms | Allocations: 905)
+  [1m[36mCACHE Book Load (0.0ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/services/cart.rb:22:in `block in total'
+  Rendered pub/cart.html.erb within layouts/pub (Duration: 3.8ms | Allocations: 1802)
+  Rendered layout layouts/pub.html.erb (Duration: 5.1ms | Allocations: 2709)
+Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 0.2ms | Allocations: 3185)
+
+
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.1ms)[0m  [1m[34mSELECT "delayed_jobs"."id" FROM "delayed_jobs" WHERE (((run_at <= '2024-04-15 20:27:04.996127' AND (locked_at IS NULL OR locked_at < '2024-04-15 16:27:04.996136')) OR locked_by = 'delayed_job host:pop-os pid:9988') AND failed_at IS NULL) ORDER BY priority ASC, run_at ASC LIMIT ?[0m  [["LIMIT", 5]]
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.1ms)[0m  [1m[34mSELECT "delayed_jobs"."id" FROM "delayed_jobs" WHERE (((run_at <= '2024-04-15 20:27:10.058382' AND (locked_at IS NULL OR locked_at < '2024-04-15 16:27:10.058391')) OR locked_by = 'delayed_job host:pop-os pid:9988') AND failed_at IS NULL) ORDER BY priority ASC, run_at ASC LIMIT ?[0m  [["LIMIT", 5]]
+Started GET "/close" for ::1 at 2024-04-15 17:27:12 -0300
+Processing by PubController#close_order as HTML
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/services/cart.rb:35:in `block in items'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/order.rb:22:in `block (2 levels) in create_by_cart'
+  [1m[36mBook Load (3.0ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/order.rb:22:in `block (2 levels) in create_by_cart'
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/models/book.rb:28:in `sell'
+  [1m[36mBook Update (0.2ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = ?, "stock" = ?, "lock_version" = ? WHERE "books"."id" = ? AND "books"."lock_version" = ?[0m  [["updated_at", "2024-04-15 20:27:12.312551"], ["stock", 33], ["lock_version", 15], ["id", 1], ["lock_version", 14]]
+  ↳ app/models/book.rb:28:in `sell'
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/models/order.rb:32:in `block in create_by_cart'
+  [1m[36mOrder Create (0.3ms)[0m  [1m[32mINSERT INTO "orders" ("person_id", "created_at", "updated_at", "status") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["person_id", 7], ["created_at", "2024-04-15 20:27:12.317931"], ["updated_at", "2024-04-15 20:27:12.317931"], ["status", nil]]
+  ↳ app/models/order.rb:32:in `block in create_by_cart'
+  [1m[36mOrderItem Create (0.2ms)[0m  [1m[32mINSERT INTO "order_items" ("order_id", "book_id", "quantity", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["order_id", 19], ["book_id", 1], ["quantity", 1], ["value", 40.0], ["created_at", "2024-04-15 20:27:12.320789"], ["updated_at", "2024-04-15 20:27:12.320789"]]
+  ↳ app/models/order.rb:32:in `block in create_by_cart'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/order.rb:18:in `create_by_cart'
+[ActiveJob]   [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob]   ↳ app/controllers/pub_controller.rb:62:in `close_order'
+[ActiveJob]   [1m[36mDelayed::Backend::ActiveRecord::Job Create (1.2ms)[0m  [1m[32mINSERT INTO "delayed_jobs" ("priority", "attempts", "handler", "last_error", "run_at", "locked_at", "failed_at", "locked_by", "queue", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["priority", 0], ["attempts", 0], ["handler", "--- !ruby/object:ActiveJob::QueueAdapters::DelayedJobAdapter::JobWrapper\njob_data:\n  job_class: OrderCreatedEmailJob\n  job_id: ecac1f97-2664-4d50-a690-cc7d94f5b048\n  provider_job_id: \n  queue_name: default\n  priority: \n  arguments:\n  - _aj_globalid: gid://bookstore/Order/19\n  executions: 0\n  exception_executions: {}\n  locale: pt-BR\n  timezone: Brasilia\n  enqueued_at: '2024-04-15T20:27:12.323793977Z'\n  scheduled_at: \n"], ["last_error", nil], ["run_at", "2024-04-15 20:27:12.324489"], ["locked_at", nil], ["failed_at", nil], ["locked_by", nil], ["queue", "default"], ["created_at", "2024-04-15 20:27:12.324519"], ["updated_at", "2024-04-15 20:27:12.324519"]]
+[ActiveJob]   ↳ app/controllers/pub_controller.rb:62:in `close_order'
+[ActiveJob]   [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob]   ↳ app/controllers/pub_controller.rb:62:in `close_order'
+[ActiveJob] Enqueued OrderCreatedEmailJob (Job ID: ecac1f97-2664-4d50-a690-cc7d94f5b048) to DelayedJob(default) with arguments: #<GlobalID:0x00007e35f35a19f8 @uri=#<URI::GID gid://bookstore/Order/19>>
+[ActiveJob] ↳ app/controllers/pub_controller.rb:62:in `close_order'
+Redirected to http://localhost:3000/order/19
+Completed 302 Found in 33ms (ActiveRecord: 6.1ms | Allocations: 9569)
+
+
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::SessionStore::Session Update (1.2ms)[0m  [1m[33mUPDATE "sessions" SET "data" = ?, "updated_at" = ? WHERE "sessions"."id" = ?[0m  [["data", "BAh7CkkiEF9jc3JmX3Rva2VuBjoGRUZJIjBseDU0dUhnZUkwNXRQNmxBQTha\namFVNE05eHRiUjlXM1R3YmJPaVNjSWlVBjsARkkiCWNhcnQGOwBGbzoJQ2Fy\ndAY6C0BpdGVtc30AaQBJIgdpZAY7AEZpDEkiCW5hbWUGOwBGSSIKUGVkcm8G\nOwBUSSIKYWRtaW4GOwBGVA==\n"], ["updated_at", "2024-04-15 20:27:12.330129"], ["id", 6]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/order/19" for ::1 at 2024-04-15 17:27:12 -0300
+Processing by PubController#order as HTML
+  Parameters: {"id"=>"19"}
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/pub_controller.rb:68:in `order'
+  Rendering layout layouts/pub.html.erb
+  Rendering pub/order.html.erb within layouts/pub
+  [1m[36mOrderItem Load (0.1ms)[0m  [1m[34mSELECT "order_items".* FROM "order_items" WHERE "order_items"."order_id" = ?[0m  [["order_id", 19]]
+  ↳ app/views/pub/order.html.erb:8
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pub/order.html.erb:10
+  Rendered pub/order.html.erb within layouts/pub (Duration: 2.8ms | Allocations: 1331)
+  Rendered layout layouts/pub.html.erb (Duration: 5.2ms | Allocations: 2505)
+Completed 200 OK in 14ms (Views: 5.4ms | ActiveRecord: 0.3ms | Allocations: 3105)
+
+
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.1ms)[0m  [1m[34mSELECT "delayed_jobs"."id" FROM "delayed_jobs" WHERE (((run_at <= '2024-04-15 20:27:15.092512' AND (locked_at IS NULL OR locked_at < '2024-04-15 16:27:15.092521')) OR locked_by = 'delayed_job host:pop-os pid:9988') AND failed_at IS NULL) ORDER BY priority ASC, run_at ASC LIMIT ?[0m  [["LIMIT", 5]]
+  [1m[36mDelayed::Backend::ActiveRecord::Job Update All (0.2ms)[0m  [1m[33mUPDATE "delayed_jobs" SET "locked_at" = ?, "locked_by" = ? WHERE "delayed_jobs"."id" IN (SELECT "delayed_jobs"."id" FROM "delayed_jobs" WHERE (((run_at <= '2024-04-15 20:27:15.092512' AND (locked_at IS NULL OR locked_at < '2024-04-15 16:27:15.092521')) OR locked_by = 'delayed_job host:pop-os pid:9988') AND failed_at IS NULL) AND "delayed_jobs"."id" = ? ORDER BY priority ASC, run_at ASC)[0m  [["locked_at", "2024-04-15 20:27:15.093534"], ["locked_by", "delayed_job host:pop-os pid:9988"], ["id", 2]]
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.1ms)[0m  [1m[34mSELECT "delayed_jobs".* FROM "delayed_jobs" WHERE "delayed_jobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+2024-04-15T17:27:15-0300: [Worker(delayed_job host:pop-os pid:9988)] Job OrderCreatedEmailJob [ecac1f97-2664-4d50-a690-cc7d94f5b048] from DelayedJob(default) with arguments: [{"_aj_globalid"=>"gid://bookstore/Order/19"}] (id=2) (queue=default) RUNNING
+[ActiveJob] [OrderCreatedEmailJob] [ecac1f97-2664-4d50-a690-cc7d94f5b048]   [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+[ActiveJob] [OrderCreatedEmailJob] [ecac1f97-2664-4d50-a690-cc7d94f5b048] Performing OrderCreatedEmailJob (Job ID: ecac1f97-2664-4d50-a690-cc7d94f5b048) from DelayedJob(default) enqueued at 2024-04-15T20:27:12.323793977Z with arguments: #<GlobalID:0x000075564dd92830 @uri=#<URI::GID gid://bookstore/Order/19>>
+[ActiveJob] [OrderCreatedEmailJob] [ecac1f97-2664-4d50-a690-cc7d94f5b048]   [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE "people"."id" = ? ORDER BY "people"."name" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+[ActiveJob] [OrderCreatedEmailJob] [ecac1f97-2664-4d50-a690-cc7d94f5b048]   ↳ app/mailers/order_mailer.rb:7:in `created'
+[ActiveJob] [OrderCreatedEmailJob] [ecac1f97-2664-4d50-a690-cc7d94f5b048]   Rendering layout layouts/mailer.html.erb
+[ActiveJob] [OrderCreatedEmailJob] [ecac1f97-2664-4d50-a690-cc7d94f5b048]   Rendering order_mailer/created.html.erb within layouts/mailer
+[ActiveJob] [OrderCreatedEmailJob] [ecac1f97-2664-4d50-a690-cc7d94f5b048]   [1m[36mOrderItem Load (0.1ms)[0m  [1m[34mSELECT "order_items".* FROM "order_items" WHERE "order_items"."order_id" = ?[0m  [["order_id", 19]]
+[ActiveJob] [OrderCreatedEmailJob] [ecac1f97-2664-4d50-a690-cc7d94f5b048]   ↳ app/views/order_mailer/created.html.erb:24
+[ActiveJob] [OrderCreatedEmailJob] [ecac1f97-2664-4d50-a690-cc7d94f5b048]   [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[ActiveJob] [OrderCreatedEmailJob] [ecac1f97-2664-4d50-a690-cc7d94f5b048]   ↳ app/views/order_mailer/created.html.erb:26
+[ActiveJob] [OrderCreatedEmailJob] [ecac1f97-2664-4d50-a690-cc7d94f5b048]   Rendered order_mailer/created.html.erb within layouts/mailer (Duration: 22.2ms | Allocations: 28065)
+[ActiveJob] [OrderCreatedEmailJob] [ecac1f97-2664-4d50-a690-cc7d94f5b048]   Rendered layout layouts/mailer.html.erb (Duration: 22.6ms | Allocations: 28252)
+[ActiveJob] [OrderCreatedEmailJob] [ecac1f97-2664-4d50-a690-cc7d94f5b048]   Rendering layout layouts/mailer.text.erb
+[ActiveJob] [OrderCreatedEmailJob] [ecac1f97-2664-4d50-a690-cc7d94f5b048]   Rendering order_mailer/created.text.erb within layouts/mailer
+[ActiveJob] [OrderCreatedEmailJob] [ecac1f97-2664-4d50-a690-cc7d94f5b048]   Rendered order_mailer/created.text.erb within layouts/mailer (Duration: 0.6ms | Allocations: 423)
+[ActiveJob] [OrderCreatedEmailJob] [ecac1f97-2664-4d50-a690-cc7d94f5b048]   Rendered layout layouts/mailer.text.erb (Duration: 0.8ms | Allocations: 586)
+[ActiveJob] [OrderCreatedEmailJob] [ecac1f97-2664-4d50-a690-cc7d94f5b048] OrderMailer#created: processed outbound mail in 59.3ms
+[ActiveJob] [OrderCreatedEmailJob] [ecac1f97-2664-4d50-a690-cc7d94f5b048] Delivered mail 661d8da32b6d9_2704d98871f6@pop-os.mail (3469.8ms)
+[ActiveJob] [OrderCreatedEmailJob] [ecac1f97-2664-4d50-a690-cc7d94f5b048] Date: Mon, 15 Apr 2024 17:27:15 -0300
+From: systemcraftdevelomenttest@gmail.com
+To: anddev007pe@gmail.com
+Message-ID: <661d8da32b6d9_2704d98871f6@pop-os.mail>
+Subject: Pedido 19 recebido!
+Mime-Version: 1.0
+Content-Type: multipart/related;
+ boundary="--==_mimepart_661d8da326999_2704d98870c9";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_661d8da326999_2704d98870c9
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_661d8da3266de_2704d9886970"
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_661d8da3266de_2704d9886970
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+Ol=C3=A1, Pedro!
+
+Seu pedido foi recebido em nosso sistema. Anote o n=C3=BAmero: 19
+
+Os itens comprados foram:
+
+- Ruby - Conhecendo a linguagem - 1 - R$ 40,00 - R$ 40,00
+
+Obrigado por fazer seu pedido conosco!
+
+
+----==_mimepart_661d8da3266de_2704d9886970
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8">
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <img src=3D"cid:661d8da320bed_2704d988681@pop-os.mail" />
+
+<h1>Bookstore</h1>
+<h2>Recebemos o seu pedido!<h2>
+
+<p>Ol=C3=A1, Pedro! </p>
+
+<p>
+  Seu pedido foi recebido em nosso sistema. Anote o n=C3=BAmero: <strong>=
+ 19 </strong>
+</p>
+
+<p>Os itens comprados foram:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>T=C3=ADtulo</th>
+      <th>Quantidade</th>
+      <th>Valor</th>
+      <th>Total</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td> Ruby - Conhecendo a linguagem </td>
+        <td> 1 </td>
+        <td> R$ 40,00 </td>
+        <td> R$ 40,00 </td>
+      </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td colspan=3D'3' >Total</td>
+      <td> R$ 40,00 </td>
+    </tr>
+  </tfoot>
+</table>
+
+  </body>
+</html>
+
+----==_mimepart_661d8da3266de_2704d9886970--
+
+----==_mimepart_661d8da326999_2704d98870c9
+Content-Type: image/png;
+ filename=logo.png
+Content-Transfer-Encoding: base64
+Content-Disposition: inline;
+ filename=logo.png
+Content-ID: <661d8da320bed_2704d988681@pop-os.mail>
+
+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
+RK5CYII=
+
+----==_mimepart_661d8da326999_2704d98870c9--
+
+[ActiveJob] [OrderCreatedEmailJob] [ecac1f97-2664-4d50-a690-cc7d94f5b048] Performed OrderCreatedEmailJob (Job ID: ecac1f97-2664-4d50-a690-cc7d94f5b048) from DelayedJob(default) in 3539.65ms
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDelayed::Backend::ActiveRecord::Job Destroy (1.3ms)[0m  [1m[31mDELETE FROM "delayed_jobs" WHERE "delayed_jobs"."id" = ?[0m  [["id", 2]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+2024-04-15T17:27:18-0300: [Worker(delayed_job host:pop-os pid:9988)] Job OrderCreatedEmailJob [ecac1f97-2664-4d50-a690-cc7d94f5b048] from DelayedJob(default) with arguments: [{"_aj_globalid"=>"gid://bookstore/Order/19"}] (id=2) (queue=default) COMPLETED after 3.5481
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.1ms)[0m  [1m[34mSELECT "delayed_jobs"."id" FROM "delayed_jobs" WHERE (((run_at <= '2024-04-15 20:27:18.654501' AND (locked_at IS NULL OR locked_at < '2024-04-15 16:27:18.654512')) OR locked_by = 'delayed_job host:pop-os pid:9988') AND failed_at IS NULL) ORDER BY priority ASC, run_at ASC LIMIT ?[0m  [["LIMIT", 5]]
+2024-04-15T17:27:18-0300: [Worker(delayed_job host:pop-os pid:9988)] 1 jobs processed at 0.2806 j/s, 0 failed
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.1ms)[0m  [1m[34mSELECT "delayed_jobs"."id" FROM "delayed_jobs" WHERE (((run_at <= '2024-04-15 20:27:18.655962' AND (locked_at IS NULL OR locked_at < '2024-04-15 16:27:18.655969')) OR locked_by = 'delayed_job host:pop-os pid:9988') AND failed_at IS NULL) ORDER BY priority ASC, run_at ASC LIMIT ?[0m  [["LIMIT", 5]]
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.1ms)[0m  [1m[34mSELECT "delayed_jobs"."id" FROM "delayed_jobs" WHERE (((run_at <= '2024-04-15 20:27:23.701200' AND (locked_at IS NULL OR locked_at < '2024-04-15 16:27:23.701209')) OR locked_by = 'delayed_job host:pop-os pid:9988') AND failed_at IS NULL) ORDER BY priority ASC, run_at ASC LIMIT ?[0m  [["LIMIT", 5]]
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.1ms)[0m  [1m[34mSELECT "delayed_jobs"."id" FROM "delayed_jobs" WHERE (((run_at <= '2024-04-15 20:27:28.741896' AND (locked_at IS NULL OR locked_at < '2024-04-15 16:27:28.741906')) OR locked_by = 'delayed_job host:pop-os pid:9988') AND failed_at IS NULL) ORDER BY priority ASC, run_at ASC LIMIT ?[0m  [["LIMIT", 5]]
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.1ms)[0m  [1m[34mSELECT "delayed_jobs"."id" FROM "delayed_jobs" WHERE (((run_at <= '2024-04-15 20:27:33.808400' AND (locked_at IS NULL OR locked_at < '2024-04-15 16:27:33.808409')) OR locked_by = 'delayed_job host:pop-os pid:9988') AND failed_at IS NULL) ORDER BY priority ASC, run_at ASC LIMIT ?[0m  [["LIMIT", 5]]
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.1ms)[0m  [1m[34mSELECT "delayed_jobs"."id" FROM "delayed_jobs" WHERE (((run_at <= '2024-04-15 20:27:38.869443' AND (locked_at IS NULL OR locked_at < '2024-04-15 16:27:38.869452')) OR locked_by = 'delayed_job host:pop-os pid:9988') AND failed_at IS NULL) ORDER BY priority ASC, run_at ASC LIMIT ?[0m  [["LIMIT", 5]]
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.1ms)[0m  [1m[34mSELECT "delayed_jobs"."id" FROM "delayed_jobs" WHERE (((run_at <= '2024-04-15 20:27:43.903851' AND (locked_at IS NULL OR locked_at < '2024-04-15 16:27:43.903860')) OR locked_by = 'delayed_job host:pop-os pid:9988') AND failed_at IS NULL) ORDER BY priority ASC, run_at ASC LIMIT ?[0m  [["LIMIT", 5]]
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.1ms)[0m  [1m[34mSELECT "delayed_jobs"."id" FROM "delayed_jobs" WHERE (((run_at <= '2024-04-15 20:27:48.952817' AND (locked_at IS NULL OR locked_at < '2024-04-15 16:27:48.952826')) OR locked_by = 'delayed_job host:pop-os pid:9988') AND failed_at IS NULL) ORDER BY priority ASC, run_at ASC LIMIT ?[0m  [["LIMIT", 5]]
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.1ms)[0m  [1m[34mSELECT "delayed_jobs"."id" FROM "delayed_jobs" WHERE (((run_at <= '2024-04-15 20:27:53.992709' AND (locked_at IS NULL OR locked_at < '2024-04-15 16:27:53.992718')) OR locked_by = 'delayed_job host:pop-os pid:9988') AND failed_at IS NULL) ORDER BY priority ASC, run_at ASC LIMIT ?[0m  [["LIMIT", 5]]
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.1ms)[0m  [1m[34mSELECT "delayed_jobs"."id" FROM "delayed_jobs" WHERE (((run_at <= '2024-04-15 20:27:59.034455' AND (locked_at IS NULL OR locked_at < '2024-04-15 16:27:59.034465')) OR locked_by = 'delayed_job host:pop-os pid:9988') AND failed_at IS NULL) ORDER BY priority ASC, run_at ASC LIMIT ?[0m  [["LIMIT", 5]]
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.1ms)[0m  [1m[34mSELECT "delayed_jobs"."id" FROM "delayed_jobs" WHERE (((run_at <= '2024-04-15 20:28:04.082444' AND (locked_at IS NULL OR locked_at < '2024-04-15 16:28:04.082455')) OR locked_by = 'delayed_job host:pop-os pid:9988') AND failed_at IS NULL) ORDER BY priority ASC, run_at ASC LIMIT ?[0m  [["LIMIT", 5]]
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.1ms)[0m  [1m[34mSELECT "delayed_jobs"."id" FROM "delayed_jobs" WHERE (((run_at <= '2024-04-15 20:28:09.126127' AND (locked_at IS NULL OR locked_at < '2024-04-15 16:28:09.126137')) OR locked_by = 'delayed_job host:pop-os pid:9988') AND failed_at IS NULL) ORDER BY priority ASC, run_at ASC LIMIT ?[0m  [["LIMIT", 5]]
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.1ms)[0m  [1m[34mSELECT "delayed_jobs"."id" FROM "delayed_jobs" WHERE (((run_at <= '2024-04-15 20:28:14.187190' AND (locked_at IS NULL OR locked_at < '2024-04-15 16:28:14.187199')) OR locked_by = 'delayed_job host:pop-os pid:9988') AND failed_at IS NULL) ORDER BY priority ASC, run_at ASC LIMIT ?[0m  [["LIMIT", 5]]
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.1ms)[0m  [1m[34mSELECT "delayed_jobs"."id" FROM "delayed_jobs" WHERE (((run_at <= '2024-04-15 20:28:19.252457' AND (locked_at IS NULL OR locked_at < '2024-04-15 16:28:19.252466')) OR locked_by = 'delayed_job host:pop-os pid:9988') AND failed_at IS NULL) ORDER BY priority ASC, run_at ASC LIMIT ?[0m  [["LIMIT", 5]]
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.1ms)[0m  [1m[34mSELECT "delayed_jobs"."id" FROM "delayed_jobs" WHERE (((run_at <= '2024-04-15 20:28:24.318842' AND (locked_at IS NULL OR locked_at < '2024-04-15 16:28:24.318851')) OR locked_by = 'delayed_job host:pop-os pid:9988') AND failed_at IS NULL) ORDER BY priority ASC, run_at ASC LIMIT ?[0m  [["LIMIT", 5]]
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.1ms)[0m  [1m[34mSELECT "delayed_jobs"."id" FROM "delayed_jobs" WHERE (((run_at <= '2024-04-15 20:28:29.384922' AND (locked_at IS NULL OR locked_at < '2024-04-15 16:28:29.384931')) OR locked_by = 'delayed_job host:pop-os pid:9988') AND failed_at IS NULL) ORDER BY priority ASC, run_at ASC LIMIT ?[0m  [["LIMIT", 5]]
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.1ms)[0m  [1m[34mSELECT "delayed_jobs"."id" FROM "delayed_jobs" WHERE (((run_at <= '2024-04-15 20:28:34.415522' AND (locked_at IS NULL OR locked_at < '2024-04-15 16:28:34.415531')) OR locked_by = 'delayed_job host:pop-os pid:9988') AND failed_at IS NULL) ORDER BY priority ASC, run_at ASC LIMIT ?[0m  [["LIMIT", 5]]
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.1ms)[0m  [1m[34mSELECT "delayed_jobs"."id" FROM "delayed_jobs" WHERE (((run_at <= '2024-04-15 20:28:39.479033' AND (locked_at IS NULL OR locked_at < '2024-04-15 16:28:39.479042')) OR locked_by = 'delayed_job host:pop-os pid:9988') AND failed_at IS NULL) ORDER BY priority ASC, run_at ASC LIMIT ?[0m  [["LIMIT", 5]]
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.1ms)[0m  [1m[34mSELECT "delayed_jobs"."id" FROM "delayed_jobs" WHERE (((run_at <= '2024-04-15 20:28:44.527202' AND (locked_at IS NULL OR locked_at < '2024-04-15 16:28:44.527213')) OR locked_by = 'delayed_job host:pop-os pid:9988') AND failed_at IS NULL) ORDER BY priority ASC, run_at ASC LIMIT ?[0m  [["LIMIT", 5]]
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.1ms)[0m  [1m[34mSELECT "delayed_jobs"."id" FROM "delayed_jobs" WHERE (((run_at <= '2024-04-15 20:28:49.568618' AND (locked_at IS NULL OR locked_at < '2024-04-15 16:28:49.568628')) OR locked_by = 'delayed_job host:pop-os pid:9988') AND failed_at IS NULL) ORDER BY priority ASC, run_at ASC LIMIT ?[0m  [["LIMIT", 5]]
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.1ms)[0m  [1m[34mSELECT "delayed_jobs"."id" FROM "delayed_jobs" WHERE (((run_at <= '2024-04-15 20:28:54.612457' AND (locked_at IS NULL OR locked_at < '2024-04-15 16:28:54.612466')) OR locked_by = 'delayed_job host:pop-os pid:9988') AND failed_at IS NULL) ORDER BY priority ASC, run_at ASC LIMIT ?[0m  [["LIMIT", 5]]
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.1ms)[0m  [1m[34mSELECT "delayed_jobs"."id" FROM "delayed_jobs" WHERE (((run_at <= '2024-04-15 20:28:59.652145' AND (locked_at IS NULL OR locked_at < '2024-04-15 16:28:59.652155')) OR locked_by = 'delayed_job host:pop-os pid:9988') AND failed_at IS NULL) ORDER BY priority ASC, run_at ASC LIMIT ?[0m  [["LIMIT", 5]]
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.1ms)[0m  [1m[34mSELECT "delayed_jobs"."id" FROM "delayed_jobs" WHERE (((run_at <= '2024-04-15 20:29:04.694030' AND (locked_at IS NULL OR locked_at < '2024-04-15 16:29:04.694040')) OR locked_by = 'delayed_job host:pop-os pid:9988') AND failed_at IS NULL) ORDER BY priority ASC, run_at ASC LIMIT ?[0m  [["LIMIT", 5]]
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.1ms)[0m  [1m[34mSELECT "delayed_jobs"."id" FROM "delayed_jobs" WHERE (((run_at <= '2024-04-15 20:29:09.736610' AND (locked_at IS NULL OR locked_at < '2024-04-15 16:29:09.736619')) OR locked_by = 'delayed_job host:pop-os pid:9988') AND failed_at IS NULL) ORDER BY priority ASC, run_at ASC LIMIT ?[0m  [["LIMIT", 5]]
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.1ms)[0m  [1m[34mSELECT "delayed_jobs"."id" FROM "delayed_jobs" WHERE (((run_at <= '2024-04-15 20:29:14.778520' AND (locked_at IS NULL OR locked_at < '2024-04-15 16:29:14.778530')) OR locked_by = 'delayed_job host:pop-os pid:9988') AND failed_at IS NULL) ORDER BY priority ASC, run_at ASC LIMIT ?[0m  [["LIMIT", 5]]
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.1ms)[0m  [1m[34mSELECT "delayed_jobs"."id" FROM "delayed_jobs" WHERE (((run_at <= '2024-04-15 20:29:19.832299' AND (locked_at IS NULL OR locked_at < '2024-04-15 16:29:19.832308')) OR locked_by = 'delayed_job host:pop-os pid:9988') AND failed_at IS NULL) ORDER BY priority ASC, run_at ASC LIMIT ?[0m  [["LIMIT", 5]]
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.1ms)[0m  [1m[34mSELECT "delayed_jobs"."id" FROM "delayed_jobs" WHERE (((run_at <= '2024-04-15 20:29:24.904208' AND (locked_at IS NULL OR locked_at < '2024-04-15 16:29:24.904224')) OR locked_by = 'delayed_job host:pop-os pid:9988') AND failed_at IS NULL) ORDER BY priority ASC, run_at ASC LIMIT ?[0m  [["LIMIT", 5]]
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.1ms)[0m  [1m[34mSELECT "delayed_jobs"."id" FROM "delayed_jobs" WHERE (((run_at <= '2024-04-15 20:29:29.973565' AND (locked_at IS NULL OR locked_at < '2024-04-15 16:29:29.973575')) OR locked_by = 'delayed_job host:pop-os pid:9988') AND failed_at IS NULL) ORDER BY priority ASC, run_at ASC LIMIT ?[0m  [["LIMIT", 5]]
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.1ms)[0m  [1m[34mSELECT "delayed_jobs"."id" FROM "delayed_jobs" WHERE (((run_at <= '2024-04-15 20:29:35.033107' AND (locked_at IS NULL OR locked_at < '2024-04-15 16:29:35.033117')) OR locked_by = 'delayed_job host:pop-os pid:9988') AND failed_at IS NULL) ORDER BY priority ASC, run_at ASC LIMIT ?[0m  [["LIMIT", 5]]
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.1ms)[0m  [1m[34mSELECT "delayed_jobs"."id" FROM "delayed_jobs" WHERE (((run_at <= '2024-04-15 20:29:40.097583' AND (locked_at IS NULL OR locked_at < '2024-04-15 16:29:40.097593')) OR locked_by = 'delayed_job host:pop-os pid:9988') AND failed_at IS NULL) ORDER BY priority ASC, run_at ASC LIMIT ?[0m  [["LIMIT", 5]]
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.1ms)[0m  [1m[34mSELECT "delayed_jobs"."id" FROM "delayed_jobs" WHERE (((run_at <= '2024-04-15 20:29:45.143976' AND (locked_at IS NULL OR locked_at < '2024-04-15 16:29:45.143989')) OR locked_by = 'delayed_job host:pop-os pid:9988') AND failed_at IS NULL) ORDER BY priority ASC, run_at ASC LIMIT ?[0m  [["LIMIT", 5]]
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.1ms)[0m  [1m[34mSELECT "delayed_jobs"."id" FROM "delayed_jobs" WHERE (((run_at <= '2024-04-15 20:29:50.192525' AND (locked_at IS NULL OR locked_at < '2024-04-15 16:29:50.192534')) OR locked_by = 'delayed_job host:pop-os pid:9988') AND failed_at IS NULL) ORDER BY priority ASC, run_at ASC LIMIT ?[0m  [["LIMIT", 5]]
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.1ms)[0m  [1m[34mSELECT "delayed_jobs"."id" FROM "delayed_jobs" WHERE (((run_at <= '2024-04-15 20:29:55.237840' AND (locked_at IS NULL OR locked_at < '2024-04-15 16:29:55.237849')) OR locked_by = 'delayed_job host:pop-os pid:9988') AND failed_at IS NULL) ORDER BY priority ASC, run_at ASC LIMIT ?[0m  [["LIMIT", 5]]
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.1ms)[0m  [1m[34mSELECT "delayed_jobs"."id" FROM "delayed_jobs" WHERE (((run_at <= '2024-04-15 20:30:00.295188' AND (locked_at IS NULL OR locked_at < '2024-04-15 16:30:00.295202')) OR locked_by = 'delayed_job host:pop-os pid:9988') AND failed_at IS NULL) ORDER BY priority ASC, run_at ASC LIMIT ?[0m  [["LIMIT", 5]]
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.1ms)[0m  [1m[34mSELECT "delayed_jobs"."id" FROM "delayed_jobs" WHERE (((run_at <= '2024-04-15 20:30:05.351604' AND (locked_at IS NULL OR locked_at < '2024-04-15 16:30:05.351622')) OR locked_by = 'delayed_job host:pop-os pid:9988') AND failed_at IS NULL) ORDER BY priority ASC, run_at ASC LIMIT ?[0m  [["LIMIT", 5]]
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.1ms)[0m  [1m[34mSELECT "delayed_jobs"."id" FROM "delayed_jobs" WHERE (((run_at <= '2024-04-15 20:30:10.409891' AND (locked_at IS NULL OR locked_at < '2024-04-15 16:30:10.409904')) OR locked_by = 'delayed_job host:pop-os pid:9988') AND failed_at IS NULL) ORDER BY priority ASC, run_at ASC LIMIT ?[0m  [["LIMIT", 5]]
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.1ms)[0m  [1m[34mSELECT "delayed_jobs"."id" FROM "delayed_jobs" WHERE (((run_at <= '2024-04-15 20:30:15.454526' AND (locked_at IS NULL OR locked_at < '2024-04-15 16:30:15.454535')) OR locked_by = 'delayed_job host:pop-os pid:9988') AND failed_at IS NULL) ORDER BY priority ASC, run_at ASC LIMIT ?[0m  [["LIMIT", 5]]
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.1ms)[0m  [1m[34mSELECT "delayed_jobs"."id" FROM "delayed_jobs" WHERE (((run_at <= '2024-04-15 20:30:20.511565' AND (locked_at IS NULL OR locked_at < '2024-04-15 16:30:20.511577')) OR locked_by = 'delayed_job host:pop-os pid:9988') AND failed_at IS NULL) ORDER BY priority ASC, run_at ASC LIMIT ?[0m  [["LIMIT", 5]]
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.1ms)[0m  [1m[34mSELECT "delayed_jobs"."id" FROM "delayed_jobs" WHERE (((run_at <= '2024-04-15 20:30:25.588740' AND (locked_at IS NULL OR locked_at < '2024-04-15 16:30:25.588751')) OR locked_by = 'delayed_job host:pop-os pid:9988') AND failed_at IS NULL) ORDER BY priority ASC, run_at ASC LIMIT ?[0m  [["LIMIT", 5]]
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.1ms)[0m  [1m[34mSELECT "delayed_jobs"."id" FROM "delayed_jobs" WHERE (((run_at <= '2024-04-15 20:30:30.642986' AND (locked_at IS NULL OR locked_at < '2024-04-15 16:30:30.642997')) OR locked_by = 'delayed_job host:pop-os pid:9988') AND failed_at IS NULL) ORDER BY priority ASC, run_at ASC LIMIT ?[0m  [["LIMIT", 5]]
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.1ms)[0m  [1m[34mSELECT "delayed_jobs"."id" FROM "delayed_jobs" WHERE (((run_at <= '2024-04-15 20:30:35.697855' AND (locked_at IS NULL OR locked_at < '2024-04-15 16:30:35.697864')) OR locked_by = 'delayed_job host:pop-os pid:9988') AND failed_at IS NULL) ORDER BY priority ASC, run_at ASC LIMIT ?[0m  [["LIMIT", 5]]
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.1ms)[0m  [1m[34mSELECT "delayed_jobs"."id" FROM "delayed_jobs" WHERE (((run_at <= '2024-04-15 20:30:40.766276' AND (locked_at IS NULL OR locked_at < '2024-04-15 16:30:40.766291')) OR locked_by = 'delayed_job host:pop-os pid:9988') AND failed_at IS NULL) ORDER BY priority ASC, run_at ASC LIMIT ?[0m  [["LIMIT", 5]]
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.1ms)[0m  [1m[34mSELECT "delayed_jobs"."id" FROM "delayed_jobs" WHERE (((run_at <= '2024-04-15 20:30:45.832793' AND (locked_at IS NULL OR locked_at < '2024-04-15 16:30:45.832801')) OR locked_by = 'delayed_job host:pop-os pid:9988') AND failed_at IS NULL) ORDER BY priority ASC, run_at ASC LIMIT ?[0m  [["LIMIT", 5]]
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.1ms)[0m  [1m[34mSELECT "delayed_jobs"."id" FROM "delayed_jobs" WHERE (((run_at <= '2024-04-15 20:30:50.900690' AND (locked_at IS NULL OR locked_at < '2024-04-15 16:30:50.900699')) OR locked_by = 'delayed_job host:pop-os pid:9988') AND failed_at IS NULL) ORDER BY priority ASC, run_at ASC LIMIT ?[0m  [["LIMIT", 5]]
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.1ms)[0m  [1m[34mSELECT "delayed_jobs"."id" FROM "delayed_jobs" WHERE (((run_at <= '2024-04-15 20:30:55.964748' AND (locked_at IS NULL OR locked_at < '2024-04-15 16:30:55.964759')) OR locked_by = 'delayed_job host:pop-os pid:9988') AND failed_at IS NULL) ORDER BY priority ASC, run_at ASC LIMIT ?[0m  [["LIMIT", 5]]
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.1ms)[0m  [1m[34mSELECT "delayed_jobs"."id" FROM "delayed_jobs" WHERE (((run_at <= '2024-04-15 20:31:01.028632' AND (locked_at IS NULL OR locked_at < '2024-04-15 16:31:01.028650')) OR locked_by = 'delayed_job host:pop-os pid:9988') AND failed_at IS NULL) ORDER BY priority ASC, run_at ASC LIMIT ?[0m  [["LIMIT", 5]]
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.1ms)[0m  [1m[34mSELECT "delayed_jobs"."id" FROM "delayed_jobs" WHERE (((run_at <= '2024-04-15 20:31:06.094266' AND (locked_at IS NULL OR locked_at < '2024-04-15 16:31:06.094274')) OR locked_by = 'delayed_job host:pop-os pid:9988') AND failed_at IS NULL) ORDER BY priority ASC, run_at ASC LIMIT ?[0m  [["LIMIT", 5]]
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.3ms)[0m  [1m[34mSELECT "delayed_jobs"."id" FROM "delayed_jobs" WHERE (((run_at <= '2024-04-15 20:31:11.155058' AND (locked_at IS NULL OR locked_at < '2024-04-15 16:31:11.155078')) OR locked_by = 'delayed_job host:pop-os pid:9988') AND failed_at IS NULL) ORDER BY priority ASC, run_at ASC LIMIT ?[0m  [["LIMIT", 5]]
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.1ms)[0m  [1m[34mSELECT "delayed_jobs"."id" FROM "delayed_jobs" WHERE (((run_at <= '2024-04-15 20:31:16.232881' AND (locked_at IS NULL OR locked_at < '2024-04-15 16:31:16.232892')) OR locked_by = 'delayed_job host:pop-os pid:9988') AND failed_at IS NULL) ORDER BY priority ASC, run_at ASC LIMIT ?[0m  [["LIMIT", 5]]
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.1ms)[0m  [1m[34mSELECT "delayed_jobs"."id" FROM "delayed_jobs" WHERE (((run_at <= '2024-04-15 20:31:21.300772' AND (locked_at IS NULL OR locked_at < '2024-04-15 16:31:21.300780')) OR locked_by = 'delayed_job host:pop-os pid:9988') AND failed_at IS NULL) ORDER BY priority ASC, run_at ASC LIMIT ?[0m  [["LIMIT", 5]]
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.1ms)[0m  [1m[34mSELECT "delayed_jobs"."id" FROM "delayed_jobs" WHERE (((run_at <= '2024-04-15 20:31:26.368151' AND (locked_at IS NULL OR locked_at < '2024-04-15 16:31:26.368163')) OR locked_by = 'delayed_job host:pop-os pid:9988') AND failed_at IS NULL) ORDER BY priority ASC, run_at ASC LIMIT ?[0m  [["LIMIT", 5]]
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.1ms)[0m  [1m[34mSELECT "delayed_jobs"."id" FROM "delayed_jobs" WHERE (((run_at <= '2024-04-15 20:31:31.434656' AND (locked_at IS NULL OR locked_at < '2024-04-15 16:31:31.434666')) OR locked_by = 'delayed_job host:pop-os pid:9988') AND failed_at IS NULL) ORDER BY priority ASC, run_at ASC LIMIT ?[0m  [["LIMIT", 5]]
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.1ms)[0m  [1m[34mSELECT "delayed_jobs"."id" FROM "delayed_jobs" WHERE (((run_at <= '2024-04-15 20:31:36.468948' AND (locked_at IS NULL OR locked_at < '2024-04-15 16:31:36.468957')) OR locked_by = 'delayed_job host:pop-os pid:9988') AND failed_at IS NULL) ORDER BY priority ASC, run_at ASC LIMIT ?[0m  [["LIMIT", 5]]
+2024-04-15T17:31:39-0300: [Worker(delayed_job host:pop-os pid:9988)] Exiting...
+  [1m[36mDelayed::Backend::ActiveRecord::Job Update All (0.1ms)[0m  [1m[33mUPDATE "delayed_jobs" SET "locked_by" = ?, "locked_at" = ? WHERE "delayed_jobs"."locked_by" = ?[0m  [["locked_by", nil], ["locked_at", nil], ["locked_by", "delayed_job host:pop-os pid:9988"]]

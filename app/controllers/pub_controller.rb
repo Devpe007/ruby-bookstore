@@ -59,7 +59,7 @@ class PubController < ApplicationController
 
     @cart.clear
 
-    OrderMailer.created(@order).deliver_now
+    OrderCreatedEmailJob.perform_later(@order.id)
 
     redirect_to order_path(@order)
   end
