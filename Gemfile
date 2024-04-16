@@ -38,6 +38,8 @@ gem 'figaro'
 gem 'daemons'
 gem 'delayed_job_active_record'
 gem 'resque'
+gem 'sidekiq'
+gem 'sinatra', '>= 1.3.0', require: false
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
